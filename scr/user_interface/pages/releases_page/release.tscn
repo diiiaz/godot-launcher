@@ -1,0 +1,175 @@
+[gd_scene load_steps=13 format=3 uid="uid://cba7grhb7105l"]
+
+[ext_resource type="Theme" uid="uid://bimvjqmjjj4jh" path="res://assets/resources/theme/main.tres" id="1_qqm0m"]
+[ext_resource type="Script" uid="uid://wk8rn28yegs6" path="res://scr/user_interface/pages/releases_page/release.gd" id="2_tl4kx"]
+[ext_resource type="FontFile" uid="uid://bjr2pe6fnpvm3" path="res://assets/resources/fonts/NotoSans-Bold.ttf" id="4_p3w3g"]
+[ext_resource type="Texture2D" uid="uid://b7t2klcgpvtjc" path="res://assets/textures/icons/toast/download.svg" id="4_pl0eu"]
+[ext_resource type="Texture2D" uid="uid://c8g6hswy4qaqt" path="res://assets/textures/icons/release/open_source.svg" id="6_snplk"]
+[ext_resource type="Texture2D" uid="uid://mwa7yfdar6j8" path="res://assets/textures/icons/common/delete.svg" id="6_v3i70"]
+[ext_resource type="Texture2D" uid="uid://cccs44sn3e3b6" path="res://assets/textures/icons/project/clock.svg" id="6_wsl2n"]
+[ext_resource type="Texture2D" uid="uid://btxmm1xnhfibv" path="res://assets/textures/icons/release/open_changelog.svg" id="7_snplk"]
+[ext_resource type="Texture2D" uid="uid://dnciiiqdshgmn" path="res://assets/textures/icons/page_controller/arrow_right.svg" id="9_pl0eu"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_xwwp3"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_v3i70"]
+font = ExtResource("4_p3w3g")
+
+[sub_resource type="LabelSettings" id="LabelSettings_cer51"]
+font_size = 12
+
+[node name="Release" type="PanelContainer"]
+custom_minimum_size = Vector2(0, 55)
+anchors_preset = 10
+anchor_right = 1.0
+offset_bottom = 40.0
+grow_horizontal = 2
+size_flags_vertical = 0
+mouse_behavior_recursive = 1
+theme = ExtResource("1_qqm0m")
+theme_override_styles/panel = SubResource("StyleBoxEmpty_xwwp3")
+script = ExtResource("2_tl4kx")
+
+[node name="MainButton" type="Button" parent="."]
+layout_mode = 2
+mouse_behavior_recursive = 2
+theme_type_variation = &"ProjectMainButton"
+
+[node name="VBoxContainer" type="VBoxContainer" parent="."]
+layout_mode = 2
+size_flags_vertical = 0
+theme_override_constants/separation = 0
+alignment = 1
+
+[node name="MarginContainer" type="MarginContainer" parent="VBoxContainer"]
+custom_minimum_size = Vector2(0, 55)
+layout_mode = 2
+size_flags_vertical = 4
+mouse_behavior_recursive = 1
+theme_override_constants/margin_left = 16
+theme_override_constants/margin_top = 4
+theme_override_constants/margin_right = 8
+theme_override_constants/margin_bottom = 4
+
+[node name="ContentContainer" type="HBoxContainer" parent="VBoxContainer/MarginContainer"]
+layout_mode = 2
+theme_override_constants/separation = 16
+
+[node name="MainInfoContainer" type="HBoxContainer" parent="VBoxContainer/MarginContainer/ContentContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 4
+theme_override_constants/separation = 8
+
+[node name="ReleaseNameLabel" type="Label" parent="VBoxContainer/MarginContainer/ContentContainer/MainInfoContainer"]
+unique_name_in_owner = true
+layout_mode = 2
+text = "Godot v4.5"
+label_settings = SubResource("LabelSettings_v3i70")
+vertical_alignment = 1
+
+[node name="TagsSeparator" type="VSeparator" parent="VBoxContainer/MarginContainer/ContentContainer/MainInfoContainer"]
+unique_name_in_owner = true
+visible = false
+layout_mode = 2
+
+[node name="TagsContainer" type="HBoxContainer" parent="VBoxContainer/MarginContainer/ContentContainer/MainInfoContainer"]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="SubInfoContainer" type="VBoxContainer" parent="VBoxContainer/MarginContainer/ContentContainer"]
+modulate = Color(1, 1, 1, 0.5882353)
+layout_mode = 2
+size_flags_horizontal = 8
+size_flags_vertical = 4
+
+[node name="ReleaseTimeContainer" type="HBoxContainer" parent="VBoxContainer/MarginContainer/ContentContainer/SubInfoContainer"]
+layout_mode = 2
+size_flags_horizontal = 8
+
+[node name="TimeTextureRect" type="TextureRect" parent="VBoxContainer/MarginContainer/ContentContainer/SubInfoContainer/ReleaseTimeContainer"]
+layout_mode = 2
+texture = ExtResource("6_wsl2n")
+stretch_mode = 5
+
+[node name="ReleaseTimeLabel" type="Label" parent="VBoxContainer/MarginContainer/ContentContainer/SubInfoContainer/ReleaseTimeContainer"]
+unique_name_in_owner = true
+layout_mode = 2
+text = "LAST_MODIFIED_MONTH_AGO"
+label_settings = SubResource("LabelSettings_cer51")
+
+[node name="BuildsDownloadedContainer" type="HBoxContainer" parent="VBoxContainer/MarginContainer/ContentContainer/SubInfoContainer"]
+unique_name_in_owner = true
+layout_mode = 2
+alignment = 2
+
+[node name="DownloadTextureRect" type="TextureRect" parent="VBoxContainer/MarginContainer/ContentContainer/SubInfoContainer/BuildsDownloadedContainer"]
+layout_mode = 2
+texture = ExtResource("4_pl0eu")
+stretch_mode = 5
+
+[node name="BuildsDownloadedLabel" type="Label" parent="VBoxContainer/MarginContainer/ContentContainer/SubInfoContainer/BuildsDownloadedContainer"]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_horizontal = 8
+text = "5 builds downloaded"
+label_settings = SubResource("LabelSettings_cer51")
+horizontal_alignment = 2
+vertical_alignment = 1
+
+[node name="ButtonsContainer" type="HBoxContainer" parent="VBoxContainer/MarginContainer/ContentContainer"]
+layout_mode = 2
+size_flags_vertical = 4
+
+[node name="DownloadRecommendedBuildButton" type="Button" parent="VBoxContainer/MarginContainer/ContentContainer/ButtonsContainer"]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(32, 32)
+layout_mode = 2
+tooltip_text = "TOOLTIP_DOWNLOAD_RECOMMENDED_BUILD"
+mouse_behavior_recursive = 2
+mouse_default_cursor_shape = 2
+theme_type_variation = &"ButtonBlue"
+icon = ExtResource("4_pl0eu")
+icon_alignment = 1
+
+[node name="DeleteRecommendedBuildButton" type="Button" parent="VBoxContainer/MarginContainer/ContentContainer/ButtonsContainer"]
+unique_name_in_owner = true
+layout_mode = 2
+tooltip_text = "TOOLTIP_DELETE_RECOMMENDED_BUILD"
+mouse_behavior_recursive = 2
+mouse_default_cursor_shape = 2
+theme_type_variation = &"ButtonRed"
+icon = ExtResource("6_v3i70")
+
+[node name="OpenSourceButton" type="Button" parent="VBoxContainer/MarginContainer/ContentContainer/ButtonsContainer"]
+custom_minimum_size = Vector2(32, 32)
+layout_mode = 2
+tooltip_text = "TOOLTIP_OPEN_SOURCE_RELEASE"
+mouse_behavior_recursive = 2
+mouse_default_cursor_shape = 2
+icon = ExtResource("6_snplk")
+icon_alignment = 1
+
+[node name="OpenChangelogButton" type="Button" parent="VBoxContainer/MarginContainer/ContentContainer/ButtonsContainer"]
+custom_minimum_size = Vector2(32, 32)
+layout_mode = 2
+tooltip_text = "TOOLTIP_OPEN_CHANGELOG"
+mouse_behavior_recursive = 2
+mouse_default_cursor_shape = 2
+icon = ExtResource("7_snplk")
+icon_alignment = 1
+
+[node name="ViewAllBuildsButton" type="Button" parent="VBoxContainer/MarginContainer/ContentContainer/ButtonsContainer"]
+layout_mode = 2
+tooltip_text = "TOOLTIP_SHOW_ALL_BUILDS"
+mouse_behavior_recursive = 2
+mouse_default_cursor_shape = 2
+icon = ExtResource("9_pl0eu")
+
+[connection signal="pressed" from="MainButton" to="." method="_on_main_button_pressed"]
+[connection signal="pressed" from="VBoxContainer/MarginContainer/ContentContainer/ButtonsContainer/DownloadRecommendedBuildButton" to="." method="_on_download_recommended_build_button_pressed"]
+[connection signal="pressed" from="VBoxContainer/MarginContainer/ContentContainer/ButtonsContainer/DeleteRecommendedBuildButton" to="." method="_on_delete_recommended_build_button_pressed"]
+[connection signal="pressed" from="VBoxContainer/MarginContainer/ContentContainer/ButtonsContainer/OpenSourceButton" to="." method="_on_open_source_button_pressed"]
+[connection signal="pressed" from="VBoxContainer/MarginContainer/ContentContainer/ButtonsContainer/OpenChangelogButton" to="." method="_on_open_changelog_button_pressed"]
+[connection signal="pressed" from="VBoxContainer/MarginContainer/ContentContainer/ButtonsContainer/ViewAllBuildsButton" to="." method="_on_view_all_builds_button_pressed"]

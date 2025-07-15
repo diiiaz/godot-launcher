@@ -1,0 +1,33 @@
+[gd_scene load_steps=5 format=3 uid="uid://ekqlub7k865j"]
+
+[ext_resource type="Theme" uid="uid://bimvjqmjjj4jh" path="res://assets/resources/theme/main.tres" id="1_e7cb4"]
+[ext_resource type="Script" uid="uid://urbti045qhl5" path="res://scr/user_interface/tags/tag.gd" id="1_wfqjq"]
+[ext_resource type="FontFile" uid="uid://bjr2pe6fnpvm3" path="res://assets/resources/fonts/NotoSans-Bold.ttf" id="3_lh3dw"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_e7cb4"]
+font = ExtResource("3_lh3dw")
+font_size = 12
+
+[node name="Tag" type="PanelContainer"]
+theme = ExtResource("1_e7cb4")
+theme_type_variation = &"TagPanel"
+script = ExtResource("1_wfqjq")
+
+[node name="MarginContainer" type="MarginContainer" parent="."]
+layout_mode = 2
+theme_override_constants/margin_left = 6
+theme_override_constants/margin_top = 4
+theme_override_constants/margin_right = 6
+theme_override_constants/margin_bottom = 4
+
+[node name="TagNameLabel" type="Label" parent="MarginContainer"]
+unique_name_in_owner = true
+layout_mode = 2
+text = "tag name"
+label_settings = SubResource("LabelSettings_e7cb4")
+
+[node name="Button" type="Button" parent="."]
+layout_mode = 2
+mouse_behavior_recursive = 2
+mouse_default_cursor_shape = 2
+theme_type_variation = &"TagButton"

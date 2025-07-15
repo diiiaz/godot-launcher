@@ -1,0 +1,42 @@
+[gd_scene load_steps=5 format=3 uid="uid://cjqesasmg6gkc"]
+
+[ext_resource type="Script" uid="uid://cegnebcqxtjbb" path="res://scr/user_interface/pages/settings_page/setting.gd" id="1_g1vd5"]
+[ext_resource type="Theme" uid="uid://bimvjqmjjj4jh" path="res://assets/resources/theme/main.tres" id="1_u82gr"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_u786y"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_u82gr"]
+
+[node name="Setting" type="PanelContainer"]
+custom_minimum_size = Vector2(16, 16)
+anchors_preset = 10
+anchor_right = 1.0
+offset_bottom = 23.0
+grow_horizontal = 2
+theme = ExtResource("1_u82gr")
+theme_override_styles/panel = SubResource("StyleBoxEmpty_u786y")
+script = ExtResource("1_g1vd5")
+
+[node name="MarginContainer" type="MarginContainer" parent="."]
+layout_mode = 2
+theme_override_constants/margin_left = 8
+theme_override_constants/margin_right = 8
+
+[node name="HBoxContainer" type="HBoxContainer" parent="MarginContainer"]
+layout_mode = 2
+
+[node name="SettingNameLabel" type="Label" parent="MarginContainer/HBoxContainer"]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(0, 32)
+layout_mode = 2
+size_flags_horizontal = 3
+text = "SETTING_LANGUAGE"
+vertical_alignment = 1
+text_overrun_behavior = 3
+
+[node name="ValueControllerContainer" type="PanelContainer" parent="MarginContainer/HBoxContainer"]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(16, 16)
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_styles/panel = SubResource("StyleBoxEmpty_u82gr")

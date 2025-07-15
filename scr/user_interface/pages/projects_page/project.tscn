@@ -1,0 +1,181 @@
+[gd_scene load_steps=15 format=3 uid="uid://dowb80m03s76p"]
+
+[ext_resource type="Texture2D" uid="uid://b2qapuue4p2mj" path="res://assets/textures/icons/default_icon.svg" id="1_jwowj"]
+[ext_resource type="Script" uid="uid://b1c0124rsqsuk" path="res://scr/user_interface/pages/projects_page/project.gd" id="1_ou0my"]
+[ext_resource type="Theme" uid="uid://bimvjqmjjj4jh" path="res://assets/resources/theme/main.tres" id="1_xwwp3"]
+[ext_resource type="Texture2D" uid="uid://cccs44sn3e3b6" path="res://assets/textures/icons/project/clock.svg" id="3_cer51"]
+[ext_resource type="FontFile" uid="uid://bjr2pe6fnpvm3" path="res://assets/resources/fonts/NotoSans-Bold.ttf" id="4_23glk"]
+[ext_resource type="Texture2D" uid="uid://dsrtamnxenut4" path="res://assets/textures/icons/common/version.svg" id="4_c25v3"]
+[ext_resource type="Script" uid="uid://bkiinajnf8i6g" path="res://scr/user_interface/buttons/options/build/project_build_option_button.gd" id="5_tw8s5"]
+[ext_resource type="Texture2D" uid="uid://dnd32ay7p67xu" path="res://assets/textures/icons/project/edit.svg" id="6_wo43g"]
+[ext_resource type="Texture2D" uid="uid://cpkfifm4oc8sf" path="res://assets/textures/icons/project/play.svg" id="7_xwwp3"]
+[ext_resource type="Texture2D" uid="uid://mwa7yfdar6j8" path="res://assets/textures/icons/common/delete.svg" id="9_xwwp3"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_xwwp3"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_xwwp3"]
+font = ExtResource("4_23glk")
+
+[sub_resource type="LabelSettings" id="LabelSettings_ou0my"]
+font_size = 12
+font_color = Color(1, 1, 1, 0.5882353)
+
+[sub_resource type="LabelSettings" id="LabelSettings_cer51"]
+font_size = 12
+
+[node name="Project" type="PanelContainer"]
+custom_minimum_size = Vector2(0, 55)
+anchors_preset = 10
+anchor_right = 1.0
+offset_bottom = 55.0
+grow_horizontal = 2
+size_flags_vertical = 0
+theme = ExtResource("1_xwwp3")
+theme_override_styles/panel = SubResource("StyleBoxEmpty_xwwp3")
+script = ExtResource("1_ou0my")
+
+[node name="MainButton" type="Button" parent="."]
+layout_mode = 2
+theme_type_variation = &"ProjectMainButton"
+
+[node name="MarginContainer" type="MarginContainer" parent="."]
+layout_mode = 2
+size_flags_vertical = 4
+mouse_behavior_recursive = 1
+theme_override_constants/margin_left = 8
+theme_override_constants/margin_top = 4
+theme_override_constants/margin_right = 8
+theme_override_constants/margin_bottom = 4
+
+[node name="ContentContainer" type="HBoxContainer" parent="MarginContainer"]
+layout_mode = 2
+theme_override_constants/separation = 16
+
+[node name="MainInfoContainer" type="HBoxContainer" parent="MarginContainer/ContentContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 4
+theme_override_constants/separation = 8
+
+[node name="IconTextureRect" type="TextureRect" parent="MarginContainer/ContentContainer/MainInfoContainer"]
+unique_name_in_owner = true
+layout_mode = 2
+mouse_behavior_recursive = 2
+texture = ExtResource("1_jwowj")
+expand_mode = 3
+stretch_mode = 5
+
+[node name="ProjectNamePathTagsContainer" type="VBoxContainer" parent="MarginContainer/ContentContainer/MainInfoContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="TopLineContainer" type="HBoxContainer" parent="MarginContainer/ContentContainer/MainInfoContainer/ProjectNamePathTagsContainer"]
+layout_mode = 2
+
+[node name="ProjectNameLabel" type="Label" parent="MarginContainer/ContentContainer/MainInfoContainer/ProjectNamePathTagsContainer/TopLineContainer"]
+unique_name_in_owner = true
+layout_mode = 2
+text = "Project Name"
+label_settings = SubResource("LabelSettings_xwwp3")
+vertical_alignment = 1
+
+[node name="TagsSeparator" type="VSeparator" parent="MarginContainer/ContentContainer/MainInfoContainer/ProjectNamePathTagsContainer/TopLineContainer"]
+unique_name_in_owner = true
+visible = false
+layout_mode = 2
+
+[node name="TagsContainer" type="HBoxContainer" parent="MarginContainer/ContentContainer/MainInfoContainer/ProjectNamePathTagsContainer/TopLineContainer"]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="ProjectPathLabel" type="Label" parent="MarginContainer/ContentContainer/MainInfoContainer/ProjectNamePathTagsContainer"]
+unique_name_in_owner = true
+layout_mode = 2
+text = "res://project/path/"
+label_settings = SubResource("LabelSettings_ou0my")
+vertical_alignment = 1
+text_overrun_behavior = 3
+
+[node name="SubInfoContainer" type="VBoxContainer" parent="MarginContainer/ContentContainer"]
+modulate = Color(1, 1, 1, 0.5882353)
+layout_mode = 2
+size_flags_horizontal = 8
+size_flags_vertical = 4
+
+[node name="LastEditedContainer" type="HBoxContainer" parent="MarginContainer/ContentContainer/SubInfoContainer"]
+layout_mode = 2
+size_flags_horizontal = 8
+
+[node name="TimeTextureRect" type="TextureRect" parent="MarginContainer/ContentContainer/SubInfoContainer/LastEditedContainer"]
+layout_mode = 2
+texture = ExtResource("3_cer51")
+stretch_mode = 5
+
+[node name="LastEditedLabel" type="Label" parent="MarginContainer/ContentContainer/SubInfoContainer/LastEditedContainer"]
+unique_name_in_owner = true
+layout_mode = 2
+text = "LAST_MODIFIED_MONTH_AGO"
+label_settings = SubResource("LabelSettings_cer51")
+
+[node name="VersionContainer" type="HBoxContainer" parent="MarginContainer/ContentContainer/SubInfoContainer"]
+layout_mode = 2
+size_flags_horizontal = 8
+
+[node name="VersionTextureRect" type="TextureRect" parent="MarginContainer/ContentContainer/SubInfoContainer/VersionContainer"]
+layout_mode = 2
+texture = ExtResource("4_c25v3")
+stretch_mode = 5
+
+[node name="VersionLabel" type="Label" parent="MarginContainer/ContentContainer/SubInfoContainer/VersionContainer"]
+unique_name_in_owner = true
+layout_mode = 2
+text = "1.0"
+label_settings = SubResource("LabelSettings_cer51")
+
+[node name="ProjectBuildOptionButton" type="OptionButton" parent="MarginContainer/ContentContainer"]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_vertical = 4
+mouse_behavior_recursive = 2
+mouse_default_cursor_shape = 2
+script = ExtResource("5_tw8s5")
+
+[node name="HBoxContainer" type="HBoxContainer" parent="MarginContainer/ContentContainer"]
+layout_mode = 2
+size_flags_vertical = 4
+
+[node name="PlayButton" type="Button" parent="MarginContainer/ContentContainer/HBoxContainer"]
+custom_minimum_size = Vector2(32, 32)
+layout_mode = 2
+tooltip_text = "TOOLTIP_PLAY_PROJECT"
+mouse_behavior_recursive = 2
+mouse_default_cursor_shape = 2
+theme_type_variation = &"ButtonGreen"
+icon = ExtResource("7_xwwp3")
+icon_alignment = 1
+
+[node name="EditButton" type="Button" parent="MarginContainer/ContentContainer/HBoxContainer"]
+custom_minimum_size = Vector2(32, 32)
+layout_mode = 2
+tooltip_text = "TOOLTIP_EDIT_PROJECT"
+mouse_behavior_recursive = 2
+mouse_default_cursor_shape = 2
+theme_type_variation = &"ButtonBlue"
+icon = ExtResource("6_wo43g")
+icon_alignment = 1
+
+[node name="DeleteButton" type="Button" parent="MarginContainer/ContentContainer/HBoxContainer"]
+custom_minimum_size = Vector2(32, 32)
+layout_mode = 2
+tooltip_text = "TOOLTIP_DELETE_PROJECT"
+mouse_behavior_recursive = 2
+mouse_default_cursor_shape = 2
+theme_type_variation = &"ButtonRedInverted"
+icon = ExtResource("9_xwwp3")
+icon_alignment = 1
+
+[connection signal="selected_build" from="MarginContainer/ContentContainer/ProjectBuildOptionButton" to="." method="_on_project_build_option_button_selected_build"]
+[connection signal="pressed" from="MarginContainer/ContentContainer/HBoxContainer/PlayButton" to="." method="_on_play_button_pressed"]
+[connection signal="pressed" from="MarginContainer/ContentContainer/HBoxContainer/EditButton" to="." method="_on_edit_button_pressed"]
+[connection signal="pressed" from="MarginContainer/ContentContainer/HBoxContainer/DeleteButton" to="." method="_on_delete_button_pressed"]

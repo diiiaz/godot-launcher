@@ -1,0 +1,71 @@
+[gd_scene load_steps=6 format=3 uid="uid://c12wjxbyonv8g"]
+
+[ext_resource type="Script" uid="uid://ccjpjiykbwq88" path="res://scr/user_interface/pages/settings_page/settings_page.gd" id="1_fbmvp"]
+[ext_resource type="Theme" uid="uid://bimvjqmjjj4jh" path="res://assets/resources/theme/main.tres" id="1_vhe0e"]
+[ext_resource type="Texture2D" uid="uid://ci7lukvp03h5l" path="res://assets/textures/icons/common/search.svg" id="2_vhe0e"]
+[ext_resource type="PackedScene" uid="uid://dnlqgewn260hf" path="res://scr/user_interface/smooth_scroll_container.tscn" id="3_dxuv4"]
+[ext_resource type="Script" uid="uid://dby6ythi1fand" path="res://scr/user_interface/pages/settings_page/settings_container.gd" id="4_363oj"]
+
+[node name="TAB_SETTINGS" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme = ExtResource("1_vhe0e")
+script = ExtResource("1_fbmvp")
+metadata/_tab_index = 2
+metadata/_edit_lock_ = true
+
+[node name="VBoxContainer" type="VBoxContainer" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/separation = 0
+
+[node name="TopMarginContainer" type="MarginContainer" parent="VBoxContainer"]
+custom_minimum_size = Vector2(0, 51)
+layout_mode = 2
+theme_override_constants/margin_left = 8
+theme_override_constants/margin_top = 8
+theme_override_constants/margin_right = 8
+theme_override_constants/margin_bottom = 8
+
+[node name="TopHBoxContainer" type="HBoxContainer" parent="VBoxContainer/TopMarginContainer"]
+layout_mode = 2
+
+[node name="SearchBar" type="LineEdit" parent="VBoxContainer/TopMarginContainer/TopHBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_type_variation = &"SearchBar"
+placeholder_text = "FILTER_SETTINGS"
+clear_button_enabled = true
+right_icon = ExtResource("2_vhe0e")
+caret_blink = true
+
+[node name="HSeparator" type="HSeparator" parent="VBoxContainer"]
+layout_mode = 2
+
+[node name="MarginContainer" type="MarginContainer" parent="VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 3
+theme_override_constants/margin_left = 8
+theme_override_constants/margin_top = 4
+theme_override_constants/margin_right = 8
+theme_override_constants/margin_bottom = 4
+
+[node name="SmoothScrollContainer" parent="VBoxContainer/MarginContainer" instance=ExtResource("3_dxuv4")]
+layout_mode = 2
+
+[node name="SettingsContainer" type="VBoxContainer" parent="VBoxContainer/MarginContainer/SmoothScrollContainer"]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+script = ExtResource("4_363oj")
+
+[connection signal="text_changed" from="VBoxContainer/TopMarginContainer/TopHBoxContainer/SearchBar" to="." method="_on_search_bar_text_changed"]

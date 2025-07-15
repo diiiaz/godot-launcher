@@ -1,0 +1,101 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<svg
+   width="16"
+   height="16"
+   version="1.1"
+   id="svg2"
+   sodipodi:docname="godot_unalive.svg"
+   inkscape:version="1.3.2 (091e20e, 2023-11-25, custom)"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:svg="http://www.w3.org/2000/svg">
+  <defs
+     id="defs2">
+    <inkscape:path-effect
+       effect="bool_op"
+       operand-path=""
+       id="path-effect6"
+       is_visible="true"
+       lpeversion="1"
+       operation="diff"
+       swap-operands="false"
+       filltype-this="from-curve"
+       filter=""
+       filltype-operand="from-curve" />
+    <filter
+       id="selectable_hidder_filter"
+       width="1.2543246"
+       height="1.2543246"
+       x="-0.12716231"
+       y="-0.12716231"
+       style="color-interpolation-filters:sRGB;"
+       inkscape:label="LPE boolean visibility">
+      <feComposite
+         id="boolops_hidder_primitive"
+         result="composite1"
+         operator="arithmetic"
+         in2="SourceGraphic"
+         in="BackgroundImage" />
+    </filter>
+    <inkscape:path-effect
+       effect="bool_op"
+       operand-path="#path4"
+       id="path-effect5"
+       is_visible="true"
+       lpeversion="1"
+       operation="diff"
+       swap-operands="false"
+       filltype-this="from-curve"
+       filter=""
+       filltype-operand="from-curve" />
+    <inkscape:path-effect
+       effect="rough_hatches"
+       id="path-effect3"
+       is_visible="true"
+       lpeversion="1.2"
+       direction="5.4800775,9.0813695 , 1.5467961,0"
+       dist_rdm="75;1"
+       growth="0"
+       do_bend="true"
+       bender="5.4800775,14.08137 , 5,0"
+       bottom_edge_variation="0.10275156;1"
+       top_edge_variation="0.10275156;1"
+       bottom_tgt_variation="0;1"
+       top_tgt_variation="0;1"
+       scale_bf="1"
+       scale_bb="1"
+       scale_tf="1"
+       scale_tb="1"
+       top_smth_variation="0;1"
+       bottom_smth_variation="0;1"
+       fat_output="true"
+       stroke_width_top="1"
+       stroke_width_bottom="1"
+       front_thickness="1"
+       back_thickness="0.25" />
+  </defs>
+  <sodipodi:namedview
+     id="namedview2"
+     pagecolor="#505050"
+     bordercolor="#eeeeee"
+     borderopacity="1"
+     inkscape:showpageshadow="0"
+     inkscape:pageopacity="0"
+     inkscape:pagecheckerboard="0"
+     inkscape:deskcolor="#505050"
+     inkscape:zoom="45.254834"
+     inkscape:cx="4.7066795"
+     inkscape:cy="12.120252"
+     inkscape:window-width="2560"
+     inkscape:window-height="1417"
+     inkscape:window-x="-8"
+     inkscape:window-y="-8"
+     inkscape:window-maximized="1"
+     inkscape:current-layer="svg2" />
+  <path
+     id="path3"
+     style="display:inline;fill:#ffffff;fill-opacity:1"
+     d="M 416.99156 77.004902 C 374.32509 86.338199 333.36408 100.32488 294.03091 118.99147 C 294.69758 152.99131 297.36172 186.95896 302.02835 220.95884 C 270.02847 238.95876 240.72309 260.27181 214.0565 284.93836 C 188.05662 266.93844 160.62432 251.28669 131.95777 237.9534 C 99.957914 270.61995 72.317566 306.71064 48.984325 346.04381 C 66.31759 374.04369 84.966494 401.01798 104.96641 427.0179 L 104.96641 672.9392 C 376.27572 712.77457 646.97997 716.77452 918.95593 672.9392 L 918.95593 427.0179 C 938.95585 401.01798 957.60477 374.04369 974.93802 346.04381 C 951.60477 306.71064 923.96445 270.61995 891.96457 237.9534 C 863.29802 251.28669 835.99072 266.93844 809.9908 284.93836 C 783.32425 260.27181 754.01883 238.95876 722.01895 220.95884 C 726.68562 186.95896 729.34976 152.99131 730.01639 118.99147 C 690.68322 100.32488 649.72225 86.338199 607.05574 77.004902 C 589.72249 105.67145 574.27875 135.30988 560.9455 165.97643 C 528.27895 161.3098 495.64336 161.3098 462.97685 165.97643 C 449.64356 135.30988 434.32485 105.67145 416.99156 77.004902 z M 226.30258 426.89294 A 26.209543 26.209543 0 0 1 246.54611 434.26558 L 246.92099 434.5155 L 300.40387 487.37358 L 354.01172 434.5155 L 354.26164 434.39054 A 26.209543 26.209543 0 0 1 390.99988 434.64046 A 26.209543 26.209543 0 0 1 391.2498 471.3787 L 391.12484 471.62862 L 338.26675 525.23647 L 391.12484 578.71935 L 391.37476 579.09423 A 26.209543 26.209543 0 0 1 354.26164 616.0824 L 354.01172 615.83248 L 300.40387 563.09935 L 246.92099 615.83248 L 246.54611 616.0824 A 26.209543 26.209543 0 0 1 209.55794 579.09423 L 209.80786 578.71935 L 262.54099 525.23647 L 209.80786 471.62862 L 209.55794 471.3787 A 26.209543 26.209543 0 0 1 226.30258 426.89294 z M 649.16727 426.89294 A 26.209543 26.209543 0 0 1 669.41079 434.26558 L 669.78567 434.5155 L 723.26855 487.37358 L 776.8764 434.5155 L 777.12632 434.39054 A 26.209543 26.209543 0 0 1 813.86456 434.64046 A 26.209543 26.209543 0 0 1 814.11448 471.3787 L 813.98952 471.62862 L 761.13144 525.23647 L 813.98952 578.71935 L 814.23944 579.09423 A 26.209543 26.209543 0 0 1 777.12632 616.0824 L 776.8764 615.83248 L 723.26855 563.09935 L 669.78567 615.83248 L 669.41079 616.0824 A 26.209543 26.209543 0 0 1 632.42262 579.09423 L 632.67254 578.71935 L 685.40567 525.23647 L 632.67254 471.62862 L 632.42262 471.3787 A 26.209543 26.209543 0 0 1 649.16727 426.89294 z M 509.21205 488.49822 C 524.55811 487.36932 540.9519 495.92759 540.9519 513.99007 L 540.9519 599.96256 C 540.9519 633.96252 482.97045 633.96252 482.97045 599.96256 L 482.97045 513.99007 C 482.97045 498.05258 495.67142 489.49432 509.21205 488.49822 z "
+     transform="matrix(0.01563,0,0,0.01563,0,1.3921165)" />
+</svg>

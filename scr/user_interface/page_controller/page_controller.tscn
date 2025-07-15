@@ -1,0 +1,116 @@
+[gd_scene load_steps=7 format=3 uid="uid://bm00jjwduad5r"]
+
+[ext_resource type="Theme" uid="uid://bimvjqmjjj4jh" path="res://assets/resources/theme/main.tres" id="1_f8vjk"]
+[ext_resource type="Script" uid="uid://cpb7nfedbt1u7" path="res://scr/user_interface/page_controller/page_controller.gd" id="2_e8gb1"]
+[ext_resource type="Texture2D" uid="uid://b3astwdjkewpq" path="res://assets/textures/icons/page_controller/arrow_left.svg" id="2_vaba2"]
+[ext_resource type="Texture2D" uid="uid://dnciiiqdshgmn" path="res://assets/textures/icons/page_controller/arrow_right.svg" id="3_l0gr1"]
+[ext_resource type="PackedScene" uid="uid://buen0xy8j0qjf" path="res://scr/user_interface/page_controller/page_button.tscn" id="4_yxgot"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_l0gr1"]
+
+[node name="PageController" type="PanelContainer"]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_behavior_recursive = 1
+theme = ExtResource("1_f8vjk")
+theme_override_styles/panel = SubResource("StyleBoxEmpty_l0gr1")
+script = ExtResource("2_e8gb1")
+
+[node name="HBoxContainer" type="HBoxContainer" parent="."]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+alignment = 1
+
+[node name="LeftArrowButton" type="Button" parent="HBoxContainer"]
+unique_name_in_owner = true
+layout_mode = 2
+mouse_behavior_recursive = 2
+mouse_default_cursor_shape = 2
+theme_type_variation = &"PageControllerPageButton"
+icon = ExtResource("2_vaba2")
+
+[node name="HBoxContainer" type="HBoxContainer" parent="HBoxContainer"]
+layout_mode = 2
+alignment = 1
+
+[node name="PageButton0" parent="HBoxContainer/HBoxContainer" instance=ExtResource("4_yxgot")]
+unique_name_in_owner = true
+layout_mode = 2
+mouse_filter = 0
+theme = null
+
+[node name="PageButton1" parent="HBoxContainer/HBoxContainer" instance=ExtResource("4_yxgot")]
+unique_name_in_owner = true
+layout_mode = 2
+mouse_filter = 0
+theme = null
+
+[node name="PageButton2" parent="HBoxContainer/HBoxContainer" instance=ExtResource("4_yxgot")]
+unique_name_in_owner = true
+layout_mode = 2
+mouse_filter = 0
+theme = null
+
+[node name="PageButton3" parent="HBoxContainer/HBoxContainer" instance=ExtResource("4_yxgot")]
+unique_name_in_owner = true
+layout_mode = 2
+mouse_filter = 0
+theme = null
+
+[node name="PageButton4" parent="HBoxContainer/HBoxContainer" instance=ExtResource("4_yxgot")]
+unique_name_in_owner = true
+layout_mode = 2
+mouse_filter = 0
+theme = null
+
+[node name="PageButton5" parent="HBoxContainer/HBoxContainer" instance=ExtResource("4_yxgot")]
+unique_name_in_owner = true
+layout_mode = 2
+mouse_filter = 0
+theme = null
+
+[node name="PageButton6" parent="HBoxContainer/HBoxContainer" instance=ExtResource("4_yxgot")]
+unique_name_in_owner = true
+layout_mode = 2
+mouse_filter = 0
+theme = null
+
+[node name="RightArrowButton" type="Button" parent="HBoxContainer"]
+unique_name_in_owner = true
+layout_mode = 2
+mouse_behavior_recursive = 2
+mouse_default_cursor_shape = 2
+theme_type_variation = &"PageControllerPageButton"
+icon = ExtResource("3_l0gr1")
+
+[node name="Control" type="Control" parent="."]
+show_behind_parent = true
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+mouse_filter = 2
+
+[node name="HighlightPanel" type="PanelContainer" parent="Control"]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(32, 32)
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -16.0
+offset_top = -16.0
+offset_right = 16.0
+offset_bottom = 16.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+theme_type_variation = &"PageControllerHighlightPanel"
+
+[connection signal="pressed" from="HBoxContainer/LeftArrowButton" to="." method="_on_left_arrow_button_pressed"]
+[connection signal="pressed" from="HBoxContainer/RightArrowButton" to="." method="_on_right_arrow_button_pressed"]

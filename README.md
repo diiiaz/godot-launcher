@@ -1,0 +1,37 @@
+# <img src="/assets/icons/app/godot-launcher.png" width="64"> Godot Launcher
+
+[![GitHub License](https://img.shields.io/github/license/diiiaz/godot-launcher?color=blue)](LICENSE)
+[![Downloads](https://img.shields.io/github/downloads/diiiaz/godot-launcher/total?color=green)](https://github.com/diiiaz/godot-launcher/releases)
+[![Latest Release](https://img.shields.io/github/v/release/diiiaz/godot-launcher?label=latest%20release)](https://github.com/diiiaz/godot-launcher/releases)
+
+✨ **Organize your Godot projects, manage engine version in one place!**
+
+## 🌟 Features
+
+- **Project Management**  
+  📂 Easily browse, sort, and launch Godot projects from a unified interface.  
+- **Godot Version Manager**  
+  🔄 Install, switch, and manage multiple Godot Engine versions (including custom builds!).  
+- **One-Click Launch**  
+  🎮 Start projects with your desired Godot version instantly.  
+- **Cross-Platform**  
+  🖥️ Runs on Windows, macOS, and Linux.  
+- **Auto-Updates**  
+  ⚡ Stay up-to-date with the latest Godot Launcher features effortlessly.
+
+---
+
+## 🚀 Quick Start
+
+> [!CAUTION]
+>**This software is currently in alpha stage**: 
+>- Unexpected behavior or data loss *is possible* in early releases.
+>- The developers assume no responsibility for project corruption/loss.
+
+### Installation
+1. **Download the latest release** for your OS from the [Releases page](https://github.com/diiiaz/godot-launcher/releases).  
+2. **Extract the package** and run the executable.  
+
+---
+
+<sub>Built with 💙 and Godot Engine.</sub>

@@ -1,0 +1,21 @@
+[gd_scene load_steps=4 format=3 uid="uid://cbka0pcjdtyr7"]
+
+[ext_resource type="Script" uid="uid://cv7mseqyh4riy" path="res://scr/user_interface/pages/settings_page/setting_controllers/number_setting_controller.gd" id="1_1715g"]
+[ext_resource type="Theme" uid="uid://bimvjqmjjj4jh" path="res://assets/resources/theme/main.tres" id="1_dnhji"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_1715g"]
+
+[node name="NumberController" type="PanelContainer" node_paths=PackedStringArray("spinbox")]
+anchors_preset = 10
+anchor_right = 1.0
+offset_bottom = 29.0
+grow_horizontal = 2
+theme = ExtResource("1_dnhji")
+theme_override_styles/panel = SubResource("StyleBoxEmpty_1715g")
+script = ExtResource("1_1715g")
+spinbox = NodePath("SpinBox")
+
+[node name="SpinBox" type="SpinBox" parent="."]
+unique_name_in_owner = true
+layout_mode = 2
+select_all_on_focus = true

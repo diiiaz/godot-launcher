@@ -1,0 +1,50 @@
+; Engine configuration file.
+; It's best edited using the editor UI and not directly,
+; since the parameters that go here are not all obvious.
+;
+; Format:
+;   [section] ; section goes between []
+;   param=value ; assign values to parameters
+
+config_version=5
+
+[application]
+
+config/name="Godot Launcher"
+config/version="1.0.0"
+run/main_scene="uid://bm3chnt4habtm"
+config/features=PackedStringArray("4.5")
+boot_splash/bg_color=Color(0.078431375, 0.078431375, 0.078431375, 1)
+boot_splash/show_image=false
+config/icon="uid://dljbcqjith5da"
+config/windows_native_icon="res://assets/textures/icons/app/godot-launcher.ico"
+
+[autoload]
+
+ToastsManager="*res://scr/user_interface/toast/toasts_manager.tscn"
+ConnectionTester="*res://scr/globals/connection_tester.gd"
+ProjectsManager="*res://scr/globals/projects_manager.gd"
+BuildsFetcher="*res://scr/globals/builds_fetcher.gd"
+BuildDownloader="*res://scr/globals/build_downloader.gd"
+BuildsManager="*res://scr/globals/builds_manager.gd"
+TagsManager="*res://scr/globals/tags_manager.gd"
+SettingsManager="*res://scr/globals/settings_manager.gd"
+
+[display]
+
+window/size/viewport_width=1280
+window/size/viewport_height=720
+
+[editor_plugins]
+
+enabled=PackedStringArray("res://addons/SmoothScroll/plugin.cfg", "res://addons/explore-editor-theme/plugin.cfg", "res://addons/proton_control_animation/plugin.cfg")
+
+[file_customization]
+
+folder_colors={
+"res://addons/": "gray"
+}
+
+[internationalization]
+
+locale/translations=PackedStringArray("res://assets/resources/localization/localization.en_US.translation", "res://assets/resources/localization/localization.fr_FR.translation")

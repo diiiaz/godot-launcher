@@ -1,0 +1,20 @@
+[gd_scene load_steps=4 format=3 uid="uid://qj14muq6hfe8"]
+
+[ext_resource type="Script" uid="uid://cragjynwhe5tj" path="res://scr/user_interface/pages/settings_page/setting_controllers/option_setting_controller.gd" id="1_dh81d"]
+[ext_resource type="Theme" uid="uid://bimvjqmjjj4jh" path="res://assets/resources/theme/main.tres" id="1_ilntb"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_0db0k"]
+
+[node name="OptionController" type="PanelContainer" node_paths=PackedStringArray("option_button")]
+anchors_preset = 10
+anchor_right = 1.0
+offset_bottom = 24.0
+grow_horizontal = 2
+theme = ExtResource("1_ilntb")
+theme_override_styles/panel = SubResource("StyleBoxEmpty_0db0k")
+script = ExtResource("1_dh81d")
+option_button = NodePath("OptionButton")
+
+[node name="OptionButton" type="OptionButton" parent="."]
+layout_mode = 2
+mouse_default_cursor_shape = 2

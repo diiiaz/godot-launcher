@@ -1,0 +1,102 @@
+[gd_scene load_steps=10 format=3 uid="uid://6vmkyybil4d3"]
+
+[ext_resource type="Theme" uid="uid://bimvjqmjjj4jh" path="res://assets/resources/theme/main.tres" id="1_65gce"]
+[ext_resource type="Script" uid="uid://cv1vp8xn4snk2" path="res://scr/user_interface/pages/releases_page/build.gd" id="1_y0fjh"]
+[ext_resource type="FontFile" uid="uid://cic57dt4ri7xg" path="res://assets/resources/fonts/NotoSans-Regular.ttf" id="3_avjpy"]
+[ext_resource type="Texture2D" uid="uid://byxc3vhusjs76" path="res://assets/textures/icons/release/weight.svg" id="3_iuba3"]
+[ext_resource type="Texture2D" uid="uid://b7t2klcgpvtjc" path="res://assets/textures/icons/toast/download.svg" id="4_qy0o5"]
+[ext_resource type="Texture2D" uid="uid://mwa7yfdar6j8" path="res://assets/textures/icons/common/delete.svg" id="5_nv8i7"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_nv8i7"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_ai4rs"]
+font = ExtResource("3_avjpy")
+font_size = 14
+
+[sub_resource type="LabelSettings" id="LabelSettings_nv8i7"]
+font_size = 12
+
+[node name="Build" type="PanelContainer"]
+anchors_preset = 10
+anchor_right = 1.0
+offset_bottom = 43.0
+grow_horizontal = 2
+mouse_behavior_recursive = 1
+theme = ExtResource("1_65gce")
+theme_override_styles/panel = SubResource("StyleBoxEmpty_nv8i7")
+script = ExtResource("1_y0fjh")
+
+[node name="MainButton" type="Button" parent="."]
+layout_mode = 2
+mouse_behavior_recursive = 2
+theme_type_variation = &"ProjectMainButton"
+
+[node name="MarginContainer" type="MarginContainer" parent="."]
+layout_mode = 2
+theme_override_constants/margin_left = 8
+theme_override_constants/margin_top = 2
+theme_override_constants/margin_right = 8
+theme_override_constants/margin_bottom = 2
+
+[node name="HBoxContainer" type="HBoxContainer" parent="MarginContainer"]
+layout_mode = 2
+theme_override_constants/separation = 16
+
+[node name="DeleteButton" type="Button" parent="MarginContainer/HBoxContainer"]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(32, 32)
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+tooltip_text = "TOOLTIP_DELETE_BUILD"
+mouse_behavior_recursive = 2
+mouse_default_cursor_shape = 2
+theme_type_variation = &"ButtonRed"
+icon = ExtResource("5_nv8i7")
+
+[node name="DownloadButton" type="Button" parent="MarginContainer/HBoxContainer"]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(32, 32)
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+tooltip_text = "TOOLTIP_DOWNLOAD_BUILD"
+mouse_behavior_recursive = 2
+mouse_default_cursor_shape = 2
+theme_type_variation = &"ButtonBlue"
+icon = ExtResource("4_qy0o5")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer/HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_constants/separation = 2
+
+[node name="BuildNameLabel" type="Label" parent="MarginContainer/HBoxContainer/VBoxContainer"]
+unique_name_in_owner = true
+layout_mode = 2
+text = "Godot_v4.5-beta99_linux.arm32.zip"
+label_settings = SubResource("LabelSettings_ai4rs")
+vertical_alignment = 1
+text_overrun_behavior = 3
+
+[node name="SizeLabelIconContainer" type="HBoxContainer" parent="MarginContainer/HBoxContainer/VBoxContainer"]
+modulate = Color(1, 1, 1, 0.5882353)
+layout_mode = 2
+
+[node name="SizeIcon" type="TextureRect" parent="MarginContainer/HBoxContainer/VBoxContainer/SizeLabelIconContainer"]
+custom_minimum_size = Vector2(14, 14)
+layout_mode = 2
+texture = ExtResource("3_iuba3")
+expand_mode = 1
+stretch_mode = 5
+
+[node name="SizeLabel" type="Label" parent="MarginContainer/HBoxContainer/VBoxContainer/SizeLabelIconContainer"]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_horizontal = 0
+text = "55.5MB"
+label_settings = SubResource("LabelSettings_nv8i7")
+vertical_alignment = 1
+
+[connection signal="pressed" from="MarginContainer/HBoxContainer/DeleteButton" to="." method="_on_delete_button_pressed"]
+[connection signal="pressed" from="MarginContainer/HBoxContainer/DownloadButton" to="." method="_on_download_button_pressed"]

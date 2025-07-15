@@ -1,0 +1,152 @@
+[gd_scene load_steps=13 format=3 uid="uid://psey4qlxyx72"]
+
+[ext_resource type="Theme" uid="uid://bimvjqmjjj4jh" path="res://assets/resources/theme/main.tres" id="1_btsu8"]
+[ext_resource type="Script" uid="uid://dwkitjgxj7rhl" path="res://scr/user_interface/pages/projects_page/projects_page.gd" id="1_xrfej"]
+[ext_resource type="Texture2D" uid="uid://ci7lukvp03h5l" path="res://assets/textures/icons/common/search.svg" id="2_btsu8"]
+[ext_resource type="Texture2D" uid="uid://beyeib7qfhua2" path="res://assets/textures/icons/sort/sort_newest.svg" id="3_fvatn"]
+[ext_resource type="Script" uid="uid://popu8nvpsm1o" path="res://scr/user_interface/buttons/menu/sorting_menu_button.gd" id="4_6clk2"]
+[ext_resource type="Texture2D" uid="uid://crfok6jqbtok8" path="res://assets/textures/icons/common/filter.svg" id="5_inwf5"]
+[ext_resource type="Script" uid="uid://d2v6jrxq5gc5o" path="res://scr/user_interface/pages/projects_page/tags_filter_menu_button.gd" id="6_ga52w"]
+[ext_resource type="PackedScene" uid="uid://dnlqgewn260hf" path="res://scr/user_interface/smooth_scroll_container.tscn" id="7_u4cvd"]
+[ext_resource type="Script" uid="uid://d4nehq5l7bkeq" path="res://scr/user_interface/pages/projects_page/projects_container.gd" id="8_b7rr7"]
+[ext_resource type="Texture2D" uid="uid://c1vqp78tk630g" path="res://assets/textures/icons/godot_unalive.svg" id="8_fvatn"]
+[ext_resource type="Texture2D" uid="uid://dwwmeuthijf74" path="res://assets/textures/icons/setting/browse_folder.svg" id="9_6clk2"]
+[ext_resource type="PackedScene" uid="uid://bm00jjwduad5r" path="res://scr/user_interface/page_controller/page_controller.tscn" id="9_rgpje"]
+
+[node name="TAB_PROJECTS" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_vertical = 3
+theme = ExtResource("1_btsu8")
+script = ExtResource("1_xrfej")
+metadata/_tab_index = 0
+metadata/_edit_lock_ = true
+
+[node name="VBoxContainer" type="VBoxContainer" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/separation = 0
+metadata/_edit_lock_ = true
+
+[node name="TopMarginContainer" type="MarginContainer" parent="VBoxContainer"]
+custom_minimum_size = Vector2(0, 51)
+layout_mode = 2
+theme_override_constants/margin_left = 8
+theme_override_constants/margin_top = 8
+theme_override_constants/margin_right = 8
+theme_override_constants/margin_bottom = 8
+
+[node name="TopHBoxContainer" type="HBoxContainer" parent="VBoxContainer/TopMarginContainer"]
+layout_mode = 2
+
+[node name="SearchBar" type="LineEdit" parent="VBoxContainer/TopMarginContainer/TopHBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_type_variation = &"SearchBar"
+placeholder_text = "FILTER_PROJECTS"
+clear_button_enabled = true
+right_icon = ExtResource("2_btsu8")
+caret_blink = true
+
+[node name="SortingMenuButton" type="MenuButton" parent="VBoxContainer/TopMarginContainer/TopHBoxContainer"]
+unique_name_in_owner = true
+layout_mode = 2
+tooltip_text = "TOOLTIP_SORT_BY"
+mouse_default_cursor_shape = 2
+theme_type_variation = &"SortingMenuButton"
+text = "SORT_LAST_MODIFIED"
+icon = ExtResource("3_fvatn")
+flat = false
+switch_on_hover = true
+script = ExtResource("4_6clk2")
+
+[node name="TagsFilterMenuButton" type="MenuButton" parent="VBoxContainer/TopMarginContainer/TopHBoxContainer"]
+unique_name_in_owner = true
+layout_mode = 2
+tooltip_text = "FILTER_TAGS"
+mouse_behavior_recursive = 2
+mouse_default_cursor_shape = 2
+theme_type_variation = &"SortingMenuButton"
+disabled = true
+text = "FILTER_TAGS"
+icon = ExtResource("5_inwf5")
+flat = false
+switch_on_hover = true
+script = ExtResource("6_ga52w")
+
+[node name="HSeparator" type="HSeparator" parent="VBoxContainer"]
+layout_mode = 2
+
+[node name="NoProjectsMessageContainer" type="CenterContainer" parent="VBoxContainer"]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_vertical = 3
+
+[node name="VBoxContainer" type="VBoxContainer" parent="VBoxContainer/NoProjectsMessageContainer"]
+layout_mode = 2
+
+[node name="NoProjectsTextureRect" type="TextureRect" parent="VBoxContainer/NoProjectsMessageContainer/VBoxContainer"]
+layout_mode = 2
+texture = ExtResource("8_fvatn")
+stretch_mode = 5
+
+[node name="NoProjectsFoundLabel" type="RichTextLabel" parent="VBoxContainer/NoProjectsMessageContainer/VBoxContainer"]
+unique_name_in_owner = true
+layout_mode = 2
+bbcode_enabled = true
+text = "NO_PROJETS_FOUND_IN_DIR"
+fit_content = true
+autowrap_mode = 0
+
+[node name="ChangeProjectsPathButton" type="Button" parent="VBoxContainer/NoProjectsMessageContainer/VBoxContainer"]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_horizontal = 4
+mouse_behavior_recursive = 2
+mouse_default_cursor_shape = 2
+text = "CHANGE_PROJECTS_PATH"
+icon = ExtResource("9_6clk2")
+
+[node name="SmoothScrollContainer" parent="VBoxContainer" instance=ExtResource("7_u4cvd")]
+unique_name_in_owner = true
+visible = false
+layout_mode = 2
+
+[node name="ProjectsContainer" type="VBoxContainer" parent="VBoxContainer/SmoothScrollContainer"]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+script = ExtResource("8_b7rr7")
+metadata/_edit_lock_ = true
+
+[node name="BottomPanelContainer" type="PanelContainer" parent="VBoxContainer"]
+unique_name_in_owner = true
+visible = false
+layout_mode = 2
+theme_type_variation = &"BottomBarPanelContainer"
+
+[node name="PageControllerMargin" type="MarginContainer" parent="VBoxContainer/BottomPanelContainer"]
+layout_mode = 2
+theme_override_constants/margin_top = 4
+theme_override_constants/margin_bottom = 4
+
+[node name="PageController" parent="VBoxContainer/BottomPanelContainer/PageControllerMargin" instance=ExtResource("9_rgpje")]
+unique_name_in_owner = true
+layout_mode = 2
+theme_type_variation = &"TopBarPanelContainer"
+
+[connection signal="text_changed" from="VBoxContainer/TopMarginContainer/TopHBoxContainer/SearchBar" to="." method="_on_search_bar_text_changed"]
+[connection signal="sorting_changed" from="VBoxContainer/TopMarginContainer/TopHBoxContainer/SortingMenuButton" to="." method="_on_sorting_menu_button_sorting_changed"]
+[connection signal="filter_changed" from="VBoxContainer/TopMarginContainer/TopHBoxContainer/TagsFilterMenuButton" to="." method="_on_tags_filter_menu_button_filter_changed"]
+[connection signal="pressed" from="VBoxContainer/NoProjectsMessageContainer/VBoxContainer/ChangeProjectsPathButton" to="." method="_on_change_projects_path_button_pressed"]
+[connection signal="udpated" from="VBoxContainer/SmoothScrollContainer/ProjectsContainer" to="." method="_on_projects_container_udpated"]
+[connection signal="changed_page" from="VBoxContainer/BottomPanelContainer/PageControllerMargin/PageController" to="." method="_on_page_controller_changed_page"]

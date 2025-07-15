@@ -1,0 +1,41 @@
+[gd_scene load_steps=5 format=3 uid="uid://binhesqtrk4nk"]
+
+[ext_resource type="Script" uid="uid://d4igxh1pxjvg0" path="res://scr/user_interface/pages/settings_page/setting_controllers/path_setting_controller.gd" id="1_7ykc2"]
+[ext_resource type="Theme" uid="uid://bimvjqmjjj4jh" path="res://assets/resources/theme/main.tres" id="1_8ym3t"]
+[ext_resource type="Texture2D" uid="uid://dwwmeuthijf74" path="res://assets/textures/icons/setting/browse_folder.svg" id="3_emedi"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_emedi"]
+
+[node name="PathController" type="PanelContainer" node_paths=PackedStringArray("line_edit")]
+anchors_preset = 10
+anchor_right = 1.0
+offset_bottom = 29.0
+grow_horizontal = 2
+theme = ExtResource("1_8ym3t")
+theme_override_styles/panel = SubResource("StyleBoxEmpty_emedi")
+script = ExtResource("1_7ykc2")
+line_edit = NodePath("HBoxContainer/LineEdit")
+
+[node name="HBoxContainer" type="HBoxContainer" parent="."]
+layout_mode = 2
+
+[node name="LineEdit" type="LineEdit" parent="HBoxContainer"]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_horizontal = 3
+editable = false
+context_menu_enabled = false
+emoji_menu_enabled = false
+virtual_keyboard_enabled = false
+virtual_keyboard_show_on_focus = false
+shortcut_keys_enabled = false
+middle_mouse_paste_enabled = false
+selecting_enabled = false
+drag_and_drop_selection_enabled = false
+
+[node name="Button" type="Button" parent="HBoxContainer"]
+layout_mode = 2
+mouse_default_cursor_shape = 2
+icon = ExtResource("3_emedi")
+
+[connection signal="pressed" from="HBoxContainer/Button" to="." method="_on_button_pressed"]

@@ -1,0 +1,117 @@
+,en-US,fr-FR
+LOCAL_NAME,English,Français
+,,
+OR,or,ou
+ON,On,On
+SEARCH,Search,Rechercher
+CLOSE,Close,Fermer
+TEMPLATES,Templates,Modèles
+CANCEL,Cancel,Annuler
+PROJECT_NAME,Project name:,Nom du projet:
+PROJECT_PATH,Project path:,Répertoire du projet:
+RENDERER,Renderer:,Moteur de rendu:
+VERSION_CONTROL_METADATA,Version control metadata,Métadonnées de contrôle de version
+CLEAR,Clear,Nettoyer
+,,
+TAB_PROJECTS,Projects,Projets
+NO_PROJETS_FOUND_IN_DIR,No projects found in [color=%s]%s[/color],Aucun projets trouvé dans [color=%s]%s[/color]
+NO_BUILD_SELECTED,No build selected,Aucune build sélectionnée
+SELECT_BUILD,Select a build,Sélectionner une build
+NO_BUILDS_AVAILABLE,No builds available,Aucune build disponible
+SELECT_PROJECT_DIRECTORY,Select projects directory,Sélectionnez le répertoire des projets
+CREATE_NEW_PROJECT,Create new project,Créer un nouveau projet
+CREATE_PROJECT,Create project,Créer le projet
+CREATE_AND_EDIT_PROJECT,Create and edit project,Créer et modifier un projet
+DELETE_PROJECT_CONFIRMATION,"I understand, delete %s","Je comprends supprimer %s"
+DELETE_PROJECT_WARNING_LABEL,"This will delete the project [color=%s]%s[/color] from your computer,Godot Launcher will try to place it in the Recycle Bin, but this is not guaranteed.","Cela supprimera le projet [color=%s]%s[/color] de votre ordinateur. Godot Launcher essaiera de le placer dans la corbeille, mais ce n'est pas garanti."
+DEFAULT_NEW_GAME_PROJECT_NAME,New game project,Nouveau projet de jeu
+CHANGE_PROJECTS_PATH,Change projects path,Modifier le chemin des projets
+,,
+TAB_RELEASES,Releases,Versions
+DOWNLOADED_BUILDS_AMOUNT,%s build(s) downloaded,%s build(s) téléchargée(s)
+,,
+TAB_SETTINGS,Settings,Paramètres
+,,
+TOOLTIP_CREATE_NEW_PROJECT,Create new project,Créer un nouveau projet
+TOOLTIP_REFRESH_LIST,Refresh list,Actualiser la liste
+TOOLTIP_SORT_BY,Sort by,Trier par
+TOOLTIP_SEARCH_BAR_PROJECT,Search in projects,Rechercher dans les projets
+TOOLTIP_SEARCH_BAR_RELEASE,Search in releases,Rechercher dans les versions
+TOOLTIP_SETTINGS,Settings,Paramètres
+TOOLTIP_PLAY_PROJECT,Play project,Jouer au projet
+TOOLTIP_EDIT_PROJECT,Edit project,Modifier le projet
+TOOLTIP_RENAME_PROJECT,Rename project,Renommer le projet
+TOOLTIP_DELETE_PROJECT,Delete project,Supprimer le projet
+TOOLTIP_OPEN_DIRECTORY_PATH,Open directory path,Ouvrir le chemin du répertoire
+TOOLTIP_DOWNLOAD_RECOMMENDED_BUILD,Download recommended build,Télécharger la build recommender
+TOOLTIP_DELETE_RECOMMENDED_BUILD,Delete recommended build,Supprimer la build recommender
+TOOLTIP_OPEN_SOURCE_RELEASE,Open source release,Ouvrir la version source
+TOOLTIP_OPEN_CHANGELOG,Open changelog,Ouvrir le changelog
+TOOLTIP_SHOW_ALL_BUILDS,Show all builds,Afficher toutes les builds
+TOOLTIP_DOWNLOAD_BUILD,Download build,Télécharger la build
+TOOLTIP_CHECK_NEW_RELEASES,Check for new releases,Vérification des nouvelles versions
+TOOLTIP_FORCE_CHECK_NEW_RELEASES,Force check for new releases,Vérification forcée des nouvelles versions
+TOOLTIP_DELETE_BUILD,Delete build,Supprimer la build
+TOOLTIP_CANT_DOWNLOAD_RECOMMENDED_VERSION,No recommended version for your system is available.,Aucune version recommender pour votre système n'est disponible.
+TOOLTIP_ALREADY_DOWNLOADED_RECOMMENDED_VERSION,You already have the recommended version.,Vous avez déjà la version recommender.
+,,
+LOADING_RELEASES,Loading releases ...,Chargement des versions ...
+CLOSE_APP_WHILE_DOWNLOADING_WARNING_LABEL,"Please keep the application open until the end of downloading, [color=%s]as interrupting the process is not recommended and can lead to corruption.","Veuillez garder l'application ouverte jusqu'à la fin du téléchargement. [color=%s]Il est déconseillé d'interrompre le processus, car cela pourrait entraîner une corruption."
+CLOSE_APP,Close app,Fermer l'application
+,,
+SORT_LAST_MODIFIED,Last modified,Dernière modification
+SORT_NAME,Name,Nom
+SORT_NEWEST,Newest,Plus récent
+SORT_OLDEST,Oldest,Plus ancien
+SORT_DESCENDING,Descending,Décroissant
+SORT_ASCENDING,Ascending,Croissant
+SORT_RELEASED_TIME,Release Time,Heure de sortie
+,,
+FILTER_TAGS,Filter Tags,Filtrer par tags
+FILTER_PROJECTS,Filter Projects,Filtrer les projets
+FILTER_RELEASES,Filter Releases,Filtrer les versions
+FILTER_BUILDS,Filter Builds,Filtrer les builds
+FILTER_SETTINGS,Filter Settings,Filtrer les paramètres
+,,
+LAST_MODIFIED_YEARS_AGO,%s Year(s) ago,Il y a %s année(s)
+LAST_MODIFIED_MONTH_AGO,%s Month(s) ago,Il y a %s mois
+LAST_MODIFIED_DAYS_AGO,%s Day(s) ago,Il y a %s jour(s)
+LAST_MODIFIED_HOURS_AGO,%s hour(s) ago,Il y a %s heure(s)
+LAST_MODIFIED_MINUTES_AGO,%s Minute(s) ago,Il y a %s minute(s)
+LAST_MODIFIED_SECONDS_AGO,%s Second(s) ago,Il y a %s seconde(s)
+,,
+SETTING_PROJECTS_PATH,Projects path,Répertoire des projets
+SETTING_BUILDS_PATH,Downloaded godot builds path,Répertoire des builds Godot téléchargées
+SETTING_LANGUAGE,Language,Langue
+SETTING_MAX_ITEMS_PER_PAGE,Max items per page,Nombre maximal d'éléments par page
+SETTING_USE_MONO_BUILDS,Use mono builds,Utiliser les builds mono
+SETTING_CHECK_FOR_NEW_RELEASES_ON_STARTUP,Check for new releases on startup.,Rechercher de nouvelles versions au démarrage.
+SETTING_CLOSE_APP_ON_PROJECT_EDITING,Close application when a project is opened.,Fermer l'application lorsqu'un projet est ouvert.
+,,
+SETTING_CATEGORY_PATHS,Paths,Chemins
+SETTING_CATEGORY_LOCALIZATION,Localization,Localisation
+SETTING_CATEGORY_PAGES,Pages,Pages
+SETTING_CATEGORY_OTHER,Other,Autre
+,,
+POPUP_TITLE_DELETE_PROJECT,Delete project,Supprimer le projet
+,,
+ERROR_API_RATE_LIMIT_EXCEEDED,"API rate limit exceeded, please retry later. (within one hour or more)","Limite de débit API dépassée, veuillez réessayer plus tard. (dans un délai d'une heure ou plus)"
+ERROR_NOT_CONNECTED_TO_INTERNET,"You are not connected to the internet, please check your connection and try again.","Vous n'êtes pas connecté à Internet, veuillez vérifier votre connexion et réessayer."
+ERROR_DOWNLOAD_FAILED,Download failed (error: %s),Échec du téléchargement (erreur: %s)
+ERROR_REQUEST_FAILED,Request failed  (error: %s),Échec de la requête (erreur: %s)
+ERROR_NO_DIRECTORY_FOUND,No directory found at '%s'.,Aucun répertoire trouvé dans '%s'.
+ERROR_DIR_ACCESS,Directory access error (error: %s),Erreur d'accès au répertoire (erreur: %s)
+ERROR_INVALID_PROJECT_NAME,Invalid project name,Nom de projet invalide
+ERROR_INVALID_BUILD_SELECTED,Invalid selected build,Build sélectionnée invalide
+,,
+WARNING_ALREADY_DOWNLOADING_BUILD,"Already downloading an build, please retry later.","Vous téléchargez déjà une build, veuillez réessayer plus tard."
+WARNING_ALREADY_DOWNLOADED_BUILD,Already downloaded %s.,%s déjà téléchargé(e).
+WARNING_PROJECT_RUN_WITHOUT_SELECTED_BUILD,Cannot run project without a selected build,Impossible d'exécuter le projet sans build sélectionnée
+,,
+TOAST_NO_NEW_RELEASES,No new releases available,Aucune nouvelle version disponible
+TOAST_NEW_RELEASES,New releases available!,Nouvelles versions disponibles !
+TOAST_CREATED_NEW_PROJECT,Created '%s' !,Projet '%s' créé !
+TOAST_DELETED_PROJECT,Deleted '%s',Projet '%s' supprimé
+TOAST_DOWNLOADING_BUILD,Downloading %s..,Téléchargement de %s..
+TOAST_SUCCESS_DOWNLOADED_BUILD,Downloaded %s successfully !,Téléchargé %s avec succès !
+TOAST_SUCCESS_UNINSTALLED_BUILD,Uninstalled %s successfully !,Désinstallé %s avec succès !

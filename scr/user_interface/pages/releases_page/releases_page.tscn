@@ -1,0 +1,209 @@
+[gd_scene load_steps=13 format=3 uid="uid://b182chroba61d"]
+
+[ext_resource type="Theme" uid="uid://bimvjqmjjj4jh" path="res://assets/resources/theme/main.tres" id="1_4iq68"]
+[ext_resource type="Script" uid="uid://bpxla6f8whkbu" path="res://scr/user_interface/pages/releases_page/releases_page.gd" id="1_nsw3i"]
+[ext_resource type="Texture2D" uid="uid://ci7lukvp03h5l" path="res://assets/textures/icons/common/search.svg" id="2_4iq68"]
+[ext_resource type="Texture2D" uid="uid://crfok6jqbtok8" path="res://assets/textures/icons/common/filter.svg" id="3_ui1e6"]
+[ext_resource type="Script" uid="uid://d2v6jrxq5gc5o" path="res://scr/user_interface/pages/projects_page/tags_filter_menu_button.gd" id="4_fs0x8"]
+[ext_resource type="PackedScene" uid="uid://dnlqgewn260hf" path="res://scr/user_interface/smooth_scroll_container.tscn" id="5_n7hxp"]
+[ext_resource type="Texture2D" uid="uid://br3x4ntyxch7q" path="res://assets/textures/icons/common/reload.svg" id="6_ui1e6"]
+[ext_resource type="Script" uid="uid://snvabnjbedt4" path="res://scr/user_interface/pages/releases_page/releases_container.gd" id="7_4iq68"]
+[ext_resource type="PackedScene" uid="uid://bm00jjwduad5r" path="res://scr/user_interface/page_controller/page_controller.tscn" id="7_plw72"]
+[ext_resource type="Script" uid="uid://nvmxqn3kgl1w" path="res://scr/user_interface/pages/releases_page/builds_container.gd" id="10_fs0x8"]
+[ext_resource type="Texture2D" uid="uid://cgcqna5itrjj3" path="res://assets/textures/icons/godot.svg" id="10_n7hxp"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_ui1e6"]
+
+[node name="TAB_RELEASES" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme = ExtResource("1_4iq68")
+script = ExtResource("1_nsw3i")
+metadata/_tab_index = 1
+metadata/_edit_lock_ = true
+
+[node name="Background" type="PanelContainer" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_type_variation = &"BottomBarPanelContainer"
+metadata/_edit_lock_ = true
+
+[node name="HboxContainer" type="HBoxContainer" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/separation = 8
+
+[node name="LeftSide" type="VBoxContainer" parent="HboxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_constants/separation = 0
+metadata/_edit_lock_ = true
+
+[node name="LeftSideBackground" type="PanelContainer" parent="HboxContainer/LeftSide"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+theme_type_variation = &"ReleasesPageLeftBackgroundPanelLight"
+
+[node name="VBoxContainer" type="VBoxContainer" parent="HboxContainer/LeftSide/LeftSideBackground"]
+layout_mode = 2
+size_flags_vertical = 3
+theme_override_constants/separation = 0
+
+[node name="TopMarginContainer" type="MarginContainer" parent="HboxContainer/LeftSide/LeftSideBackground/VBoxContainer"]
+custom_minimum_size = Vector2(0, 51)
+layout_mode = 2
+theme_override_constants/margin_left = 8
+theme_override_constants/margin_top = 8
+theme_override_constants/margin_right = 8
+theme_override_constants/margin_bottom = 8
+
+[node name="TopHBoxContainer" type="HBoxContainer" parent="HboxContainer/LeftSide/LeftSideBackground/VBoxContainer/TopMarginContainer"]
+layout_mode = 2
+
+[node name="SearchBar" type="LineEdit" parent="HboxContainer/LeftSide/LeftSideBackground/VBoxContainer/TopMarginContainer/TopHBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_type_variation = &"SearchBar"
+placeholder_text = "FILTER_RELEASES"
+clear_button_enabled = true
+right_icon = ExtResource("2_4iq68")
+caret_blink = true
+
+[node name="TagsFilterMenuButton" type="MenuButton" parent="HboxContainer/LeftSide/LeftSideBackground/VBoxContainer/TopMarginContainer/TopHBoxContainer"]
+unique_name_in_owner = true
+layout_mode = 2
+tooltip_text = "FILTER_TAGS"
+mouse_behavior_recursive = 2
+mouse_default_cursor_shape = 2
+theme_type_variation = &"SortingMenuButton"
+disabled = true
+text = "FILTER_TAGS"
+icon = ExtResource("3_ui1e6")
+flat = false
+switch_on_hover = true
+script = ExtResource("4_fs0x8")
+
+[node name="VSeparator" type="VSeparator" parent="HboxContainer/LeftSide/LeftSideBackground/VBoxContainer/TopMarginContainer/TopHBoxContainer"]
+layout_mode = 2
+
+[node name="ReloadButton" type="Button" parent="HboxContainer/LeftSide/LeftSideBackground/VBoxContainer/TopMarginContainer/TopHBoxContainer"]
+custom_minimum_size = Vector2(32, 32)
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+tooltip_text = "TOOLTIP_CHECK_NEW_RELEASES"
+mouse_default_cursor_shape = 2
+theme_type_variation = &"PageControllerPageButton"
+icon = ExtResource("6_ui1e6")
+
+[node name="HSeparator" type="HSeparator" parent="HboxContainer/LeftSide/LeftSideBackground/VBoxContainer"]
+layout_mode = 2
+
+[node name="ReleasesSmoothScrollContainer" parent="HboxContainer/LeftSide/LeftSideBackground/VBoxContainer" instance=ExtResource("5_n7hxp")]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="ReleasesContainer" type="VBoxContainer" parent="HboxContainer/LeftSide/LeftSideBackground/VBoxContainer/ReleasesSmoothScrollContainer"]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+script = ExtResource("7_4iq68")
+metadata/_edit_lock_ = true
+
+[node name="BottomPanelContainer" type="PanelContainer" parent="HboxContainer/LeftSide"]
+layout_mode = 2
+theme_override_styles/panel = SubResource("StyleBoxEmpty_ui1e6")
+
+[node name="PageControllerMargin" type="MarginContainer" parent="HboxContainer/LeftSide/BottomPanelContainer"]
+layout_mode = 2
+theme_override_constants/margin_top = 4
+theme_override_constants/margin_bottom = 4
+
+[node name="PageController" parent="HboxContainer/LeftSide/BottomPanelContainer/PageControllerMargin" instance=ExtResource("7_plw72")]
+unique_name_in_owner = true
+layout_mode = 2
+theme_type_variation = &"TopBarPanelContainer"
+
+[node name="RightSide" type="PanelContainer" parent="HboxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_stretch_ratio = 0.4
+theme_type_variation = &"ReleasesPageRightBackgroundPanelLight"
+
+[node name="VBoxContainer" type="VBoxContainer" parent="HboxContainer/RightSide"]
+layout_mode = 2
+theme_override_constants/separation = 0
+
+[node name="TopMarginContainer" type="MarginContainer" parent="HboxContainer/RightSide/VBoxContainer"]
+custom_minimum_size = Vector2(0, 51)
+layout_mode = 2
+theme_override_constants/margin_left = 8
+theme_override_constants/margin_top = 8
+theme_override_constants/margin_right = 8
+theme_override_constants/margin_bottom = 8
+
+[node name="SearchBar" type="LineEdit" parent="HboxContainer/RightSide/VBoxContainer/TopMarginContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_type_variation = &"SearchBar"
+placeholder_text = "FILTER_BUILDS"
+clear_button_enabled = true
+right_icon = ExtResource("2_4iq68")
+caret_blink = true
+
+[node name="HSeparator" type="HSeparator" parent="HboxContainer/RightSide/VBoxContainer"]
+layout_mode = 2
+
+[node name="NoReleasesSelectedContainer" type="CenterContainer" parent="HboxContainer/RightSide/VBoxContainer"]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_vertical = 3
+
+[node name="VBoxContainer" type="VBoxContainer" parent="HboxContainer/RightSide/VBoxContainer/NoReleasesSelectedContainer"]
+modulate = Color(1, 1, 1, 0.5882353)
+layout_mode = 2
+theme_override_constants/separation = -8
+
+[node name="TextureRect" type="TextureRect" parent="HboxContainer/RightSide/VBoxContainer/NoReleasesSelectedContainer/VBoxContainer"]
+layout_mode = 2
+texture = ExtResource("10_n7hxp")
+stretch_mode = 5
+
+[node name="Label" type="Label" parent="HboxContainer/RightSide/VBoxContainer/NoReleasesSelectedContainer/VBoxContainer"]
+layout_mode = 2
+mouse_filter = 1
+text = "Select a Release to see Builds"
+
+[node name="BuilldsSmoothScrollContainer" parent="HboxContainer/RightSide/VBoxContainer" instance=ExtResource("5_n7hxp")]
+unique_name_in_owner = true
+visible = false
+layout_mode = 2
+
+[node name="BuildsContainer" type="VBoxContainer" parent="HboxContainer/RightSide/VBoxContainer/BuilldsSmoothScrollContainer"]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+script = ExtResource("10_fs0x8")
+
+[connection signal="text_changed" from="HboxContainer/LeftSide/LeftSideBackground/VBoxContainer/TopMarginContainer/TopHBoxContainer/SearchBar" to="." method="_on_search_bar_text_changed"]
+[connection signal="filter_changed" from="HboxContainer/LeftSide/LeftSideBackground/VBoxContainer/TopMarginContainer/TopHBoxContainer/TagsFilterMenuButton" to="." method="_on_tags_filter_menu_button_filter_changed"]
+[connection signal="pressed" from="HboxContainer/LeftSide/LeftSideBackground/VBoxContainer/TopMarginContainer/TopHBoxContainer/ReloadButton" to="." method="_on_reload_button_pressed"]
+[connection signal="release_pressed" from="HboxContainer/LeftSide/LeftSideBackground/VBoxContainer/ReleasesSmoothScrollContainer/ReleasesContainer" to="HboxContainer/RightSide/VBoxContainer/BuilldsSmoothScrollContainer/BuildsContainer" method="_on_releases_container_release_pressed"]
+[connection signal="changed_page" from="HboxContainer/LeftSide/BottomPanelContainer/PageControllerMargin/PageController" to="." method="_on_page_controller_changed_page"]
+[connection signal="text_changed" from="HboxContainer/RightSide/VBoxContainer/TopMarginContainer/SearchBar" to="HboxContainer/RightSide/VBoxContainer/BuilldsSmoothScrollContainer/BuildsContainer" method="_on_search_bar_text_changed"]
