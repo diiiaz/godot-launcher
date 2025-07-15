@@ -29,6 +29,7 @@ CHANGE_PROJECTS_PATH,Change projects path,Modifier le chemin des projets
 ,,
 TAB_RELEASES,Releases,Versions
 DOWNLOADED_BUILDS_AMOUNT,%s build(s) downloaded,%s build(s) téléchargée(s)
+INFO_NO_BUILDS_SELECTED,Select a Release to see Builds,Selectionner une version pour voir les builds
 ,,
 TAB_SETTINGS,Settings,Paramètres
 ,,

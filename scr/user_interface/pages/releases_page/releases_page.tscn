@@ -185,9 +185,13 @@ texture = ExtResource("10_n7hxp")
 stretch_mode = 5
 
 [node name="Label" type="Label" parent="HboxContainer/RightSide/VBoxContainer/NoReleasesSelectedContainer/VBoxContainer"]
+custom_minimum_size = Vector2(250, 0)
 layout_mode = 2
 mouse_filter = 1
-text = "Select a Release to see Builds"
+text = "INFO_NO_BUILDS_SELECTED"
+horizontal_alignment = 1
+vertical_alignment = 1
+autowrap_mode = 3
 
 [node name="BuilldsSmoothScrollContainer" parent="HboxContainer/RightSide/VBoxContainer" instance=ExtResource("5_n7hxp")]
 unique_name_in_owner = true
