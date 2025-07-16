@@ -175,6 +175,7 @@ theme_type_variation = &"ButtonRedInverted"
 icon = ExtResource("9_xwwp3")
 icon_alignment = 1
 
+[connection signal="gui_input" from="MainButton" to="." method="_on_main_button_gui_input"]
 [connection signal="selected_build" from="MarginContainer/ContentContainer/ProjectBuildOptionButton" to="." method="_on_project_build_option_button_selected_build"]
 [connection signal="pressed" from="MarginContainer/ContentContainer/HBoxContainer/PlayButton" to="." method="_on_play_button_pressed"]
 [connection signal="pressed" from="MarginContainer/ContentContainer/HBoxContainer/EditButton" to="." method="_on_edit_button_pressed"]
