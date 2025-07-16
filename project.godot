@@ -42,7 +42,8 @@ enabled=PackedStringArray("res://addons/SmoothScroll/plugin.cfg", "res://addons/
 [file_customization]
 
 folder_colors={
-"res://addons/": "gray"
+"res://addons/": "gray",
+"res://local/": "gray"
 }
 
 [internationalization]

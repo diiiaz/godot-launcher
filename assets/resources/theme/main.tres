@@ -1,8 +1,5 @@
-[gd_resource type="Theme" load_steps=111 format=3 uid="uid://bimvjqmjjj4jh"]
+[gd_resource type="Theme" load_steps=105 format=3 uid="uid://bimvjqmjjj4jh"]
 
-[ext_resource type="Texture2D" uid="uid://cpkfifm4oc8sf" path="res://assets/textures/icons/project/play.svg" id="1_7xmdk"]
-[ext_resource type="Texture2D" uid="uid://mwa7yfdar6j8" path="res://assets/textures/icons/common/delete.svg" id="1_25oj4"]
-[ext_resource type="Texture2D" uid="uid://dnd32ay7p67xu" path="res://assets/textures/icons/project/edit.svg" id="1_va4da"]
 [ext_resource type="FontFile" uid="uid://bjr2pe6fnpvm3" path="res://assets/resources/fonts/NotoSans-Bold.ttf" id="4_ur88k"]
 [ext_resource type="FontFile" uid="uid://cic57dt4ri7xg" path="res://assets/resources/fonts/NotoSans-Regular.ttf" id="5_7xn3m"]
 
@@ -147,7 +144,7 @@ content_margin_left = 8.0
 content_margin_top = 6.0
 content_margin_right = 8.0
 content_margin_bottom = 6.0
-bg_color = Color(0.2707479, 0.5618209, 0.28843144, 1)
+bg_color = Color(0.27058825, 0.56078434, 0.2901961, 1)
 border_color = Color(0.34117648, 0.62352943, 1, 1)
 corner_radius_top_left = 5
 corner_radius_top_right = 5
@@ -224,7 +221,7 @@ content_margin_left = 8.0
 content_margin_top = 6.0
 content_margin_right = 8.0
 content_margin_bottom = 6.0
-bg_color = Color(0.89266706, 0.3601875, 0.311962, 1)
+bg_color = Color(0.89411765, 0.36078432, 0.3137255, 1)
 border_color = Color(0.34117648, 0.62352943, 1, 1)
 corner_radius_top_left = 5
 corner_radius_top_right = 5
@@ -616,6 +613,15 @@ corner_radius_top_right = 5
 corner_radius_bottom_right = 5
 corner_radius_bottom_left = 5
 
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_vlyog"]
+bg_color = Color(0.14509805, 0.14509805, 0.14509805, 1)
+corner_radius_top_left = 5
+corner_radius_top_right = 5
+corner_radius_bottom_right = 5
+corner_radius_bottom_left = 5
+shadow_color = Color(0, 0, 0, 0.12156863)
+shadow_size = 15
+
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_ifg5j"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_c7q75"]
@@ -623,24 +629,6 @@ bg_color = Color(1, 1, 1, 0.039215688)
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_8xi4m"]
 bg_color = Color(1, 1, 1, 0.05882353)
-
-[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_25oj4"]
-
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_4j565"]
-bg_color = Color(1, 1, 1, 0.11764706)
-corner_radius_top_left = 5
-corner_radius_top_right = 5
-corner_radius_bottom_right = 5
-corner_radius_bottom_left = 5
-
-[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_ur88k"]
-
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_ga8dc"]
-bg_color = Color(1, 1, 1, 0.15686275)
-corner_radius_top_left = 5
-corner_radius_top_right = 5
-corner_radius_bottom_right = 5
-corner_radius_bottom_left = 5
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_gy0x3"]
 bg_color = Color(0.14509805, 0.14509805, 0.14509805, 1)
@@ -997,6 +985,8 @@ ButtonRed/styles/hover = SubResource("StyleBoxFlat_u386i")
 ButtonRed/styles/normal = SubResource("StyleBoxFlat_4t56x")
 ButtonRed/styles/pressed = SubResource("StyleBoxFlat_6fc65")
 ButtonRedInverted/base_type = &"ButtonRed"
+ButtonRedInverted/colors/font_color = Color(0.89411765, 0.36078432, 0.3137255, 1)
+ButtonRedInverted/colors/font_focus_color = Color(0.89411765, 0.36078432, 0.3137255, 1)
 ButtonRedInverted/colors/icon_focus_color = Color(0.89266706, 0.3601875, 0.311962, 1)
 ButtonRedInverted/colors/icon_normal_color = Color(0.89266706, 0.3601875, 0.311962, 1)
 ButtonRedInverted/styles/normal = SubResource("StyleBoxFlat_s8x1x")
@@ -1096,21 +1086,13 @@ PopupMenu/styles/labeled_separator_right = SubResource("StyleBoxLine_knbae")
 PopupMenu/styles/panel = SubResource("StyleBoxFlat_7xn3m")
 PopupMenu/styles/separator = SubResource("StyleBoxLine_knbae")
 PopupPanel/styles/panel = SubResource("StyleBoxFlat_f5i6a")
-ProjectDeleteButton/base_type = &"ProjectPlayButton"
-ProjectDeleteButton/icons/icon = ExtResource("1_25oj4")
-ProjectEditButton/base_type = &"ProjectPlayButton"
-ProjectEditButton/icons/icon = ExtResource("1_va4da")
+PopupWindowPanel/base_type = &"PanelContainer"
+PopupWindowPanel/styles/panel = SubResource("StyleBoxFlat_vlyog")
 ProjectMainButton/base_type = &"Button"
 ProjectMainButton/styles/focus = SubResource("StyleBoxEmpty_ifg5j")
 ProjectMainButton/styles/hover = SubResource("StyleBoxFlat_c7q75")
 ProjectMainButton/styles/normal = SubResource("StyleBoxEmpty_ifg5j")
 ProjectMainButton/styles/pressed = SubResource("StyleBoxFlat_8xi4m")
-ProjectPlayButton/base_type = &"Button"
-ProjectPlayButton/icons/icon = ExtResource("1_7xmdk")
-ProjectPlayButton/styles/focus = SubResource("StyleBoxEmpty_25oj4")
-ProjectPlayButton/styles/hover = SubResource("StyleBoxFlat_4j565")
-ProjectPlayButton/styles/normal = SubResource("StyleBoxEmpty_ur88k")
-ProjectPlayButton/styles/pressed = SubResource("StyleBoxFlat_ga8dc")
 ReleasesPageLeftBackgroundPanelLight/base_type = &"PanelContainer"
 ReleasesPageLeftBackgroundPanelLight/styles/panel = SubResource("StyleBoxFlat_gy0x3")
 ReleasesPageRightBackgroundPanelLight/base_type = &"PanelContainer"
