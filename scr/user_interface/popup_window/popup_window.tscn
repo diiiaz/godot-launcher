@@ -1,0 +1,103 @@
+[gd_scene load_steps=8 format=3 uid="uid://ctlltenahpe6b"]
+
+[ext_resource type="Theme" uid="uid://bimvjqmjjj4jh" path="res://assets/resources/theme/main.tres" id="1_6hycv"]
+[ext_resource type="Script" uid="uid://y8vdp63hjw0k" path="res://scr/user_interface/popup_window/popup_window.gd" id="2_rntqx"]
+[ext_resource type="Texture2D" uid="uid://cmyjvyy6k7111" path="res://assets/textures/icons/common/x.svg" id="3_40ugh"]
+[ext_resource type="FontFile" uid="uid://bjr2pe6fnpvm3" path="res://assets/resources/fonts/NotoSans-Bold.ttf" id="3_x4yeo"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_on4ck"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_26jr8"]
+font = ExtResource("3_x4yeo")
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_6hycv"]
+
+[node name="PopupWindow" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+theme = ExtResource("1_6hycv")
+script = ExtResource("2_rntqx")
+
+[node name="MouseBlocker" type="PanelContainer" parent="."]
+unique_name_in_owner = true
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_behavior_recursive = 2
+theme_type_variation = &"DarkTransparentPanel"
+
+[node name="WindowPanel" type="PanelContainer" parent="."]
+unique_name_in_owner = true
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.288194
+anchor_top = 0.29321
+anchor_right = 0.711806
+anchor_bottom = 0.70679
+grow_horizontal = 2
+grow_vertical = 2
+theme_type_variation = &"PopupWindowPanel"
+metadata/_edit_use_anchors_ = true
+
+[node name="VBoxContainer" type="VBoxContainer" parent="WindowPanel"]
+layout_mode = 2
+
+[node name="Header" type="PanelContainer" parent="WindowPanel/VBoxContainer"]
+layout_mode = 2
+theme_override_styles/panel = SubResource("StyleBoxEmpty_on4ck")
+
+[node name="MarginContainer" type="MarginContainer" parent="WindowPanel/VBoxContainer/Header"]
+layout_mode = 2
+theme_override_constants/margin_left = 8
+theme_override_constants/margin_top = 8
+theme_override_constants/margin_right = 8
+theme_override_constants/margin_bottom = 2
+
+[node name="HBoxContainer" type="HBoxContainer" parent="WindowPanel/VBoxContainer/Header/MarginContainer"]
+layout_mode = 2
+
+[node name="TitleLabel" type="Label" parent="WindowPanel/VBoxContainer/Header/MarginContainer/HBoxContainer"]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 1
+text = "POPUP_WINDOW_TITLE"
+label_settings = SubResource("LabelSettings_26jr8")
+vertical_alignment = 1
+
+[node name="CloseButton" type="Button" parent="WindowPanel/VBoxContainer/Header/MarginContainer/HBoxContainer"]
+custom_minimum_size = Vector2(24, 24)
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+tooltip_text = "CLOSE"
+mouse_default_cursor_shape = 2
+theme_type_variation = &"TagButton"
+icon = ExtResource("3_40ugh")
+icon_alignment = 1
+
+[node name="HSeparator" type="HSeparator" parent="WindowPanel/VBoxContainer"]
+layout_mode = 2
+
+[node name="MarginContainer" type="MarginContainer" parent="WindowPanel/VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 3
+theme_override_constants/margin_left = 8
+theme_override_constants/margin_top = 8
+theme_override_constants/margin_right = 8
+theme_override_constants/margin_bottom = 8
+
+[node name="ContentContainer" type="PanelContainer" parent="WindowPanel/VBoxContainer/MarginContainer"]
+unique_name_in_owner = true
+layout_mode = 2
+theme_override_styles/panel = SubResource("StyleBoxEmpty_6hycv")
+
+[connection signal="pressed" from="WindowPanel/VBoxContainer/Header/MarginContainer/HBoxContainer/CloseButton" to="." method="_on_close_button_pressed"]
