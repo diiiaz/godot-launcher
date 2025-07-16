@@ -1,10 +1,7 @@
 extends Control
 
-#const CLOSE_WHILE_DOWNLOADING_POPUP_WINDOW_CONTENT = preload("res://scr/ui/popup_window/popup_windows_content/close_while_downloading_popup_window_content.tscn")
-#@onready var main_pages_controller: Node = %MainPagesController
-#@onready var projects_page: ProjectsPage = %ProjectsPage
-#@onready var releases_page: ReleasesPage = %ReleasesPage
-#@onready var settings_page: SettingsPage = %SettingsPage
+const CLOSE_WHILE_DOWNLOADING_POPUP_WINDOW_CONTENT = preload("uid://b6rp7jwqchtvr")
+
 @onready var loading_screen: CanvasLayer = %LoadingScreen
 
 
@@ -14,7 +11,6 @@ func _ready() -> void:
 	
 	TranslationServer.set_locale(TranslationServer.get_loaded_locales()[SettingsManager.get_setting(Settings.SETTING.LANGUAGE)])
 	
-	#WARNING i don't know why but this lags the app when closing it. 
 	SettingsManager.updated.connect(
 		func(setting: Settings.SETTING) -> void:
 			if setting != Settings.SETTING.LANGUAGE: return
@@ -30,7 +26,6 @@ func _ready() -> void:
 	check_for_new_releases()
 	get_tree().set_auto_accept_quit(false)
 	
-	#main_pages_controller.open_page(MainPagesController.PAGE.PROJECTS, false)
 	loading_screen.close()
 
 
@@ -53,6 +48,12 @@ func check_for_new_releases() -> void:
 func _notification(what: int) -> void:
 	if what == NOTIFICATION_WM_CLOSE_REQUEST:
 		if BuildDownloader.is_downloading():
-			#PopupWindowHelper.popup_window("CLOSE_APP", CLOSE_WHILE_DOWNLOADING_POPUP_WINDOW_CONTENT.instantiate(), get_viewport())
+			var popup_content: CloseWhileDownlaodingPopupWindowContent = CLOSE_WHILE_DOWNLOADING_POPUP_WINDOW_CONTENT.instantiate()
+			popup_content.user_input_result.connect(_on_close_while_downloading_popup_content_user_input)
+			PopupWindowHelper.popup_window("CLOSE_APP", popup_content, get_viewport())
 			return
+		get_tree().quit()
+
+func _on_close_while_downloading_popup_content_user_input(result: PopupWindowContent.Result) -> void:
+	if result.action_is_close():
 		get_tree().quit()

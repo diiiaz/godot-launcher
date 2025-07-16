@@ -1,0 +1,48 @@
+[gd_scene load_steps=3 format=3 uid="uid://b6rp7jwqchtvr"]
+
+[ext_resource type="Theme" uid="uid://bimvjqmjjj4jh" path="res://assets/resources/theme/main.tres" id="1_i0i7g"]
+[ext_resource type="Script" uid="uid://cf3fipvft3p1g" path="res://scr/user_interface/popup_window/popup_windows_content/close_while_downloading/close_while_downloading_popup_window_content.gd" id="2_i0i7g"]
+
+[node name="CloseWhileDownloadingPopupWindowContent" type="VBoxContainer"]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme = ExtResource("1_i0i7g")
+script = ExtResource("2_i0i7g")
+
+[node name="InfoLabel" type="RichTextLabel" parent="."]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_vertical = 3
+bbcode_enabled = true
+text = "CLOSE_APP_WHILE_DOWNLOADING_WARNING_LABEL"
+fit_content = true
+scroll_active = false
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="HSeparator" type="HSeparator" parent="."]
+layout_mode = 2
+
+[node name="HBoxContainer" type="HBoxContainer" parent="."]
+layout_mode = 2
+
+[node name="CloseAppButton" type="Button" parent="HBoxContainer"]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_horizontal = 3
+mouse_default_cursor_shape = 2
+theme_type_variation = &"ButtonRed"
+text = "CLOSE_APP"
+
+[node name="CancelButton" type="Button" parent="HBoxContainer"]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_horizontal = 3
+mouse_default_cursor_shape = 2
+text = "CANCEL"
+
+[connection signal="pressed" from="HBoxContainer/CloseAppButton" to="." method="_on_close_app_button_pressed"]
+[connection signal="pressed" from="HBoxContainer/CancelButton" to="." method="_on_cancel_button_pressed"]
