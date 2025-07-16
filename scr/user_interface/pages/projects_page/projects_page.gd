@@ -109,3 +109,9 @@ func _on_tags_filter_menu_button_filter_changed(_unused) -> void:
 
 func _on_page_controller_changed_page(page_index: int) -> void:
 	projects_container.set_page(page_index)
+
+
+# ---------------------------------- Reload Button
+
+func _on_reload_button_pressed() -> void:
+	ProjectsManager.update_projects()

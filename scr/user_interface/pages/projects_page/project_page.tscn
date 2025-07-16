@@ -1,4 +1,4 @@
-[gd_scene load_steps=13 format=3 uid="uid://psey4qlxyx72"]
+[gd_scene load_steps=14 format=3 uid="uid://psey4qlxyx72"]
 
 [ext_resource type="Theme" uid="uid://bimvjqmjjj4jh" path="res://assets/resources/theme/main.tres" id="1_btsu8"]
 [ext_resource type="Script" uid="uid://dwkitjgxj7rhl" path="res://scr/user_interface/pages/projects_page/projects_page.gd" id="1_xrfej"]
@@ -10,6 +10,7 @@
 [ext_resource type="PackedScene" uid="uid://dnlqgewn260hf" path="res://scr/user_interface/smooth_scroll_container.tscn" id="7_u4cvd"]
 [ext_resource type="Script" uid="uid://d4nehq5l7bkeq" path="res://scr/user_interface/pages/projects_page/projects_container.gd" id="8_b7rr7"]
 [ext_resource type="Texture2D" uid="uid://c1vqp78tk630g" path="res://assets/textures/icons/godot_unalive.svg" id="8_fvatn"]
+[ext_resource type="Texture2D" uid="uid://br3x4ntyxch7q" path="res://assets/textures/icons/common/reload.svg" id="8_inwf5"]
 [ext_resource type="Texture2D" uid="uid://dwwmeuthijf74" path="res://assets/textures/icons/setting/browse_folder.svg" id="9_6clk2"]
 [ext_resource type="PackedScene" uid="uid://bm00jjwduad5r" path="res://scr/user_interface/page_controller/page_controller.tscn" id="9_rgpje"]
 
@@ -82,6 +83,19 @@ flat = false
 switch_on_hover = true
 script = ExtResource("6_ga52w")
 
+[node name="VSeparator" type="VSeparator" parent="VBoxContainer/TopMarginContainer/TopHBoxContainer"]
+layout_mode = 2
+
+[node name="ReloadButton" type="Button" parent="VBoxContainer/TopMarginContainer/TopHBoxContainer"]
+custom_minimum_size = Vector2(32, 32)
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+tooltip_text = "TOOLTIP_REFRESH_PROJECTS"
+mouse_default_cursor_shape = 2
+theme_type_variation = &"PageControllerPageButton"
+icon = ExtResource("8_inwf5")
+
 [node name="HSeparator" type="HSeparator" parent="VBoxContainer"]
 layout_mode = 2
 
@@ -102,7 +116,7 @@ stretch_mode = 5
 unique_name_in_owner = true
 layout_mode = 2
 bbcode_enabled = true
-text = "NO_PROJETS_FOUND_IN_DIR"
+text = "NO_PROJECTS_FOUND_IN_DIR"
 fit_content = true
 autowrap_mode = 0
 
@@ -147,6 +161,7 @@ theme_type_variation = &"TopBarPanelContainer"
 [connection signal="text_changed" from="VBoxContainer/TopMarginContainer/TopHBoxContainer/SearchBar" to="." method="_on_search_bar_text_changed"]
 [connection signal="sorting_changed" from="VBoxContainer/TopMarginContainer/TopHBoxContainer/SortingMenuButton" to="." method="_on_sorting_menu_button_sorting_changed"]
 [connection signal="filter_changed" from="VBoxContainer/TopMarginContainer/TopHBoxContainer/TagsFilterMenuButton" to="." method="_on_tags_filter_menu_button_filter_changed"]
+[connection signal="pressed" from="VBoxContainer/TopMarginContainer/TopHBoxContainer/ReloadButton" to="." method="_on_reload_button_pressed"]
 [connection signal="pressed" from="VBoxContainer/NoProjectsMessageContainer/VBoxContainer/ChangeProjectsPathButton" to="." method="_on_change_projects_path_button_pressed"]
 [connection signal="udpated" from="VBoxContainer/SmoothScrollContainer/ProjectsContainer" to="." method="_on_projects_container_udpated"]
 [connection signal="changed_page" from="VBoxContainer/BottomPanelContainer/PageControllerMargin/PageController" to="." method="_on_page_controller_changed_page"]
