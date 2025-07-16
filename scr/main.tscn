@@ -22,6 +22,7 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+mouse_behavior_recursive = 1
 theme = ExtResource("1_s0v7e")
 script = ExtResource("2_o1jc6")
 metadata/_edit_lock_ = true
@@ -51,6 +52,7 @@ theme_override_constants/margin_top = 8
 [node name="TabContainer" type="TabContainer" parent="MarginContainer"]
 layout_mode = 2
 size_flags_vertical = 3
+mouse_behavior_recursive = 2
 theme_override_styles/panel = SubResource("StyleBoxFlat_tpi1q")
 tab_alignment = 1
 current_tab = 0
