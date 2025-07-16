@@ -28,3 +28,4 @@ mono_crash.*.json
 
 # Project-specific ignores
 local/
+addons/explore-editor-theme/
