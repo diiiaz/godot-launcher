@@ -3,13 +3,13 @@
 [ext_resource type="Texture2D" uid="uid://b2qapuue4p2mj" path="res://assets/textures/icons/default_icon.svg" id="1_jwowj"]
 [ext_resource type="Script" uid="uid://b1c0124rsqsuk" path="res://scr/user_interface/pages/projects_page/project.gd" id="1_ou0my"]
 [ext_resource type="Theme" uid="uid://bimvjqmjjj4jh" path="res://assets/resources/theme/main.tres" id="1_xwwp3"]
-[ext_resource type="Texture2D" uid="uid://cccs44sn3e3b6" path="res://assets/textures/icons/project/clock.svg" id="3_cer51"]
+[ext_resource type="Texture2D" uid="uid://cccs44sn3e3b6" path="res://assets/textures/icons/clock.svg" id="3_cer51"]
 [ext_resource type="FontFile" uid="uid://bjr2pe6fnpvm3" path="res://assets/resources/fonts/NotoSans-Bold.ttf" id="4_23glk"]
-[ext_resource type="Texture2D" uid="uid://dsrtamnxenut4" path="res://assets/textures/icons/common/version.svg" id="4_c25v3"]
+[ext_resource type="Texture2D" uid="uid://dsrtamnxenut4" path="res://assets/textures/icons/sign.svg" id="4_c25v3"]
 [ext_resource type="Script" uid="uid://bkiinajnf8i6g" path="res://scr/user_interface/buttons/options/build/project_build_option_button.gd" id="5_tw8s5"]
-[ext_resource type="Texture2D" uid="uid://dnd32ay7p67xu" path="res://assets/textures/icons/project/edit.svg" id="6_wo43g"]
-[ext_resource type="Texture2D" uid="uid://cpkfifm4oc8sf" path="res://assets/textures/icons/project/play.svg" id="7_xwwp3"]
-[ext_resource type="Texture2D" uid="uid://mwa7yfdar6j8" path="res://assets/textures/icons/common/delete.svg" id="9_xwwp3"]
+[ext_resource type="Texture2D" uid="uid://dnd32ay7p67xu" path="res://assets/textures/icons/edit.svg" id="6_wo43g"]
+[ext_resource type="Texture2D" uid="uid://cpkfifm4oc8sf" path="res://assets/textures/icons/arrow_right_filled.svg" id="7_xwwp3"]
+[ext_resource type="Texture2D" uid="uid://mwa7yfdar6j8" path="res://assets/textures/icons/delete.svg" id="9_xwwp3"]
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_xwwp3"]
 

@@ -3,9 +3,9 @@
 [ext_resource type="Theme" uid="uid://bimvjqmjjj4jh" path="res://assets/resources/theme/main.tres" id="1_65gce"]
 [ext_resource type="Script" uid="uid://cv1vp8xn4snk2" path="res://scr/user_interface/pages/releases_page/build.gd" id="1_y0fjh"]
 [ext_resource type="FontFile" uid="uid://cic57dt4ri7xg" path="res://assets/resources/fonts/NotoSans-Regular.ttf" id="3_avjpy"]
-[ext_resource type="Texture2D" uid="uid://byxc3vhusjs76" path="res://assets/textures/icons/release/weight.svg" id="3_iuba3"]
-[ext_resource type="Texture2D" uid="uid://b7t2klcgpvtjc" path="res://assets/textures/icons/toast/download.svg" id="4_qy0o5"]
-[ext_resource type="Texture2D" uid="uid://mwa7yfdar6j8" path="res://assets/textures/icons/common/delete.svg" id="5_nv8i7"]
+[ext_resource type="Texture2D" uid="uid://byxc3vhusjs76" path="res://assets/textures/icons/weight.svg" id="3_iuba3"]
+[ext_resource type="Texture2D" uid="uid://b7t2klcgpvtjc" path="res://assets/textures/icons/download.svg" id="4_qy0o5"]
+[ext_resource type="Texture2D" uid="uid://mwa7yfdar6j8" path="res://assets/textures/icons/delete.svg" id="5_nv8i7"]
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_nv8i7"]
 

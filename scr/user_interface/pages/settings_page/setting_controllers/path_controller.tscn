@@ -2,7 +2,7 @@
 
 [ext_resource type="Script" uid="uid://d4igxh1pxjvg0" path="res://scr/user_interface/pages/settings_page/setting_controllers/path_setting_controller.gd" id="1_7ykc2"]
 [ext_resource type="Theme" uid="uid://bimvjqmjjj4jh" path="res://assets/resources/theme/main.tres" id="1_8ym3t"]
-[ext_resource type="Texture2D" uid="uid://dwwmeuthijf74" path="res://assets/textures/icons/setting/browse_folder.svg" id="3_emedi"]
+[ext_resource type="Texture2D" uid="uid://dwwmeuthijf74" path="res://assets/textures/icons/browse_folder.svg" id="3_emedi"]
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_emedi"]
 

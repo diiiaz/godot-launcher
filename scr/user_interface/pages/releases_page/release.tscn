@@ -3,12 +3,12 @@
 [ext_resource type="Theme" uid="uid://bimvjqmjjj4jh" path="res://assets/resources/theme/main.tres" id="1_qqm0m"]
 [ext_resource type="Script" uid="uid://wk8rn28yegs6" path="res://scr/user_interface/pages/releases_page/release.gd" id="2_tl4kx"]
 [ext_resource type="FontFile" uid="uid://bjr2pe6fnpvm3" path="res://assets/resources/fonts/NotoSans-Bold.ttf" id="4_p3w3g"]
-[ext_resource type="Texture2D" uid="uid://b7t2klcgpvtjc" path="res://assets/textures/icons/toast/download.svg" id="4_pl0eu"]
-[ext_resource type="Texture2D" uid="uid://c8g6hswy4qaqt" path="res://assets/textures/icons/release/open_source.svg" id="6_snplk"]
-[ext_resource type="Texture2D" uid="uid://mwa7yfdar6j8" path="res://assets/textures/icons/common/delete.svg" id="6_v3i70"]
-[ext_resource type="Texture2D" uid="uid://cccs44sn3e3b6" path="res://assets/textures/icons/project/clock.svg" id="6_wsl2n"]
-[ext_resource type="Texture2D" uid="uid://btxmm1xnhfibv" path="res://assets/textures/icons/release/open_changelog.svg" id="7_snplk"]
-[ext_resource type="Texture2D" uid="uid://dnciiiqdshgmn" path="res://assets/textures/icons/page_controller/arrow_right.svg" id="9_pl0eu"]
+[ext_resource type="Texture2D" uid="uid://b7t2klcgpvtjc" path="res://assets/textures/icons/download.svg" id="4_pl0eu"]
+[ext_resource type="Texture2D" uid="uid://c8g6hswy4qaqt" path="res://assets/textures/icons/code.svg" id="6_snplk"]
+[ext_resource type="Texture2D" uid="uid://mwa7yfdar6j8" path="res://assets/textures/icons/delete.svg" id="6_v3i70"]
+[ext_resource type="Texture2D" uid="uid://cccs44sn3e3b6" path="res://assets/textures/icons/clock.svg" id="6_wsl2n"]
+[ext_resource type="Texture2D" uid="uid://btxmm1xnhfibv" path="res://assets/textures/icons/script.svg" id="7_snplk"]
+[ext_resource type="Texture2D" uid="uid://dnciiiqdshgmn" path="res://assets/textures/icons/arrow_right.svg" id="9_pl0eu"]
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_xwwp3"]
 

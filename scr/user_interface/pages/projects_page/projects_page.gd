@@ -62,7 +62,7 @@ func _on_search_bar_text_changed(new_text: String) -> void:
 
 # ---------------------------------- Sorting Menu Button
 
-const SORT_BY_DATE_ICON_TEXTURE = preload("uid://bmv58bwjkiill")
+const SORT_BY_DATE_ICON_TEXTURE = preload("uid://cccs44sn3e3b6")
 const SORT_BY_NAME_ICON_TEXTURE = preload("uid://c37ao0tstubqf")
 
 func setup_sorting_menu_button() -> void:

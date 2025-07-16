@@ -7,7 +7,7 @@
 [ext_resource type="PackedScene" uid="uid://b182chroba61d" path="res://scr/user_interface/pages/releases_page/releases_page.tscn" id="6_tpi1q"]
 [ext_resource type="PackedScene" uid="uid://c12wjxbyonv8g" path="res://scr/user_interface/pages/settings_page/settings_page.tscn" id="7_ss67u"]
 [ext_resource type="Script" uid="uid://ctuphdj5sjpgg" path="res://scr/user_interface/loading_screen/loading_screen.gd" id="8_q4m34"]
-[ext_resource type="Texture2D" uid="uid://dljbcqjith5da" path="res://assets/textures/icons/app/godot-launcher.png" id="9_q4m34"]
+[ext_resource type="Texture2D" uid="uid://ctvd18b7s3dj8" path="res://assets/textures/logo/godot-launcher.png" id="8_yk2f6"]
 [ext_resource type="Script" uid="uid://c3vf2ull0nu75" path="res://scr/user_interface/popup_animator.gd" id="14_o5q5n"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_tpi1q"]
@@ -113,6 +113,6 @@ grow_horizontal = 2
 grow_vertical = 2
 size_flags_horizontal = 4
 size_flags_vertical = 4
-texture = ExtResource("9_q4m34")
+texture = ExtResource("8_yk2f6")
 expand_mode = 1
 stretch_mode = 5
