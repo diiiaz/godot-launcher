@@ -43,10 +43,14 @@ func get_projects(sort_function: Callable = Callable(), tags_filter: PackedStrin
 	return projects
 
 
-func delete_project(project: Project) -> void:
-	OS.move_to_trash(ProjectSettings.globalize_path(project.get_path()))
+func delete_project(project: Project) -> Error:
+	var error: Error = OS.move_to_trash(ProjectSettings.globalize_path(project.get_path()))
+	if error != OK:
+		ToastsManager.create_error_toast(tr("TOAST_DELETE_PROJECT_ERROR") % [project.get_name(), error_string(error)])
+		return error
 	ToastsManager.create_info_toast(tr("TOAST_DELETED_PROJECT") % [project.get_name()])
 	update_projects()
+	return error
 
 
 func is_dir_project_dir(dir_path: String) -> bool:
