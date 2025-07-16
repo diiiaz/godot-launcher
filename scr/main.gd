@@ -5,7 +5,7 @@ extends Control
 #@onready var projects_page: ProjectsPage = %ProjectsPage
 #@onready var releases_page: ReleasesPage = %ReleasesPage
 #@onready var settings_page: SettingsPage = %SettingsPage
-#@onready var loading_screen: LoadingScreen = %LoadingScreen
+@onready var loading_screen: CanvasLayer = %LoadingScreen
 
 
 func _ready() -> void:
@@ -31,7 +31,7 @@ func _ready() -> void:
 	get_tree().set_auto_accept_quit(false)
 	
 	#main_pages_controller.open_page(MainPagesController.PAGE.PROJECTS, false)
-	#loading_screen.close()
+	loading_screen.close()
 
 
 func check_for_new_releases() -> void:
