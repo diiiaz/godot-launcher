@@ -16,13 +16,13 @@ func setup(extra_data: Variant) -> void:
 
 
 func _on_delete_project_button_pressed() -> void:
-	get_popup_window().close()
 	user_input_result.emit(DeleteProjectResult.new(DeleteProjectResult.ACTION.DELETE))
+	get_popup_window().close()
 
 
 func _on_cancel_button_pressed() -> void:
-	get_popup_window().close()
 	user_input_result.emit(DeleteProjectResult.new(DeleteProjectResult.ACTION.CANCEL))
+	get_popup_window().close()
 
 
 class DeleteProjectResult extends PopupWindowContent.Result:

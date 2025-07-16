@@ -99,5 +99,5 @@ func uninstall_build(build: Build) -> void:
 		ToastsManager.create_error_toast(error_string(err))
 		return
 	
-	ToastsManager.create_info_toast(tr("SUCCESS_UNINSTALLED_BUILD") % [build.get_name()])
+	ToastsManager.create_info_toast(tr("TOAST_SUCCESS_UNINSTALLED_BUILD") % [build.get_name()])
 	build.uninstalled.emit()

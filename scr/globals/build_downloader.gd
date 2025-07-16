@@ -24,7 +24,7 @@ func download(build: Build) -> void:
 		ToastsManager.create_warning_toast(tr("WARNING_ALREADY_DOWNLOADED_BUILD") % [build.get_name()])
 		return
 	
-	var toast: Toast = await ToastsManager.create_progress_toast(tr("DOWNLOADING_BUILD") % [build.get_name()])
+	var toast: Toast = await ToastsManager.create_progress_toast(tr("TOAST_DOWNLOADING_BUILD") % [build.get_name()])
 	
 	_is_downloading = true
 	download_started.emit(build)
@@ -53,7 +53,7 @@ func download(build: Build) -> void:
 	if ZIP_EXTENSION in build.get_name():
 		await extract_all_from_zip(build.get_unextracted_path())
 	
-	ToastsManager.create_info_toast(TranslationServer.translate("SUCCESS_DOWNLOADED_BUILD") % [build.get_name()])
+	ToastsManager.create_info_toast(TranslationServer.translate("TOAST_SUCCESS_DOWNLOADED_BUILD") % [build.get_name()])
 	download_finished.emit(build)
 	build.downloaded.emit()
 	toast.set_progress(1.0)
