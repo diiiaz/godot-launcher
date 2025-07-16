@@ -1,9 +1,12 @@
-[gd_scene load_steps=8 format=3 uid="uid://ctlltenahpe6b"]
+[gd_scene load_steps=9 format=3 uid="uid://ctlltenahpe6b"]
 
 [ext_resource type="Theme" uid="uid://bimvjqmjjj4jh" path="res://assets/resources/theme/main.tres" id="1_6hycv"]
 [ext_resource type="Script" uid="uid://y8vdp63hjw0k" path="res://scr/user_interface/popup_window/popup_window.gd" id="2_rntqx"]
 [ext_resource type="Texture2D" uid="uid://cmyjvyy6k7111" path="res://assets/textures/icons/x.svg" id="3_40ugh"]
 [ext_resource type="FontFile" uid="uid://bjr2pe6fnpvm3" path="res://assets/resources/fonts/NotoSans-Bold.ttf" id="3_x4yeo"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_x4yeo"]
+bg_color = Color(0, 0, 0, 0.32941177)
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_on4ck"]
 
@@ -32,7 +35,7 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 mouse_behavior_recursive = 2
-theme_type_variation = &"DarkTransparentPanel"
+theme_override_styles/panel = SubResource("StyleBoxFlat_x4yeo")
 
 [node name="WindowPanel" type="PanelContainer" parent="."]
 unique_name_in_owner = true
@@ -49,6 +52,7 @@ metadata/_edit_use_anchors_ = true
 
 [node name="VBoxContainer" type="VBoxContainer" parent="WindowPanel"]
 layout_mode = 2
+theme_override_constants/separation = 0
 
 [node name="Header" type="PanelContainer" parent="WindowPanel/VBoxContainer"]
 layout_mode = 2
@@ -62,6 +66,10 @@ theme_override_constants/margin_right = 8
 theme_override_constants/margin_bottom = 2
 
 [node name="HBoxContainer" type="HBoxContainer" parent="WindowPanel/VBoxContainer/Header/MarginContainer"]
+layout_mode = 2
+
+[node name="Empty" type="Control" parent="WindowPanel/VBoxContainer/Header/MarginContainer/HBoxContainer"]
+custom_minimum_size = Vector2(7.5, 0)
 layout_mode = 2
 
 [node name="TitleLabel" type="Label" parent="WindowPanel/VBoxContainer/Header/MarginContainer/HBoxContainer"]
@@ -80,7 +88,7 @@ size_flags_horizontal = 4
 size_flags_vertical = 4
 tooltip_text = "CLOSE"
 mouse_default_cursor_shape = 2
-theme_type_variation = &"TagButton"
+theme_type_variation = &"ButtonSimple"
 icon = ExtResource("3_40ugh")
 icon_alignment = 1
 
