@@ -27,7 +27,7 @@ func get_icon() -> Texture2D:
 	return preload("uid://dovk625lj7wf0")
 
 func update_no_projects_found_label() -> void:
-	no_projects_found_label.text = tr("NO_PROJETS_FOUND_IN_DIR") % [Color.from_ok_hsl(0.7, 0.8, 0.7).to_html(false), SettingsManager.get_setting(Settings.SETTING.PROJECTS_PATH)]
+	no_projects_found_label.text = tr("NO_PROJETS_FOUND_IN_DIR") % [ColorHelper.LIGHT_BLUE.to_html(false), SettingsManager.get_setting(Settings.SETTING.PROJECTS_PATH)]
 
 
 # ---------------------------------- Projects Container
