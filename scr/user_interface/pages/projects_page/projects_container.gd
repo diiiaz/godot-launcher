@@ -57,3 +57,4 @@ func create_project_ui(project: Project) -> void:
 	var project_ui: ProjectUI = PROJECT.instantiate()
 	add_child(project_ui)
 	project_ui.setup.call_deferred(project)
+	project_ui.deleted.connect(update)

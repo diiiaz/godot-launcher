@@ -1,7 +1,10 @@
 extends PanelContainer
 class_name ProjectUI
 
+signal deleted
+
 const TAG_UI = preload("uid://ekqlub7k865j")
+const DELETE_PROJECT_POPUP_WINDOW_CONTENT = preload("uid://qwl6em84n25p")
 
 @onready var icon_texture_rect: TextureRect = %IconTextureRect
 @onready var project_name_label: Label = %ProjectNameLabel
@@ -53,7 +56,15 @@ func _on_play_button_pressed() -> void: ProjectsManager.run_project(_build, _pro
 func _on_edit_button_pressed() -> void: ProjectsManager.run_project(_build, _project.get_path(), true)
 
 func _on_delete_button_pressed() -> void:
-	pass # Replace with function body.
+	var popup_content: PopupWindowContent = DELETE_PROJECT_POPUP_WINDOW_CONTENT.instantiate()
+	popup_content.user_input_result.connect(_on_delete_project_popup_result)
+	PopupWindowHelper.popup_window("POPUP_TITLE_DELETE_PROJECT", popup_content, get_viewport(), _project)
+
+func _on_delete_project_popup_result(result: PopupWindowContent.Result) -> void:
+	if result.action_is_delete():
+		ProjectsManager.delete_project(_project)
+		deleted.emit()
+
 
 func _on_project_build_option_button_selected_build(build: Build) -> void:
 	_build = build

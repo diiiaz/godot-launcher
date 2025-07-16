@@ -60,7 +60,6 @@ theme_override_constants/separation = 8
 [node name="IconTextureRect" type="TextureRect" parent="MarginContainer/ContentContainer/MainInfoContainer"]
 unique_name_in_owner = true
 layout_mode = 2
-mouse_behavior_recursive = 2
 texture = ExtResource("1_jwowj")
 expand_mode = 3
 stretch_mode = 5
