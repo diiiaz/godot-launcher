@@ -39,7 +39,7 @@ func get_projects(sort_function: Callable = Callable(), tags_filter: PackedStrin
 	if sort_function.is_valid():
 		projects.sort_custom(sort_function)
 	
-	projects = projects.slice(offset, offset + SettingsManager.get_setting(Settings.SETTING.MAX_ITEMS_PER_PAGE) + 1)
+	projects = projects.slice(offset, offset + SettingsManager.get_setting(Settings.SETTING.MAX_ITEMS_PER_PAGE))
 	return projects
 
 

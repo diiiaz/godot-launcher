@@ -15,16 +15,13 @@ func _ready() -> void:
 	setup_sorting_menu_button()
 	setup_tags_filter_menu_button()
 	projects_container.setup(sorting_menu_button.get_sort_info(), tags_filter_menu_button.get_filter_info())
-	ProjectsManager.updated.connect(func(): page_controller.setup(ceil(ProjectsManager.get_projects_amount() / float(SettingsManager.get_setting(Settings.SETTING.MAX_ITEMS_PER_PAGE)))))
-	visibility_changed.connect(_on_visibility_changed)
+	page_controller.setup(func(): return ProjectsManager.get_projects_amount())
+	ProjectsManager.updated.connect(page_controller.update)
+	visibility_changed.connect(page_controller.update)
 
 func _notification(what: int) -> void:
 	if what == NOTIFICATION_TRANSLATION_CHANGED and no_projects_found_label != null:
 		update_no_projects_found_label()
-
-func _on_visibility_changed() -> void:
-	if is_visible_in_tree():
-		page_controller.update()
 
 func get_icon() -> Texture2D:
 	return preload("uid://dovk625lj7wf0")

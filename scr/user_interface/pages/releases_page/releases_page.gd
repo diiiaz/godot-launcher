@@ -8,13 +8,9 @@ extends Page
 func _ready() -> void:
 	setup_tags_filter_menu_button()
 	releases_container.setup(tags_filter_menu_button.get_filter_info())
-	page_controller.setup(ceil(await BuildsManager.get_releases_amount() / float(SettingsManager.get_setting(Settings.SETTING.MAX_ITEMS_PER_PAGE))))
-	BuildsManager.updated.connect(func(): page_controller.setup(ceil(await BuildsManager.get_releases_amount() / float(SettingsManager.get_setting(Settings.SETTING.MAX_ITEMS_PER_PAGE)))))
-	visibility_changed.connect(_on_visibility_changed)
-
-func _on_visibility_changed() -> void:
-	if is_visible_in_tree():
-		page_controller.update()
+	page_controller.setup(func(): return await BuildsManager.get_releases_amount())
+	BuildsManager.updated.connect(page_controller.update)
+	visibility_changed.connect(page_controller.update)
 
 func get_icon() -> Texture2D:
 	return preload("uid://dsrtamnxenut4")

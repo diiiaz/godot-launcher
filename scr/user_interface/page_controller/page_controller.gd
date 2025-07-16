@@ -3,25 +3,35 @@ class_name PageController
 
 signal changed_page(page_index: int)
 
-const MAX_AMOUNT_OF_BUTTONS: int = 7
+const _MAX_AMOUNT_OF_BUTTONS: int = 7
 
 @onready var _page_buttons: Array[PageButton] = [%PageButton0, %PageButton1, %PageButton2, %PageButton3, %PageButton4, %PageButton5, %PageButton6]
-@onready var highlight_panel: PanelContainer = %HighlightPanel
-@onready var left_arrow_button: Button = %LeftArrowButton
-@onready var right_arrow_button: Button = %RightArrowButton
+@onready var _highlight_panel: PanelContainer = %HighlightPanel
+@onready var _left_arrow_button: Button = %LeftArrowButton
+@onready var _right_arrow_button: Button = %RightArrowButton
 
 var _amount_of_pages: int = 1
 var _current_page: int = 0
 var _current_page_button: PageButton = null
+var _items_count_getter: Callable
 
 
-func setup(amount_of_pages: int) -> void:
-	_current_page = 0
-	_current_page_button = _page_buttons[_current_page]
-	set_amount_of_pages(amount_of_pages)
+func setup(items_count_getter: Callable) -> void:
+	_items_count_getter = items_count_getter
+#func setup(amount_of_pages: int) -> void:
+	#_current_page = 0
+	#_current_page_button = _page_buttons[_current_page]
+	#set_amount_of_pages(amount_of_pages)
+	SettingsManager.updated.connect(
+		func(setting: Settings.SETTING):
+			if setting != Settings.SETTING.MAX_ITEMS_PER_PAGE:
+				return
+			update()
+	)
 
 
 func update() -> void:
+	set_amount_of_pages(ceil(await _items_count_getter.call() / float(SettingsManager.get_setting(Settings.SETTING.MAX_ITEMS_PER_PAGE))))
 	travel_to_page(_current_page, true, true, false)
 
 
@@ -34,7 +44,7 @@ func travel_to_page(page: int, stop_signal: bool = false, force_update: bool = f
 	if not stop_signal:
 		changed_page.emit(_current_page)
 	
-	var has_less_than_max: bool = (_amount_of_pages - 1) <= MAX_AMOUNT_OF_BUTTONS
+	var has_less_than_max: bool = (_amount_of_pages - 1) <= _MAX_AMOUNT_OF_BUTTONS
 	var has_start_ellipsis: bool = _current_page >= 4 and not has_less_than_max
 	var has_end_ellipsis: bool = (_amount_of_pages - 1) - _current_page >= 4 and not has_less_than_max
 	
@@ -65,13 +75,13 @@ func travel_to_page(page: int, stop_signal: bool = false, force_update: bool = f
 	await get_tree().process_frame
 	
 	var tweener: Tween = create_tween().set_ease(Tween.EASE_OUT).set_trans(Tween.TRANS_CUBIC).set_parallel()
-	tweener.tween_property(highlight_panel, "global_position", _current_page_button.global_position, 0.2 if animate else 0.01).from_current()
-	tweener.tween_property(left_arrow_button, "modulate:a", 0.0 if _current_page == 0 else 1.0, 0.1 if animate else 0.01).from_current()
-	tweener.tween_property(right_arrow_button, "modulate:a", 0.0 if _current_page == (_amount_of_pages - 1) else 1.0, 0.1 if animate else 0.01).from_current()
-	left_arrow_button.disabled = _current_page == 0
-	left_arrow_button.mouse_default_cursor_shape = Control.CURSOR_ARROW if _current_page == 0 else Control.CURSOR_POINTING_HAND
-	right_arrow_button.disabled = _current_page == (_amount_of_pages - 1)
-	right_arrow_button.mouse_default_cursor_shape = Control.CURSOR_ARROW if _current_page == (_amount_of_pages - 1) else Control.CURSOR_POINTING_HAND
+	tweener.tween_property(_highlight_panel, "global_position", _current_page_button.global_position, 0.2 if animate else 0.01).from_current()
+	tweener.tween_property(_left_arrow_button, "modulate:a", 0.0 if _current_page == 0 else 1.0, 0.1 if animate else 0.01).from_current()
+	tweener.tween_property(_right_arrow_button, "modulate:a", 0.0 if _current_page == (_amount_of_pages - 1) else 1.0, 0.1 if animate else 0.01).from_current()
+	_left_arrow_button.disabled = _current_page == 0
+	_left_arrow_button.mouse_default_cursor_shape = Control.CURSOR_ARROW if _current_page == 0 else Control.CURSOR_POINTING_HAND
+	_right_arrow_button.disabled = _current_page == (_amount_of_pages - 1)
+	_right_arrow_button.mouse_default_cursor_shape = Control.CURSOR_ARROW if _current_page == (_amount_of_pages - 1) else Control.CURSOR_POINTING_HAND
 
 func _on_page_button_pressed(page_button: PageButton) -> void:
 	travel_to_page(page_button.get_page_number())
@@ -94,7 +104,6 @@ func set_amount_of_pages(pages_amount: int) -> void:
 	_current_page = 0
 	_current_page_button = _page_buttons[0]
 	_amount_of_pages = pages_amount
-	update()
 
 func get_start_ellipsis_button() -> PageButton:
 	return get_page_button(1)

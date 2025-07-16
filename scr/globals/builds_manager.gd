@@ -33,7 +33,7 @@ func get_releases(tags_filter: PackedStringArray = [], string_filter: String = "
 	if not string_filter.is_empty():
 		releases.assign(FuzzySearcher.mapped_search(string_filter, releases, func(release: Release): return Helper.strip_bbcode(release.get_formatted_name())))
 	
-	releases = releases.slice(offset, offset + SettingsManager.get_setting(Settings.SETTING.MAX_ITEMS_PER_PAGE) + 1)
+	releases = releases.slice(offset, offset + SettingsManager.get_setting(Settings.SETTING.MAX_ITEMS_PER_PAGE))
 	
 	return releases
 

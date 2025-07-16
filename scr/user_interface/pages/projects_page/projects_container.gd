@@ -13,6 +13,12 @@ var _page: int = 0
 
 func _init() -> void:
 	ProjectsManager.updated.connect(update)
+	SettingsManager.updated.connect(
+		func(setting: Settings.SETTING):
+			if setting != Settings.SETTING.MAX_ITEMS_PER_PAGE:
+				return
+			update()
+	)
 
 
 func setup(sort_info: SortingMenuButton.SortInfo, filter_info: FilterMenuButton.FilterInfo) -> void:
