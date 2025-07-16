@@ -62,7 +62,7 @@ unique_name_in_owner = true
 layout_mode = 2
 tooltip_text = "TOOLTIP_SORT_BY"
 mouse_default_cursor_shape = 2
-theme_type_variation = &"SortingMenuButton"
+theme_type_variation = &"ButtonSimple"
 text = "SORT_LAST_MODIFIED"
 icon = ExtResource("3_fvatn")
 flat = false
@@ -75,7 +75,7 @@ layout_mode = 2
 tooltip_text = "FILTER_TAGS"
 mouse_behavior_recursive = 2
 mouse_default_cursor_shape = 2
-theme_type_variation = &"SortingMenuButton"
+theme_type_variation = &"ButtonSimple"
 disabled = true
 text = "FILTER_TAGS"
 icon = ExtResource("5_inwf5")
@@ -93,7 +93,7 @@ size_flags_horizontal = 4
 size_flags_vertical = 4
 tooltip_text = "TOOLTIP_REFRESH_PROJECTS"
 mouse_default_cursor_shape = 2
-theme_type_variation = &"PageControllerPageButton"
+theme_type_variation = &"ButtonSimple"
 icon = ExtResource("8_inwf5")
 
 [node name="HSeparator" type="HSeparator" parent="VBoxContainer"]
@@ -108,17 +108,19 @@ size_flags_vertical = 3
 layout_mode = 2
 
 [node name="NoProjectsTextureRect" type="TextureRect" parent="VBoxContainer/NoProjectsMessageContainer/VBoxContainer"]
+modulate = Color(1, 1, 1, 0.5882353)
 layout_mode = 2
 texture = ExtResource("8_fvatn")
 stretch_mode = 5
 
 [node name="NoProjectsFoundLabel" type="RichTextLabel" parent="VBoxContainer/NoProjectsMessageContainer/VBoxContainer"]
 unique_name_in_owner = true
+custom_minimum_size = Vector2(500, 0)
 layout_mode = 2
 bbcode_enabled = true
 text = "NO_PROJECTS_FOUND_IN_DIR"
 fit_content = true
-autowrap_mode = 0
+horizontal_alignment = 1
 
 [node name="ChangeProjectsPathButton" type="Button" parent="VBoxContainer/NoProjectsMessageContainer/VBoxContainer"]
 unique_name_in_owner = true

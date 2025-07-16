@@ -88,7 +88,7 @@ layout_mode = 2
 tooltip_text = "FILTER_TAGS"
 mouse_behavior_recursive = 2
 mouse_default_cursor_shape = 2
-theme_type_variation = &"SortingMenuButton"
+theme_type_variation = &"ButtonSimple"
 disabled = true
 text = "FILTER_TAGS"
 icon = ExtResource("3_ui1e6")
@@ -106,7 +106,7 @@ size_flags_horizontal = 4
 size_flags_vertical = 4
 tooltip_text = "TOOLTIP_CHECK_NEW_RELEASES"
 mouse_default_cursor_shape = 2
-theme_type_variation = &"PageControllerPageButton"
+theme_type_variation = &"ButtonSimple"
 icon = ExtResource("6_ui1e6")
 
 [node name="HSeparator" type="HSeparator" parent="HboxContainer/LeftSide/LeftSideBackground/VBoxContainer"]

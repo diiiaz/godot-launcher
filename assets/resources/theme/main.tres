@@ -1,4 +1,4 @@
-[gd_resource type="Theme" load_steps=105 format=3 uid="uid://bimvjqmjjj4jh"]
+[gd_resource type="Theme" load_steps=99 format=3 uid="uid://bimvjqmjjj4jh"]
 
 [ext_resource type="FontFile" uid="uid://bjr2pe6fnpvm3" path="res://assets/resources/fonts/NotoSans-Bold.ttf" id="4_ur88k"]
 [ext_resource type="FontFile" uid="uid://cic57dt4ri7xg" path="res://assets/resources/fonts/NotoSans-Regular.ttf" id="5_7xn3m"]
@@ -250,6 +250,34 @@ shadow_color = Color(0, 0, 0, 0.005)
 shadow_size = 8
 shadow_offset = Vector2(0, 4)
 
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_ga8dc"]
+content_margin_left = 8.0
+content_margin_top = 6.0
+content_margin_right = 8.0
+content_margin_bottom = 6.0
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_4j565"]
+content_margin_left = 8.0
+content_margin_top = 6.0
+content_margin_right = 8.0
+content_margin_bottom = 6.0
+bg_color = Color(1, 1, 1, 0.078431375)
+corner_radius_top_left = 5
+corner_radius_top_right = 5
+corner_radius_bottom_right = 5
+corner_radius_bottom_left = 5
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_ga8dc"]
+content_margin_left = 8.0
+content_margin_top = 6.0
+content_margin_right = 8.0
+content_margin_bottom = 6.0
+bg_color = Color(1, 1, 1, 0.13725491)
+corner_radius_top_left = 5
+corner_radius_top_right = 5
+corner_radius_bottom_right = 5
+corner_radius_bottom_left = 5
+
 [sub_resource type="SVGTexture" id="SVGTexture_c7q75"]
 _source = "<svg xmlns=\"http://www.w3.org/2000/svg\" width=\"16\" height=\"16\"><rect width=\"14\" height=\"14\" x=\"1\" y=\"1\" fill=\"#699ce8\" rx=\"2.33\"/><path fill=\"#fff\" d=\"M11.5 3.734 5.89 9.346 4.185 7.665l-1.5 1.499 3.204 3.18L13 5.235z\"/></svg>
 "
@@ -460,19 +488,6 @@ corner_radius_top_right = 5
 corner_radius_bottom_right = 5
 corner_radius_bottom_left = 5
 
-[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_7xmdk"]
-
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_knbae"]
-bg_color = Color(1, 1, 1, 0.078431375)
-corner_radius_top_left = 5
-corner_radius_top_right = 5
-corner_radius_bottom_right = 5
-corner_radius_bottom_left = 5
-
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_quv2j"]
-bg_color = Color(0.5983088, 0.59830886, 0.5983088, 1)
-draw_center = false
-
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_nhtgq"]
 content_margin_left = 9.0
 content_margin_top = 9.0
@@ -638,19 +653,6 @@ corner_radius_bottom_right = 5
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_kvy2h"]
 bg_color = Color(0.14509805, 0.14509805, 0.14509805, 1)
 corner_radius_top_left = 5
-
-[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_7xn3m"]
-content_margin_left = 8.0
-content_margin_top = 4.0
-content_margin_right = 8.0
-content_margin_bottom = 4.0
-
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_mhc10"]
-bg_color = Color(1, 1, 1, 0.05882353)
-corner_radius_top_left = 5
-corner_radius_top_right = 5
-corner_radius_bottom_right = 5
-corner_radius_bottom_left = 5
 
 [sub_resource type="SVGTexture" id="SVGTexture_ktu72"]
 _source = "<svg xmlns=\"http://www.w3.org/2000/svg\" width=\"16\" height=\"8\"><path fill=\"none\" stroke=\"#fff\" stroke-width=\"2\" d=\"m12 2-4 3.5L4 2\"/></svg>
@@ -856,24 +858,6 @@ corner_radius_top_right = 5
 corner_radius_bottom_right = 5
 corner_radius_bottom_left = 5
 
-[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_nhtgq"]
-
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_jr3vw"]
-bg_color = Color(1, 1, 1, 0.11764706)
-corner_radius_top_left = 5
-corner_radius_top_right = 5
-corner_radius_bottom_right = 5
-corner_radius_bottom_left = 5
-
-[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_yy2ta"]
-
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_e82wo"]
-bg_color = Color(1, 1, 1, 0.19607843)
-corner_radius_top_left = 5
-corner_radius_top_right = 5
-corner_radius_bottom_right = 5
-corner_radius_bottom_left = 5
-
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_djmjg"]
 bg_color = Color(1, 1, 1, 1)
 corner_radius_top_left = 5
@@ -938,7 +922,7 @@ Button/colors/font_hover_pressed_color = Color(1, 1, 1, 1)
 Button/colors/font_outline_color = Color(0, 0, 0, 0)
 Button/colors/font_pressed_color = Color(1, 1, 1, 1)
 Button/colors/icon_disabled_color = Color(1, 1, 1, 0.3)
-Button/colors/icon_focus_color = Color(1.15, 1.15, 1.15, 1)
+Button/colors/icon_focus_color = Color(1, 1, 1, 0.7019608)
 Button/colors/icon_hover_color = Color(1.15, 1.15, 1.15, 1)
 Button/colors/icon_hover_pressed_color = Color(0.38784313, 0.71254903, 1.15, 1)
 Button/colors/icon_normal_color = Color(1, 1, 1, 0.7)
@@ -990,6 +974,13 @@ ButtonRedInverted/colors/font_focus_color = Color(0.89411765, 0.36078432, 0.3137
 ButtonRedInverted/colors/icon_focus_color = Color(0.89266706, 0.3601875, 0.311962, 1)
 ButtonRedInverted/colors/icon_normal_color = Color(0.89266706, 0.3601875, 0.311962, 1)
 ButtonRedInverted/styles/normal = SubResource("StyleBoxFlat_s8x1x")
+ButtonSimple/base_type = &"Button"
+ButtonSimple/styles/disabled = SubResource("StyleBoxEmpty_ga8dc")
+ButtonSimple/styles/focus = SubResource("StyleBoxEmpty_ga8dc")
+ButtonSimple/styles/hover = SubResource("StyleBoxFlat_4j565")
+ButtonSimple/styles/hover_pressed = SubResource("StyleBoxFlat_ga8dc")
+ButtonSimple/styles/normal = SubResource("StyleBoxEmpty_ga8dc")
+ButtonSimple/styles/pressed = SubResource("StyleBoxFlat_ga8dc")
 CheckBox/colors/font_color = Color(0.7862745, 0.7862745, 0.7862745, 1)
 CheckBox/colors/font_disabled_color = Color(1, 1, 1, 0.35)
 CheckBox/colors/font_focus_color = Color(0.8931373, 0.8931373, 0.8931373, 1)
@@ -1052,12 +1043,6 @@ MainBGPanel/base_type = &"Panel"
 MainBGPanel/styles/panel = SubResource("StyleBoxFlat_52wmj")
 PageControllerHighlightPanel/base_type = &"PanelContainer"
 PageControllerHighlightPanel/styles/panel = SubResource("StyleBoxFlat_yy2ta")
-PageControllerPageButton/base_type = &"Button"
-PageControllerPageButton/styles/disabled = SubResource("StyleBoxEmpty_7xmdk")
-PageControllerPageButton/styles/focus = SubResource("StyleBoxEmpty_7xmdk")
-PageControllerPageButton/styles/hover = SubResource("StyleBoxFlat_knbae")
-PageControllerPageButton/styles/normal = SubResource("StyleBoxFlat_quv2j")
-PageControllerPageButton/styles/pressed = SubResource("StyleBoxFlat_knbae")
 PopupDialog/styles/panel = SubResource("StyleBoxFlat_nhtgq")
 PopupMenu/colors/font_accelerator_color = Color(1, 1, 1, 0.35)
 PopupMenu/colors/font_color = Color(0.7862745, 0.7862745, 0.7862745, 1)
@@ -1099,13 +1084,6 @@ ReleasesPageRightBackgroundPanelLight/base_type = &"PanelContainer"
 ReleasesPageRightBackgroundPanelLight/styles/panel = SubResource("StyleBoxFlat_kvy2h")
 ScrollContainer/styles/focus = SubResource("StyleBoxFlat_25oj4")
 ScrollContainer/styles/panel = SubResource("StyleBoxFlat_25oj4")
-SortingMenuButton/base_type = &"MenuButton"
-SortingMenuButton/styles/disabled = SubResource("StyleBoxEmpty_7xn3m")
-SortingMenuButton/styles/focus = SubResource("StyleBoxEmpty_7xn3m")
-SortingMenuButton/styles/hover = SubResource("StyleBoxFlat_mhc10")
-SortingMenuButton/styles/hover_pressed = SubResource("StyleBoxFlat_mhc10")
-SortingMenuButton/styles/normal = SubResource("StyleBoxEmpty_7xn3m")
-SortingMenuButton/styles/pressed = SubResource("StyleBoxEmpty_7xn3m")
 SpinBox/colors/down_disabled_icon_modulate = Color(0.875, 0.875, 0.875, 0.5)
 SpinBox/colors/down_hover_icon_modulate = Color(0.95, 0.95, 0.95, 1)
 SpinBox/colors/down_icon_modulate = Color(0.875, 0.875, 0.875, 1)
@@ -1161,7 +1139,7 @@ TabContainer/colors/drop_mark_color = Color(0.27289218, 0.48465684, 0.769951, 1)
 TabContainer/colors/font_hovered_color = Color(0.7862745, 0.7862745, 0.7862745, 1)
 TabContainer/colors/font_outline_color = Color(0, 0, 0, 0)
 TabContainer/colors/font_selected_color = Color(0.7862745, 0.7862745, 0.7862745, 1)
-TabContainer/colors/font_unselected_color = Color(1, 1, 1, 0.35)
+TabContainer/colors/font_unselected_color = Color(1, 1, 1, 0.23529412)
 TabContainer/constants/icon_separation = 6
 TabContainer/constants/outline_size = 0
 TabContainer/constants/side_margin = 0
@@ -1180,11 +1158,6 @@ TabContainer/styles/tab_hovered = SubResource("StyleBoxFlat_3ogxf")
 TabContainer/styles/tab_selected = SubResource("StyleBoxFlat_1a267")
 TabContainer/styles/tab_unselected = SubResource("StyleBoxFlat_o4m83")
 TabContainer/styles/tabbar_background = SubResource("StyleBoxFlat_adek6")
-TagButton/base_type = &"Button"
-TagButton/styles/focus = SubResource("StyleBoxEmpty_nhtgq")
-TagButton/styles/hover = SubResource("StyleBoxFlat_jr3vw")
-TagButton/styles/normal = SubResource("StyleBoxEmpty_yy2ta")
-TagButton/styles/pressed = SubResource("StyleBoxFlat_e82wo")
 TagPanel/base_type = &"PanelContainer"
 TagPanel/styles/panel = SubResource("StyleBoxFlat_djmjg")
 ToastProgressBar/base_type = &"ProgressBar"
