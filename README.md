@@ -4,20 +4,20 @@
 [![Downloads](https://img.shields.io/github/downloads/diiiaz/godot-launcher/total?color=green)](https://github.com/diiiaz/godot-launcher/releases)
 [![Latest Release](https://img.shields.io/github/v/release/diiiaz/godot-launcher?label=latest%20release)](https://github.com/diiiaz/godot-launcher/releases)
 
-✨ **Organize your Godot projects, manage engine version in one place!**
+✨ **Organize your projects, manage engine version in one place!**
 
 ## 🌟 Features
 
-- **Project Management**  
-  📂 Easily browse, sort, and launch Godot projects from a unified interface.  
-- **Godot Version Manager**  
-  🔄 Install, switch, and manage multiple Godot Engine versions (including custom builds!).  
-- **One-Click Launch**  
-  🎮 Start projects with your desired Godot version instantly.  
-- **Cross-Platform**  
+- **Project Management**
+  📂 Browse, sort, and launch projects from a unified interface.  
+- **Godot Version Manager**
+  🔄 Install, switch, and manage multiple engine versions.  
+- **One-Click Launch**
+  🎮 Start projects with your desired version instantly.  
+- **Cross-Platform**
   🖥️ Runs on Windows, macOS, and Linux.  
-- **Auto-Updates**  
-  ⚡ Stay up-to-date with the latest Godot Launcher features effortlessly.
+- **Auto-Updates**
+  ⚡ Stay up-to-date with the latest features effortlessly.
 
 ---
 
@@ -29,7 +29,7 @@
 >- The developers assume no responsibility for project corruption/loss.
 
 ### Installation
-1. **Download the latest release** for your OS from the [Releases page](https://github.com/diiiaz/godot-launcher/releases).  
+1. **Download the latest release** from the [Releases page](https://github.com/diiiaz/godot-launcher/releases).  
 2. **Extract the package** and run the executable.  
 
 ---
