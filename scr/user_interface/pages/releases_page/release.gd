@@ -35,7 +35,7 @@ func setup(release: Release) -> void:
 	delete_recommended_build_button.tooltip_text = "%s (%s)" % [tr("TOOLTIP_DELETE_RECOMMENDED_BUILD"), _release.get_recommended_build().get_name()]
 	
 	builds_downloaded_container.modulate.a = 1.0 if not release.get_downloaded_builds().is_empty() else 0.3
-	builds_downloaded_label.text = tr("DOWNLOADED_BUILDS_AMOUNT") % release.get_downloaded_builds().size()
+	builds_downloaded_label.text = tr("DOWNLOADED_BUILDS_AMOUNT").format({"builds_downloaded_amount": release.get_downloaded_builds().size()})
 	release_time_label.text = TimeHelper.format_date_time_dict(TimeHelper.get_time_since_last_modified_date(release.get_published_time()))
 	
 	tags_separator.visible = release.has_tags()

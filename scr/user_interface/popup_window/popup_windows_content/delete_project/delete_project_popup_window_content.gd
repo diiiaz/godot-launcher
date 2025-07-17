@@ -11,8 +11,8 @@ func setup(extra_data: Variant) -> void:
 	if not is_node_ready():
 		await self.ready
 		await get_tree().process_frame
-	info_label.text = tr("DELETE_PROJECT_WARNING_LABEL") % [ColorHelper.LIGHT_BLUE.to_html(false), project.get_name()]
-	delete_project_button.text = tr("DELETE_PROJECT_CONFIRMATION") % [project.get_name()]
+	info_label.text = tr("DELETE_PROJECT_WARNING_LABEL").format({"color": ColorHelper.LIGHT_BLUE.to_html(false), "project_name": project.get_name()})
+	delete_project_button.text = tr("DELETE_PROJECT_CONFIRMATION").format({"project_name": project.get_name()})
 
 
 func _on_delete_project_button_pressed() -> void:

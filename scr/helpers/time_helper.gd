@@ -14,18 +14,18 @@ static func get_time_since_last_modified_date(project_last_modified_date_unix: i
 
 static func format_date_time_dict(date_time_dict: Dictionary) -> String:
 	if date_time_dict.year > 0:
-		return TranslationServer.translate("LAST_MODIFIED_YEARS_AGO") % [date_time_dict.year]
+		return TranslationServer.translate("LAST_MODIFIED_YEARS_AGO").format({"years_amount": date_time_dict.year})
 	elif date_time_dict.month > 0:
-		return TranslationServer.translate("LAST_MODIFIED_MONTH_AGO") % [date_time_dict.month]
+		return TranslationServer.translate("LAST_MODIFIED_MONTH_AGO").format({"months_amount": date_time_dict.month})
 	elif date_time_dict.day > 0:
-		return TranslationServer.translate("LAST_MODIFIED_DAYS_AGO") % [date_time_dict.day]
+		return TranslationServer.translate("LAST_MODIFIED_DAYS_AGO").format({"days_amount": date_time_dict.day})
 	elif date_time_dict.hour > 0:
-		return TranslationServer.translate("LAST_MODIFIED_HOURS_AGO") % [date_time_dict.hour]
+		return TranslationServer.translate("LAST_MODIFIED_HOURS_AGO").format({"hours_amount": date_time_dict.hour})
 	elif date_time_dict.minute > 0:
-		return TranslationServer.translate("LAST_MODIFIED_MINUTES_AGO") % [date_time_dict.minute]
+		return TranslationServer.translate("LAST_MODIFIED_MINUTES_AGO").format({"minutes_amount": date_time_dict.minute})
 	elif date_time_dict.second > 0:
-		return TranslationServer.translate("LAST_MODIFIED_SECONDS_AGO") % [date_time_dict.second]
-	return TranslationServer.translate("LAST_MODIFIED_SECONDS_AGO") % [0]
+		return TranslationServer.translate("LAST_MODIFIED_SECONDS_AGO").format({"seconds_amount": date_time_dict.second})
+	return TranslationServer.translate("LAST_MODIFIED_SECONDS_AGO").format({"seconds_amount": 0})
 
 
 static func convert_iso_to_unix_time(date_string: String) -> int:

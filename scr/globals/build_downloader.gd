@@ -21,10 +21,10 @@ func download(build: Build) -> void:
 		return
 	
 	if build.is_downloaded():
-		ToastsManager.create_warning_toast(tr("WARNING_ALREADY_DOWNLOADED_BUILD") % [build.get_name()])
+		ToastsManager.create_warning_toast(tr("WARNING_ALREADY_DOWNLOADED_BUILD").format({"build_name": build.get_name()}))
 		return
 	
-	var toast: Toast = await ToastsManager.create_progress_toast(tr("TOAST_DOWNLOADING_BUILD") % [build.get_name()])
+	var toast: Toast = await ToastsManager.create_progress_toast(tr("TOAST_DOWNLOADING_BUILD").format({"build_name": build.get_name()}))
 	
 	_is_downloading = true
 	download_started.emit(build)
@@ -46,14 +46,14 @@ func download(build: Build) -> void:
 	https_request.queue_free()
 	
 	if request != OK:
-		ToastsManager.create_error_toast(TranslationServer.translate("ERROR_REQUEST_FAILED") % [request])
+		ToastsManager.create_error_toast(TranslationServer.translate("ERROR_REQUEST_FAILED").format({"error": request}))
 		toast.close()
 		return
 	
 	if ZIP_EXTENSION in build.get_name():
 		await extract_all_from_zip(build.get_unextracted_path())
 	
-	ToastsManager.create_info_toast(TranslationServer.translate("TOAST_SUCCESS_DOWNLOADED_BUILD") % [build.get_name()])
+	ToastsManager.create_info_toast(TranslationServer.translate("TOAST_SUCCESS_DOWNLOADED_BUILD").format({"build_name": build.get_name()}))
 	download_finished.emit(build)
 	build.downloaded.emit()
 	toast.set_progress(1.0)
@@ -61,7 +61,7 @@ func download(build: Build) -> void:
 
 func _http_request_completed(result, _response_code, _headers, _body):
 	if result != OK:
-		ToastsManager.create_error_toast(TranslationServer.translate("ERROR_DOWNLOAD_FAILED") % [result])
+		ToastsManager.create_error_toast(TranslationServer.translate("ERROR_DOWNLOAD_FAILED").format({"error": result}))
 
 
 func extract_all_from_zip(zip_file_path: String) -> void:

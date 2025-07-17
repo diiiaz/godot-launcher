@@ -45,9 +45,9 @@ func get_projects(sort_function: Callable = Callable(), tags_filter: PackedStrin
 func delete_project(project: Project) -> Error:
 	var error: Error = OS.move_to_trash(ProjectSettings.globalize_path(project.get_path()))
 	if error != OK:
-		ToastsManager.create_error_toast(tr("TOAST_DELETE_PROJECT_ERROR") % [project.get_name(), error_string(error)])
+		ToastsManager.create_error_toast(tr("TOAST_DELETE_PROJECT_ERROR").format({"project_name": project.get_name(), "error": error_string(error)}))
 		return error
-	ToastsManager.create_info_toast(tr("TOAST_DELETED_PROJECT") % [project.get_name()])
+	ToastsManager.create_info_toast(tr("TOAST_DELETED_PROJECT").format({"project_name": project.get_name()}))
 	update_projects()
 	if UserDataManager.get_user_data(UserData.USER_DATA.PROJECTS_SELECTED_BUILDS).has(project.get_path()):
 		UserDataManager.get_user_data(UserData.USER_DATA.PROJECTS_SELECTED_BUILDS).erase(project.get_path())
@@ -87,7 +87,7 @@ func get_dir_contents(path) -> Array[String]:
 	var dir = DirAccess.open(path)
 	var err: Error = DirAccess.get_open_error()
 	if err != OK:
-		ToastsManager.create_error_toast(tr("ERROR_DIR_ACCESS") % [err])
+		ToastsManager.create_error_toast(tr("ERROR_DIR_ACCESS").format({"error": err}))
 		return []
 	
 	dir.list_dir_begin()
@@ -104,7 +104,7 @@ func update_projects() -> void:
 	var path: String = SettingsManager.get_setting(Settings.SETTING.PROJECTS_PATH)
 	
 	if not DirAccess.dir_exists_absolute(path):
-		ToastsManager.create_error_toast(tr("ERROR_NO_DIRECTORY_FOUND") % [path])
+		ToastsManager.create_error_toast(tr("ERROR_NO_DIRECTORY_FOUND").format({"dir_path": path}))
 		return
 	
 	TagsManager.get_tags_group(TAGS_GROUP_NAME).clear()
@@ -126,5 +126,5 @@ func create_project(project_name: String, project_path: String, build: Build) ->
 	UserDataManager.get_user_data(UserData.USER_DATA.PROJECTS_SELECTED_BUILDS)[project_path] = build.get_path().get_file()
 	UserDataManager.save_user_data()
 	await get_tree().process_frame
-	ToastsManager.create_info_toast(tr("TOAST_CREATED_NEW_PROJECT") % [project_name])
+	ToastsManager.create_info_toast(tr("TOAST_CREATED_NEW_PROJECT").format({"project_name": project_name}))
 	update_projects()

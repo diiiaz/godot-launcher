@@ -8,7 +8,7 @@ func setup(_extra_data: Variant) -> void:
 	if not is_node_ready():
 		await self.ready
 		await get_tree().process_frame
-	info_label.text = tr("CLOSE_APP_WHILE_DOWNLOADING_WARNING_LABEL") % [ColorHelper.RED.to_html(false)]
+	info_label.text = tr("CLOSE_APP_WHILE_DOWNLOADING_WARNING_LABEL").format({"color": ColorHelper.RED.to_html(false)})
 
 
 func _on_close_app_button_pressed() -> void:
