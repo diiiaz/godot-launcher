@@ -5,8 +5,7 @@ enum SORT_METHOD {
 	NAME,
 	DATE
 }
-
-const DEFAULT_ICON_PATH = "res://builds/icons/default_icon.svg"
+const DEFAULT_ICON_PATH = "res://assets/textures/icons/default_icon.svg"
 const PROJECT_ICON_NAME = "icon.svg"
 const TAGS_GROUP_NAME = "projects"
 
@@ -50,6 +49,8 @@ func delete_project(project: Project) -> Error:
 		return error
 	ToastsManager.create_info_toast(tr("TOAST_DELETED_PROJECT") % [project.get_name()])
 	update_projects()
+	if UserDataManager.get_user_data().projects_selected_builds.has(project.get_path()):
+		UserDataManager.get_user_data().projects_selected_builds.erase(project.get_path())
 	return error
 
 
@@ -120,8 +121,8 @@ func create_project(project_name: String, project_path: String, build: Build) ->
 	if not DirAccess.dir_exists_absolute(project_path):
 		DirAccess.make_dir_recursive_absolute(project_path)
 	ProjectConfigFile.create_project_config_file(project_name, project_path, build.get_version_name())
-	DirAccess.copy_absolute(DEFAULT_ICON_PATH, project_path + PROJECT_ICON_NAME)
-	UserDataManager.get_user_data().projects_selected_version[project_path] = build.get_path().get_file()
+	DirAccess.copy_absolute(ProjectSettings.globalize_path(DEFAULT_ICON_PATH), project_path.path_join(PROJECT_ICON_NAME))
+	UserDataManager.get_user_data().projects_selected_builds[project_path] = build.get_path().get_file()
 	UserDataManager.save_user_data()
 	await get_tree().process_frame
 	ToastsManager.create_info_toast(tr("TOAST_CREATED_NEW_PROJECT") % [project_name])
