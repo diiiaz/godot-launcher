@@ -1,6 +1,8 @@
 extends RefCounted
 class_name Project
 
+const DEFAULT_ICON = preload("uid://b2qapuue4p2mj")
+
 var _config_version: int = 0
 var _name: String = ""
 var _path: String = ""
@@ -95,10 +97,10 @@ func get_path() -> String: return _path
 func get_modified_time() -> int: return _modified_time
 func get_icon() -> Texture2D:
 	if not FileAccess.file_exists(ProjectSettings.globalize_path(_icon_path)):
-		return load("res://assets/textures/icons/default_icon.svg")
+		return DEFAULT_ICON
 	var image = Image.load_from_file(ProjectSettings.globalize_path(_icon_path))
 	if image == null:
-		return load("res://assets/textures/icons/default_icon.svg")
+		return DEFAULT_ICON
 	return ImageTexture.create_from_image(image)
 func get_tags() -> Array[String]: return _tags
 func has_tags() -> bool: return not get_tags().is_empty()
