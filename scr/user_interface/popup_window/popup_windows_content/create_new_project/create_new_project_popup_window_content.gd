@@ -94,6 +94,10 @@ func _on_change_projects_path_button_pressed() -> void:
 func _on_file_dialog_selected_directory(dir_path: String) -> void:
 	SettingsManager.set_setting(Settings.SETTING.PROJECTS_PATH, dir_path)
 
+func _on_open_directory_button_pressed() -> void:
+	OS.shell_open(SettingsManager.get_setting(Settings.SETTING.PROJECTS_PATH))
+
+
 
 func _on_create_button_pressed() -> void:
 	user_input_result.emit(CreateNewProjectResult.new(CreateNewProjectResult.ACTION.CREATE).setup_new_project(_current_project_name, _current_project_path, _selected_build))
@@ -111,7 +115,6 @@ func _on_cancel_button_pressed() -> void:
 func _on_build_option_button_selected_build(build: Build) -> void:
 	_selected_build = build
 	update()
-
 
 
 class CreateNewProjectResult extends PopupWindowContent.Result:
@@ -141,12 +144,3 @@ class CreateNewProjectResult extends PopupWindowContent.Result:
 	func get_result_as_text() -> String: return "action: " + ACTION.keys()[get_action()] + ", project_name: " + _project_name + ", project_path: " + _project_path + ", project_build: " + _project_build.get_name() if _project_build != null else "none"
 	func has_canceled() -> bool: return _action == ACTION.CANCEL
 	func is_editing_after() -> bool: return _action == ACTION.CREATE_EDIT
-
-
-class NewProjectData extends RefCounted:
-	var _name: String
-	var _path: String
-	
-	func _init(name: String, path: String) -> void:
-		_name = name
-		_path = path

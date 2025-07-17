@@ -5,6 +5,7 @@
 [ext_resource type="Theme" uid="uid://bimvjqmjjj4jh" path="res://assets/resources/theme/main.tres" id="1_xwwp3"]
 [ext_resource type="FontFile" uid="uid://bjr2pe6fnpvm3" path="res://assets/resources/fonts/NotoSans-Bold.ttf" id="4_23glk"]
 [ext_resource type="Texture2D" uid="uid://dsrtamnxenut4" path="res://assets/textures/icons/sign.svg" id="4_c25v3"]
+[ext_resource type="Texture2D" uid="uid://bae0ajbegaon1" path="res://assets/textures/icons/history.svg" id="5_2mhnf"]
 [ext_resource type="Script" uid="uid://bkiinajnf8i6g" path="res://scr/user_interface/buttons/options/build/project_build_option_button.gd" id="5_tw8s5"]
 [ext_resource type="Texture2D" uid="uid://dnd32ay7p67xu" path="res://assets/textures/icons/edit.svg" id="6_wo43g"]
 [ext_resource type="Texture2D" uid="uid://defpw5vdhd5vj" path="res://assets/textures/icons/play.svg" id="8_2mhnf"]
@@ -15,9 +16,7 @@
 [sub_resource type="LabelSettings" id="LabelSettings_xwwp3"]
 font = ExtResource("4_23glk")
 
-[sub_resource type="LabelSettings" id="LabelSettings_ou0my"]
-font_size = 12
-font_color = Color(1, 1, 1, 0.5882353)
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_2mhnf"]
 
 [sub_resource type="LabelSettings" id="LabelSettings_cer51"]
 font_size = 12
@@ -87,13 +86,36 @@ unique_name_in_owner = true
 layout_mode = 2
 size_flags_horizontal = 3
 
-[node name="ProjectPathLabel" type="Label" parent="MarginContainer/ContentContainer/MainInfoContainer/ProjectNamePathTagsContainer"]
+[node name="ProjectPathLabel" type="RichTextLabel" parent="MarginContainer/ContentContainer/MainInfoContainer/ProjectNamePathTagsContainer"]
 unique_name_in_owner = true
+modulate = Color(1, 1, 1, 0.5882353)
 layout_mode = 2
+size_flags_horizontal = 0
+theme_override_font_sizes/normal_font_size = 12
+theme_override_font_sizes/bold_font_size = 12
+theme_override_font_sizes/bold_italics_font_size = 12
+theme_override_font_sizes/italics_font_size = 12
+theme_override_font_sizes/mono_font_size = 12
+theme_override_styles/focus = SubResource("StyleBoxEmpty_2mhnf")
 text = "res://project/path/"
-label_settings = SubResource("LabelSettings_ou0my")
+fit_content = true
+autowrap_mode = 0
 vertical_alignment = 1
-text_overrun_behavior = 3
+
+[node name="ProjectPathButton" type="Button" parent="MarginContainer/ContentContainer/MainInfoContainer/ProjectNamePathTagsContainer/ProjectPathLabel"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 0
+tooltip_text = "PROJECT_OPEN_DIRECTORY"
+mouse_behavior_recursive = 2
+mouse_default_cursor_shape = 2
+theme_type_variation = &"ButtonSimple"
+theme_override_font_sizes/font_size = 12
+alignment = 0
 
 [node name="SubInfoContainer" type="VBoxContainer" parent="MarginContainer/ContentContainer"]
 modulate = Color(1, 1, 1, 0.5882353)
@@ -107,7 +129,7 @@ size_flags_horizontal = 8
 
 [node name="TimeTextureRect" type="TextureRect" parent="MarginContainer/ContentContainer/SubInfoContainer/LastEditedContainer"]
 layout_mode = 2
-texture = ExtResource("3_cer51")
+texture = ExtResource("5_2mhnf")
 stretch_mode = 5
 
 [node name="LastEditedLabel" type="Label" parent="MarginContainer/ContentContainer/SubInfoContainer/LastEditedContainer"]
@@ -174,6 +196,7 @@ icon = ExtResource("9_xwwp3")
 icon_alignment = 1
 
 [connection signal="gui_input" from="MainButton" to="." method="_on_main_button_gui_input"]
+[connection signal="pressed" from="MarginContainer/ContentContainer/MainInfoContainer/ProjectNamePathTagsContainer/ProjectPathLabel/ProjectPathButton" to="." method="_on_project_path_button_pressed"]
 [connection signal="selected_build" from="MarginContainer/ContentContainer/ProjectBuildOptionButton" to="." method="_on_project_build_option_button_selected_build"]
 [connection signal="pressed" from="MarginContainer/ContentContainer/HBoxContainer/PlayButton" to="." method="_on_play_button_pressed"]
 [connection signal="pressed" from="MarginContainer/ContentContainer/HBoxContainer/EditButton" to="." method="_on_edit_button_pressed"]

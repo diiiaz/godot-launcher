@@ -1,9 +1,10 @@
-[gd_scene load_steps=8 format=3 uid="uid://dub2pm32m75ws"]
+[gd_scene load_steps=9 format=3 uid="uid://dub2pm32m75ws"]
 
 [ext_resource type="Theme" uid="uid://bimvjqmjjj4jh" path="res://assets/resources/theme/main.tres" id="1_2e1g5"]
 [ext_resource type="Script" uid="uid://xu83malhcw3f" path="res://scr/user_interface/popup_window/popup_windows_content/create_new_project/create_new_project_popup_window_content.gd" id="1_635uj"]
 [ext_resource type="Texture2D" uid="uid://bw8oxtvrnpwq3" path="res://assets/textures/icons/status_error.svg" id="3_5l4pr"]
 [ext_resource type="Texture2D" uid="uid://2nb7jfyv18y5" path="res://assets/textures/icons/folder-search.svg" id="3_23848"]
+[ext_resource type="Texture2D" uid="uid://dvxij2arp75im" path="res://assets/textures/icons/folder-open.svg" id="4_n7r38"]
 [ext_resource type="Script" uid="uid://cgxcwg3yp3k87" path="res://scr/user_interface/buttons/options/build/build_option_button.gd" id="5_5l4pr"]
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_635uj"]
@@ -91,6 +92,13 @@ tooltip_text = "CHANGE_PROJECTS_PATH"
 mouse_behavior_recursive = 2
 mouse_default_cursor_shape = 2
 icon = ExtResource("3_23848")
+
+[node name="OpenDirectoryButton" type="Button" parent="VBoxContainer/ProjectPathContainer/HBoxContainer"]
+layout_mode = 2
+tooltip_text = "TOOLTIP_OPEN_DIRECTORY_PATH"
+mouse_behavior_recursive = 2
+mouse_default_cursor_shape = 2
+icon = ExtResource("4_n7r38")
 
 [node name="ProjectPathStatusContainer" type="HBoxContainer" parent="VBoxContainer"]
 layout_mode = 2
@@ -192,6 +200,7 @@ text = "CANCEL"
 
 [connection signal="text_changed" from="VBoxContainer/ProjectNameContainer/ProjectNameLineEdit" to="." method="_on_project_name_line_edit_text_changed"]
 [connection signal="pressed" from="VBoxContainer/ProjectPathContainer/HBoxContainer/ChangeProjectsPathButton" to="." method="_on_change_projects_path_button_pressed"]
+[connection signal="pressed" from="VBoxContainer/ProjectPathContainer/HBoxContainer/OpenDirectoryButton" to="." method="_on_open_directory_button_pressed"]
 [connection signal="selected_build" from="VBoxContainer/BuildContainer/BuildOptionButton" to="." method="_on_build_option_button_selected_build"]
 [connection signal="pressed" from="VBoxContainer/BottomContainer/BottomButtonsContainer/CreateButton" to="." method="_on_create_button_pressed"]
 [connection signal="pressed" from="VBoxContainer/BottomContainer/BottomButtonsContainer/CreateEditButton" to="." method="_on_create_edit_button_pressed"]

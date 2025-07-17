@@ -1,42 +1,66 @@
-[gd_scene load_steps=5 format=3 uid="uid://binhesqtrk4nk"]
+[gd_scene load_steps=6 format=3 uid="uid://binhesqtrk4nk"]
 
 [ext_resource type="Script" uid="uid://d4igxh1pxjvg0" path="res://scr/user_interface/pages/settings_page/setting_controllers/path_setting_controller.gd" id="1_7ykc2"]
 [ext_resource type="Theme" uid="uid://bimvjqmjjj4jh" path="res://assets/resources/theme/main.tres" id="1_8ym3t"]
-[ext_resource type="Texture2D" uid="uid://dwwmeuthijf74" path="res://assets/textures/icons/browse_folder.svg" id="3_emedi"]
+[ext_resource type="Texture2D" uid="uid://2nb7jfyv18y5" path="res://assets/textures/icons/folder-search.svg" id="3_xb512"]
+[ext_resource type="Texture2D" uid="uid://dvxij2arp75im" path="res://assets/textures/icons/folder-open.svg" id="4_xb512"]
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_emedi"]
 
-[node name="PathController" type="PanelContainer" node_paths=PackedStringArray("line_edit")]
+[node name="PathController" type="PanelContainer" node_paths=PackedStringArray("path_label")]
 anchors_preset = 10
 anchor_right = 1.0
 offset_bottom = 29.0
 grow_horizontal = 2
+mouse_filter = 1
+mouse_behavior_recursive = 1
 theme = ExtResource("1_8ym3t")
 theme_override_styles/panel = SubResource("StyleBoxEmpty_emedi")
 script = ExtResource("1_7ykc2")
-line_edit = NodePath("HBoxContainer/LineEdit")
+path_label = NodePath("HBoxContainer/PanelContainer/MarginContainer/PathLabel")
 
 [node name="HBoxContainer" type="HBoxContainer" parent="."]
 layout_mode = 2
 
-[node name="LineEdit" type="LineEdit" parent="HBoxContainer"]
-unique_name_in_owner = true
+[node name="PanelContainer" type="PanelContainer" parent="HBoxContainer"]
+show_behind_parent = true
 layout_mode = 2
 size_flags_horizontal = 3
-editable = false
-context_menu_enabled = false
-emoji_menu_enabled = false
-virtual_keyboard_enabled = false
-virtual_keyboard_show_on_focus = false
-shortcut_keys_enabled = false
-middle_mouse_paste_enabled = false
-selecting_enabled = false
-drag_and_drop_selection_enabled = false
 
-[node name="Button" type="Button" parent="HBoxContainer"]
+[node name="MarginContainer" type="MarginContainer" parent="HBoxContainer/PanelContainer"]
+layout_mode = 2
+theme_override_constants/margin_left = 8
+theme_override_constants/margin_top = 2
+theme_override_constants/margin_right = 8
+theme_override_constants/margin_bottom = 2
+
+[node name="PathLabel" type="Label" parent="HBoxContainer/PanelContainer/MarginContainer"]
+unique_name_in_owner = true
+modulate = Color(1, 1, 1, 0.5882353)
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 1
+mouse_filter = 0
+mouse_behavior_recursive = 2
+mouse_default_cursor_shape = 16
+horizontal_alignment = 2
+vertical_alignment = 1
+text_overrun_behavior = 3
+text_direction = 2
+
+[node name="BrowseDirectoriesButton" type="Button" parent="HBoxContainer"]
 layout_mode = 2
 tooltip_text = "TOOLTIP_BROWSE_DIRECTORY"
+mouse_behavior_recursive = 2
 mouse_default_cursor_shape = 2
-icon = ExtResource("3_emedi")
+icon = ExtResource("3_xb512")
 
-[connection signal="pressed" from="HBoxContainer/Button" to="." method="_on_button_pressed"]
+[node name="OpenDirectoryButton" type="Button" parent="HBoxContainer"]
+layout_mode = 2
+tooltip_text = "TOOLTIP_OPEN_DIRECTORY_PATH"
+mouse_behavior_recursive = 2
+mouse_default_cursor_shape = 2
+icon = ExtResource("4_xb512")
+
+[connection signal="pressed" from="HBoxContainer/BrowseDirectoriesButton" to="." method="_on_browse_directories_button_pressed"]
+[connection signal="pressed" from="HBoxContainer/OpenDirectoryButton" to="." method="_on_open_directory_button_pressed"]

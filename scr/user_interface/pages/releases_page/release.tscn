@@ -1,14 +1,13 @@
-[gd_scene load_steps=13 format=3 uid="uid://cba7grhb7105l"]
+[gd_scene load_steps=12 format=3 uid="uid://cba7grhb7105l"]
 
 [ext_resource type="Theme" uid="uid://bimvjqmjjj4jh" path="res://assets/resources/theme/main.tres" id="1_qqm0m"]
 [ext_resource type="Script" uid="uid://wk8rn28yegs6" path="res://scr/user_interface/pages/releases_page/release.gd" id="2_tl4kx"]
 [ext_resource type="FontFile" uid="uid://bjr2pe6fnpvm3" path="res://assets/resources/fonts/NotoSans-Bold.ttf" id="4_p3w3g"]
 [ext_resource type="Texture2D" uid="uid://b7t2klcgpvtjc" path="res://assets/textures/icons/download.svg" id="4_pl0eu"]
+[ext_resource type="Texture2D" uid="uid://bae0ajbegaon1" path="res://assets/textures/icons/history.svg" id="4_tl4kx"]
 [ext_resource type="Texture2D" uid="uid://c8g6hswy4qaqt" path="res://assets/textures/icons/code.svg" id="6_snplk"]
 [ext_resource type="Texture2D" uid="uid://mwa7yfdar6j8" path="res://assets/textures/icons/delete.svg" id="6_v3i70"]
-[ext_resource type="Texture2D" uid="uid://cccs44sn3e3b6" path="res://assets/textures/icons/clock.svg" id="6_wsl2n"]
 [ext_resource type="Texture2D" uid="uid://btxmm1xnhfibv" path="res://assets/textures/icons/script.svg" id="7_snplk"]
-[ext_resource type="Texture2D" uid="uid://dnciiiqdshgmn" path="res://assets/textures/icons/arrow_right.svg" id="9_pl0eu"]
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_xwwp3"]
 
@@ -90,7 +89,7 @@ size_flags_horizontal = 8
 
 [node name="TimeTextureRect" type="TextureRect" parent="VBoxContainer/MarginContainer/ContentContainer/SubInfoContainer/ReleaseTimeContainer"]
 layout_mode = 2
-texture = ExtResource("6_wsl2n")
+texture = ExtResource("4_tl4kx")
 stretch_mode = 5
 
 [node name="ReleaseTimeLabel" type="Label" parent="VBoxContainer/MarginContainer/ContentContainer/SubInfoContainer/ReleaseTimeContainer"]
@@ -160,16 +159,8 @@ mouse_default_cursor_shape = 2
 icon = ExtResource("7_snplk")
 icon_alignment = 1
 
-[node name="ViewAllBuildsButton" type="Button" parent="VBoxContainer/MarginContainer/ContentContainer/ButtonsContainer"]
-layout_mode = 2
-tooltip_text = "TOOLTIP_SHOW_ALL_BUILDS"
-mouse_behavior_recursive = 2
-mouse_default_cursor_shape = 2
-icon = ExtResource("9_pl0eu")
-
 [connection signal="pressed" from="MainButton" to="." method="_on_main_button_pressed"]
 [connection signal="pressed" from="VBoxContainer/MarginContainer/ContentContainer/ButtonsContainer/DownloadRecommendedBuildButton" to="." method="_on_download_recommended_build_button_pressed"]
 [connection signal="pressed" from="VBoxContainer/MarginContainer/ContentContainer/ButtonsContainer/DeleteRecommendedBuildButton" to="." method="_on_delete_recommended_build_button_pressed"]
 [connection signal="pressed" from="VBoxContainer/MarginContainer/ContentContainer/ButtonsContainer/OpenSourceButton" to="." method="_on_open_source_button_pressed"]
 [connection signal="pressed" from="VBoxContainer/MarginContainer/ContentContainer/ButtonsContainer/OpenChangelogButton" to="." method="_on_open_changelog_button_pressed"]
-[connection signal="pressed" from="VBoxContainer/MarginContainer/ContentContainer/ButtonsContainer/ViewAllBuildsButton" to="." method="_on_view_all_builds_button_pressed"]

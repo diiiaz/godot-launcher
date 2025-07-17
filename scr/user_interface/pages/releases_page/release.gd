@@ -79,9 +79,6 @@ func _on_main_button_pressed() -> void:
 func _on_delete_recommended_build_button_pressed() -> void:
 	BuildsManager.uninstall_build(_release.get_recommended_build())
 
-func _on_view_all_builds_button_pressed() -> void:
-	update_builds()
-
 
 func _on_release_build_downloaded() -> void:
 	update()

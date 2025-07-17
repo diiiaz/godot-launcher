@@ -8,7 +8,7 @@ const DELETE_PROJECT_POPUP_WINDOW_CONTENT = preload("uid://qwl6em84n25p")
 
 @onready var icon_texture_rect: TextureRect = %IconTextureRect
 @onready var project_name_label: Label = %ProjectNameLabel
-@onready var project_path_label: Label = %ProjectPathLabel
+@onready var project_path_label: RichTextLabel = %ProjectPathLabel
 
 @onready var last_edited_label: Label = %LastEditedLabel
 @onready var version_label: Label = %VersionLabel
@@ -75,3 +75,7 @@ func _on_main_button_gui_input(event: InputEvent) -> void:
 	if event is InputEventMouseButton:
 		if event.button_mask == MOUSE_BUTTON_MASK_LEFT and event.double_click:
 			ProjectsManager.run_project(_build, _project.get_path(), true)
+
+
+func _on_project_path_button_pressed() -> void:
+	OS.shell_open(_project.get_path())
