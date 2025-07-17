@@ -1,5 +1,7 @@
 extends Page
 
+const CREATE_NEW_PROJECT_POPUP_WINDOW_CONTENT = preload("uid://dub2pm32m75ws")
+
 @onready var sorting_menu_button: SortingMenuButton = %SortingMenuButton
 @onready var tags_filter_menu_button: FilterMenuButton = %TagsFilterMenuButton
 @onready var projects_container: ProjectsContainer = %ProjectsContainer
@@ -115,3 +117,18 @@ func _on_page_controller_changed_page(page_index: int) -> void:
 
 func _on_reload_button_pressed() -> void:
 	ProjectsManager.update_projects()
+
+
+# ---------------------------------- Create New Project Button
+
+func _on_create_new_project_button_pressed() -> void:
+	var popup_content: CreateNewProjectPopupWindowContent = CREATE_NEW_PROJECT_POPUP_WINDOW_CONTENT.instantiate()
+	popup_content.user_input_result.connect(_on_create_new_project_window_content_user_input_result)
+	PopupWindowHelper.popup_window("CREATE_NEW_PROJECT", popup_content, get_viewport())
+
+func _on_create_new_project_window_content_user_input_result(result: CreateNewProjectPopupWindowContent.CreateNewProjectResult) -> void:
+	if result.has_canceled():
+		return
+	ProjectsManager.create_project(result.get_project_name(), result.get_project_path(), result.get_project_build())
+	if result.is_editing_after():
+		ProjectsManager.run_project(result.get_project_build(), result.get_project_path(), true)

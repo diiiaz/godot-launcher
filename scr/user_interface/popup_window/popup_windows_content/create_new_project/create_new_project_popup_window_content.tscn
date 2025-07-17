@@ -1,0 +1,198 @@
+[gd_scene load_steps=8 format=3 uid="uid://dub2pm32m75ws"]
+
+[ext_resource type="Theme" uid="uid://bimvjqmjjj4jh" path="res://assets/resources/theme/main.tres" id="1_2e1g5"]
+[ext_resource type="Script" uid="uid://xu83malhcw3f" path="res://scr/user_interface/popup_window/popup_windows_content/create_new_project/create_new_project_popup_window_content.gd" id="1_635uj"]
+[ext_resource type="Texture2D" uid="uid://bw8oxtvrnpwq3" path="res://assets/textures/icons/status_error.svg" id="3_5l4pr"]
+[ext_resource type="Texture2D" uid="uid://dwwmeuthijf74" path="res://assets/textures/icons/browse_folder.svg" id="3_23848"]
+[ext_resource type="Script" uid="uid://cgxcwg3yp3k87" path="res://scr/user_interface/buttons/options/build/build_option_button.gd" id="5_5l4pr"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_635uj"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_5l4pr"]
+
+[node name="CreateNewProjectPopupWindowContent" type="PanelContainer"]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_behavior_recursive = 1
+theme = ExtResource("1_2e1g5")
+theme_override_styles/panel = SubResource("StyleBoxEmpty_635uj")
+script = ExtResource("1_635uj")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="."]
+layout_mode = 2
+
+[node name="ProjectNameContainer" type="HBoxContainer" parent="VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 0
+
+[node name="ProjectNameLabel" type="Label" parent="VBoxContainer/ProjectNameContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_stretch_ratio = 0.4
+text = "PROJECT_NAME"
+
+[node name="ProjectNameLineEdit" type="LineEdit" parent="VBoxContainer/ProjectNameContainer"]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_horizontal = 3
+mouse_behavior_recursive = 2
+placeholder_text = "UNTITLED_PROJECT_NAME"
+select_all_on_focus = true
+caret_blink = true
+caret_blink_interval = 0.2
+
+[node name="ProjectPathContainer" type="HBoxContainer" parent="VBoxContainer"]
+layout_mode = 2
+
+[node name="ProjectPathLabel" type="Label" parent="VBoxContainer/ProjectPathContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_stretch_ratio = 0.4
+text = "PROJECT_PATH"
+
+[node name="HBoxContainer" type="HBoxContainer" parent="VBoxContainer/ProjectPathContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="PanelContainer" type="PanelContainer" parent="VBoxContainer/ProjectPathContainer/HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="MarginContainer" type="MarginContainer" parent="VBoxContainer/ProjectPathContainer/HBoxContainer/PanelContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_constants/margin_left = 8
+theme_override_constants/margin_top = 2
+theme_override_constants/margin_right = 8
+theme_override_constants/margin_bottom = 2
+
+[node name="ProjectPathLabel" type="Label" parent="VBoxContainer/ProjectPathContainer/HBoxContainer/PanelContainer/MarginContainer"]
+unique_name_in_owner = true
+modulate = Color(1, 1, 1, 0.5882353)
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 1
+mouse_filter = 0
+mouse_behavior_recursive = 2
+mouse_default_cursor_shape = 16
+theme_override_styles/focus = SubResource("StyleBoxEmpty_5l4pr")
+horizontal_alignment = 2
+vertical_alignment = 1
+text_overrun_behavior = 3
+text_direction = 2
+
+[node name="ChangeProjectsPathButton" type="Button" parent="VBoxContainer/ProjectPathContainer/HBoxContainer"]
+custom_minimum_size = Vector2(32, 32)
+layout_mode = 2
+tooltip_text = "CHANGE_PROJECTS_PATH"
+mouse_behavior_recursive = 2
+mouse_default_cursor_shape = 2
+icon = ExtResource("3_23848")
+
+[node name="ProjectPathStatusContainer" type="HBoxContainer" parent="VBoxContainer"]
+layout_mode = 2
+
+[node name="ProjectPathStatusTextureRect" type="TextureRect" parent="VBoxContainer/ProjectPathStatusContainer"]
+unique_name_in_owner = true
+layout_mode = 2
+texture = ExtResource("3_5l4pr")
+expand_mode = 3
+stretch_mode = 3
+
+[node name="ProjectPathStatusLabel" type="Label" parent="VBoxContainer/ProjectPathStatusContainer"]
+unique_name_in_owner = true
+modulate = Color(0.89411765, 0.36078432, 0.3137255, 1)
+custom_minimum_size = Vector2(500, 0)
+layout_mode = 2
+size_flags_horizontal = 3
+vertical_alignment = 1
+autowrap_mode = 3
+
+[node name="BuildContainer" type="HBoxContainer" parent="VBoxContainer"]
+layout_mode = 2
+
+[node name="ProjectPathLabel" type="Label" parent="VBoxContainer/BuildContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_stretch_ratio = 0.4
+text = "BUILD"
+
+[node name="BuildOptionButton" type="OptionButton" parent="VBoxContainer/BuildContainer"]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 4
+mouse_behavior_recursive = 2
+mouse_default_cursor_shape = 2
+selected = 0
+item_count = 1
+popup/item_0/text = "test"
+popup/item_0/id = 0
+script = ExtResource("5_5l4pr")
+
+[node name="BuildStatusContainer" type="HBoxContainer" parent="VBoxContainer"]
+layout_mode = 2
+
+[node name="BuildStatusTextureRect" type="TextureRect" parent="VBoxContainer/BuildStatusContainer"]
+unique_name_in_owner = true
+layout_mode = 2
+texture = ExtResource("3_5l4pr")
+expand_mode = 3
+stretch_mode = 3
+
+[node name="BuildStatusLabel" type="Label" parent="VBoxContainer/BuildStatusContainer"]
+unique_name_in_owner = true
+modulate = Color(0.89411765, 0.36078432, 0.3137255, 1)
+custom_minimum_size = Vector2(500, 0)
+layout_mode = 2
+size_flags_horizontal = 3
+vertical_alignment = 1
+autowrap_mode = 3
+
+[node name="BottomContainer" type="VBoxContainer" parent="VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 10
+
+[node name="HSeparator" type="HSeparator" parent="VBoxContainer/BottomContainer"]
+layout_mode = 2
+size_flags_vertical = 10
+
+[node name="BottomButtonsContainer" type="HBoxContainer" parent="VBoxContainer/BottomContainer"]
+layout_mode = 2
+size_flags_vertical = 10
+alignment = 1
+
+[node name="CreateButton" type="Button" parent="VBoxContainer/BottomContainer/BottomButtonsContainer"]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_horizontal = 3
+mouse_behavior_recursive = 2
+mouse_default_cursor_shape = 2
+theme_type_variation = &"ButtonGreen"
+text = "CREATE_PROJECT"
+
+[node name="CreateEditButton" type="Button" parent="VBoxContainer/BottomContainer/BottomButtonsContainer"]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_horizontal = 3
+mouse_behavior_recursive = 2
+mouse_default_cursor_shape = 2
+theme_type_variation = &"ButtonBlue"
+text = "CREATE_AND_EDIT_PROJECT"
+
+[node name="CancelButton" type="Button" parent="VBoxContainer/BottomContainer/BottomButtonsContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+mouse_behavior_recursive = 2
+mouse_default_cursor_shape = 2
+text = "CANCEL"
+
+[connection signal="text_changed" from="VBoxContainer/ProjectNameContainer/ProjectNameLineEdit" to="." method="_on_project_name_line_edit_text_changed"]
+[connection signal="pressed" from="VBoxContainer/ProjectPathContainer/HBoxContainer/ChangeProjectsPathButton" to="." method="_on_change_projects_path_button_pressed"]
+[connection signal="selected_build" from="VBoxContainer/BuildContainer/BuildOptionButton" to="." method="_on_build_option_button_selected_build"]
+[connection signal="pressed" from="VBoxContainer/BottomContainer/BottomButtonsContainer/CreateButton" to="." method="_on_create_button_pressed"]
+[connection signal="pressed" from="VBoxContainer/BottomContainer/BottomButtonsContainer/CreateEditButton" to="." method="_on_create_edit_button_pressed"]
+[connection signal="pressed" from="VBoxContainer/BottomContainer/BottomButtonsContainer/CancelButton" to="." method="_on_cancel_button_pressed"]
