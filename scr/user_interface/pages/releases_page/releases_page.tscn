@@ -6,7 +6,7 @@
 [ext_resource type="Texture2D" uid="uid://crfok6jqbtok8" path="res://assets/textures/icons/filter.svg" id="3_ui1e6"]
 [ext_resource type="Script" uid="uid://d2v6jrxq5gc5o" path="res://scr/user_interface/pages/projects_page/tags_filter_menu_button.gd" id="4_fs0x8"]
 [ext_resource type="PackedScene" uid="uid://dnlqgewn260hf" path="res://scr/user_interface/smooth_scroll_container.tscn" id="5_n7hxp"]
-[ext_resource type="Texture2D" uid="uid://br3x4ntyxch7q" path="res://assets/textures/icons/reload.svg" id="6_ui1e6"]
+[ext_resource type="Texture2D" uid="uid://6hb8qsb6ss1u" path="res://assets/textures/icons/refresh.svg" id="6_n7hxp"]
 [ext_resource type="Script" uid="uid://snvabnjbedt4" path="res://scr/user_interface/pages/releases_page/releases_container.gd" id="7_4iq68"]
 [ext_resource type="PackedScene" uid="uid://bm00jjwduad5r" path="res://scr/user_interface/page_controller/page_controller.tscn" id="7_plw72"]
 [ext_resource type="Script" uid="uid://nvmxqn3kgl1w" path="res://scr/user_interface/pages/releases_page/builds_container.gd" id="10_fs0x8"]
@@ -107,7 +107,7 @@ size_flags_vertical = 4
 tooltip_text = "TOOLTIP_CHECK_NEW_RELEASES"
 mouse_default_cursor_shape = 2
 theme_type_variation = &"ButtonSimple"
-icon = ExtResource("6_ui1e6")
+icon = ExtResource("6_n7hxp")
 
 [node name="HSeparator" type="HSeparator" parent="HboxContainer/LeftSide/LeftSideBackground/VBoxContainer"]
 layout_mode = 2

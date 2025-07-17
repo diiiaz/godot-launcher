@@ -10,10 +10,10 @@
 [ext_resource type="PackedScene" uid="uid://dnlqgewn260hf" path="res://scr/user_interface/smooth_scroll_container.tscn" id="7_u4cvd"]
 [ext_resource type="Script" uid="uid://d4nehq5l7bkeq" path="res://scr/user_interface/pages/projects_page/projects_container.gd" id="8_b7rr7"]
 [ext_resource type="Texture2D" uid="uid://c1vqp78tk630g" path="res://assets/textures/icons/godot_unalive.svg" id="8_fvatn"]
-[ext_resource type="Texture2D" uid="uid://br3x4ntyxch7q" path="res://assets/textures/icons/reload.svg" id="8_inwf5"]
-[ext_resource type="Texture2D" uid="uid://dwwmeuthijf74" path="res://assets/textures/icons/browse_folder.svg" id="9_6clk2"]
+[ext_resource type="Texture2D" uid="uid://2nb7jfyv18y5" path="res://assets/textures/icons/folder-search.svg" id="9_6clk2"]
 [ext_resource type="Texture2D" uid="uid://dqcte27m3tbeq" path="res://assets/textures/icons/package-plus.svg" id="9_ga52w"]
 [ext_resource type="PackedScene" uid="uid://bm00jjwduad5r" path="res://scr/user_interface/page_controller/page_controller.tscn" id="9_rgpje"]
+[ext_resource type="Texture2D" uid="uid://b14nvrif8sv4v" path="res://assets/textures/icons/folder-refresh.svg" id="9_u4cvd"]
 
 [node name="TAB_PROJECTS" type="Control"]
 layout_mode = 3
@@ -105,7 +105,7 @@ size_flags_vertical = 4
 tooltip_text = "TOOLTIP_REFRESH_PROJECTS"
 mouse_default_cursor_shape = 2
 theme_type_variation = &"ButtonSimple"
-icon = ExtResource("8_inwf5")
+icon = ExtResource("9_u4cvd")
 
 [node name="HSeparator" type="HSeparator" parent="VBoxContainer"]
 layout_mode = 2

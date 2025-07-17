@@ -3,7 +3,7 @@ extends Node
 
 const INFO_ICON_TEXTURE = preload("uid://3cxxjt1mj38b")
 const WARNING_ICON_TEXTURE = preload("uid://ccf6nx3dgn3h")
-const ERROR_ICON_TEXTURE = preload("uid://dv7lhvxpe776h")
+const ERROR_ICON_TEXTURE = preload("uid://bw8oxtvrnpwq3")
 const DOWNLOAD_ICON_TEXTURE = preload("uid://b7t2klcgpvtjc")
 
 const DEFAULT_ERROR_DURATION: float = 5.0
