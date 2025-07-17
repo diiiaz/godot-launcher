@@ -34,12 +34,12 @@ func check_for_new_releases() -> void:
 	
 	var can_check_for_new_version: bool = \
 		SettingsManager.get_setting(Settings.SETTING.CHECK_FOR_NEW_RELEASES_ON_STARTUP) and \
-		(current_time - UserDataManager.get_user_data().check_new_version_timestamp) > TimeHelper.CHECK_NEW_VERSION_TIME_SEC
+		(current_time - UserDataManager.get_user_data(UserData.USER_DATA.CHECK_NEW_VERSION_TIMESTAMP)) > TimeHelper.CHECK_NEW_VERSION_TIME_SEC
 	
 	if can_check_for_new_version:
 		if not await ConnectionTester.is_connected_to_internet():
 			return
-		UserDataManager.set_user_data("check_new_version_timestamp", current_time)
+		UserDataManager.set_user_data(UserData.USER_DATA.CHECK_NEW_VERSION_TIMESTAMP, current_time)
 		if not await BuildsFetcher.has_new_release():
 			return
 		ToastsManager.create_info_toast(TranslationServer.translate("TOAST_NEW_RELEASES"))

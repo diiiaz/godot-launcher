@@ -1,8 +1,6 @@
 extends Node
 #class_name SettingsManager
 
-#static var updated: Signal = StaticSignal.make()
-
 signal updated(setting: Settings.SETTING)
 
 const SETTINGS_PATH = "user://settings.tres"

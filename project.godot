@@ -29,6 +29,7 @@ BuildDownloader="*res://scr/globals/build_downloader.gd"
 BuildsManager="*res://scr/globals/builds_manager.gd"
 TagsManager="*res://scr/globals/tags_manager.gd"
 SettingsManager="*res://scr/globals/settings_manager.gd"
+UserDataManager="*res://scr/globals/user_data_manager.gd"
 
 [display]
 

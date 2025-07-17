@@ -72,8 +72,8 @@ func setup_sorting_menu_button() -> void:
 		SortingMenuButton.SortItem.new("SORT_LAST_MODIFIED", SORT_BY_DATE_ICON_TEXTURE, _sort_by_date_function).add_inverted_options("SORT_NEWEST", "SORT_OLDEST"),
 		SortingMenuButton.SortItem.new("SORT_NAME", SORT_BY_NAME_ICON_TEXTURE, _sort_by_name_function).add_inverted_options("SORT_DESCENDING", "SORT_ASCENDING"),
 	],
-	UserDataManager.get_user_data().project_sort_option_index,
-	UserDataManager.get_user_data().project_sort_inverted)
+	UserDataManager.get_user_data(UserData.USER_DATA.PROJECT_SORT_OPTION_INDEX),
+	UserDataManager.get_user_data(UserData.USER_DATA.PROJECT_SORT_INVERTED))
 
 
 func _sort_by_name_function(a: Project, b: Project, invert: bool = false) -> bool:
@@ -84,8 +84,8 @@ func _sort_by_date_function(a: Project, b: Project, invert: bool = false) -> boo
 
 
 func _on_sorting_menu_button_sorting_changed(sort_info: SortingMenuButton.SortInfo) -> void:
-	UserDataManager.set_user_data("project_sort_option_index", sort_info.get_selected_index())
-	UserDataManager.set_user_data("project_sort_inverted", sort_info.is_inverted())
+	UserDataManager.set_user_data(UserData.USER_DATA.PROJECT_SORT_OPTION_INDEX, sort_info.get_selected_index())
+	UserDataManager.set_user_data(UserData.USER_DATA.PROJECT_SORT_INVERTED, sort_info.is_inverted())
 	page_controller.travel_to_page(0)
 	projects_container.update()
 

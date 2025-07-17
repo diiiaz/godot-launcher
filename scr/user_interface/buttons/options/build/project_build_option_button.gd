@@ -14,7 +14,7 @@ func update() -> void:
 	if _project == null:
 		return
 	
-	var projects_selected_builds: Dictionary = UserDataManager.get_user_data().projects_selected_builds
+	var projects_selected_builds: Dictionary = UserDataManager.get_user_data(UserData.USER_DATA.PROJECTS_SELECTED_BUILDS)
 	
 	if projects_selected_builds.has(_project.get_path().trim_suffix("/")):
 		var index: int = 2

@@ -68,7 +68,7 @@ func _on_delete_project_popup_result(result: PopupWindowContent.Result) -> void:
 
 func _on_project_build_option_button_selected_build(build: Build) -> void:
 	_build = build
-	UserDataManager.get_user_data().projects_selected_builds[_project.get_path()] = _build.get_path().get_file()
+	UserDataManager.get_user_data(UserData.USER_DATA.PROJECTS_SELECTED_BUILDS)[_project.get_path()] = _build.get_path().get_file()
 	UserDataManager.save_user_data()
 
 func _on_main_button_gui_input(event: InputEvent) -> void:
