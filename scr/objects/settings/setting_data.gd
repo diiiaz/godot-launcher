@@ -3,11 +3,13 @@ class_name SettingData
 
 var _controller: Controller
 var _translation_key: String
+var _tooltip: String
 
 
-func _init(translation_key: String, controller: Controller) -> void:
+func _init(translation_key: String, tooltip: String, controller: Controller) -> void:
 	_translation_key = translation_key
 	_controller = controller
+	_tooltip = tooltip
 
 
 func get_controller() -> Controller:
@@ -15,6 +17,9 @@ func get_controller() -> Controller:
 
 func get_translation_key() -> String:
 	return _translation_key
+
+func get_tooltip() -> String:
+	return _tooltip
 
 
 

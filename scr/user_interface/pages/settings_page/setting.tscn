@@ -1,9 +1,20 @@
-[gd_scene load_steps=5 format=3 uid="uid://cjqesasmg6gkc"]
+[gd_scene load_steps=6 format=3 uid="uid://cjqesasmg6gkc"]
 
 [ext_resource type="Script" uid="uid://cegnebcqxtjbb" path="res://scr/user_interface/pages/settings_page/setting.gd" id="1_g1vd5"]
 [ext_resource type="Theme" uid="uid://bimvjqmjjj4jh" path="res://assets/resources/theme/main.tres" id="1_u82gr"]
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_u786y"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_4j565"]
+content_margin_left = 8.0
+content_margin_top = 6.0
+content_margin_right = 8.0
+content_margin_bottom = 6.0
+bg_color = Color(1, 1, 1, 0.078431375)
+corner_radius_top_left = 5
+corner_radius_top_right = 5
+corner_radius_bottom_right = 5
+corner_radius_bottom_left = 5
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_u82gr"]
 
@@ -17,11 +28,6 @@ mouse_behavior_recursive = 1
 theme = ExtResource("1_u82gr")
 theme_override_styles/panel = SubResource("StyleBoxEmpty_u786y")
 script = ExtResource("1_g1vd5")
-
-[node name="Button" type="Button" parent="."]
-layout_mode = 2
-mouse_behavior_recursive = 2
-theme_type_variation = &"ButtonSimple"
 
 [node name="MarginContainer" type="MarginContainer" parent="."]
 layout_mode = 2
@@ -39,6 +45,22 @@ size_flags_horizontal = 3
 text = "SETTING_LANGUAGE"
 vertical_alignment = 1
 text_overrun_behavior = 3
+
+[node name="HoverButton" type="Button" parent="MarginContainer/HBoxContainer/SettingNameLabel"]
+unique_name_in_owner = true
+layout_mode = 1
+anchors_preset = -1
+anchor_left = -0.013
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 0.19000053
+grow_horizontal = 2
+grow_vertical = 2
+mouse_behavior_recursive = 2
+theme_type_variation = &"ButtonSimple"
+theme_override_styles/pressed = SubResource("StyleBoxFlat_4j565")
+theme_override_styles/pressed_mirrored = SubResource("StyleBoxFlat_4j565")
+theme_override_styles/hover_pressed_mirrored = SubResource("StyleBoxFlat_4j565")
 
 [node name="ValueControllerContainer" type="PanelContainer" parent="MarginContainer/HBoxContainer"]
 unique_name_in_owner = true

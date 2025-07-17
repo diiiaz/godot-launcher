@@ -8,11 +8,13 @@ const PATH_CONTROLLER = preload("uid://binhesqtrk4nk")
 
 @onready var setting_name_label: Label = %SettingNameLabel
 @onready var value_controller_container: PanelContainer = %ValueControllerContainer
+@onready var hover_button: Button = %HoverButton
 
 
 func setup(setting: Settings.SETTING) -> void:
 	var setting_data: SettingData = SettingsManager.get_setting_data(setting)
 	setting_name_label.text = setting_data.get_translation_key()
+	hover_button.tooltip_text = setting_data.get_tooltip()
 	
 	var controller: SettingController
 	

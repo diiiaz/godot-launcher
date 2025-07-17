@@ -35,14 +35,38 @@ static var _setting_fallback_value_map: Dictionary[SETTING, Variant] = {
 }
 
 static var _setting_data_map: Dictionary[SETTING, SettingData] = {
-	SETTING.LANGUAGE: SettingData.new("SETTING_LANGUAGE", SettingData.ControllerOption.new().add_options(_get_translation_local_names())),
-	SETTING.BUILDS_PATH: SettingData.new("SETTING_BUILDS_PATH", SettingData.ControllerPath.new()),
-	SETTING.PROJECTS_PATH: SettingData.new("SETTING_PROJECTS_PATH", SettingData.ControllerPath.new()),
-	SETTING.MAX_ITEMS_PER_PAGE: SettingData.new("SETTING_MAX_ITEMS_PER_PAGE", SettingData.ControllerNumber.new().set_range(5, 30, 1)),
-	SETTING.USE_MONO_BUILDS: SettingData.new("SETTING_USE_MONO_BUILDS", SettingData.ControllerBoolean.new()),
-	SETTING.CHECK_FOR_NEW_ENGINE_RELEASES_ON_STARTUP: SettingData.new("SETTING_CHECK_FOR_NEW_ENGINE_RELEASES_ON_STARTUP", SettingData.ControllerBoolean.new()),
-	SETTING.CHECK_FOR_NEW_LAUNCHER_RELEASES_ON_STARTUP: SettingData.new("SETTING_CHECK_FOR_NEW_LAUNCHER_RELEASES_ON_STARTUP", SettingData.ControllerBoolean.new()),
-	SETTING.CLOSE_APP_ON_PROJECT_EDITING: SettingData.new("SETTING_CLOSE_APP_ON_PROJECT_EDITING", SettingData.ControllerBoolean.new()),
+	SETTING.LANGUAGE: SettingData.new(
+		"SETTING_LANGUAGE", "SETTING_TOOLTIP_LANGUAGE",
+		SettingData.ControllerOption.new().add_options(_get_translation_local_names())),
+	
+	SETTING.BUILDS_PATH: SettingData.new(
+		"SETTING_BUILDS_PATH", "SETTING_TOOLTIP_BUILDS_PATH",
+		SettingData.ControllerPath.new()),
+	
+	SETTING.PROJECTS_PATH: SettingData.new(
+		"SETTING_PROJECTS_PATH", "SETTING_TOOLTIP_PROJECTS_PATH",
+		SettingData.ControllerPath.new()),
+	
+	SETTING.MAX_ITEMS_PER_PAGE: SettingData.new(
+		"SETTING_MAX_ITEMS_PER_PAGE", "SETTING_TOOLTIP_MAX_ITEMS_PER_PAGE",
+		SettingData.ControllerNumber.new().set_range(5, 30, 1)),
+	
+	SETTING.USE_MONO_BUILDS: SettingData.new(
+		"SETTING_USE_MONO_BUILDS", "SETTING_TOOLTIP_USE_MONO_BUILDS",
+		SettingData.ControllerBoolean.new()),
+	
+	SETTING.CHECK_FOR_NEW_ENGINE_RELEASES_ON_STARTUP: SettingData.new(
+		"SETTING_CHECK_FOR_NEW_ENGINE_RELEASES_ON_STARTUP", "SETTING_TOOLTIP_CHECK_FOR_NEW_ENGINE_RELEASES_ON_STARTUP",
+		SettingData.ControllerBoolean.new()),
+	
+	SETTING.CHECK_FOR_NEW_LAUNCHER_RELEASES_ON_STARTUP: SettingData.new(
+		"SETTING_CHECK_FOR_NEW_LAUNCHER_RELEASES_ON_STARTUP", "SETTING_TOOLTIP_CHECK_FOR_NEW_LAUNCHER_RELEASES_ON_STARTUP",
+		SettingData.ControllerBoolean.new()),
+	
+	SETTING.CLOSE_APP_ON_PROJECT_EDITING: SettingData.new(
+		"SETTING_CLOSE_APP_ON_PROJECT_EDITING", "SETTING_TOOLTIP_CLOSE_APP_ON_PROJECT_EDITING",
+		SettingData.ControllerBoolean.new()),
+	
 }
 
 static var _categories: Array[SettingCategory] = [
