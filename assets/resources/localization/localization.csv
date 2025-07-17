@@ -1,133 +1,133 @@
-                                               ,en-US                                                                                                                                                                        ,fr-FR
-LOCAL_NAME                                     ,English                                                                                                                                                                      ,Français
-                                               ,                                                                                                                                                                             ,
-# Core UI Elements
-OR                                             ,or                                                                                                                                                                           ,ou
-ON                                             ,On                                                                                                                                                                           ,On
-SEARCH                                         ,Search                                                                                                                                                                       ,Rechercher
-CLOSE                                          ,Close                                                                                                                                                                        ,Fermer
-BUILD                                          ,Build                                                                                                                                                                        ,Build
-TEMPLATES                                      ,Templates                                                                                                                                                                    ,Modèles
-CANCEL                                         ,Cancel                                                                                                                                                                       ,Annuler
-CLEAR                                          ,Clear                                                                                                                                                                        ,Nettoyer
+,en-US,fr-FR
+LOCAL_NAME,English,Français
+,,
+# Core UI Elements,,
+OR,or,ou
+ON,On,On
+SEARCH,Search,Rechercher
+CLOSE,Close,Fermer
+BUILD,Build,Build
+TEMPLATES,Templates,Modèles
+CANCEL,Cancel,Annuler
+CLEAR,Clear,Nettoyer
 
-# Project Management
-PROJECT_NAME                                   ,Project name                                                                                                                                                                 ,Nom du projet
-PROJECT_PATH                                   ,Project path                                                                                                                                                                 ,Répertoire du projet
-PROJECT_OPEN_DIRECTORY                         ,Open project directory                                                                                                                                                       ,Ouvrir le répertoire du projet
-RENDERER                                       ,Renderer                                                                                                                                                                     ,Moteur de rendu
-VERSION_CONTROL_METADATA                       ,Version control metadata                                                                                                                                                     ,Métadonnées de contrôle de version
-CREATE_NEW_PROJECT                             ,Create new project                                                                                                                                                           ,Créer un nouveau projet
-CREATE_PROJECT                                 ,Create project                                                                                                                                                               ,Créer le projet
-CREATE_AND_EDIT_PROJECT                        ,Create & edit project                                                                                                                                                        ,Créer et modifier un projet
-DEFAULT_NEW_GAME_PROJECT_NAME                  ,New game project                                                                                                                                                             ,Nouveau projet de jeu
-UNTITLED_PROJECT_NAME                          ,Untitled                                                                                                                                                                     ,Sans titre
-CHANGE_PROJECTS_PATH                           ,Change projects path                                                                                                                                                         ,Modifier le chemin des projets
-DELETE_PROJECT_CONFIRMATION                    ,"I understand, delete {project_name}"                                                                                                                                        ,"Je comprends supprimer {project_name}"
-DELETE_PROJECT_WARNING_LABEL                   ,"This will delete the project [color={color}]{project_name}[/color] from your computer. Godot Launcher will try to place it in the Recycle Bin, but this is not guaranteed." ,"Cela supprimera le projet [color={color}]{project_name}[/color] de votre ordinateur. Godot Launcher essaiera de le placer dans la corbeille, mais ce n'est pas garanti."
-INFO_PROJECT_DIR_CREATE_AUTO                   ,The project directory will be automatically created                                                                                                                          ,Le répertoire du projet sera créé automatiquement
-INFO_BUILD_VALID                               ,Build is valid                                                                                                                                                               ,Le build n'est pas valide
-INFO_BUILD_NULL                                ,"No build selected, select one to continue"                                                                                                                                  ,"Aucun build selectionée, choisisser en un pour continuer"
+# Project Management,,
+PROJECT_NAME,Project name,Nom du projet
+PROJECT_PATH,Project path,Répertoire du projet
+PROJECT_OPEN_DIRECTORY,Open project directory,Ouvrir le répertoire du projet
+RENDERER,Renderer,Moteur de rendu
+VERSION_CONTROL_METADATA,Version control metadata,Métadonnées de contrôle de version
+CREATE_NEW_PROJECT,Create new project,Créer un nouveau projet
+CREATE_PROJECT,Create project,Créer le projet
+CREATE_AND_EDIT_PROJECT,Create & edit project,Créer et modifier un projet
+DEFAULT_NEW_GAME_PROJECT_NAME,New game project,Nouveau projet de jeu
+UNTITLED_PROJECT_NAME,Untitled,Sans titre
+CHANGE_PROJECTS_PATH,Change projects path,Modifier le chemin des projets
+DELETE_PROJECT_CONFIRMATION,"I understand, delete {project_name}","Je comprends supprimer {project_name}"
+DELETE_PROJECT_WARNING_LABEL,"This will delete the project [color={color}]{project_name}[/color] from your computer. Godot Launcher will try to place it in the Recycle Bin, but this is not guaranteed.","Cela supprimera le projet [color={color}]{project_name}[/color] de votre ordinateur. Godot Launcher essaiera de le placer dans la corbeille, mais ce n'est pas garanti."
+INFO_PROJECT_DIR_CREATE_AUTO,The project directory will be automatically created,Le répertoire du projet sera créé automatiquement
+INFO_BUILD_VALID,Build is valid,Le build n'est pas valide
+INFO_BUILD_NULL,"No build selected, select one to continue","Aucun build selectionée, choisisser en un pour continuer"
 
-# Tab Sections
-TAB_PROJECTS                                   ,Projects                                                                                                                                                                     ,Projets
-NO_PROJECTS_FOUND_IN_DIR                       ,No projects found in [color={color}]{dir_path}                                                                                                                               ,Aucun projet trouvé dans [color={color}]{dir_path}
-TAB_RELEASES                                   ,Releases                                                                                                                                                                     ,Versions
-INFO_NO_BUILDS_SELECTED                        ,Select a Release to see Builds                                                                                                                                               ,Sélectionner une version pour voir les builds
-DOWNLOADED_BUILDS_AMOUNT                       ,{builds_downloaded_amount} build(s) downloaded                                                                                                                               ,{builds_downloaded_amount} build(s) téléchargée(s)
-TAB_SETTINGS                                   ,Settings                                                                                                                                                                     ,Paramètres
+# Tab Sections,,
+TAB_PROJECTS,Projects,Projets
+NO_PROJECTS_FOUND_IN_DIR,No projects found in [color={color}]{dir_path},Aucun projet trouvé dans [color={color}]{dir_path}
+TAB_RELEASES,Releases,Versions
+INFO_NO_BUILDS_SELECTED,Select a Release to see Builds,Sélectionner une version pour voir les builds
+DOWNLOADED_BUILDS_AMOUNT,{builds_downloaded_amount} build(s) downloaded,{builds_downloaded_amount} build(s) téléchargée(s)
+TAB_SETTINGS,Settings,Paramètres
 
-# Build Management
-NO_BUILD_SELECTED                              ,No build selected                                                                                                                                                            ,Aucune build sélectionnée
-SELECT_BUILD                                   ,Select a build                                                                                                                                                               ,Sélectionner une build
-NO_BUILDS_AVAILABLE                            ,No builds available                                                                                                                                                          ,Aucune build disponible
-SELECT_PROJECT_DIRECTORY                       ,Select projects directory                                                                                                                                                    ,Sélectionnez le répertoire des projets
-LOADING_RELEASES                               ,Loading releases ...                                                                                                                                                         ,Chargement des versions ...
-CLOSE_APP_WHILE_DOWNLOADING_WARNING_LABEL      ,"Please keep the application open until the end of downloading, [color={color}]as interrupting the process is not recommended and can lead to corruption."                        ,"Veuillez garder l'application ouverte jusqu'à la fin du téléchargement. [color={color}]Il est déconseillé d'interrompre le processus, car cela pourrait entraîner une corruption."
-CLOSE_APP                                      ,Close app                                                                                                                                                                    ,Fermer l'application
+# Build Management,,
+NO_BUILD_SELECTED,No build selected,Aucune build sélectionnée
+SELECT_BUILD,Select a build,Sélectionner une build
+NO_BUILDS_AVAILABLE,No builds available,Aucune build disponible
+SELECT_PROJECT_DIRECTORY,Select projects directory,Sélectionnez le répertoire des projets
+LOADING_RELEASES,Loading releases ...,Chargement des versions ...
+CLOSE_APP_WHILE_DOWNLOADING_WARNING_LABEL,"Please keep the application open until the end of downloading, [color={color}]as interrupting the process is not recommended and can lead to corruption.","Veuillez garder l'application ouverte jusqu'à la fin du téléchargement. [color={color}]Il est déconseillé d'interrompre le processus, car cela pourrait entraîner une corruption."
+CLOSE_APP,Close app,Fermer l'application
 
-# Sorting & Filtering
-SORT_LAST_MODIFIED                             ,Last modified                                                                                                                                                                ,Dernière modification
-SORT_NAME                                      ,Name                                                                                                                                                                         ,Nom
-SORT_NEWEST                                    ,Newest                                                                                                                                                                       ,Plus récent
-SORT_OLDEST                                    ,Oldest                                                                                                                                                                       ,Plus ancien
-SORT_DESCENDING                                ,Descending                                                                                                                                                                   ,Décroissant
-SORT_ASCENDING                                 ,Ascending                                                                                                                                                                    ,Croissant
-SORT_RELEASED_TIME                             ,Release Time                                                                                                                                                                 ,Heure de sortie
-FILTER_TAGS                                    ,Filter Tags                                                                                                                                                                  ,Filtrer par tags
-FILTER_PROJECTS                                ,Filter Projects                                                                                                                                                              ,Filtrer les projets
-FILTER_RELEASES                                ,Filter Releases                                                                                                                                                              ,Filtrer les versions
-FILTER_BUILDS                                  ,Filter Builds                                                                                                                                                                ,Filtrer les builds
-FILTER_SETTINGS                                ,Filter Settings                                                                                                                                                              ,Filtrer les paramètres
+# Sorting & Filtering,,
+SORT_LAST_MODIFIED,Last modified,Dernière modification
+SORT_NAME,Name,Nom
+SORT_NEWEST,Newest,Plus récent
+SORT_OLDEST,Oldest,Plus ancien
+SORT_DESCENDING,Descending,Décroissant
+SORT_ASCENDING,Ascending,Croissant
+SORT_RELEASED_TIME,Release Time,Heure de sortie
+FILTER_TAGS,Filter Tags,Filtrer par tags
+FILTER_PROJECTS,Filter Projects,Filtrer les projets
+FILTER_RELEASES,Filter Releases,Filtrer les versions
+FILTER_BUILDS,Filter Builds,Filtrer les builds
+FILTER_SETTINGS,Filter Settings,Filtrer les paramètres
 
-# Time Formats
-LAST_MODIFIED_YEARS_AGO                        ,{years_amount} Year(s) ago                                                                                                                                                   ,Il y a {years_amount} année(s)
-LAST_MODIFIED_MONTH_AGO                        ,{months_amount} Month(s) ago                                                                                                                                                 ,Il y a {months_amount} mois
-LAST_MODIFIED_DAYS_AGO                         ,{days_amount} Day(s) ago                                                                                                                                                     ,Il y a {days_amount} jour(s)
-LAST_MODIFIED_HOURS_AGO                        ,{hours_amount} hour(s) ago                                                                                                                                                   ,Il y a {hours_amount} heure(s)
-LAST_MODIFIED_MINUTES_AGO                      ,{minutes_amount} Minute(s) ago                                                                                                                                               ,Il y a {minutes_amount} minute(s)
-LAST_MODIFIED_SECONDS_AGO                      ,{seconds_amount} Second(s) ago                                                                                                                                               ,Il y a {seconds_amount} seconde(s)
+# Time Formats,,
+LAST_MODIFIED_YEARS_AGO,{years_amount} Year(s) ago,Il y a {years_amount} année(s)
+LAST_MODIFIED_MONTH_AGO,{months_amount} Month(s) ago,Il y a {months_amount} mois
+LAST_MODIFIED_DAYS_AGO,{days_amount} Day(s) ago,Il y a {days_amount} jour(s)
+LAST_MODIFIED_HOURS_AGO,{hours_amount} hour(s) ago,Il y a {hours_amount} heure(s)
+LAST_MODIFIED_MINUTES_AGO,{minutes_amount} Minute(s) ago,Il y a {minutes_amount} minute(s)
+LAST_MODIFIED_SECONDS_AGO,{seconds_amount} Second(s) ago,Il y a {seconds_amount} seconde(s)
 
-# Settings
-SETTING_CATEGORY_PATHS                         ,Paths                                                                                                                                                                        ,Chemins
-SETTING_PROJECTS_PATH                          ,Projects path                                                                                                                                                                ,Répertoire des projets
-SETTING_BUILDS_PATH                            ,Downloaded godot builds path                                                                                                                                                 ,Répertoire des builds Godot téléchargées
-SETTING_CATEGORY_LOCALIZATION                  ,Localization                                                                                                                                                                 ,Localisation
-SETTING_LANGUAGE                               ,Language                                                                                                                                                                     ,Langue
-SETTING_CATEGORY_PAGES                         ,Pages                                                                                                                                                                        ,Pages
-SETTING_MAX_ITEMS_PER_PAGE                     ,Max items per page                                                                                                                                                           ,Nombre maximal d'éléments par page
-SETTING_CATEGORY_OTHER                         ,Other                                                                                                                                                                        ,Autre
-SETTING_USE_MONO_BUILDS                        ,Use mono builds                                                                                                                                                              ,Utiliser les builds mono
-SETTING_CHECK_FOR_NEW_RELEASES_ON_STARTUP      ,Check for new releases on startup.                                                                                                                                           ,Rechercher de nouvelles versions au démarrage.
-SETTING_CLOSE_APP_ON_PROJECT_EDITING           ,Close application when a project is opened.                                                                                                                                  ,Fermer l'application lorsqu'un projet est ouvert.
+# Settings,,
+SETTING_CATEGORY_PATHS,Paths,Chemins
+SETTING_PROJECTS_PATH,Projects path,Répertoire des projets
+SETTING_BUILDS_PATH,Downloaded godot builds path,Répertoire des builds Godot téléchargées
+SETTING_CATEGORY_LOCALIZATION,Localization,Localisation
+SETTING_LANGUAGE,Language,Langue
+SETTING_CATEGORY_PAGES,Pages,Pages
+SETTING_MAX_ITEMS_PER_PAGE,Max items per page,Nombre maximal d'éléments par page
+SETTING_CATEGORY_OTHER,Other,Autre
+SETTING_USE_MONO_BUILDS,Use mono builds,Utiliser les builds mono
+SETTING_CHECK_FOR_NEW_RELEASES_ON_STARTUP,Check for new releases on startup.,Rechercher de nouvelles versions au démarrage.
+SETTING_CLOSE_APP_ON_PROJECT_EDITING,Close application when a project is opened.,Fermer l'application lorsqu'un projet est ouvert.
 
-# Tooltips
-TOOLTIP_CREATE_NEW_PROJECT                     ,Create new project                                                                                                                                                           ,Créer un nouveau projet
-TOOLTIP_REFRESH_PROJECTS                       ,Refresh projects                                                                                                                                                             ,Actualiser les projets
-TOOLTIP_SORT_BY                                ,Sort by                                                                                                                                                                      ,Trier par
-TOOLTIP_SEARCH_BAR_PROJECT                     ,Search in projects                                                                                                                                                           ,Rechercher dans les projets
-TOOLTIP_SEARCH_BAR_RELEASE                     ,Search in releases                                                                                                                                                           ,Rechercher dans les versions
-TOOLTIP_SETTINGS                               ,Settings                                                                                                                                                                     ,Paramètres
-TOOLTIP_PLAY_PROJECT                           ,Play project                                                                                                                                                                 ,Jouer au projet
-TOOLTIP_EDIT_PROJECT                           ,Edit project                                                                                                                                                                 ,Modifier le projet
-TOOLTIP_RENAME_PROJECT                         ,Rename project                                                                                                                                                               ,Renommer le projet
-TOOLTIP_DELETE_PROJECT                         ,Delete project                                                                                                                                                               ,Supprimer le projet
-TOOLTIP_OPEN_DIRECTORY_PATH                    ,Open directory path                                                                                                                                                          ,Ouvrir le chemin du répertoire
-TOOLTIP_BROWSE_DIRECTORY                       ,Browse directory                                                                                                                                                             ,Parcourir le répertoire
-TOOLTIP_DOWNLOAD_RECOMMENDED_BUILD             ,Download recommended build                                                                                                                                                   ,Télécharger la build recommandée
-TOOLTIP_DELETE_RECOMMENDED_BUILD               ,Delete recommended build                                                                                                                                                     ,Supprimer la build recommandée
-TOOLTIP_OPEN_SOURCE_RELEASE                    ,Open source release                                                                                                                                                          ,Ouvrir la version source
-TOOLTIP_OPEN_CHANGELOG                         ,Open changelog                                                                                                                                                               ,Ouvrir le changelog
-TOOLTIP_SHOW_ALL_BUILDS                        ,Show all builds                                                                                                                                                              ,Afficher toutes les builds
-TOOLTIP_DOWNLOAD_BUILD                         ,Download build                                                                                                                                                               ,Télécharger la build
-TOOLTIP_CHECK_NEW_RELEASES                     ,Check for new releases                                                                                                                                                       ,Vérification des nouvelles versions
-TOOLTIP_FORCE_CHECK_NEW_RELEASES               ,Force check for new releases                                                                                                                                                 ,Vérification forcée des nouvelles versions
-TOOLTIP_DELETE_BUILD                           ,Delete build                                                                                                                                                                 ,Supprimer la build
-TOOLTIP_CANT_DOWNLOAD_RECOMMENDED_VERSION      ,No recommended version for your system is available.                                                                                                                         ,Aucune version recommandée pour votre système n'est disponible.
-TOOLTIP_ALREADY_DOWNLOADED_RECOMMENDED_VERSION ,You already have the recommended version.                                                                                                                                    ,Vous avez déjà la version recommandée.
+# Tooltips,,
+TOOLTIP_CREATE_NEW_PROJECT,Create new project,Créer un nouveau projet
+TOOLTIP_REFRESH_PROJECTS,Refresh projects,Actualiser les projets
+TOOLTIP_SORT_BY,Sort by,Trier par
+TOOLTIP_SEARCH_BAR_PROJECT,Search in projects,Rechercher dans les projets
+TOOLTIP_SEARCH_BAR_RELEASE,Search in releases,Rechercher dans les versions
+TOOLTIP_SETTINGS,Settings,Paramètres
+TOOLTIP_PLAY_PROJECT,Play project,Jouer au projet
+TOOLTIP_EDIT_PROJECT,Edit project,Modifier le projet
+TOOLTIP_RENAME_PROJECT,Rename project,Renommer le projet
+TOOLTIP_DELETE_PROJECT,Delete project,Supprimer le projet
+TOOLTIP_OPEN_DIRECTORY_PATH,Open directory path,Ouvrir le chemin du répertoire
+TOOLTIP_BROWSE_DIRECTORY,Browse directory,Parcourir le répertoire
+TOOLTIP_DOWNLOAD_RECOMMENDED_BUILD,Download recommended build,Télécharger la build recommandée
+TOOLTIP_DELETE_RECOMMENDED_BUILD,Delete recommended build,Supprimer la build recommandée
+TOOLTIP_OPEN_SOURCE_RELEASE,Open source release,Ouvrir la version source
+TOOLTIP_OPEN_CHANGELOG,Open changelog,Ouvrir le changelog
+TOOLTIP_SHOW_ALL_BUILDS,Show all builds,Afficher toutes les builds
+TOOLTIP_DOWNLOAD_BUILD,Download build,Télécharger la build
+TOOLTIP_CHECK_NEW_RELEASES,Check for new releases,Vérification des nouvelles versions
+TOOLTIP_FORCE_CHECK_NEW_RELEASES,Force check for new releases,Vérification forcée des nouvelles versions
+TOOLTIP_DELETE_BUILD,Delete build,Supprimer la build
+TOOLTIP_CANT_DOWNLOAD_RECOMMENDED_VERSION,No recommended version for your system is available.,Aucune version recommandée pour votre système n'est disponible.
+TOOLTIP_ALREADY_DOWNLOADED_RECOMMENDED_VERSION,You already have the recommended version.,Vous avez déjà la version recommandée.
 
 
-# Popups
-POPUP_TITLE_DELETE_PROJECT                     ,Delete project                                                                                                                                                               ,Supprimer le projet
+# Popups,,
+POPUP_TITLE_DELETE_PROJECT,Delete project,Supprimer le projet
 
-# Notifications & Errors
-TOAST_NO_NEW_RELEASES                          ,No new releases available                                                                                                                                                    ,Aucune nouvelle version disponible
-TOAST_NEW_RELEASES                             ,New releases available!                                                                                                                                                      ,Nouvelles versions disponibles !
-TOAST_CREATED_NEW_PROJECT                      ,Created {project_name} !                                                                                                                                                     ,Projet {project_name} créé !
-TOAST_DELETED_PROJECT                          ,Deleted {project_name}                                                                                                                                                       ,Projet {project_name} supprimé
-TOAST_DELETE_PROJECT_ERROR                     ,Error while deleting project {project_name}: {error}                                                                                                                         ,Une erreur est survenue en tentant de supprimer {project_name}: {error}
-TOAST_DOWNLOADING_BUILD                        ,Downloading {build_name}..                                                                                                                                                   ,Téléchargement de {build_name}..
-TOAST_SUCCESS_DOWNLOADED_BUILD                 ,Downloaded {build_name} successfully !                                                                                                                                       ,Téléchargé {build_name} avec succès !
-TOAST_SUCCESS_UNINSTALLED_BUILD                ,Uninstalled {build_name} successfully !                                                                                                                                      ,Désinstallé {build_name} avec succès !
-ERROR_API_RATE_LIMIT_EXCEEDED                  ,"API rate limit exceeded, please retry later. (within one hour or more)"                                                                                                     ,"Limite de débit API dépassée, veuillez réessayer plus tard. (dans un délai d'une heure ou plus)"
-ERROR_NOT_CONNECTED_TO_INTERNET                ,"You are not connected to the internet, please check your connection and try again."                                                                                         ,"Vous n'êtes pas connecté à Internet, veuillez vérifier votre connexion et réessayer."
-ERROR_DOWNLOAD_FAILED                          ,Download failed (error: {error})                                                                                                                                             ,Échec du téléchargement (erreur: {error})
-ERROR_REQUEST_FAILED                           ,Request failed  (error: {error})                                                                                                                                             ,Échec de la requête (erreur: {error})
-ERROR_NO_DIRECTORY_FOUND                       ,No directory found at {dir_path}.                                                                                                                                            ,Aucun répertoire trouvé dans {dir_path}.
-ERROR_DIR_ACCESS                               ,Directory access error (error: {error})                                                                                                                                      ,Erreur d'accès au répertoire (erreur: {error})
-ERROR_INVALID_PROJECT_NAME                     ,Invalid project name                                                                                                                                                         ,Nom de projet invalide
-ERROR_INVALID_BUILD_SELECTED                   ,Invalid selected build                                                                                                                                                       ,Build sélectionnée invalide
-ERROR_DIRECTORY_NOT_EMPTY                      ,This directory has files and/or directories already inside.                                                                                                                  ,Ce répertoire contient déjà des fichiers et/ou des répertoires.
-WARNING_ALREADY_DOWNLOADING_BUILD              ,"Already downloading an build, please retry later."                                                                                                                          ,"Vous téléchargez déjà une build, veuillez réessayer plus tard."
-WARNING_ALREADY_DOWNLOADED_BUILD               ,Already downloaded {build_name}.                                                                                                                                             ,{build_name} est déjà téléchargé(e).
-WARNING_PROJECT_RUN_WITHOUT_SELECTED_BUILD     ,Cannot run project without a selected build                                                                                                                                  ,Impossible d'exécuter le projet sans build sélectionnée
+# Notifications & Errors,,
+TOAST_NO_NEW_RELEASES,No new releases available,Aucune nouvelle version disponible
+TOAST_NEW_RELEASES,New releases available!,Nouvelles versions disponibles !
+TOAST_CREATED_NEW_PROJECT,Created {project_name} !,Projet {project_name} créé !
+TOAST_DELETED_PROJECT,Deleted {project_name},Projet {project_name} supprimé
+TOAST_DELETE_PROJECT_ERROR,Error while deleting project {project_name}: {error},Une erreur est survenue en tentant de supprimer {project_name}: {error}
+TOAST_DOWNLOADING_BUILD,Downloading {build_name}..,Téléchargement de {build_name}..
+TOAST_SUCCESS_DOWNLOADED_BUILD,Downloaded {build_name} successfully !,Téléchargé {build_name} avec succès !
+TOAST_SUCCESS_UNINSTALLED_BUILD,Uninstalled {build_name} successfully !,Désinstallé {build_name} avec succès !
+ERROR_API_RATE_LIMIT_EXCEEDED,"API rate limit exceeded, please retry later. (within one hour or more)","Limite de débit API dépassée, veuillez réessayer plus tard. (dans un délai d'une heure ou plus)"
+ERROR_NOT_CONNECTED_TO_INTERNET,"You are not connected to the internet, please check your connection and try again.","Vous n'êtes pas connecté à Internet, veuillez vérifier votre connexion et réessayer."
+ERROR_DOWNLOAD_FAILED,Download failed (error: {error}),Échec du téléchargement (erreur: {error})
+ERROR_REQUEST_FAILED,Request failed  (error: {error}),Échec de la requête (erreur: {error})
+ERROR_NO_DIRECTORY_FOUND,No directory found at {dir_path}.,Aucun répertoire trouvé dans {dir_path}.
+ERROR_DIR_ACCESS,Directory access error (error: {error}),Erreur d'accès au répertoire (erreur: {error})
+ERROR_INVALID_PROJECT_NAME,Invalid project name,Nom de projet invalide
+ERROR_INVALID_BUILD_SELECTED,Invalid selected build,Build sélectionnée invalide
+ERROR_DIRECTORY_NOT_EMPTY,This directory has files and/or directories already inside.,Ce répertoire contient déjà des fichiers et/ou des répertoires.
+WARNING_ALREADY_DOWNLOADING_BUILD,"Already downloading an build, please retry later.","Vous téléchargez déjà une build, veuillez réessayer plus tard."
+WARNING_ALREADY_DOWNLOADED_BUILD,Already downloaded {build_name}.,{build_name} est déjà téléchargé(e).
+WARNING_PROJECT_RUN_WITHOUT_SELECTED_BUILD,Cannot run project without a selected build,Impossible d'exécuter le projet sans build sélectionnée
