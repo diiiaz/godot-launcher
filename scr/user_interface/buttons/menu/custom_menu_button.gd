@@ -36,8 +36,10 @@ func load_item_to_ui(item: CustomMenuButton.Item) -> void:
 			CustomMenuButton.Item.CHECKABLE_TYPE.RADIO_BUTTON:
 				popup.add_icon_radio_check_item(item.get_icon(), item.get_label())
 		popup.set_item_checked(-1, item.is_checked())
+		popup.set_item_icon_modulate(-1, item.get_color())
 		return
 	popup.add_icon_item(item.get_icon(), item.get_label())
+	popup.set_item_icon_modulate(-1, item.get_color())
 
 
 class Item extends RefCounted:
@@ -53,6 +55,7 @@ class Item extends RefCounted:
 	var _checked: bool = false
 	var _disabled: bool = false
 	var _separator: bool = false
+	var _color: Color = Color.WHITE
 	
 	func set_label(label: String) -> CustomMenuButton.Item:
 		_label = label
@@ -79,10 +82,15 @@ class Item extends RefCounted:
 		_separator = state
 		return self
 	
+	func set_color(color: Color) -> CustomMenuButton.Item:
+		_color = color
+		return self
+	
 	func get_label() -> String: return _label
 	func get_icon() -> Texture2D: return _icon
-	func is_checkable() -> bool: return _checkable
 	func get_checkable_type() -> CHECKABLE_TYPE: return _checkable_type
+	func get_color() -> Color: return _color
+	func is_checkable() -> bool: return _checkable
 	func is_checked() -> bool: return _checked
 	func is_disabled() -> bool: return _disabled
 	func is_separator() -> bool: return _separator

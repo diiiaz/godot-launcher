@@ -1,5 +1,7 @@
 extends Page
 
+const TAGS_FILTER_ICON_TEXTURE = preload("uid://da4q4drae4qnk")
+
 @onready var tags_filter_menu_button: FilterMenuButton = %TagsFilterMenuButton
 @onready var releases_container: ReleasesContainer = %ReleasesContainer
 @onready var page_controller: PageController = %PageController
@@ -25,7 +27,13 @@ func setup_tags_filter_menu_button() -> void:
 			tags_filter_menu_button.disabled = TagsManager.get_tags_group(BuildsManager.TAGS_GROUP_NAME).get_tags().is_empty()
 			tags_filter_menu_button.mouse_default_cursor_shape = Control.CURSOR_ARROW if tags_filter_menu_button.disabled else Control.CURSOR_POINTING_HAND
 			for tag_name: String in TagsManager.get_tags_group(BuildsManager.TAGS_GROUP_NAME).get_tags():
-				tags_filter_menu_button.add_item(CustomMenuButton.Item.new().set_label(tag_name).set_checkable_type(CustomMenuButton.Item.CHECKABLE_TYPE.CHECKBOX))
+				tags_filter_menu_button.add_item(
+					CustomMenuButton.Item.new()
+						.set_label(tag_name)
+						.set_checkable_type(CustomMenuButton.Item.CHECKABLE_TYPE.CHECKBOX)
+						.set_color(Color.from_ok_hsl(TagsManager.get_tag_hue(tag_name), 0.8, 0.8))
+						.set_icon(TAGS_FILTER_ICON_TEXTURE)
+				)
 	)
 
 func _on_tags_filter_menu_button_filter_changed(_unused) -> void:

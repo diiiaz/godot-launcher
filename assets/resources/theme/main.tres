@@ -1,6 +1,10 @@
-[gd_resource type="Theme" load_steps=105 format=3 uid="uid://bimvjqmjjj4jh"]
+[gd_resource type="Theme" load_steps=103 format=3 uid="uid://bimvjqmjjj4jh"]
 
+[ext_resource type="Texture2D" uid="uid://0h56jmloqjg5" path="res://assets/textures/icons/square.svg" id="1_25oj4"]
+[ext_resource type="Texture2D" uid="uid://dsutiwoq61d8n" path="res://assets/textures/icons/square-check.svg" id="1_ur88k"]
 [ext_resource type="Texture2D" uid="uid://bqkqo1ibuxlap" path="res://assets/textures/icons/arrow_down.svg" id="1_va4da"]
+[ext_resource type="Texture2D" uid="uid://d2ukrnpvgdhsp" path="res://assets/textures/icons/radio_unchecked.svg" id="4_7xn3m"]
+[ext_resource type="Texture2D" uid="uid://145ps1wxjh2i" path="res://assets/textures/icons/radio_checked.svg" id="4_c7q75"]
 [ext_resource type="FontFile" uid="uid://bjr2pe6fnpvm3" path="res://assets/resources/fonts/NotoSans-Bold.ttf" id="4_ur88k"]
 [ext_resource type="FontFile" uid="uid://cic57dt4ri7xg" path="res://assets/resources/fonts/NotoSans-Regular.ttf" id="5_7xn3m"]
 
@@ -279,13 +283,6 @@ corner_radius_top_right = 5
 corner_radius_bottom_right = 5
 corner_radius_bottom_left = 5
 
-[sub_resource type="SVGTexture" id="SVGTexture_c7q75"]
-_source = "<svg xmlns=\"http://www.w3.org/2000/svg\" width=\"16\" height=\"16\"><rect width=\"14\" height=\"14\" x=\"1\" y=\"1\" fill=\"#699ce8\" rx=\"2.33\"/><path fill=\"#fff\" d=\"M11.5 3.734 5.89 9.346 4.185 7.665l-1.5 1.499 3.204 3.18L13 5.235z\"/></svg>
-"
-color_map = {
-Color(0.4117647, 0.6117647, 0.9098039, 1): Color(0.3372549, 0.61960787, 1, 1)
-}
-
 [sub_resource type="SVGTexture" id="SVGTexture_yy2ta"]
 _source = "<svg xmlns=\"http://www.w3.org/2000/svg\" width=\"16\" height=\"16\"><rect width=\"14\" height=\"14\" x=\"1\" y=\"1\" fill=\"gray\" rx=\"2.33\"/><path fill=\"#b3b3b3\" d=\"M11.5 3.734 5.89 9.346 4.185 7.665l-1.5 1.499 3.204 3.18L13 5.235z\"/></svg>
 "
@@ -325,16 +322,6 @@ Color(1, 0.8666667, 0.39607844, 1): Color(1, 0.87, 0.4, 1)
 
 [sub_resource type="SVGTexture" id="SVGTexture_dopoi"]
 _source = "<svg xmlns=\"http://www.w3.org/2000/svg\" width=\"16\" height=\"16\"><circle cx=\"8\" cy=\"8\" r=\"7\" fill=\"gray\" fill-opacity=\".2\"/></svg>
-"
-saturation = 2.0
-color_map = {
-Color(1, 0.37254903, 0.37254903, 1): Color(1, 0.47, 0.42, 1),
-Color(0.37254903, 1, 0.5921569, 1): Color(0.45, 0.95, 0.5, 1),
-Color(1, 0.8666667, 0.39607844, 1): Color(1, 0.87, 0.4, 1)
-}
-
-[sub_resource type="SVGTexture" id="SVGTexture_f5i6a"]
-_source = "<svg xmlns=\"http://www.w3.org/2000/svg\" width=\"16\" height=\"16\"><rect width=\"14\" height=\"14\" x=\"1\" y=\"1\" fill=\"#e0e0e0\" fill-opacity=\".2\" rx=\"2.333\"/></svg>
 "
 saturation = 2.0
 color_map = {
@@ -580,13 +567,6 @@ content_margin_right = 9.0
 content_margin_bottom = 9.0
 bg_color = Color(0.14509805, 0.14509805, 0.14509805, 1)
 
-[sub_resource type="SVGTexture" id="SVGTexture_uymlp"]
-_source = "<svg xmlns=\"http://www.w3.org/2000/svg\" width=\"16\" height=\"16\"><rect width=\"14\" height=\"14\" x=\"1\" y=\"1\" fill=\"#699ce8\" rx=\"2.33\"/><path fill=\"#fff\" d=\"M11.5 3.734 5.89 9.346 4.185 7.665l-1.5 1.499 3.204 3.18L13 5.235z\"/></svg>
-"
-color_map = {
-Color(0.4117647, 0.6117647, 0.9098039, 1): Color(0.3372549, 0.61960787, 1, 1)
-}
-
 [sub_resource type="SVGTexture" id="SVGTexture_k3w2a"]
 _source = "<svg xmlns=\"http://www.w3.org/2000/svg\" width=\"16\" height=\"16\"><rect width=\"14\" height=\"14\" x=\"1\" y=\"1\" fill=\"gray\" rx=\"2.33\"/><path fill=\"#b3b3b3\" d=\"M11.5 3.734 5.89 9.346 4.185 7.665l-1.5 1.499 3.204 3.18L13 5.235z\"/></svg>
 "
@@ -597,25 +577,8 @@ Color(0.37254903, 1, 0.5921569, 1): Color(0.45, 0.95, 0.5, 1),
 Color(1, 0.8666667, 0.39607844, 1): Color(1, 0.87, 0.4, 1)
 }
 
-[sub_resource type="SVGTexture" id="SVGTexture_ibnmp"]
-_source = "<svg xmlns=\"http://www.w3.org/2000/svg\" width=\"16\" height=\"16\"><circle cx=\"8\" cy=\"8\" r=\"7\" fill=\"#699ce8\"/><circle cx=\"8\" cy=\"8\" r=\"4\" fill=\"#fff\"/></svg>
-"
-color_map = {
-Color(0.4117647, 0.6117647, 0.9098039, 1): Color(0.3372549, 0.61960787, 1, 1)
-}
-
 [sub_resource type="SVGTexture" id="SVGTexture_bgbmp"]
 _source = "<svg xmlns=\"http://www.w3.org/2000/svg\" width=\"16\" height=\"16\"><circle cx=\"8\" cy=\"8\" r=\"7\" fill=\"gray\"/><circle cx=\"8\" cy=\"8\" r=\"4\" fill=\"#b3b3b3\"/></svg>
-"
-saturation = 2.0
-color_map = {
-Color(1, 0.37254903, 0.37254903, 1): Color(1, 0.47, 0.42, 1),
-Color(0.37254903, 1, 0.5921569, 1): Color(0.45, 0.95, 0.5, 1),
-Color(1, 0.8666667, 0.39607844, 1): Color(1, 0.87, 0.4, 1)
-}
-
-[sub_resource type="SVGTexture" id="SVGTexture_8xi4m"]
-_source = "<svg xmlns=\"http://www.w3.org/2000/svg\" width=\"16\" height=\"16\"><circle cx=\"8\" cy=\"8\" r=\"7\" fill=\"#e0e0e0\" fill-opacity=\".2\"/></svg>
 "
 saturation = 2.0
 color_map = {
@@ -646,16 +609,6 @@ Color(1, 0.8666667, 0.39607844, 1): Color(1, 0.87, 0.4, 1)
 
 [sub_resource type="SVGTexture" id="SVGTexture_dcctb"]
 _source = "<svg xmlns=\"http://www.w3.org/2000/svg\" width=\"16\" height=\"16\"><path fill=\"none\" stroke=\"#e0e0e0\" stroke-linecap=\"round\" stroke-linejoin=\"round\" stroke-width=\"2\" d=\"M11 8H4l4 4M4 8l4-4\"/></svg>
-"
-saturation = 2.0
-color_map = {
-Color(1, 0.37254903, 0.37254903, 1): Color(1, 0.47, 0.42, 1),
-Color(0.37254903, 1, 0.5921569, 1): Color(0.45, 0.95, 0.5, 1),
-Color(1, 0.8666667, 0.39607844, 1): Color(1, 0.87, 0.4, 1)
-}
-
-[sub_resource type="SVGTexture" id="SVGTexture_nmwu5"]
-_source = "<svg xmlns=\"http://www.w3.org/2000/svg\" width=\"16\" height=\"16\"><rect width=\"14\" height=\"14\" x=\"1\" y=\"1\" fill=\"#e0e0e0\" fill-opacity=\".2\" rx=\"2.333\"/></svg>
 "
 saturation = 2.0
 color_map = {
@@ -1087,13 +1040,13 @@ CheckBox/colors/icon_pressed_color = Color(0.38784313, 0.71254903, 1.15, 1)
 CheckBox/constants/check_v_offset = 0
 CheckBox/constants/h_separation = 8
 CheckBox/constants/outline_size = 0
-CheckBox/icons/checked = SubResource("SVGTexture_c7q75")
+CheckBox/icons/checked = ExtResource("1_ur88k")
 CheckBox/icons/checked_disabled = SubResource("SVGTexture_yy2ta")
 CheckBox/icons/radio_checked = SubResource("SVGTexture_nhtgq")
 CheckBox/icons/radio_checked_disabled = SubResource("SVGTexture_olpyw")
 CheckBox/icons/radio_unchecked = SubResource("SVGTexture_knbae")
 CheckBox/icons/radio_unchecked_disabled = SubResource("SVGTexture_dopoi")
-CheckBox/icons/unchecked = SubResource("SVGTexture_f5i6a")
+CheckBox/icons/unchecked = ExtResource("1_25oj4")
 CheckBox/icons/unchecked_disabled = SubResource("SVGTexture_ico4d")
 CheckBox/styles/disabled = SubResource("StyleBoxFlat_gnpvo")
 CheckBox/styles/hover = SubResource("StyleBoxFlat_gnpvo")
@@ -1174,15 +1127,15 @@ PopupMenu/constants/item_end_padding = 4
 PopupMenu/constants/item_start_padding = 9
 PopupMenu/constants/outline_size = 0
 PopupMenu/constants/v_separation = 7
-PopupMenu/icons/checked = SubResource("SVGTexture_uymlp")
+PopupMenu/icons/checked = ExtResource("1_ur88k")
 PopupMenu/icons/checked_disabled = SubResource("SVGTexture_k3w2a")
-PopupMenu/icons/radio_checked = SubResource("SVGTexture_ibnmp")
+PopupMenu/icons/radio_checked = ExtResource("4_c7q75")
 PopupMenu/icons/radio_checked_disabled = SubResource("SVGTexture_bgbmp")
-PopupMenu/icons/radio_unchecked = SubResource("SVGTexture_8xi4m")
+PopupMenu/icons/radio_unchecked = ExtResource("4_7xn3m")
 PopupMenu/icons/radio_unchecked_disabled = SubResource("SVGTexture_3r3hi")
 PopupMenu/icons/submenu = SubResource("SVGTexture_6bfiu")
 PopupMenu/icons/submenu_mirrored = SubResource("SVGTexture_dcctb")
-PopupMenu/icons/unchecked = SubResource("SVGTexture_nmwu5")
+PopupMenu/icons/unchecked = ExtResource("1_25oj4")
 PopupMenu/icons/unchecked_disabled = SubResource("SVGTexture_quv2j")
 PopupMenu/styles/hover = SubResource("StyleBoxFlat_olpyw")
 PopupMenu/styles/labeled_separator_left = SubResource("StyleBoxLine_knbae")
