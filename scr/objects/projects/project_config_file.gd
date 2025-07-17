@@ -1,16 +1,16 @@
 extends RefCounted
 class_name ProjectConfigFile
 
-const CONFIG_FILE_COMMENT_HEADER: String = "; Engine configuration file.
+const CONFIG_FILE_TEMPLATE: String = "; Engine configuration file.
 ; It's best edited using the editor UI and not directly,
 ; since the parameters that go here are not all obvious.
 ;
 ; Format:
 ;   [section] ; section goes between []
 ;   param=value ; assign values to parameters
-"
 
-const CONFIG_PARAMETERS: String = "
+{config_version}
+
 [application]
 
 {config_key}name=\"{project_name}\"
@@ -27,8 +27,12 @@ static func create_project_config_file(
 	var file: FileAccess = FileAccess.open(project_path.path_join(get_config_file_name(godot_version)), FileAccess.WRITE)
 	
 	if file:
-		var content: String = CONFIG_FILE_COMMENT_HEADER + "\n" + get_config_version(godot_version) + "\n" + get_config_parameters(godot_version)
-		content = content.format({"project_name": project_name})
+		#var content: String = CONFIG_FILE_COMMENT_HEADER + "\n" + get_config_version(godot_version) + "\n" + get_config_parameters(godot_version)
+		var content: String = CONFIG_FILE_TEMPLATE.format({
+			"config_version": get_config_version(godot_version),
+			"config_key": get_config_key(godot_version),
+			"project_name": project_name,
+		})
 		file.store_string(content)
 		file.close()
 	else:
@@ -50,12 +54,12 @@ static func get_config_version(godot_version: String) -> String:
 	else: return ""
 
 
-static func get_config_parameters(godot_version: String) -> String:
+static func get_config_key(godot_version: String) -> String:
 	var splitted_version: PackedStringArray = godot_version.split(".")
 	var first_number: int = splitted_version[0].to_int()
 	# if we are in versions from 1.0 - 2.1.4 we do nothing, else, we add a "config/" to the param name
 	var config_key: String = "config/" if first_number >= 3 else ""
-	return CONFIG_PARAMETERS.format({"config_key": config_key})
+	return config_key
 
 
 static func get_config_file_name(godot_version: String) -> String:
