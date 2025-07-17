@@ -16,10 +16,10 @@ func update() -> void:
 	
 	var projects_selected_builds: Dictionary = UserDataManager.get_user_data(UserData.USER_DATA.PROJECTS_SELECTED_BUILDS)
 	
-	if projects_selected_builds.has(_project.get_path().trim_suffix("/")):
+	if projects_selected_builds.has(_project.get_path()):
 		var index: int = 2
 		for build: Build in BuildsManager.get_downloaded_builds():
-			if build.get_path().get_file() == projects_selected_builds[_project.get_path().trim_suffix("/")]:
+			if build.get_path().get_file() == projects_selected_builds[_project.get_path()]:
 				select(index)
 				selected_build.emit(build)
 				return

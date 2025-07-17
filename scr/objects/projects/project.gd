@@ -69,7 +69,7 @@ func set_name(name: String) -> Project:
 	return self
 
 func set_path(path: String) -> Project:
-	_path = path
+	_path = path.trim_suffix("/")
 	return self
 
 func set_modified_time(modified_time: int) -> Project:
