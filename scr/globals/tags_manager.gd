@@ -16,6 +16,9 @@ func get_tags_group(group_name: String) -> TagsGroup:
 		return create_tags_group(group_name)
 	return _tags_groups.get(group_name)
 
+func get_tag_hue(tag_name: String) -> float:
+	return float(wrapi(hash(tag_name), 0, 10000) / 10000.0)
+
 
 #signal tags_changed(tags: PackedStringArray)
 #
