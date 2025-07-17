@@ -28,7 +28,11 @@ func setup(setting: Settings.SETTING) -> void:
 	controller.setup(setting_data.get_controller())
 	controller.set_value(SettingsManager.get_setting(setting))
 	value_controller_container.add_child(controller)
-	
+	set_text_alpha(0.6)
+
+func set_text_alpha(value: float) -> void:
+	setting_name_label.self_modulate.a = value
+
 #func build_number_controller() -> void:
 	#var spinbox: SpinBox = SpinBox.new()
 	#value_controller_container.add_child(spinbox)

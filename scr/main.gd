@@ -33,7 +33,7 @@ func check_for_new_releases() -> void:
 	var current_time = Time.get_unix_time_from_system()
 	
 	var can_check_for_new_version: bool = \
-		SettingsManager.get_setting(Settings.SETTING.CHECK_FOR_NEW_RELEASES_ON_STARTUP) and \
+		SettingsManager.get_setting(Settings.SETTING.CHECK_FOR_NEW_ENGINE_RELEASES_ON_STARTUP) and \
 		(current_time - UserDataManager.get_user_data(UserData.USER_DATA.CHECK_NEW_VERSION_TIMESTAMP)) > TimeHelper.CHECK_NEW_VERSION_TIME_SEC
 	
 	if can_check_for_new_version:

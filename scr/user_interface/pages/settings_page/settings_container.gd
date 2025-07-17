@@ -1,6 +1,6 @@
 extends VBoxContainer
 
-const SETTING = preload("uid://cjqesasmg6gkc")
+const SETTING_CATEGORY_HEADER = preload("uid://c8x7e5whnksyn")
 
 var _search_text: String = ""
 
@@ -13,14 +13,23 @@ func set_search_text(text: String) -> void:
 
 func update() -> void:
 	clear()
-	var settings: Array[Settings.SETTING]
-	settings.assign(Settings.SETTING.values().duplicate())
+	var categories: Array[Settings.SettingCategory]
+	categories.assign(Settings.get_categories().duplicate())
 	
 	if not _search_text.is_empty():
-		settings.assign(FuzzySearcher.mapped_search(_search_text, settings, func(setting: Settings.SETTING): return tr(SettingsManager.get_setting_data(setting).get_translation_key())))
+		categories.assign(
+			FuzzySearcher.mapped_search(_search_text, categories,
+				func(category: Settings.SettingCategory):
+					var string: String = ""
+					for setting: Settings.SETTING in category.get_settings():
+						string += tr(SettingsManager.get_setting_data(setting).get_translation_key()) + ","
+					return string.left(-1)
+					)
+				)
 	
-	for setting: Settings.SETTING in settings:
-		create_setting_ui(setting)
+	for category: Settings.SettingCategory in categories:
+		create_setting_category(category)
+	
 	smooth_scroll_container.set_deferred("scroll_vertical", 0)
 
 
@@ -29,8 +38,7 @@ func clear() -> void:
 		child.hide()
 		child.queue_free()
 
-
-func create_setting_ui(setting: Settings.SETTING) -> void:
-	var setting_ui: SettingUI = SETTING.instantiate()
-	add_child(setting_ui)
-	setting_ui.setup.call_deferred(setting)
+func create_setting_category(category: Settings.SettingCategory) -> void:
+	var category_ui: Control = SETTING_CATEGORY_HEADER.instantiate()
+	add_child(category_ui)
+	category_ui.setup.call_deferred(category, _search_text)
