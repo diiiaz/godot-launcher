@@ -14,6 +14,7 @@ CLEAR,Clear,Nettoyer
 # Project Management
 PROJECT_NAME,Project name,Nom du projet
 PROJECT_PATH,Project path,Répertoire du projet
+PROJECT_OPEN_DIRECTORY,Open project directory,Ouvrir le répertoire du projet
 RENDERER,Renderer,Moteur de rendu
 VERSION_CONTROL_METADATA,Version control metadata,Métadonnées de contrôle de version
 CREATE_NEW_PROJECT,Create new project,Créer un nouveau projet
