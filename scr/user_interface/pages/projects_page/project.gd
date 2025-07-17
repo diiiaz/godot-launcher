@@ -1,6 +1,7 @@
 extends PanelContainer
 class_name ProjectUI
 
+signal tag_pressed(tag_name: String)
 signal deleted
 
 const TAG_UI = preload("uid://ekqlub7k865j")
@@ -45,6 +46,7 @@ func setup(project: Project) -> void:
 		var tag_ui = TAG_UI.instantiate()
 		tags_container.add_child(tag_ui)
 		tag_ui.setup(tag_name)
+		tag_ui.pressed.connect(tag_pressed.emit)
 
 
 func _notification(what: int) -> void:

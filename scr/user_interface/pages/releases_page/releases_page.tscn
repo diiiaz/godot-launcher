@@ -209,5 +209,6 @@ script = ExtResource("10_fs0x8")
 [connection signal="filter_changed" from="HboxContainer/LeftSide/LeftSideBackground/VBoxContainer/TopMarginContainer/TopHBoxContainer/TagsFilterMenuButton" to="." method="_on_tags_filter_menu_button_filter_changed"]
 [connection signal="pressed" from="HboxContainer/LeftSide/LeftSideBackground/VBoxContainer/TopMarginContainer/TopHBoxContainer/ReloadButton" to="." method="_on_reload_button_pressed"]
 [connection signal="release_pressed" from="HboxContainer/LeftSide/LeftSideBackground/VBoxContainer/ReleasesSmoothScrollContainer/ReleasesContainer" to="HboxContainer/RightSide/VBoxContainer/BuilldsSmoothScrollContainer/BuildsContainer" method="_on_releases_container_release_pressed"]
+[connection signal="tag_pressed" from="HboxContainer/LeftSide/LeftSideBackground/VBoxContainer/ReleasesSmoothScrollContainer/ReleasesContainer" to="." method="_on_releases_container_tag_pressed"]
 [connection signal="changed_page" from="HboxContainer/LeftSide/BottomPanelContainer/PageControllerMargin/PageController" to="." method="_on_page_controller_changed_page"]
 [connection signal="text_changed" from="HboxContainer/RightSide/VBoxContainer/TopMarginContainer/SearchBar" to="HboxContainer/RightSide/VBoxContainer/BuilldsSmoothScrollContainer/BuildsContainer" method="_on_search_bar_text_changed"]

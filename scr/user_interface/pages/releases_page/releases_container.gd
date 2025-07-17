@@ -3,6 +3,7 @@ class_name ReleasesContainer
 
 const RELEASE = preload("uid://cba7grhb7105l")
 
+signal tag_pressed(tag_name: String)
 signal release_pressed(release_ui: ReleaseUI, release: Release)
 
 var _filter_info: FilterMenuButton.FilterInfo
@@ -56,3 +57,4 @@ func create_release_ui(release: Release) -> void:
 	add_child(release_ui)
 	release_ui.setup.call_deferred(release)
 	release_ui.pressed.connect(func(): release_pressed.emit(release_ui, release))
+	release_ui.tag_pressed.connect(tag_pressed.emit)

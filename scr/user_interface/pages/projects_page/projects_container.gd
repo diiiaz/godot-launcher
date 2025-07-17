@@ -1,6 +1,7 @@
 extends VBoxContainer
 class_name ProjectsContainer
 
+signal tag_pressed(tag_name: String)
 signal udpated
 
 const PROJECT = preload("res://scr/user_interface/pages/projects_page/project.tscn")
@@ -58,3 +59,4 @@ func create_project_ui(project: Project) -> void:
 	add_child(project_ui)
 	project_ui.setup.call_deferred(project)
 	project_ui.deleted.connect(update)
+	project_ui.tag_pressed.connect(tag_pressed.emit)

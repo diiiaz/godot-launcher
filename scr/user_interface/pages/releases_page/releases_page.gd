@@ -18,6 +18,13 @@ func get_icon() -> Texture2D:
 	return preload("uid://dsrtamnxenut4")
 
 
+func _on_releases_container_tag_pressed(tag_name: String) -> void:
+	for index: int in range(tags_filter_menu_button.get_popup().item_count):
+		if tags_filter_menu_button.get_popup().get_item_text(index) == tag_name:
+			tags_filter_menu_button.set_filter(index, true)
+			return
+
+
 # ---------------------------------- Tags Filter Menu Button
 
 func setup_tags_filter_menu_button() -> void:

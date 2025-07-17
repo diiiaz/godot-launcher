@@ -26,8 +26,10 @@ layout_mode = 2
 text = "tag name"
 label_settings = SubResource("LabelSettings_e7cb4")
 
-[node name="Button" type="Button" parent="."]
+[node name="MainButton" type="Button" parent="."]
 layout_mode = 2
 mouse_behavior_recursive = 2
 mouse_default_cursor_shape = 2
 theme_type_variation = &"ButtonSimple"
+
+[connection signal="pressed" from="MainButton" to="." method="_on_main_button_pressed"]

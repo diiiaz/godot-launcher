@@ -17,6 +17,7 @@ func _init() -> void:
 
 
 func clear_items() -> void:
+	get_popup().clear(true)
 	_items.clear()
 	_filter_info.clear()
 	add_item(Item.new().set_label("CLEAR").set_icon(CLEAR_ICON_TEXTURE))
@@ -32,8 +33,11 @@ func _on_index_pressed(index: int) -> void:
 		filter_changed.emit(_filter_info)
 		update()
 		return
-	
-	get_popup().toggle_item_checked(index)
+	toggle_filter_index(index)
+
+
+func set_filter(index: int, checked: bool) -> void:
+	get_popup().set_item_checked(index, checked)
 	var filter_name: String = get_popup().get_item_text(index)
 	var is_checked: bool = get_popup().is_item_checked(index)
 	
@@ -44,6 +48,10 @@ func _on_index_pressed(index: int) -> void:
 		_filter_info.remove_filter(filter_name)
 	
 	filter_changed.emit(_filter_info)
+
+
+func toggle_filter_index(index: int) -> void:
+	set_filter(index, not get_popup().is_item_checked(index))
 
 
 func get_filter_info() -> FilterInfo:

@@ -43,6 +43,13 @@ func _on_projects_container_udpated() -> void:
 	update_no_projects_found_label()
 
 
+func _on_projects_container_tag_pressed(tag_name: String) -> void:
+	for index: int in range(tags_filter_menu_button.get_popup().item_count):
+		if tags_filter_menu_button.get_popup().get_item_text(index) == tag_name:
+			tags_filter_menu_button.set_filter(index, true)
+			return
+
+
 # ---------------------------------- Change Projects Path Button
 
 func _on_change_projects_path_button_pressed() -> void:

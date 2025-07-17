@@ -177,5 +177,6 @@ theme_type_variation = &"TopBarPanelContainer"
 [connection signal="pressed" from="VBoxContainer/TopMarginContainer/TopHBoxContainer/CreateNewProjectButton" to="." method="_on_create_new_project_button_pressed"]
 [connection signal="pressed" from="VBoxContainer/TopMarginContainer/TopHBoxContainer/ReloadButton" to="." method="_on_reload_button_pressed"]
 [connection signal="pressed" from="VBoxContainer/NoProjectsMessageContainer/VBoxContainer/ChangeProjectsPathButton" to="." method="_on_change_projects_path_button_pressed"]
+[connection signal="tag_pressed" from="VBoxContainer/SmoothScrollContainer/ProjectsContainer" to="." method="_on_projects_container_tag_pressed"]
 [connection signal="udpated" from="VBoxContainer/SmoothScrollContainer/ProjectsContainer" to="." method="_on_projects_container_udpated"]
 [connection signal="changed_page" from="VBoxContainer/BottomPanelContainer/PageControllerMargin/PageController" to="." method="_on_page_controller_changed_page"]

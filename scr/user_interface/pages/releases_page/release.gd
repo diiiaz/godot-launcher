@@ -3,6 +3,7 @@ class_name ReleaseUI
 
 const TAG_UI = preload("uid://ekqlub7k865j")
 
+signal tag_pressed(tag_name: String)
 signal pressed
 
 @onready var release_name_label: Label = %ReleaseNameLabel
@@ -48,6 +49,7 @@ func setup(release: Release) -> void:
 		var tag_ui = TAG_UI.instantiate()
 		tags_container.add_child(tag_ui)
 		tag_ui.setup(tag_name)
+		tag_ui.pressed.connect(tag_pressed.emit)
 
 
 func update() -> void:
