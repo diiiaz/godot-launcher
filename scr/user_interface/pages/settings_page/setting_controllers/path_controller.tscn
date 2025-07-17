@@ -35,6 +35,7 @@ drag_and_drop_selection_enabled = false
 
 [node name="Button" type="Button" parent="HBoxContainer"]
 layout_mode = 2
+tooltip_text = "TOOLTIP_BROWSE_DIRECTORY"
 mouse_default_cursor_shape = 2
 icon = ExtResource("3_emedi")
 
