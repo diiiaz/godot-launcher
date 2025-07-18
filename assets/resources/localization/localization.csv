@@ -69,17 +69,29 @@ LAST_MODIFIED_MINUTES_AGO,{minutes_amount} Minute(s) ago,Il y a {minutes_amount}
 LAST_MODIFIED_SECONDS_AGO,{seconds_amount} Second(s) ago,Il y a {seconds_amount} seconde(s)
 
 # Settings,,
-SETTING_CATEGORY_PATHS,Paths,Chemins
 SETTING_PROJECTS_PATH,Projects path,Répertoire des projets
-SETTING_BUILDS_PATH,Downloaded godot builds path,Répertoire des builds Godot téléchargées
-SETTING_CATEGORY_LOCALIZATION,Localization,Localisation
+SETTING_BUILDS_PATH,Builds path,Répertoire des builds
 SETTING_LANGUAGE,Language,Langue
-SETTING_CATEGORY_PAGES,Pages,Pages
 SETTING_MAX_ITEMS_PER_PAGE,Max items per page,Nombre maximal d'éléments par page
-SETTING_CATEGORY_OTHER,Other,Autre
 SETTING_USE_MONO_BUILDS,Use mono builds,Utiliser les builds mono
-SETTING_CHECK_FOR_NEW_RELEASES_ON_STARTUP,Check for new releases on startup.,Rechercher de nouvelles versions au démarrage.
-SETTING_CLOSE_APP_ON_PROJECT_EDITING,Close application when a project is opened.,Fermer l'application lorsqu'un projet est ouvert.
+SETTING_CHECK_FOR_NEW_LAUNCHER_RELEASES_ON_STARTUP,Godot Launcher,Le Launcher Godot
+SETTING_CHECK_FOR_NEW_ENGINE_RELEASES_ON_STARTUP,Godot Engine,Le Moteur de jeu Godot
+SETTING_CLOSE_APP_ON_PROJECT_EDITING,Close application when a project is opened,Fermer l'application lorsqu'un projet est ouvert
+
+SETTING_CATEGORY_LANGUAGE,Language,Langue
+SETTING_CATEGORY_PATHS,Paths,Chemins
+SETTING_CATEGORY_CHECK_FOR_NEW_RELEASES_ON_STARTUP,Check for new releases on startup for :,Rechercher de nouvelles versions au démarrage pour :
+SETTING_CATEGORY_OTHER,Other,Autre
+
+SETTING_TOOLTIP_PROJECTS_PATH,Path where your Godot projects are stored.,Chemin où vos projets Godot sont stockés.
+SETTING_TOOLTIP_BUILDS_PATH,Directory containing Godot engine executables.,Répertoire contenant les exécutables du moteur Godot.
+SETTING_TOOLTIP_LANGUAGE,Interface language for the launcher.,Langue de l'interface du lanceur.
+SETTING_TOOLTIP_MAX_ITEMS_PER_PAGE,Number of projects/engines displayed per page before pagination.,Nombre de projets/moteurs affichés par page avant pagination.
+SETTING_TOOLTIP_USE_MONO_BUILDS,Prefer Mono/C#-enabled Godot builds when compatible with projects (supports C# scripting).,Privilégier les versions Godot avec Mono/C# pour les projets compatibles (supporte le scripting C#).
+SETTING_TOOLTIP_CHECK_FOR_NEW_LAUNCHER_RELEASES_ON_STARTUP,Automatically check for launcher updates when starting the application.,Vérifier automatiquement les mises à jour du lanceur au démarrage de l'application.
+SETTING_TOOLTIP_CHECK_FOR_NEW_ENGINE_RELEASES_ON_STARTUP,Automatically check for new Godot Engine versions at startup.,Vérifier automatiquement les nouvelles versions du moteur Godot au démarrage.
+SETTING_TOOLTIP_CLOSE_APP_ON_PROJECT_EDITING,Exit launcher when opening projects in Godot Editor.,Fermer le lanceur lors de l'ouverture de projets dans l'éditeur Godot.
+
 
 # Tooltips,,
 TOOLTIP_CREATE_NEW_PROJECT,Create new project,Créer un nouveau projet

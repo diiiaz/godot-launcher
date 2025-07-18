@@ -8,11 +8,13 @@ const PATH_CONTROLLER = preload("uid://binhesqtrk4nk")
 
 @onready var setting_name_label: Label = %SettingNameLabel
 @onready var value_controller_container: PanelContainer = %ValueControllerContainer
+@onready var hover_button: Button = %HoverButton
 
 
 func setup(setting: Settings.SETTING) -> void:
 	var setting_data: SettingData = SettingsManager.get_setting_data(setting)
 	setting_name_label.text = setting_data.get_translation_key()
+	hover_button.tooltip_text = setting_data.get_tooltip()
 	
 	var controller: SettingController
 	
@@ -28,7 +30,11 @@ func setup(setting: Settings.SETTING) -> void:
 	controller.setup(setting_data.get_controller())
 	controller.set_value(SettingsManager.get_setting(setting))
 	value_controller_container.add_child(controller)
-	
+	set_text_alpha(0.6)
+
+func set_text_alpha(value: float) -> void:
+	setting_name_label.self_modulate.a = value
+
 #func build_number_controller() -> void:
 	#var spinbox: SpinBox = SpinBox.new()
 	#value_controller_container.add_child(spinbox)
