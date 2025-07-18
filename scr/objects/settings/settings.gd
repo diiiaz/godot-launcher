@@ -19,7 +19,7 @@ static var _setting_variable_map: Dictionary[SETTING, String] = {
 	SETTING.MAX_ITEMS_PER_PAGE: "_max_items_per_page",
 	SETTING.USE_MONO_BUILDS: "_use_mono_version",
 	SETTING.CHECK_FOR_NEW_ENGINE_RELEASES_ON_STARTUP: "_check_for_new_engine_releases_on_startup",
-	SETTING.CHECK_FOR_NEW_LAUNCHER_RELEASES_ON_STARTUP: "_check_for_new_engine_releases_on_startup",
+	SETTING.CHECK_FOR_NEW_LAUNCHER_RELEASES_ON_STARTUP: "_check_for_new_launcher_releases_on_startup",
 	SETTING.CLOSE_APP_ON_PROJECT_EDITING: "_close_app_on_project_editing",
 }
 
