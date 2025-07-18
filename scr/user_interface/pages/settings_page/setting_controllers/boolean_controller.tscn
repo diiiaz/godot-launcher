@@ -1,14 +1,28 @@
-[gd_scene load_steps=2 format=3 uid="uid://bbvwquqdvdb5o"]
+[gd_scene load_steps=3 format=3 uid="uid://bbvwquqdvdb5o"]
 
 [ext_resource type="Script" uid="uid://hlva6vdrppcf" path="res://scr/user_interface/pages/settings_page/setting_controllers/boolean_setting_controller.gd" id="1_4wjw7"]
+[ext_resource type="Theme" uid="uid://bimvjqmjjj4jh" path="res://assets/resources/theme/main.tres" id="1_alxmc"]
 
 [node name="BooleanController" type="PanelContainer" node_paths=PackedStringArray("checkbox")]
+offset_right = 54.0
+offset_bottom = 31.0
+theme = ExtResource("1_alxmc")
 script = ExtResource("1_4wjw7")
 checkbox = NodePath("CheckBox")
 
 [node name="CheckBox" type="CheckBox" parent="."]
 unique_name_in_owner = true
+modulate = Color(0.44943535, 0.6887896, 0.9543951, 1)
 layout_mode = 2
 mouse_behavior_recursive = 2
 mouse_default_cursor_shape = 2
+
+[node name="MarginContainer" type="MarginContainer" parent="."]
+layout_mode = 2
+theme_override_constants/margin_left = 28
+theme_override_constants/margin_bottom = 2
+
+[node name="Label" type="Label" parent="MarginContainer"]
+layout_mode = 2
 text = "ON"
+vertical_alignment = 1
