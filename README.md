@@ -1,4 +1,4 @@
-# <img src="/assets/icons/app/godot-launcher.png" width="64"> Godot Launcher
+# <img src="/assets/textures/icons/app/godot-launcher.png" width="64"> Godot Launcher
 
 [![GitHub License](https://img.shields.io/github/license/diiiaz/godot-launcher?color=blue)](LICENSE)
 [![Downloads](https://img.shields.io/github/downloads/diiiaz/godot-launcher/total?color=green)](https://github.com/diiiaz/godot-launcher/releases)
@@ -14,8 +14,6 @@
   🔄 Install, switch, and manage multiple engine versions.  
 - **One-Click Launch**
   🎮 Start projects with your desired version instantly.  
-- **Cross-Platform**
-  🖥️ Runs on Windows, macOS, and Linux.  
 - **Auto-Updates**
   ⚡ Stay up-to-date with the latest features effortlessly.
 
