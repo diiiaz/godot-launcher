@@ -10,7 +10,7 @@
 
 - **Project Management**
   📂 Browse, sort, and launch projects from a unified interface.  
-- **Godot Version Manager**
+- **Version Manager**
   🔄 Install, switch, and manage multiple engine versions.  
 - **One-Click Launch**
   🎮 Start projects with your desired version instantly.  
