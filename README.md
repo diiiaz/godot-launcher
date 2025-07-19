@@ -3,17 +3,14 @@
 [![Latest Release](https://img.shields.io/github/v/release/diiiaz/godot-launcher?label=latest%20release)](https://github.com/diiiaz/godot-launcher/releases)
 [![Downloads](https://img.shields.io/github/downloads/diiiaz/godot-launcher/total?color=green)](https://github.com/diiiaz/godot-launcher/releases)
 
-✨ **Organize your projects, manage engine version in one place!**
-
-## 🌟 Features
-
-- **Project Management**
-  📂 Browse, sort, and launch projects from a unified interface.  
-- **Version Manager**
-  🔄 Install, switch, and manage multiple engine versions.  
-- **One-Click Launch**
-  🎮 Start projects with your desired version instantly.  
-
+📂 **Project Management**: Browse, sort, change version, and launch projects from a unified interface.
+   
+  <img src="https://github.com/diiiaz/godot-launcher/blob/main/meta/screenshots/projects_page.png" width="768"/>
+  
+🔄 **Version Manager**: Install, delete, and manage multiple engine versions.
+   
+  <img src="https://github.com/diiiaz/godot-launcher/blob/main/meta/screenshots/releases_page.png" width="768"/>
+  
 ---
 
 ## 🚀 Quick Start
