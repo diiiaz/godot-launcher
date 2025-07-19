@@ -14,8 +14,6 @@
   🔄 Install, switch, and manage multiple engine versions.  
 - **One-Click Launch**
   🎮 Start projects with your desired version instantly.  
-- **Auto-Updates**
-  ⚡ Stay up-to-date with the latest features effortlessly.
 
 ---
 
