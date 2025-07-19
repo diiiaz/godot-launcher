@@ -112,11 +112,12 @@ TOOLTIP_OPEN_SOURCE_RELEASE,Open source release,Ouvrir la version source
 TOOLTIP_OPEN_CHANGELOG,Open changelog,Ouvrir le changelog
 TOOLTIP_SHOW_ALL_BUILDS,Show all builds,Afficher toutes les builds
 TOOLTIP_DOWNLOAD_BUILD,Download build,Télécharger la build
-TOOLTIP_CHECK_NEW_RELEASES,Check for new releases,Vérification des nouvelles versions
-TOOLTIP_FORCE_CHECK_NEW_RELEASES,Force check for new releases,Vérification forcée des nouvelles versions
 TOOLTIP_DELETE_BUILD,Delete build,Supprimer la build
 TOOLTIP_CANT_DOWNLOAD_RECOMMENDED_VERSION,No recommended version for your system is available.,Aucune version recommandée pour votre système n'est disponible.
 TOOLTIP_ALREADY_DOWNLOADED_RECOMMENDED_VERSION,You already have the recommended version.,Vous avez déjà la version recommandée.
+TOOLTIP_CHECK_NEW_BUILD_RELEASES,Check for new releases,Vérification des nouvelles versions
+TOOLTIP_CHECK_NEW_LAUNCHER_RELEASE,Check for new launcher releases,Vérification des nouvelles versions du launcher
+TOOLTIP_DOWNLOAD_LATEST_LAUNCHER_RELEASE,Download latest launcher release,Télécharger la dernière version du launcher
 
 
 # Popups,,
@@ -124,7 +125,9 @@ POPUP_TITLE_DELETE_PROJECT,Delete project,Supprimer le projet
 
 # Notifications & Errors,,
 TOAST_NO_NEW_RELEASES,No new releases available,Aucune nouvelle version disponible
-TOAST_NEW_RELEASES,New releases available!,Nouvelles versions disponibles !
+TOAST_NEW_BUILD_RELEASES,New build release(s) available!,Nouvelles version(s) de build disponibles !
+TOAST_NEW_LAUNCHER_RELEASES,New launcher release available!,Nouvelles version du launcher disponibles !
+TOAST_NO_NEW_LAUNCHER_RELEASES,No new launcher releases available,Aucune nouvelles versions du launcher sont disponibles
 TOAST_CREATED_NEW_PROJECT,Created {project_name} !,Projet {project_name} créé !
 TOAST_DELETED_PROJECT,Deleted {project_name},Projet {project_name} supprimé
 TOAST_DELETE_PROJECT_ERROR,Error while deleting project {project_name}: {error},Une erreur est survenue en tentant de supprimer {project_name}: {error}

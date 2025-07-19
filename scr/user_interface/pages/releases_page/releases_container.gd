@@ -13,7 +13,7 @@ var _page: int = 0
 @onready var smooth_scroll_container: SmoothScrollContainer = %ReleasesSmoothScrollContainer
 
 func _init() -> void:
-	BuildsManager.updated.connect(update)
+	EngineBuildsManager.updated.connect(update)
 	SettingsManager.updated.connect(
 		func(setting: Settings.SETTING):
 			if setting != Settings.SETTING.MAX_ITEMS_PER_PAGE:
@@ -27,7 +27,7 @@ func setup(filter_info: FilterMenuButton.FilterInfo) -> void:
 
 
 func set_page(page: int) -> void:
-	_page = wrapi(page, 0, ceil(await BuildsManager.get_releases_amount() / float(SettingsManager.get_setting(Settings.SETTING.MAX_ITEMS_PER_PAGE))))
+	_page = wrapi(page, 0, ceil(await EngineBuildsManager.get_releases_amount() / float(SettingsManager.get_setting(Settings.SETTING.MAX_ITEMS_PER_PAGE))))
 	update()
 
 
@@ -37,7 +37,7 @@ func set_search_text(text: String) -> void:
 
 func update() -> void:
 	clear()
-	for release: Release in await BuildsManager.get_releases(
+	for release: Release in await EngineBuildsManager.get_releases(
 			_filter_info.get_filter(),
 			_search_text,
 			_page * SettingsManager.get_setting(Settings.SETTING.MAX_ITEMS_PER_PAGE)

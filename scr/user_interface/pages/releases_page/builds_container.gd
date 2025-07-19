@@ -16,14 +16,14 @@ func load_builds(release: Release) -> void:
 	smooth_scroll_container.visible = true
 	no_releases_selected_container.visible = false
 	smooth_scroll_container.scroll_vertical = 0
-	var builds: Array[Build] = release.get_builds().duplicate(true)
+	var builds: Array[EngineBuild] = release.get_builds().duplicate(true)
 	
 	if not _search_text.is_empty():
-		builds.assign(FuzzySearcher.mapped_search(_search_text, builds, func(build: Build): return build.get_name()))
+		builds.assign(FuzzySearcher.mapped_search(_search_text, builds, func(build: EngineBuild): return build.get_name()))
 	
-	builds.sort_custom(func(build_a: Build, build_b: Build): return build_a.get_name() < build_b.get_name())
+	builds.sort_custom(func(build_a: EngineBuild, build_b: EngineBuild): return build_a.get_name() < build_b.get_name())
 	
-	for build: Build in builds:
+	for build: EngineBuild in builds:
 		var build_ui: BuildUI = BUILD.instantiate()
 		add_child(build_ui)
 		build_ui.setup(build)

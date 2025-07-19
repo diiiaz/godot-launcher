@@ -1,4 +1,4 @@
-[gd_scene load_steps=11 format=3 uid="uid://bm3chnt4habtm"]
+[gd_scene load_steps=12 format=3 uid="uid://bm3chnt4habtm"]
 
 [ext_resource type="Theme" uid="uid://bimvjqmjjj4jh" path="res://assets/resources/theme/main.tres" id="1_s0v7e"]
 [ext_resource type="Script" uid="uid://ds2f2wannod2b" path="res://scr/main.gd" id="2_o1jc6"]
@@ -7,6 +7,7 @@
 [ext_resource type="PackedScene" uid="uid://b182chroba61d" path="res://scr/user_interface/pages/releases_page/releases_page.tscn" id="6_tpi1q"]
 [ext_resource type="PackedScene" uid="uid://c12wjxbyonv8g" path="res://scr/user_interface/pages/settings_page/settings_page.tscn" id="7_ss67u"]
 [ext_resource type="Script" uid="uid://ctuphdj5sjpgg" path="res://scr/user_interface/loading_screen/loading_screen.gd" id="8_q4m34"]
+[ext_resource type="Script" uid="uid://5eklgjndid51" path="res://scr/user_interface/buttons/update_launcher_button.gd" id="8_tpi1q"]
 [ext_resource type="Texture2D" uid="uid://dljbcqjith5da" path="res://assets/textures/icons/app/godot-launcher.png" id="9_q4m34"]
 [ext_resource type="Script" uid="uid://c3vf2ull0nu75" path="res://scr/user_interface/popup_animator.gd" id="14_o5q5n"]
 
@@ -69,6 +70,32 @@ layout_mode = 2
 visible = false
 layout_mode = 2
 
+[node name="MarginContainer2" type="MarginContainer" parent="."]
+layout_mode = 1
+anchors_preset = 10
+anchor_right = 1.0
+offset_bottom = 48.0
+grow_horizontal = 2
+theme_override_constants/margin_left = 8
+theme_override_constants/margin_top = 8
+theme_override_constants/margin_right = 8
+theme_override_constants/margin_bottom = 8
+
+[node name="HBoxContainer" type="HBoxContainer" parent="MarginContainer2"]
+layout_mode = 2
+size_flags_vertical = 0
+alignment = 2
+
+[node name="UpdateLauncherButton" type="Button" parent="MarginContainer2/HBoxContainer"]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(32, 32)
+layout_mode = 2
+mouse_behavior_recursive = 2
+mouse_default_cursor_shape = 2
+theme_type_variation = &"ButtonSimple"
+text = "v0.9.0"
+script = ExtResource("8_tpi1q")
+
 [node name="LoadingScreen" type="CanvasLayer" parent="."]
 unique_name_in_owner = true
 layer = 128
@@ -116,3 +143,5 @@ size_flags_vertical = 4
 texture = ExtResource("9_q4m34")
 expand_mode = 1
 stretch_mode = 5
+
+[connection signal="pressed" from="MarginContainer2/HBoxContainer/UpdateLauncherButton" to="." method="_on_update_launcher_button_pressed"]

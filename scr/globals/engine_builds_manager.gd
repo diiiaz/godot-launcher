@@ -2,28 +2,26 @@ extends Node
 
 const TAGS_GROUP_NAME = "releases"
 
-signal downloaded_build(build: Build)
-signal uninstalled_build(build: Build)
+signal downloaded_build(build: EngineBuild)
+signal uninstalled_build(build: EngineBuild)
 signal updated
 
 var _releases: Array[Release]
-var _downloaded_builds: Array[Build]
+var _downloaded_builds: Array[EngineBuild]
 
 
 func initialize() -> void:
-	# WARNING: move this to the button to download the build, we don't want to update the whole releases.
 	SettingsManager.updated.connect(func(setting: Settings.SETTING): if setting == Settings.SETTING.BUILDS_PATH: update_releases())
 	update_releases()
 
 
 func get_releases(tags_filter: PackedStringArray = [], string_filter: String = "", offset: int = 0) -> Array[Release]:
-#func get_releases() -> Array[Release]:
 	if _releases.is_empty():
 		await update_releases()
 	
-	TagsManager.get_tags_group(BuildsManager.TAGS_GROUP_NAME).clear()
+	TagsManager.get_tags_group(EngineBuildsManager.TAGS_GROUP_NAME).clear()
 	for release in _releases:
-		TagsManager.get_tags_group(BuildsManager.TAGS_GROUP_NAME).add_tags(release.get_tags())
+		TagsManager.get_tags_group(EngineBuildsManager.TAGS_GROUP_NAME).add_tags(release.get_tags())
 	
 	var releases: Array[Release] = _releases.duplicate(true)
 	
@@ -43,12 +41,11 @@ func get_releases_amount() -> int:
 		await update_releases()
 	return _releases.size()
 
-func get_downloaded_builds() -> Array[Build]:
+func get_downloaded_builds() -> Array[EngineBuild]:
 	return _downloaded_builds
 
 func has_downloaded_builds() -> bool:
 	return not _downloaded_builds.is_empty()
-	#return DirAccess.get_files_at(SettingsManager.get_settings().builds_path).size() > 0
 
 
 func update_releases(force_fetch_new_releases: bool = false) -> void:
@@ -57,7 +54,7 @@ func update_releases(force_fetch_new_releases: bool = false) -> void:
 	
 	_downloaded_builds.clear()
 	_releases.clear()
-	for release_dict: Dictionary in await BuildsFetcher.fetch_or_load_releases(force_fetch_new_releases):
+	for release_dict: Dictionary in await EngineBuildsFetcher.fetch_or_load_releases(force_fetch_new_releases):
 		var release: Release = Release.new() \
 			.set_version(ReleaseHelper.get_version_from_release_dict(release_dict)) \
 			.set_type(ReleaseHelper.get_type_from_release_dict(release_dict)) \
@@ -65,7 +62,7 @@ func update_releases(force_fetch_new_releases: bool = false) -> void:
 			.set_published_time(TimeHelper.convert_iso_to_unix_time(release_dict.published_at))
 		
 		for build_dict: Dictionary in release_dict.assets:
-			var build: Build = Build.new(build_dict)
+			var build: EngineBuild = EngineBuild.new(build_dict)
 			release.add_build(build)
 			build.downloaded.connect(
 				func():
@@ -84,13 +81,13 @@ func update_releases(force_fetch_new_releases: bool = false) -> void:
 
 
 func check_for_new_releases() -> void:
-	if await BuildsFetcher.has_new_release():
+	if await EngineBuildsFetcher.has_new_release():
 		await update_releases(true)
 	else:
 		ToastsManager.create_info_toast(TranslationServer.translate("TOAST_NO_NEW_RELEASES"))
 
 
-func uninstall_build(build: Build) -> void:
+func uninstall_build(build: EngineBuild) -> void:
 	if not build.is_downloaded():
 		return
 	
@@ -99,5 +96,5 @@ func uninstall_build(build: Build) -> void:
 		ToastsManager.create_error_toast(error_string(err))
 		return
 	
-	ToastsManager.create_info_toast(tr("TOAST_SUCCESS_UNINSTALLED_BUILD") % [build.get_name()])
+	ToastsManager.create_info_toast(tr("TOAST_SUCCESS_UNINSTALLED_BUILD").format({"build_name": build.get_name()}))
 	build.uninstalled.emit()

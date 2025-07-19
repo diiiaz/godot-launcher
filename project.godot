@@ -24,12 +24,13 @@ config/windows_native_icon="res://assets/textures/icons/app/godot-launcher.ico"
 ToastsManager="*res://scr/user_interface/toast/toasts_manager.tscn"
 ConnectionTester="*res://scr/globals/connection_tester.gd"
 ProjectsManager="*res://scr/globals/projects_manager.gd"
-BuildsFetcher="*res://scr/globals/builds_fetcher.gd"
-BuildDownloader="*res://scr/globals/build_downloader.gd"
-BuildsManager="*res://scr/globals/builds_manager.gd"
+EngineBuildsFetcher="*res://scr/globals/engine_builds_fetcher.gd"
+EngineBuildsManager="*res://scr/globals/engine_builds_manager.gd"
 TagsManager="*res://scr/globals/tags_manager.gd"
 SettingsManager="*res://scr/globals/settings_manager.gd"
 UserDataManager="*res://scr/globals/user_data_manager.gd"
+LauncherBuildsFetcher="*res://scr/globals/launcher_builds_fetcher.gd"
+Downloader="*res://scr/globals/downloader.gd"
 
 [display]
 

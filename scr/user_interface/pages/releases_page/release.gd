@@ -67,7 +67,7 @@ func _notification(what: int) -> void:
 
 
 func _on_download_recommended_build_button_pressed() -> void:
-	BuildDownloader.download(_release.get_recommended_build())
+	Downloader.download(_release.get_recommended_build())
 
 func _on_open_source_button_pressed() -> void:
 	OS.shell_open(_release.get_html_url())
@@ -79,7 +79,7 @@ func _on_main_button_pressed() -> void:
 	update_builds()
 
 func _on_delete_recommended_build_button_pressed() -> void:
-	BuildsManager.uninstall_build(_release.get_recommended_build())
+	EngineBuildsManager.uninstall_build(_release.get_recommended_build())
 
 
 func _on_release_build_downloaded() -> void:

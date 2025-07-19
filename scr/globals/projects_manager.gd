@@ -61,7 +61,7 @@ func is_dir_project_dir(dir_path: String) -> bool:
 	return "project.godot" in files or "engine.cfg" in files
 
 
-func run_project(build: Build, project_path: String, in_editor: bool = false) -> void:
+func run_project(build: EngineBuild, project_path: String, in_editor: bool = false) -> void:
 	if build == null:
 		ToastsManager.create_warning_toast(tr("WARNING_PROJECT_RUN_WITHOUT_SELECTED_BUILD"))
 		return
@@ -118,7 +118,7 @@ func update_projects() -> void:
 	updated.emit()
 
 
-func create_project(project_name: String, project_path: String, build: Build) -> void:
+func create_project(project_name: String, project_path: String, build: EngineBuild) -> void:
 	if not DirAccess.dir_exists_absolute(project_path):
 		DirAccess.make_dir_recursive_absolute(project_path)
 	ProjectConfigFile.create_project_config_file(project_name, project_path, build.get_version_name())

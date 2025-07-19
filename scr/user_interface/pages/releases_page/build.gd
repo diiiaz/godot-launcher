@@ -9,12 +9,13 @@ const TAG_UI = preload("uid://ekqlub7k865j")
 @onready var download_button: Button = %DownloadButton
 @onready var delete_button: Button = %DeleteButton
 
-var _build: Build
+var _build: EngineBuild
 
 
-func setup(build: Build) -> void:
+func setup(build: EngineBuild) -> void:
 	_build = build
-	build.downloaded.connect(_on_build_downloaded)
+	if not build.downloaded.is_connected(_on_build_downloaded):
+		build.downloaded.connect(_on_build_downloaded)
 	build_name_label.text = build.get_name()
 	size_label.text = MemorySizeHelper.format_file_size(build.get_size())
 	
@@ -32,7 +33,7 @@ func _on_build_downloaded() -> void:
 
 
 func _on_delete_button_pressed() -> void:
-	BuildsManager.uninstall_build(_build)
+	EngineBuildsManager.uninstall_build(_build)
 
 func _on_download_button_pressed() -> void:
-	BuildDownloader.download(_build)
+	Downloader.download(_build)
