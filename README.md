@@ -19,11 +19,6 @@
 
 ## 🚀 Quick Start
 
-> [!CAUTION]
->**This software is currently in alpha stage**: 
->- Unexpected behavior or data loss *is possible* in early releases.
->- The developers assume no responsibility for project corruption/loss.
-
 ### Installation
 1. **Download the latest release** from the [Releases page](https://github.com/diiiaz/godot-launcher/releases).  
 2. **Extract the package** and run the executable.  
