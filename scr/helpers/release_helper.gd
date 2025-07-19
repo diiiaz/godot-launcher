@@ -30,7 +30,7 @@ const RELEASES_TYPE_FORMATTED_NAME = {
 
 #region x---------------------------------------x Patterns
 
-static func get_release_patterns(_release: Release) -> Array[String]:
+static func get_release_patterns() -> Array[String]:
 	var system: SystemInfo = SystemHelper.get_or_create_system_info()
 	var patterns: Array[String] = []
 	

@@ -171,7 +171,7 @@ func _is_cache_expired(cached_data) -> bool:
 	return (current_time - cached_data.timestamp) > CACHE_EXPIRY_SEC
 
 
-func _fallback_build(builds: Array[Build], os_key: String) -> Build:
+func _fallback_build(builds: Array[EngineBuild], os_key: String) -> EngineBuild:
 	var is_mono: bool = SettingsManager.get_setting(Settings.SETTING.USE_MONO_BUILDS)
 	var fallback_patterns = []
 	var mono_prefix = "_mono_" if is_mono else ""
@@ -187,7 +187,7 @@ func _fallback_build(builds: Array[Build], os_key: String) -> Build:
 			fallback_patterns.append("%smacos.universal" % mono_prefix)
 
 	for pattern in fallback_patterns:
-		for build: Build in builds:
+		for build: EngineBuild in builds:
 			if build["name"].find(pattern) != -1:
 				return build["download_url"]
 

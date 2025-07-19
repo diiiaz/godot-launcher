@@ -11,7 +11,7 @@ const RELEASE_NAME_PLACEHOLDER = "{version}-{type}{type_version}"
 var _version: String = "1.0"
 var _type: ReleaseHelper.RELEASES_TYPE = ReleaseHelper.RELEASES_TYPE.STABLE
 var _type_version: int = -1
-var _builds: Array[Build] = []
+var _builds: Array[EngineBuild] = []
 var _published_at: int = 0
 
 
@@ -27,7 +27,7 @@ func set_type_version(type_version: int) -> Release:
 	_type_version = type_version
 	return self
 
-func add_build(build: Build) -> Release:
+func add_build(build: EngineBuild) -> Release:
 	_builds.append(build)
 	build.downloaded.connect(build_downloaded.emit)
 	build.uninstalled.connect(build_uninstalled.emit)
@@ -41,9 +41,9 @@ func set_published_time(published_at: int) -> Release:
 func get_version() -> String: return _version
 func get_type() -> ReleaseHelper.RELEASES_TYPE: return _type
 func get_type_version() -> int: return _type_version
-func get_builds() -> Array[Build]: return _builds
+func get_builds() -> Array[EngineBuild]: return _builds
 func get_published_time() -> int: return _published_at
-func get_downloaded_builds() -> Array: return _builds.filter(func(build: Build): return build.is_downloaded())
+func get_downloaded_builds() -> Array: return _builds.filter(func(build: EngineBuild): return build.is_downloaded())
 
 
 func get_name() -> String:
@@ -61,11 +61,11 @@ func has_tags() -> bool:
 	return not get_tags().is_empty()
 
 
-func get_recommended_build() -> Build:
-	var patterns: Array[String] = ReleaseHelper.get_release_patterns(self)
+func get_recommended_build() -> EngineBuild:
+	var patterns: Array[String] = ReleaseHelper.get_release_patterns()
 	
 	for pattern: String in patterns:
-		for build: Build in get_builds():
+		for build: EngineBuild in get_builds():
 			if pattern not in build.get_url():
 				continue
 			if (build.is_mono()) != SettingsManager.get_setting(Settings.SETTING.USE_MONO_BUILDS):

@@ -18,7 +18,7 @@ const STATUS_SUCCESS_ICON_TEXTURE = preload("uid://dl5251qp6cx1y")
 
 var _current_project_name: String = ""
 var _current_project_path: String = ""
-var _selected_build: Build
+var _selected_build: EngineBuild
 
 
 func _ready() -> void:
@@ -112,7 +112,7 @@ func _on_cancel_button_pressed() -> void:
 	get_popup_window().close()
 
 
-func _on_build_option_button_selected_build(build: Build) -> void:
+func _on_build_option_button_selected_build(build: EngineBuild) -> void:
 	_selected_build = build
 	update()
 
@@ -126,12 +126,12 @@ class CreateNewProjectResult extends PopupWindowContent.Result:
 	var _action: ACTION
 	var _project_name: String
 	var _project_path: String
-	var _project_build: Build
+	var _project_build: EngineBuild
 	
 	func _init(action: ACTION) -> void:
 		_action = action
 	
-	func setup_new_project(name: String = "", path: String = "", build: Build = null) -> CreateNewProjectResult:
+	func setup_new_project(name: String = "", path: String = "", build: EngineBuild = null) -> CreateNewProjectResult:
 		_project_name = name
 		_project_path = path
 		_project_build = build
@@ -140,7 +140,7 @@ class CreateNewProjectResult extends PopupWindowContent.Result:
 	func get_action() -> ACTION: return _action
 	func get_project_name() -> String: return _project_name
 	func get_project_path() -> String: return _project_path
-	func get_project_build() -> Build: return _project_build
+	func get_project_build() -> EngineBuild: return _project_build
 	func get_result_as_text() -> String: return "action: " + ACTION.keys()[get_action()] + ", project_name: " + _project_name + ", project_path: " + _project_path + ", project_build: " + _project_build.get_name() if _project_build != null else "none"
 	func has_canceled() -> bool: return _action == ACTION.CANCEL
 	func is_editing_after() -> bool: return _action == ACTION.CREATE_EDIT

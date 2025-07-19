@@ -20,7 +20,7 @@ const DELETE_PROJECT_POPUP_WINDOW_CONTENT = preload("uid://qwl6em84n25p")
 @onready var project_build_option_button: OptionButton = %ProjectBuildOptionButton
 
 var _project: Project
-var _build: Build
+var _build: EngineBuild
 
 
 func setup(project: Project) -> void:
@@ -68,7 +68,7 @@ func _on_delete_project_popup_result(result: PopupWindowContent.Result) -> void:
 		deleted.emit()
 
 
-func _on_project_build_option_button_selected_build(build: Build) -> void:
+func _on_project_build_option_button_selected_build(build: EngineBuild) -> void:
 	_build = build
 	UserDataManager.get_user_data(UserData.USER_DATA.PROJECTS_SELECTED_BUILDS)[_project.get_path()] = _build.get_path().get_file()
 	UserDataManager.save_user_data()

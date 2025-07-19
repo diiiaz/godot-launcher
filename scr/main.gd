@@ -1,13 +1,16 @@
 extends Control
 
+const RELEASES_URL_TEMPLATE: String = "https://github.com/diiiaz/godot-launcher/releases/tag/{tag_name}"
 const CLOSE_WHILE_DOWNLOADING_POPUP_WINDOW_CONTENT = preload("uid://b6rp7jwqchtvr")
 
 @onready var loading_screen: CanvasLayer = %LoadingScreen
+@onready var update_launcher_button: Button = %UpdateLauncherButton
 
 
 func _ready() -> void:
-	BuildsManager.initialize()
+	EngineBuildsManager.initialize()
 	ProjectsManager.initialize()
+	update_launcher_button.text = "v" + ProjectSettings.get_setting("application/config/version")
 	
 	TranslationServer.set_locale(TranslationServer.get_loaded_locales()[SettingsManager.get_setting(Settings.SETTING.LANGUAGE)])
 	
@@ -23,31 +26,52 @@ func _ready() -> void:
 	if not DirAccess.dir_exists_absolute(SettingsManager.get_setting_fallback_value(Settings.SETTING.BUILDS_PATH)):
 		DirAccess.make_dir_absolute(SettingsManager.get_setting_fallback_value(Settings.SETTING.BUILDS_PATH))
 	
-	check_for_new_releases()
+	check_for_new_launcher_releases()
+	check_for_new_engine_releases()
 	get_tree().set_auto_accept_quit(false)
 	
 	loading_screen.close()
 
 
-func check_for_new_releases() -> void:
+func check_for_new_launcher_releases() -> void:
+	if not await ConnectionTester.is_connected_to_internet():
+		return
+	await LauncherBuildsFetcher.check_for_update()
+	if LauncherBuildsFetcher.has_new_release():
+		ToastsManager.create_info_toast(TranslationServer.translate("TOAST_NEW_LAUNCHER_RELEASES"))
+
+
+func _on_update_launcher_button_pressed() -> void:
+	if LauncherBuildsFetcher.has_new_release():
+		OS.shell_open(RELEASES_URL_TEMPLATE.format({"tag_name": LauncherBuildsFetcher.get_latest_version()}))
+	else:
+		await check_for_new_launcher_releases()
+		if not LauncherBuildsFetcher.has_new_release():
+			ToastsManager.create_info_toast(TranslationServer.translate("TOAST_NO_NEW_LAUNCHER_RELEASES"))
+
+
+func check_for_new_engine_releases() -> void:
+	if not await ConnectionTester.is_connected_to_internet():
+		return
+	
 	var current_time = Time.get_unix_time_from_system()
 	
-	var can_check_for_new_version: bool = \
+	var can_check_for_new_release: bool = \
 		SettingsManager.get_setting(Settings.SETTING.CHECK_FOR_NEW_ENGINE_RELEASES_ON_STARTUP) and \
 		(current_time - UserDataManager.get_user_data(UserData.USER_DATA.CHECK_NEW_VERSION_TIMESTAMP)) > TimeHelper.CHECK_NEW_VERSION_TIME_SEC
 	
-	if can_check_for_new_version:
-		if not await ConnectionTester.is_connected_to_internet():
-			return
-		UserDataManager.set_user_data(UserData.USER_DATA.CHECK_NEW_VERSION_TIMESTAMP, current_time)
-		if not await BuildsFetcher.has_new_release():
-			return
-		ToastsManager.create_info_toast(TranslationServer.translate("TOAST_NEW_RELEASES"))
+	if not can_check_for_new_release:
+		return
+	
+	UserDataManager.set_user_data(UserData.USER_DATA.CHECK_NEW_VERSION_TIMESTAMP, current_time)
+	
+	if await EngineBuildsFetcher.has_new_release():
+		ToastsManager.create_info_toast(TranslationServer.translate("TOAST_NEW_BUILD_RELEASES"))
 
 
 func _notification(what: int) -> void:
 	if what == NOTIFICATION_WM_CLOSE_REQUEST:
-		if BuildDownloader.is_downloading():
+		if Downloader.is_downloading():
 			var popup_content: CloseWhileDownlaodingPopupWindowContent = CLOSE_WHILE_DOWNLOADING_POPUP_WINDOW_CONTENT.instantiate()
 			popup_content.user_input_result.connect(_on_close_while_downloading_popup_content_user_input)
 			PopupWindowHelper.popup_window("CLOSE_APP", popup_content, get_viewport())
