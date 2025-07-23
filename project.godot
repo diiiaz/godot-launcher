@@ -12,6 +12,7 @@ config_version=5
 
 config/name="Godot Launcher"
 config/version="1.0.0"
+config/tags=PackedStringArray("app", "current")
 run/main_scene="uid://bm3chnt4habtm"
 config/features=PackedStringArray("4.5")
 boot_splash/bg_color=Color(0.078431375, 0.078431375, 0.078431375, 1)
@@ -19,7 +20,6 @@ boot_splash/show_image=false
 config/icon="uid://dljbcqjith5da"
 config/windows_native_icon="res://assets/textures/icons/app/godot-launcher.ico"
 
-config/tags=PackedStringArray("app", "current")
 [autoload]
 
 ToastsManager="*res://scr/user_interface/toast/toasts_manager.tscn"
