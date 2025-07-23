@@ -45,10 +45,10 @@ func setup(release: Release) -> void:
 		child.hide()
 		child.queue_free()
 	
-	for tag_name: String in release.get_tags():
+	for tag: Tag in release.get_tags():
 		var tag_ui = TAG_UI.instantiate()
 		tags_container.add_child(tag_ui)
-		tag_ui.setup(tag_name)
+		tag_ui.setup(tag)
 		tag_ui.pressed.connect(tag_pressed.emit)
 
 

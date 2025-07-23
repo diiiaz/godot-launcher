@@ -1,10 +1,11 @@
-[gd_scene load_steps=15 format=3 uid="uid://psey4qlxyx72"]
+[gd_scene load_steps=16 format=3 uid="uid://psey4qlxyx72"]
 
 [ext_resource type="Theme" uid="uid://bimvjqmjjj4jh" path="res://assets/resources/theme/main.tres" id="1_btsu8"]
 [ext_resource type="Script" uid="uid://dwkitjgxj7rhl" path="res://scr/user_interface/pages/projects_page/projects_page.gd" id="1_xrfej"]
 [ext_resource type="Texture2D" uid="uid://ci7lukvp03h5l" path="res://assets/textures/icons/search.svg" id="2_btsu8"]
 [ext_resource type="Texture2D" uid="uid://beyeib7qfhua2" path="res://assets/textures/icons/sort_newest.svg" id="3_fvatn"]
 [ext_resource type="Script" uid="uid://popu8nvpsm1o" path="res://scr/user_interface/buttons/menu/sorting_menu_button.gd" id="4_6clk2"]
+[ext_resource type="Script" uid="uid://uac4k17vk0bw" path="res://scr/components/unfocus_when_clicked_outside.gd" id="4_u4cvd"]
 [ext_resource type="Texture2D" uid="uid://crfok6jqbtok8" path="res://assets/textures/icons/filter.svg" id="5_inwf5"]
 [ext_resource type="Script" uid="uid://d2v6jrxq5gc5o" path="res://scr/user_interface/pages/projects_page/tags_filter_menu_button.gd" id="6_ga52w"]
 [ext_resource type="PackedScene" uid="uid://dnlqgewn260hf" path="res://scr/user_interface/smooth_scroll_container.tscn" id="7_u4cvd"]
@@ -57,6 +58,10 @@ placeholder_text = "FILTER_PROJECTS"
 clear_button_enabled = true
 right_icon = ExtResource("2_btsu8")
 caret_blink = true
+
+[node name="UnfocusWhenClickedOutsideComponent" type="Node" parent="VBoxContainer/TopMarginContainer/TopHBoxContainer/SearchBar"]
+script = ExtResource("4_u4cvd")
+metadata/_custom_type_script = "uid://uac4k17vk0bw"
 
 [node name="SortingMenuButton" type="MenuButton" parent="VBoxContainer/TopMarginContainer/TopHBoxContainer"]
 unique_name_in_owner = true

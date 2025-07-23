@@ -1,7 +1,5 @@
 extends Node
 
-const TAGS_GROUP_NAME = "releases"
-
 signal downloaded_build(build: EngineBuild)
 signal uninstalled_build(build: EngineBuild)
 signal updated
@@ -19,14 +17,10 @@ func get_releases(tags_filter: PackedStringArray = [], string_filter: String = "
 	if _releases.is_empty():
 		await update_releases()
 	
-	TagsManager.get_tags_group(EngineBuildsManager.TAGS_GROUP_NAME).clear()
-	for release in _releases:
-		TagsManager.get_tags_group(EngineBuildsManager.TAGS_GROUP_NAME).add_tags(release.get_tags())
-	
 	var releases: Array[Release] = _releases.duplicate(true)
 	
 	if not tags_filter.is_empty():
-		releases = releases.filter(func(release: Release): return release.get_tags().any(func(tag_name: String): return tag_name in tags_filter))
+		releases = releases.filter(func(release: Release): return release.get_tags().any(func(tag: Tag): return tag.get_name() in tags_filter))
 	
 	if not string_filter.is_empty():
 		releases.assign(FuzzySearcher.mapped_search(string_filter, releases, func(release: Release): return Helper.strip_bbcode(release.get_formatted_name())))

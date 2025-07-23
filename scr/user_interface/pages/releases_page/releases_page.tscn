@@ -1,9 +1,10 @@
-[gd_scene load_steps=13 format=3 uid="uid://b182chroba61d"]
+[gd_scene load_steps=14 format=3 uid="uid://b182chroba61d"]
 
 [ext_resource type="Theme" uid="uid://bimvjqmjjj4jh" path="res://assets/resources/theme/main.tres" id="1_4iq68"]
 [ext_resource type="Script" uid="uid://bpxla6f8whkbu" path="res://scr/user_interface/pages/releases_page/releases_page.gd" id="1_nsw3i"]
 [ext_resource type="Texture2D" uid="uid://ci7lukvp03h5l" path="res://assets/textures/icons/search.svg" id="2_4iq68"]
 [ext_resource type="Texture2D" uid="uid://crfok6jqbtok8" path="res://assets/textures/icons/filter.svg" id="3_ui1e6"]
+[ext_resource type="Script" uid="uid://uac4k17vk0bw" path="res://scr/components/unfocus_when_clicked_outside.gd" id="4_012q0"]
 [ext_resource type="Script" uid="uid://d2v6jrxq5gc5o" path="res://scr/user_interface/pages/projects_page/tags_filter_menu_button.gd" id="4_fs0x8"]
 [ext_resource type="PackedScene" uid="uid://dnlqgewn260hf" path="res://scr/user_interface/smooth_scroll_container.tscn" id="5_n7hxp"]
 [ext_resource type="Texture2D" uid="uid://6hb8qsb6ss1u" path="res://assets/textures/icons/refresh.svg" id="6_n7hxp"]
@@ -81,6 +82,10 @@ placeholder_text = "FILTER_RELEASES"
 clear_button_enabled = true
 right_icon = ExtResource("2_4iq68")
 caret_blink = true
+
+[node name="UnfocusWhenClickedOutsideComponent" type="Node" parent="HboxContainer/LeftSide/LeftSideBackground/VBoxContainer/TopMarginContainer/TopHBoxContainer/SearchBar"]
+script = ExtResource("4_012q0")
+metadata/_custom_type_script = "uid://uac4k17vk0bw"
 
 [node name="TagsFilterMenuButton" type="MenuButton" parent="HboxContainer/LeftSide/LeftSideBackground/VBoxContainer/TopMarginContainer/TopHBoxContainer"]
 unique_name_in_owner = true
@@ -165,6 +170,10 @@ placeholder_text = "FILTER_BUILDS"
 clear_button_enabled = true
 right_icon = ExtResource("2_4iq68")
 caret_blink = true
+
+[node name="UnfocusWhenClickedOutsideComponent" type="Node" parent="HboxContainer/RightSide/VBoxContainer/TopMarginContainer/SearchBar"]
+script = ExtResource("4_012q0")
+metadata/_custom_type_script = "uid://uac4k17vk0bw"
 
 [node name="HSeparator" type="HSeparator" parent="HboxContainer/RightSide/VBoxContainer"]
 layout_mode = 2

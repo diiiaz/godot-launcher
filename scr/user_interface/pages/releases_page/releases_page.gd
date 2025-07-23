@@ -18,9 +18,9 @@ func get_icon() -> Texture2D:
 	return preload("uid://dsrtamnxenut4")
 
 
-func _on_releases_container_tag_pressed(tag_name: String) -> void:
+func _on_releases_container_tag_pressed(tag: Tag) -> void:
 	for index: int in range(tags_filter_menu_button.get_popup().item_count):
-		if tags_filter_menu_button.get_popup().get_item_text(index) == tag_name:
+		if tags_filter_menu_button.get_popup().get_item_text(index) == tag.get_name():
 			tags_filter_menu_button.set_filter(index, true)
 			return
 
@@ -31,14 +31,14 @@ func setup_tags_filter_menu_button() -> void:
 	EngineBuildsManager.updated.connect(
 		func():
 			tags_filter_menu_button.clear_items()
-			tags_filter_menu_button.disabled = TagsManager.get_tags_group(EngineBuildsManager.TAGS_GROUP_NAME).get_tags().is_empty()
+			tags_filter_menu_button.disabled = TagsManager.get_or_create_tag_group(Release.TAG_GROUP).get_tags().is_empty()
 			tags_filter_menu_button.mouse_default_cursor_shape = Control.CURSOR_ARROW if tags_filter_menu_button.disabled else Control.CURSOR_POINTING_HAND
-			for tag_name: String in TagsManager.get_tags_group(EngineBuildsManager.TAGS_GROUP_NAME).get_tags():
+			for tag: Tag in TagsManager.get_or_create_tag_group(Release.TAG_GROUP).get_tags():
 				tags_filter_menu_button.add_item(
 					CustomMenuButton.Item.new()
-						.set_label(tag_name)
+						.set_label(tag.get_name())
 						.set_checkable_type(CustomMenuButton.Item.CHECKABLE_TYPE.CHECKBOX)
-						.set_color(Color.from_ok_hsl(TagsManager.get_tag_hue(tag_name), 0.8, 0.8))
+						.set_color(Color.from_ok_hsl(tag.get_hue(), 0.8, 0.8))
 						.set_icon(TAGS_FILTER_ICON_TEXTURE)
 				)
 	)

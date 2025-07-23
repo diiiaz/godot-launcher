@@ -118,10 +118,15 @@ TOOLTIP_ALREADY_DOWNLOADED_RECOMMENDED_VERSION,You already have the recommended 
 TOOLTIP_CHECK_NEW_BUILD_RELEASES,Check for new releases,Vérification des nouvelles versions
 TOOLTIP_CHECK_NEW_LAUNCHER_RELEASE,Check for new launcher releases,Vérification des nouvelles versions du launcher
 TOOLTIP_DOWNLOAD_LATEST_LAUNCHER_RELEASE,Download latest launcher release,Télécharger la dernière version du launcher
+TOOLTIP_MANAGE_TAGS,Manage tags,Gérer les étiquettes
+TOOLTIP_DELETE_TAG,Delete tag,Supprimer l'étiquette
+TOOLTIP_CREATE_TAG,Create new tag,Créer une nouvelle étiquette
+TOOLTIP_EDIT_TAG_NAME,Edit tag name,Editer le nom de l'étiquette
 
 
 # Popups,,
 POPUP_TITLE_DELETE_PROJECT,Delete project,Supprimer le projet
+POPUP_TITLE_MANAGE_TAGS,Manage tags,Gérer les étiquettes 
 
 # Notifications & Errors,,
 TOAST_NO_NEW_RELEASES,No new releases available,Aucune nouvelle version disponible
@@ -146,3 +151,6 @@ ERROR_DIRECTORY_NOT_EMPTY,This directory has files and/or directories already in
 WARNING_ALREADY_DOWNLOADING_BUILD,"Already downloading an build, please retry later.","Vous téléchargez déjà une build, veuillez réessayer plus tard."
 WARNING_ALREADY_DOWNLOADED_BUILD,Already downloaded {build_name}.,{build_name} est déjà téléchargé(e).
 WARNING_PROJECT_RUN_WITHOUT_SELECTED_BUILD,Cannot run project without a selected build,Impossible d'exécuter le projet sans build sélectionnée
+
+# Other,,
+NEW_TAG_NAME,New Tag,Nouvelle étiquette

@@ -4,6 +4,7 @@ class_name Release
 signal build_downloaded
 signal build_uninstalled
 
+const TAG_GROUP: String = "release"
 const INTERACTIVE_CHANGELOG_URL = "https://godotengine.github.io/godot-interactive-changelog/#{version}"
 const HTML_URL = "https://github.com/godotengine/godot-builds/releases/tag/{version}"
 const RELEASE_NAME_PLACEHOLDER = "{version}-{type}{type_version}"
@@ -53,8 +54,8 @@ func get_name() -> String:
 	return RELEASE_NAME_PLACEHOLDER.format({"version": version_string, "type": type_string_value, "type_version": type_version_string})
 
 
-func get_tags() -> Array[String]:
-	return [ReleaseHelper.RELEASES_TYPE_FORMATTED_NAME.get(get_type())]
+func get_tags() -> Array[Tag]:
+	return [TagsManager.get_or_create_tag_group(TAG_GROUP).create_tag(ReleaseHelper.RELEASES_TYPE.keys()[get_type()].capitalize())]
 
 
 func has_tags() -> bool:
