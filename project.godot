@@ -19,6 +19,7 @@ boot_splash/show_image=false
 config/icon="uid://dljbcqjith5da"
 config/windows_native_icon="res://assets/textures/icons/app/godot-launcher.ico"
 
+config/tags=PackedStringArray("app", "current")
 [autoload]
 
 ToastsManager="*res://scr/user_interface/toast/toasts_manager.tscn"
