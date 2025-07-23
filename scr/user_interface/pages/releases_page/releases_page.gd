@@ -2,6 +2,7 @@ extends Page
 
 const TAGS_FILTER_ICON_TEXTURE = preload("uid://da4q4drae4qnk")
 
+@onready var search_bar: LineEdit = %SearchBar
 @onready var tags_filter_menu_button: FilterMenuButton = %TagsFilterMenuButton
 @onready var releases_container: ReleasesContainer = %ReleasesContainer
 @onready var page_controller: PageController = %PageController
@@ -10,7 +11,13 @@ const TAGS_FILTER_ICON_TEXTURE = preload("uid://da4q4drae4qnk")
 func _ready() -> void:
 	setup_tags_filter_menu_button()
 	releases_container.setup(tags_filter_menu_button.get_filter_info())
-	page_controller.setup(func(): return await EngineBuildsManager.get_releases_amount())
+	
+	page_controller.setup(
+		func():
+			var releases: Array[Release] = await EngineBuildsManager.get_releases(tags_filter_menu_button.get_filter_info().get_filter(), search_bar.text)
+			return releases.size()
+	)
+	
 	EngineBuildsManager.updated.connect(page_controller.update)
 	visibility_changed.connect(page_controller.update)
 
@@ -44,16 +51,18 @@ func setup_tags_filter_menu_button() -> void:
 	)
 
 func _on_tags_filter_menu_button_filter_changed(_unused) -> void:
-	page_controller.travel_to_page(0)
 	releases_container.update()
+	page_controller.update()
+	page_controller.travel_to_page(0)
 
 
 # ---------------------------------- Search bar
 
 func _on_search_bar_text_changed(new_text: String) -> void:
-	page_controller.travel_to_page(0)
 	releases_container.set_search_text(new_text)
 	releases_container.update()
+	page_controller.update()
+	page_controller.travel_to_page(0)
 
 
 # ---------------------------------- Page Controller
@@ -65,6 +74,7 @@ func _on_page_controller_changed_page(page_index: int) -> void:
 # ---------------------------------- Reload Button
 
 func _on_reload_button_pressed() -> void:
-	page_controller.travel_to_page(0)
 	releases_container.update()
 	EngineBuildsManager.check_for_new_releases()
+	page_controller.update()
+	page_controller.travel_to_page(0)

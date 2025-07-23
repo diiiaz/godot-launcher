@@ -59,7 +59,7 @@ func get_filter_info() -> FilterInfo:
 
 
 class FilterInfo extends RefCounted:
-	var _filter: PackedStringArray
+	var _filter: Array[String]
 	
 	func clear() -> void:
 		_filter.clear()
@@ -73,9 +73,9 @@ class FilterInfo extends RefCounted:
 		if _filter.has(filter):
 			_filter.erase(filter)
 	
-	func add_filters(filters: PackedStringArray) -> void:
+	func add_filters(filters: Array[String]) -> void:
 		for filter in filters:
 			add_filter(filter)
 	
-	func get_filter() -> PackedStringArray:
+	func get_filter() -> Array[String]:
 		return _filter

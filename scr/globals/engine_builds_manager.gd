@@ -13,7 +13,7 @@ func initialize() -> void:
 	update_releases()
 
 
-func get_releases(tags_filter: PackedStringArray = [], string_filter: String = "", offset: int = 0) -> Array[Release]:
+func get_releases(tags_filter: PackedStringArray = [], string_filter: String = "", offset: int = -1) -> Array[Release]:
 	if _releases.is_empty():
 		await update_releases()
 	
@@ -25,7 +25,8 @@ func get_releases(tags_filter: PackedStringArray = [], string_filter: String = "
 	if not string_filter.is_empty():
 		releases.assign(FuzzySearcher.mapped_search(string_filter, releases, func(release: Release): return Helper.strip_bbcode(release.get_formatted_name())))
 	
-	releases = releases.slice(offset, offset + SettingsManager.get_setting(Settings.SETTING.MAX_ITEMS_PER_PAGE))
+	if offset > -1:
+		releases = releases.slice(offset, offset + SettingsManager.get_setting(Settings.SETTING.MAX_ITEMS_PER_PAGE))
 	
 	return releases
 

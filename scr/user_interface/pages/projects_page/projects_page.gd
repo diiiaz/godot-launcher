@@ -3,6 +3,7 @@ extends Page
 const TAGS_FILTER_ICON_TEXTURE = preload("uid://da4q4drae4qnk")
 const CREATE_NEW_PROJECT_POPUP_WINDOW_CONTENT = preload("uid://dub2pm32m75ws")
 
+@onready var search_bar: LineEdit = %SearchBar
 @onready var sorting_menu_button: SortingMenuButton = %SortingMenuButton
 @onready var tags_filter_menu_button: FilterMenuButton = %TagsFilterMenuButton
 @onready var projects_container: ProjectsContainer = %ProjectsContainer
@@ -18,7 +19,18 @@ func _ready() -> void:
 	setup_sorting_menu_button()
 	setup_tags_filter_menu_button()
 	projects_container.setup(sorting_menu_button.get_sort_info(), tags_filter_menu_button.get_filter_info())
-	page_controller.setup(func(): return ProjectsManager.get_projects_amount())
+	
+	page_controller.setup(
+		func():
+			var sort_info: SortingMenuButton.SortInfo = sorting_menu_button.get_sort_info()
+			var filter_info: FilterMenuButton.FilterInfo = tags_filter_menu_button.get_filter_info()
+			return ProjectsManager.get_projects(
+				sort_info.get_selected_item().get_sort_method().bind(not sort_info.is_inverted()),
+				filter_info.get_filter(),
+				search_bar.text
+			).size()
+	)
+	
 	ProjectsManager.updated.connect(page_controller.update)
 	visibility_changed.connect(page_controller.update)
 
@@ -65,9 +77,10 @@ func _on_file_dialog_selected_directory(dir_path: String) -> void:
 # ---------------------------------- Search Bar
 
 func _on_search_bar_text_changed(new_text: String) -> void:
-	page_controller.travel_to_page(0)
 	projects_container.set_search_text(new_text)
 	projects_container.update()
+	page_controller.update()
+	page_controller.travel_to_page(0)
 
 
 # ---------------------------------- Sorting Menu Button
@@ -94,8 +107,9 @@ func _sort_by_date_function(a: Project, b: Project, invert: bool = false) -> boo
 func _on_sorting_menu_button_sorting_changed(sort_info: SortingMenuButton.SortInfo) -> void:
 	UserDataManager.set_user_data(UserData.USER_DATA.PROJECT_SORT_OPTION_INDEX, sort_info.get_selected_index())
 	UserDataManager.set_user_data(UserData.USER_DATA.PROJECT_SORT_INVERTED, sort_info.is_inverted())
-	page_controller.travel_to_page(0)
 	projects_container.update()
+	page_controller.update()
+	page_controller.travel_to_page(0)
 
 
 # ---------------------------------- Tags Filter Menu Button
@@ -123,8 +137,9 @@ func _update_tags_filter_button() -> void:
 		)
 
 func _on_tags_filter_menu_button_filter_changed(_unused) -> void:
-	page_controller.travel_to_page(0)
 	projects_container.update()
+	page_controller.update()
+	page_controller.travel_to_page(0)
 
 
 # ---------------------------------- Page Controller
@@ -137,6 +152,8 @@ func _on_page_controller_changed_page(page_index: int) -> void:
 
 func _on_reload_button_pressed() -> void:
 	ProjectsManager.update_projects()
+	page_controller.update()
+	page_controller.travel_to_page(0)
 
 
 # ---------------------------------- Create New Project Button
@@ -149,6 +166,12 @@ func _on_create_new_project_button_pressed() -> void:
 func _on_create_new_project_window_content_user_input_result(result: CreateNewProjectPopupWindowContent.CreateNewProjectResult) -> void:
 	if result.has_canceled():
 		return
+	
 	ProjectsManager.create_project(result.get_project_name(), result.get_project_path(), result.get_project_build())
+	
 	if result.is_editing_after():
 		ProjectsManager.run_project(result.get_project_build(), result.get_project_path(), true)
+		return
+	
+	page_controller.update()
+	page_controller.travel_to_page(0)

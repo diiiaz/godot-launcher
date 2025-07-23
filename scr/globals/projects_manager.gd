@@ -5,6 +5,7 @@ enum SORT_METHOD {
 	NAME,
 	DATE
 }
+
 const DEFAULT_ICON_PATH = "res://assets/textures/icons/default_icon.svg"
 const PROJECT_ICON_NAME = "icon.svg"
 
@@ -25,7 +26,7 @@ func get_projects_amount() -> int:
 	return _projects.size()
 
 
-func get_projects(sort_function: Callable = Callable(), tags_filter: PackedStringArray = [], string_filter: String = "", offset: int = 0) -> Array[Project]:
+func get_projects(sort_function: Callable = Callable(), tags_filter: PackedStringArray = [], string_filter: String = "", offset: int = -1) -> Array[Project]:
 	var projects: Array[Project] = _projects.duplicate(true)
 	
 	if not tags_filter.is_empty():
@@ -37,7 +38,9 @@ func get_projects(sort_function: Callable = Callable(), tags_filter: PackedStrin
 	if sort_function.is_valid():
 		projects.sort_custom(sort_function)
 	
-	projects = projects.slice(offset, offset + SettingsManager.get_setting(Settings.SETTING.MAX_ITEMS_PER_PAGE))
+	if offset > -1:
+		projects = projects.slice(offset, offset + SettingsManager.get_setting(Settings.SETTING.MAX_ITEMS_PER_PAGE))
+	
 	return projects
 
 
@@ -112,6 +115,7 @@ func update_projects() -> void:
 		
 		var project: Project = Project.new(project_path.path_join(get_project_config_file_name(project_path)))
 		_projects.append(project)
+	
 	updated.emit()
 
 
