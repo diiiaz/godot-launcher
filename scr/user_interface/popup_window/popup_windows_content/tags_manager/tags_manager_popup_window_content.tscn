@@ -1,9 +1,13 @@
-[gd_scene load_steps=4 format=3 uid="uid://duskngwh068gh"]
+[gd_scene load_steps=5 format=3 uid="uid://duskngwh068gh"]
 
 [ext_resource type="Script" uid="uid://c882b4qsmjh7" path="res://scr/user_interface/popup_window/popup_windows_content/tags_manager/tags_manager_popup_window_content.gd" id="1_635bm"]
 [ext_resource type="Theme" uid="uid://bimvjqmjjj4jh" path="res://assets/resources/theme/main.tres" id="1_aicbu"]
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_6ugnh"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_aicbu"]
+font_size = 14
+font_color = Color(1, 1, 1, 0.5882353)
 
 [node name="TagsManagerPopupWindowContent" type="PanelContainer"]
 anchors_preset = 15
@@ -17,62 +21,73 @@ theme_override_styles/panel = SubResource("StyleBoxEmpty_6ugnh")
 script = ExtResource("1_635bm")
 metadata/_edit_lock_ = true
 
-[node name="HBoxContainer" type="HBoxContainer" parent="."]
+[node name="VBoxContainer" type="VBoxContainer" parent="."]
 layout_mode = 2
+
+[node name="HBoxContainer" type="HBoxContainer" parent="VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 3
 theme_override_constants/separation = 8
 
-[node name="ProjectTagsContainer" type="VBoxContainer" parent="HBoxContainer"]
+[node name="ProjectTagsContainer" type="VBoxContainer" parent="VBoxContainer/HBoxContainer"]
 layout_mode = 2
 size_flags_horizontal = 3
 theme_override_constants/separation = 8
 
-[node name="Label" type="Label" parent="HBoxContainer/ProjectTagsContainer"]
+[node name="Label" type="Label" parent="VBoxContainer/HBoxContainer/ProjectTagsContainer"]
 layout_mode = 2
 text = "Projects Tags"
 horizontal_alignment = 1
 vertical_alignment = 1
 
-[node name="Background" type="PanelContainer" parent="HBoxContainer/ProjectTagsContainer"]
+[node name="Background" type="PanelContainer" parent="VBoxContainer/HBoxContainer/ProjectTagsContainer"]
 layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 3
 theme_type_variation = &"PanelContainerDefaultDark"
 
-[node name="MarginContainer" type="MarginContainer" parent="HBoxContainer/ProjectTagsContainer/Background"]
+[node name="MarginContainer" type="MarginContainer" parent="VBoxContainer/HBoxContainer/ProjectTagsContainer/Background"]
 layout_mode = 2
 theme_override_constants/margin_left = 8
 theme_override_constants/margin_top = 8
 theme_override_constants/margin_right = 8
 theme_override_constants/margin_bottom = 8
 
-[node name="ProjectTagsHFlowContainer" type="HFlowContainer" parent="HBoxContainer/ProjectTagsContainer/Background/MarginContainer"]
+[node name="ProjectTagsHFlowContainer" type="HFlowContainer" parent="VBoxContainer/HBoxContainer/ProjectTagsContainer/Background/MarginContainer"]
 unique_name_in_owner = true
 layout_mode = 2
 
-[node name="AllTagsContainer" type="VBoxContainer" parent="HBoxContainer"]
+[node name="AllTagsContainer" type="VBoxContainer" parent="VBoxContainer/HBoxContainer"]
 layout_mode = 2
 size_flags_horizontal = 3
 theme_override_constants/separation = 8
 
-[node name="Label" type="Label" parent="HBoxContainer/AllTagsContainer"]
+[node name="Label" type="Label" parent="VBoxContainer/HBoxContainer/AllTagsContainer"]
 layout_mode = 2
 text = "All Tags"
 horizontal_alignment = 1
 vertical_alignment = 1
 
-[node name="Background" type="PanelContainer" parent="HBoxContainer/AllTagsContainer"]
+[node name="Background" type="PanelContainer" parent="VBoxContainer/HBoxContainer/AllTagsContainer"]
 layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 3
 theme_type_variation = &"PanelContainerDefaultDark"
 
-[node name="MarginContainer" type="MarginContainer" parent="HBoxContainer/AllTagsContainer/Background"]
+[node name="MarginContainer" type="MarginContainer" parent="VBoxContainer/HBoxContainer/AllTagsContainer/Background"]
 layout_mode = 2
 theme_override_constants/margin_left = 8
 theme_override_constants/margin_top = 8
 theme_override_constants/margin_right = 8
 theme_override_constants/margin_bottom = 8
 
-[node name="AllTagsHFlowContainer" type="HFlowContainer" parent="HBoxContainer/AllTagsContainer/Background/MarginContainer"]
+[node name="AllTagsHFlowContainer" type="HFlowContainer" parent="VBoxContainer/HBoxContainer/AllTagsContainer/Background/MarginContainer"]
 unique_name_in_owner = true
 layout_mode = 2
+
+[node name="InfoLabel" type="Label" parent="VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 1
+text = "TAGS_MANAGER_WINDOW_INFO"
+label_settings = SubResource("LabelSettings_aicbu")
+horizontal_alignment = 1

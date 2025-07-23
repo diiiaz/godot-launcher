@@ -154,3 +154,5 @@ WARNING_PROJECT_RUN_WITHOUT_SELECTED_BUILD,Cannot run project without a selected
 
 # Other,,
 NEW_TAG_NAME,New Tag,Nouvelle étiquette
+TAGS_MANAGER_WINDOW_INFO,Click tags to move them; use the + button to create new ones.,Cliquez sur les étiquettes pour les déplacer; utilisez le bouton + pour en créer de nouvelles.
+
