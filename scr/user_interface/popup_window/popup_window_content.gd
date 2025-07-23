@@ -1,3 +1,4 @@
+@abstract
 extends Control
 class_name PopupWindowContent
 
@@ -16,8 +17,8 @@ func set_popup_window(popup_window: PopupWindow) -> void:
 	_popup_window = popup_window
 
 
-func get_popup_window() -> PopupWindow:
-	return _popup_window
+func get_popup_window() -> PopupWindow: return _popup_window
+func get_window_size_ratio() -> Vector2: return Vector2(0.725, 0.725)
 
 
 @abstract class Result extends RefCounted:

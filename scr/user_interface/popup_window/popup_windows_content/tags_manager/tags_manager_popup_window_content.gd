@@ -9,6 +9,8 @@ const TAG_UI_EDITOR = preload("uid://b4ymg7l804jgx")
 
 var _project: Project
 
+func get_window_size_ratio() -> Vector2: return Vector2.ONE * 0.8
+
 
 func setup(extra_data: Variant) -> void:
 	assert(extra_data is Project, "extra data for delete_project_popup_window_content.gd should be of type 'Project'.")

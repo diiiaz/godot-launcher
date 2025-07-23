@@ -41,10 +41,10 @@ theme_override_styles/panel = SubResource("StyleBoxFlat_x4yeo")
 unique_name_in_owner = true
 layout_mode = 1
 anchors_preset = -1
-anchor_left = 0.26875
-anchor_top = 0.275
-anchor_right = 0.73125
-anchor_bottom = 0.725
+anchor_left = 0.2
+anchor_top = 0.2
+anchor_right = 0.8
+anchor_bottom = 0.8
 grow_horizontal = 2
 grow_vertical = 2
 theme_type_variation = &"PopupWindowPanel"
@@ -82,7 +82,7 @@ label_settings = SubResource("LabelSettings_26jr8")
 vertical_alignment = 1
 
 [node name="CloseButton" type="Button" parent="WindowPanel/VBoxContainer/Header/MarginContainer/HBoxContainer"]
-custom_minimum_size = Vector2(24, 24)
+custom_minimum_size = Vector2(32, 32)
 layout_mode = 2
 size_flags_horizontal = 4
 size_flags_vertical = 4

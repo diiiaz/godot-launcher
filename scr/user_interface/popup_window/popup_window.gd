@@ -21,7 +21,18 @@ func open(title: String, content: PopupWindowContent) -> void:
 	_title_label.text = title
 	content.set_popup_window(self)
 	_content_container.add_child(content)
+	
+	var content_size: Vector2 = content.get_window_size_ratio()
+	content_size = content_size.clampf(0.0, 1.0)
+	
+	_window_panel.set_anchor(Side.SIDE_LEFT, 1.0 - content_size.x, true)
+	_window_panel.set_anchor(Side.SIDE_RIGHT, content_size.x, true)
+	_window_panel.set_anchor(Side.SIDE_TOP, 1.0 - content_size.y, true)
+	_window_panel.set_anchor(Side.SIDE_BOTTOM, content_size.y, true)
+	
+	await get_tree().process_frame
 	_window_panel.pivot_offset = _window_panel.size / 2.0
+	
 	create_tween().set_ease(Tween.EASE_OUT).set_trans(Tween.TRANS_BACK).tween_property(_window_panel, "scale", Vector2.ONE, 0.2).from(Vector2.ONE * 0.8)
 	create_tween().set_ease(Tween.EASE_OUT).set_trans(Tween.TRANS_EXPO).tween_property(_window_panel, "modulate:a", 1.0, 0.2).from(0.0)
 	create_tween().set_ease(Tween.EASE_OUT).set_trans(Tween.TRANS_EXPO).tween_property(_mouse_blocker, "modulate:a", 1.0, 1.0).from(0.0)
