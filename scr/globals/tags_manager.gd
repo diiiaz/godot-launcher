@@ -8,9 +8,6 @@ var _tag_groups: Dictionary[String, TagGroup]
 func _init() -> void:
 	load_tags()
 	tag_group_changed.connect(func(_unused): save_tags.call_deferred())
-	print("tags_manager.gd::_init")
-	for tag_group: TagGroup in _tag_groups.values():
-		print("   - ", tag_group)
 
 
 func get_or_create_tag_group(group_name: String) -> TagGroup:
