@@ -55,7 +55,7 @@ func get_name() -> String:
 
 
 func get_tags() -> Array[Tag]:
-	return [TagsManager.get_or_create_tag_group(TAG_GROUP).create_tag(ReleaseHelper.RELEASES_TYPE.keys()[get_type()].capitalize())]
+	return [TagsManager.get_or_create_tag_group(TAG_GROUP).create_tag(ReleaseHelper.RELEASES_TYPE_FORMATTED_NAME.get(get_type()))]
 
 
 func has_tags() -> bool:
