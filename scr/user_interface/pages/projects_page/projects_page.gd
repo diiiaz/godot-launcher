@@ -43,9 +43,9 @@ func _on_projects_container_udpated() -> void:
 	update_no_projects_found_label()
 
 
-func _on_projects_container_tag_pressed(tag_name: String) -> void:
+func _on_projects_container_tag_pressed(tag: Tag) -> void:
 	for index: int in range(tags_filter_menu_button.get_popup().item_count):
-		if tags_filter_menu_button.get_popup().get_item_text(index) == tag_name:
+		if tags_filter_menu_button.get_popup().get_item_text(index) == tag.get_name():
 			tags_filter_menu_button.set_filter(index, true)
 			return
 
@@ -101,20 +101,26 @@ func _on_sorting_menu_button_sorting_changed(sort_info: SortingMenuButton.SortIn
 # ---------------------------------- Tags Filter Menu Button
 
 func setup_tags_filter_menu_button() -> void:
-	ProjectsManager.updated.connect(
-		func():
-			tags_filter_menu_button.clear_items()
-			tags_filter_menu_button.disabled = TagsManager.get_tags_group(ProjectsManager.TAGS_GROUP_NAME).get_tags().is_empty()
-			tags_filter_menu_button.mouse_default_cursor_shape = Control.CURSOR_ARROW if tags_filter_menu_button.disabled else Control.CURSOR_POINTING_HAND
-			for tag_name: String in TagsManager.get_tags_group(ProjectsManager.TAGS_GROUP_NAME).get_tags():
-				tags_filter_menu_button.add_item(
-					CustomMenuButton.Item.new()
-						.set_label(tag_name)
-						.set_checkable_type(CustomMenuButton.Item.CHECKABLE_TYPE.CHECKBOX)
-						.set_color(Color.from_ok_hsl(TagsManager.get_tag_hue(tag_name), 0.8, 0.8))
-						.set_icon(TAGS_FILTER_ICON_TEXTURE)
-				)
+	ProjectsManager.updated.connect(_update_tags_filter_button)
+	TagsManager.tag_group_changed.connect(
+		func(tag_group: TagGroup):
+			if tag_group.get_group_name() != Project.TAG_GROUP:
+				return
+			_update_tags_filter_button()
 	)
+
+func _update_tags_filter_button() -> void:
+	tags_filter_menu_button.clear_items()
+	tags_filter_menu_button.disabled = TagsManager.get_or_create_tag_group(Project.TAG_GROUP).get_tags().is_empty()
+	tags_filter_menu_button.mouse_default_cursor_shape = Control.CURSOR_ARROW if tags_filter_menu_button.disabled else Control.CURSOR_POINTING_HAND
+	for tag: Tag in TagsManager.get_or_create_tag_group(Project.TAG_GROUP).get_tags():
+		tags_filter_menu_button.add_item(
+			CustomMenuButton.Item.new()
+				.set_label(tag.get_name())
+				.set_checkable_type(CustomMenuButton.Item.CHECKABLE_TYPE.CHECKBOX)
+				.set_color(Color.from_ok_hsl(tag.get_hue(), 0.8, 0.8))
+				.set_icon(TAGS_FILTER_ICON_TEXTURE)
+		)
 
 func _on_tags_filter_menu_button_filter_changed(_unused) -> void:
 	page_controller.travel_to_page(0)

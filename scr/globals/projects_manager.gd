@@ -7,7 +7,6 @@ enum SORT_METHOD {
 }
 const DEFAULT_ICON_PATH = "res://assets/textures/icons/default_icon.svg"
 const PROJECT_ICON_NAME = "icon.svg"
-const TAGS_GROUP_NAME = "projects"
 
 signal updated
 signal finished_initialization
@@ -30,7 +29,7 @@ func get_projects(sort_function: Callable = Callable(), tags_filter: PackedStrin
 	var projects: Array[Project] = _projects.duplicate(true)
 	
 	if not tags_filter.is_empty():
-		projects = projects.filter(func(project: Project): return project.get_tags().any(func(tag_name: String): return tag_name in tags_filter))
+		projects = projects.filter(func(project: Project): return project.get_tags().any(func(tag: Tag): return tag.get_name() in tags_filter))
 	
 	if not string_filter.is_empty():
 		projects.assign(FuzzySearcher.mapped_search(string_filter, projects, func(project: Project): return project.get_name()))
@@ -107,13 +106,11 @@ func update_projects() -> void:
 		ToastsManager.create_error_toast(tr("ERROR_NO_DIRECTORY_FOUND").format({"dir_path": path}))
 		return
 	
-	TagsManager.get_tags_group(TAGS_GROUP_NAME).clear()
 	for project_path: String in get_dir_contents(path):
 		if not is_dir_project_dir(project_path):
 			continue
 		
 		var project: Project = Project.new(project_path.path_join(get_project_config_file_name(project_path)))
-		TagsManager.get_tags_group(TAGS_GROUP_NAME).add_tags(project.get_tags())
 		_projects.append(project)
 	updated.emit()
 

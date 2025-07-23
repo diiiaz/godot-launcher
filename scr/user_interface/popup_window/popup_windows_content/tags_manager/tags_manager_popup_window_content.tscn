@@ -1,0 +1,78 @@
+[gd_scene load_steps=4 format=3 uid="uid://duskngwh068gh"]
+
+[ext_resource type="Script" uid="uid://c882b4qsmjh7" path="res://scr/user_interface/popup_window/popup_windows_content/tags_manager/tags_manager_popup_window_content.gd" id="1_635bm"]
+[ext_resource type="Theme" uid="uid://bimvjqmjjj4jh" path="res://assets/resources/theme/main.tres" id="1_aicbu"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_6ugnh"]
+
+[node name="TagsManagerPopupWindowContent" type="PanelContainer"]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_behavior_recursive = 1
+theme = ExtResource("1_aicbu")
+theme_override_styles/panel = SubResource("StyleBoxEmpty_6ugnh")
+script = ExtResource("1_635bm")
+metadata/_edit_lock_ = true
+
+[node name="HBoxContainer" type="HBoxContainer" parent="."]
+layout_mode = 2
+theme_override_constants/separation = 8
+
+[node name="ProjectTagsContainer" type="VBoxContainer" parent="HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_constants/separation = 8
+
+[node name="Label" type="Label" parent="HBoxContainer/ProjectTagsContainer"]
+layout_mode = 2
+text = "Projects Tags"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Background" type="PanelContainer" parent="HBoxContainer/ProjectTagsContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+theme_type_variation = &"PanelContainerDefaultDark"
+
+[node name="MarginContainer" type="MarginContainer" parent="HBoxContainer/ProjectTagsContainer/Background"]
+layout_mode = 2
+theme_override_constants/margin_left = 8
+theme_override_constants/margin_top = 8
+theme_override_constants/margin_right = 8
+theme_override_constants/margin_bottom = 8
+
+[node name="ProjectTagsHFlowContainer" type="HFlowContainer" parent="HBoxContainer/ProjectTagsContainer/Background/MarginContainer"]
+unique_name_in_owner = true
+layout_mode = 2
+
+[node name="AllTagsContainer" type="VBoxContainer" parent="HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_constants/separation = 8
+
+[node name="Label" type="Label" parent="HBoxContainer/AllTagsContainer"]
+layout_mode = 2
+text = "All Tags"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Background" type="PanelContainer" parent="HBoxContainer/AllTagsContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+theme_type_variation = &"PanelContainerDefaultDark"
+
+[node name="MarginContainer" type="MarginContainer" parent="HBoxContainer/AllTagsContainer/Background"]
+layout_mode = 2
+theme_override_constants/margin_left = 8
+theme_override_constants/margin_top = 8
+theme_override_constants/margin_right = 8
+theme_override_constants/margin_bottom = 8
+
+[node name="AllTagsHFlowContainer" type="HFlowContainer" parent="HBoxContainer/AllTagsContainer/Background/MarginContainer"]
+unique_name_in_owner = true
+layout_mode = 2

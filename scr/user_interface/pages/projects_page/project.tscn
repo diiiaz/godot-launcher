@@ -1,4 +1,4 @@
-[gd_scene load_steps=15 format=3 uid="uid://dowb80m03s76p"]
+[gd_scene load_steps=16 format=3 uid="uid://dowb80m03s76p"]
 
 [ext_resource type="Texture2D" uid="uid://b2qapuue4p2mj" path="res://assets/textures/icons/default_icon.svg" id="1_jwowj"]
 [ext_resource type="Script" uid="uid://b1c0124rsqsuk" path="res://scr/user_interface/pages/projects_page/project.gd" id="1_ou0my"]
@@ -10,6 +10,7 @@
 [ext_resource type="Texture2D" uid="uid://dnd32ay7p67xu" path="res://assets/textures/icons/edit.svg" id="6_wo43g"]
 [ext_resource type="Texture2D" uid="uid://defpw5vdhd5vj" path="res://assets/textures/icons/play.svg" id="8_2mhnf"]
 [ext_resource type="Texture2D" uid="uid://mwa7yfdar6j8" path="res://assets/textures/icons/delete.svg" id="9_xwwp3"]
+[ext_resource type="Texture2D" uid="uid://da4q4drae4qnk" path="res://assets/textures/icons/hash.svg" id="11_3toxg"]
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_xwwp3"]
 
@@ -195,9 +196,20 @@ theme_type_variation = &"ButtonRedInverted"
 icon = ExtResource("9_xwwp3")
 icon_alignment = 1
 
+[node name="ManageTagsButton" type="Button" parent="MarginContainer/ContentContainer/HBoxContainer"]
+custom_minimum_size = Vector2(32, 32)
+layout_mode = 2
+tooltip_text = "TOOLTIP_MANAGE_TAGS"
+mouse_behavior_recursive = 2
+mouse_default_cursor_shape = 2
+theme_type_variation = &"FlatButton"
+icon = ExtResource("11_3toxg")
+icon_alignment = 1
+
 [connection signal="gui_input" from="MainButton" to="." method="_on_main_button_gui_input"]
 [connection signal="pressed" from="MarginContainer/ContentContainer/MainInfoContainer/ProjectNamePathTagsContainer/ProjectPathLabel/ProjectPathButton" to="." method="_on_project_path_button_pressed"]
 [connection signal="selected_build" from="MarginContainer/ContentContainer/ProjectBuildOptionButton" to="." method="_on_project_build_option_button_selected_build"]
 [connection signal="pressed" from="MarginContainer/ContentContainer/HBoxContainer/PlayButton" to="." method="_on_play_button_pressed"]
 [connection signal="pressed" from="MarginContainer/ContentContainer/HBoxContainer/EditButton" to="." method="_on_edit_button_pressed"]
 [connection signal="pressed" from="MarginContainer/ContentContainer/HBoxContainer/DeleteButton" to="." method="_on_delete_button_pressed"]
+[connection signal="pressed" from="MarginContainer/ContentContainer/HBoxContainer/ManageTagsButton" to="." method="_on_manage_tags_button_pressed"]

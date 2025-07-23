@@ -1,50 +1,49 @@
 extends Node
 
-var _tags_groups: Dictionary[String, TagsGroup]
+signal tag_group_changed(tag_group: TagGroup)
+
+var _tag_groups: Dictionary[String, TagGroup]
 
 
-func create_tags_group(group_name: String, tags: Array[String] = []) -> TagsGroup:
-	if _tags_groups.has(group_name):
-		ToastsManager.create_error_toast("Tags Group \"%s\" already exist. (tags_manager.gd::create_tags_group)")
+func _init() -> void:
+	load_tags()
+	tag_group_changed.connect(func(_unused): save_tags.call_deferred())
+	print("tags_manager.gd::_init")
+	for tag_group: TagGroup in _tag_groups.values():
+		print("   - ", tag_group)
+
+
+func get_or_create_tag_group(group_name: String) -> TagGroup:
+	if not _tag_groups.has(group_name):
+		return _create_tag_group(group_name)
+	return _tag_groups.get(group_name)
+
+func _create_tag_group(group_name: String) -> TagGroup:
+	if _tag_groups.has(group_name):
+		ToastsManager.create_error_toast("Tags Group \"%s\" already exist. (tags_manager.gd::create_tag_group)")
 		return null
-	_tags_groups[group_name] = TagsGroup.new().add_tags(tags)
-	return _tags_groups[group_name]
+	var new_tag_group: TagGroup = TagGroup.new(group_name)
+	_tag_groups[group_name] = new_tag_group
+	new_tag_group.added_tag.connect(func(_unused): tag_group_changed.emit(new_tag_group))
+	new_tag_group.deleted_tag.connect(func(_unused): tag_group_changed.emit(new_tag_group))
+	new_tag_group.renamed_tag.connect(func(_unused0, _unused1): tag_group_changed.emit(new_tag_group))
+	new_tag_group.cleared.connect(func(_unused): tag_group_changed.emit(new_tag_group))
+	return new_tag_group
 
 
-func get_tags_group(group_name: String) -> TagsGroup:
-	if not _tags_groups.has(group_name):
-		return create_tags_group(group_name)
-	return _tags_groups.get(group_name)
+func save_tags() -> void:
+	var tags: Dictionary[String, Array]
+	for tag_group: TagGroup in _tag_groups.values():
+		tags[tag_group.get_group_name()] = []
+		for tag: Tag in tag_group.get_tags():
+			tags[tag_group.get_group_name()].append(tag.get_name())
+	UserDataManager.set_user_data(UserData.USER_DATA.TAGS, tags)
 
-func get_tag_hue(tag_name: String) -> float:
-	return float(wrapi(hash(tag_name), 0, 10000) / 10000.0)
-
-
-#signal tags_changed(tags: PackedStringArray)
-#
-#var _tags: PackedStringArray
-#
-#
-#func add_tag(tag_name: String) -> void:
-	#if tag_exist(tag_name):
-		#return
-	#_tags.append(tag_name)
-	#_tags.sort()
-	#tags_changed.emit(_tags)
-#
-#
-#func add_tags(tags_name: PackedStringArray) -> void:
-	#for tag_name: String in tags_name:
-		#add_tag(tag_name)
-#
-#
-#func tag_exist(tag_name: String) -> bool:
-	#return _tags.has(tag_name)
-#
-#
-#func get_tags() -> PackedStringArray:
-	#return _tags
-#
-#
-#func clear() -> void:
-	#_tags.clear()
+func load_tags() -> void:
+	_tag_groups.clear()
+	var tags: Dictionary[String, Array] = UserDataManager.get_user_data(UserData.USER_DATA.TAGS)
+	for index: int in tags.size():
+		var tag_group_name: String = tags.keys()[index]
+		var tags_name: Array[String] = []
+		tags_name.assign(tags[tag_group_name])
+		get_or_create_tag_group(tag_group_name).create_tags(tags_name)

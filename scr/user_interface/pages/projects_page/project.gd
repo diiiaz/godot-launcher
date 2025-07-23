@@ -6,6 +6,7 @@ signal deleted
 
 const TAG_UI = preload("uid://ekqlub7k865j")
 const DELETE_PROJECT_POPUP_WINDOW_CONTENT = preload("uid://qwl6em84n25p")
+const TAGS_MANAGER_POPUP_WINDOW_CONTENT = preload("uid://duskngwh068gh")
 
 @onready var icon_texture_rect: TextureRect = %IconTextureRect
 @onready var project_name_label: Label = %ProjectNameLabel
@@ -26,6 +27,9 @@ var _build: EngineBuild
 func setup(project: Project) -> void:
 	_project = project
 	
+	if not _project.tags_changed.is_connected(update):
+		_project.tags_changed.connect(update_tags)
+	
 	project_build_option_button.setup(_project)
 	
 	icon_texture_rect.texture = project.get_icon()
@@ -36,22 +40,30 @@ func setup(project: Project) -> void:
 	last_edited_label.text = TimeHelper.format_date_time_dict(TimeHelper.get_time_since_last_modified_date(project.get_modified_time()))
 	version_label.text = project.get_version()
 	
-	tags_separator.visible = project.has_tags()
+	update_tags()
+
+
+func update() -> void:
+	setup(_project)
+
+
+func update_tags() -> void:
+	tags_separator.visible = _project.has_tags()
 	
 	for child in tags_container.get_children():
 		child.hide()
 		child.queue_free()
 	
-	for tag_name: String in project.get_tags():
-		var tag_ui = TAG_UI.instantiate()
+	for tag: Tag in _project.get_tags():
+		var tag_ui: TagUI = TAG_UI.instantiate()
 		tags_container.add_child(tag_ui)
-		tag_ui.setup(tag_name)
+		tag_ui.setup(tag)
 		tag_ui.pressed.connect(tag_pressed.emit)
 
 
 func _notification(what: int) -> void:
 	if what == NOTIFICATION_TRANSLATION_CHANGED and _project != null:
-		setup(_project)
+		update()
 
 
 func _on_play_button_pressed() -> void: ProjectsManager.run_project(_build, _project.get_path(), false)
@@ -66,6 +78,11 @@ func _on_delete_project_popup_result(result: PopupWindowContent.Result) -> void:
 	if result.action_is_delete():
 		ProjectsManager.delete_project(_project)
 		deleted.emit()
+
+func _on_manage_tags_button_pressed() -> void:
+	var popup_content: PopupWindowContent = TAGS_MANAGER_POPUP_WINDOW_CONTENT.instantiate()
+	popup_content.user_input_result.connect(_on_delete_project_popup_result)
+	PopupWindowHelper.popup_window("POPUP_TITLE_MANAGE_TAGS", popup_content, get_viewport(), _project)
 
 
 func _on_project_build_option_button_selected_build(build: EngineBuild) -> void:

@@ -1,4 +1,4 @@
-[gd_resource type="Theme" load_steps=103 format=3 uid="uid://bimvjqmjjj4jh"]
+[gd_resource type="Theme" load_steps=112 format=3 uid="uid://bimvjqmjjj4jh"]
 
 [ext_resource type="Texture2D" uid="uid://0h56jmloqjg5" path="res://assets/textures/icons/square.svg" id="1_25oj4"]
 [ext_resource type="Texture2D" uid="uid://dsutiwoq61d8n" path="res://assets/textures/icons/square-check.svg" id="1_ur88k"]
@@ -283,6 +283,29 @@ corner_radius_top_right = 5
 corner_radius_bottom_right = 5
 corner_radius_bottom_left = 5
 
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_nhtgq"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_knbae"]
+bg_color = Color(1, 1, 1, 0.39215687)
+corner_radius_top_left = 5
+corner_radius_top_right = 5
+corner_radius_bottom_right = 5
+corner_radius_bottom_left = 5
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_xfbmc"]
+bg_color = Color(1, 1, 1, 0.19607843)
+corner_radius_top_left = 5
+corner_radius_top_right = 5
+corner_radius_bottom_right = 5
+corner_radius_bottom_left = 5
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_8h8qr"]
+bg_color = Color(1, 1, 1, 0.39215687)
+corner_radius_top_left = 5
+corner_radius_top_right = 5
+corner_radius_bottom_right = 5
+corner_radius_bottom_left = 5
+
 [sub_resource type="SVGTexture" id="SVGTexture_yy2ta"]
 _source = "<svg xmlns=\"http://www.w3.org/2000/svg\" width=\"16\" height=\"16\"><rect width=\"14\" height=\"14\" x=\"1\" y=\"1\" fill=\"gray\" rx=\"2.33\"/><path fill=\"#b3b3b3\" d=\"M11.5 3.734 5.89 9.346 4.185 7.665l-1.5 1.499 3.204 3.18L13 5.235z\"/></svg>
 "
@@ -457,6 +480,17 @@ corner_radius_top_right = 5
 corner_radius_bottom_right = 5
 corner_radius_bottom_left = 5
 
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_c5wfw"]
+content_margin_left = 6.0
+bg_color = Color(0.078431375, 0.078431375, 0.078431375, 1)
+corner_radius_top_left = 5
+corner_radius_top_right = 5
+corner_radius_bottom_right = 5
+corner_radius_bottom_left = 5
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_yy2ta"]
+content_margin_left = 6.0
+
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_52wmj"]
 content_margin_left = 0.0
 content_margin_top = 0.0
@@ -559,6 +593,31 @@ corner_radius_top_left = 5
 corner_radius_top_right = 5
 corner_radius_bottom_right = 5
 corner_radius_bottom_left = 5
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_14l2s"]
+bg_color = Color(0.14509805, 0.14509805, 0.14509805, 1)
+corner_radius_top_left = 5
+corner_radius_top_right = 5
+corner_radius_bottom_right = 5
+corner_radius_bottom_left = 5
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_quv2j"]
+bg_color = Color(0.078431375, 0.078431375, 0.078431375, 1)
+corner_radius_top_left = 5
+corner_radius_top_right = 5
+corner_radius_bottom_right = 5
+corner_radius_bottom_left = 5
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_wic7j"]
+bg_color = Color(0.14509805, 0.14509805, 0.14509805, 1)
+corner_radius_top_left = 5
+corner_radius_top_right = 5
+corner_radius_bottom_right = 5
+corner_radius_bottom_left = 5
+expand_margin_left = 4.0
+expand_margin_top = 4.0
+expand_margin_right = 4.0
+expand_margin_bottom = 4.0
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_nhtgq"]
 content_margin_left = 9.0
@@ -1025,6 +1084,11 @@ ButtonSimple/styles/hover = SubResource("StyleBoxFlat_4j565")
 ButtonSimple/styles/hover_pressed = SubResource("StyleBoxFlat_ga8dc")
 ButtonSimple/styles/normal = SubResource("StyleBoxEmpty_ga8dc")
 ButtonSimple/styles/pressed = SubResource("StyleBoxFlat_ga8dc")
+ButtonTag/base_type = &"Button"
+ButtonTag/styles/focus = SubResource("StyleBoxEmpty_nhtgq")
+ButtonTag/styles/hover = SubResource("StyleBoxFlat_knbae")
+ButtonTag/styles/normal = SubResource("StyleBoxFlat_xfbmc")
+ButtonTag/styles/pressed = SubResource("StyleBoxFlat_8h8qr")
 CheckBox/colors/font_color = Color(0.7862745, 0.7862745, 0.7862745, 1)
 CheckBox/colors/font_disabled_color = Color(1, 1, 1, 0.35)
 CheckBox/colors/font_focus_color = Color(0.8931373, 0.8931373, 0.8931373, 1)
@@ -1083,6 +1147,10 @@ LineEdit/icons/clear = SubResource("SVGTexture_ifg5j")
 LineEdit/styles/focus = SubResource("StyleBoxFlat_7xmdk")
 LineEdit/styles/normal = SubResource("StyleBoxFlat_uymlp")
 LineEdit/styles/read_only = SubResource("StyleBoxFlat_k3w2a")
+LineEditTag/base_type = &"LineEdit"
+LineEditTag/colors/font_color = Color(1, 1, 1, 1)
+LineEditTag/styles/focus = SubResource("StyleBoxFlat_c5wfw")
+LineEditTag/styles/normal = SubResource("StyleBoxEmpty_yy2ta")
 MainBGPanel/base_type = &"Panel"
 MainBGPanel/styles/panel = SubResource("StyleBoxFlat_52wmj")
 OptionButton/colors/font_color = Color(1, 1, 1, 0.7)
@@ -1115,6 +1183,12 @@ OptionButton/styles/pressed = SubResource("StyleBoxFlat_06qdq")
 OptionButton/styles/pressed_mirrored = SubResource("StyleBoxFlat_06qdq")
 PageControllerHighlightPanel/base_type = &"PanelContainer"
 PageControllerHighlightPanel/styles/panel = SubResource("StyleBoxFlat_yy2ta")
+PanelContainerDefault/base_type = &"PanelContainer"
+PanelContainerDefault/styles/panel = SubResource("StyleBoxFlat_14l2s")
+PanelContainerDefaultDark/base_type = &"PanelContainer"
+PanelContainerDefaultDark/styles/panel = SubResource("StyleBoxFlat_quv2j")
+PanelDefaultTag/base_type = &"PanelContainer"
+PanelDefaultTag/styles/panel = SubResource("StyleBoxFlat_wic7j")
 PopupDialog/styles/panel = SubResource("StyleBoxFlat_nhtgq")
 PopupMenu/colors/font_accelerator_color = Color(1, 1, 1, 0.35)
 PopupMenu/colors/font_color = Color(0.7862745, 0.7862745, 0.7862745, 1)
