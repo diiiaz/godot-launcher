@@ -1,14 +1,14 @@
 [remap]
 
 importer="svg"
-type="SVGTexture"
+type="DPITexture"
 uid="uid://dxa5x3uqk2vs1"
-path="res://.godot/imported/sort_oldest.svg-35eb35f62e4979b2b6f021e94d9f7c72.svgtex"
+path="res://.godot/imported/sort_oldest.svg-35eb35f62e4979b2b6f021e94d9f7c72.dpitex"
 
 [deps]
 
 source_file="res://assets/textures/icons/sort_oldest.svg"
-dest_files=["res://.godot/imported/sort_oldest.svg-35eb35f62e4979b2b6f021e94d9f7c72.svgtex"]
+dest_files=["res://.godot/imported/sort_oldest.svg-35eb35f62e4979b2b6f021e94d9f7c72.dpitex"]
 
 [params]
 

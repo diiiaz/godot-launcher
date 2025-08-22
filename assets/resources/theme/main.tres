@@ -1,4 +1,4 @@
-[gd_resource type="Theme" load_steps=112 format=3 uid="uid://bimvjqmjjj4jh"]
+[gd_resource type="Theme" load_steps=90 format=3 uid="uid://bimvjqmjjj4jh"]
 
 [ext_resource type="Texture2D" uid="uid://0h56jmloqjg5" path="res://assets/textures/icons/square.svg" id="1_25oj4"]
 [ext_resource type="Texture2D" uid="uid://dsutiwoq61d8n" path="res://assets/textures/icons/square-check.svg" id="1_ur88k"]
@@ -306,63 +306,6 @@ corner_radius_top_right = 5
 corner_radius_bottom_right = 5
 corner_radius_bottom_left = 5
 
-[sub_resource type="SVGTexture" id="SVGTexture_yy2ta"]
-_source = "<svg xmlns=\"http://www.w3.org/2000/svg\" width=\"16\" height=\"16\"><rect width=\"14\" height=\"14\" x=\"1\" y=\"1\" fill=\"gray\" rx=\"2.33\"/><path fill=\"#b3b3b3\" d=\"M11.5 3.734 5.89 9.346 4.185 7.665l-1.5 1.499 3.204 3.18L13 5.235z\"/></svg>
-"
-saturation = 2.0
-color_map = {
-Color(1, 0.37254903, 0.37254903, 1): Color(1, 0.47, 0.42, 1),
-Color(0.37254903, 1, 0.5921569, 1): Color(0.45, 0.95, 0.5, 1),
-Color(1, 0.8666667, 0.39607844, 1): Color(1, 0.87, 0.4, 1)
-}
-
-[sub_resource type="SVGTexture" id="SVGTexture_nhtgq"]
-_source = "<svg xmlns=\"http://www.w3.org/2000/svg\" width=\"16\" height=\"16\"><circle cx=\"8\" cy=\"8\" r=\"7\" fill=\"#699ce8\"/><circle cx=\"8\" cy=\"8\" r=\"4\" fill=\"#fff\"/></svg>
-"
-color_map = {
-Color(0.4117647, 0.6117647, 0.9098039, 1): Color(0.3372549, 0.61960787, 1, 1)
-}
-
-[sub_resource type="SVGTexture" id="SVGTexture_olpyw"]
-_source = "<svg xmlns=\"http://www.w3.org/2000/svg\" width=\"16\" height=\"16\"><circle cx=\"8\" cy=\"8\" r=\"7\" fill=\"gray\"/><circle cx=\"8\" cy=\"8\" r=\"4\" fill=\"#b3b3b3\"/></svg>
-"
-saturation = 2.0
-color_map = {
-Color(1, 0.37254903, 0.37254903, 1): Color(1, 0.47, 0.42, 1),
-Color(0.37254903, 1, 0.5921569, 1): Color(0.45, 0.95, 0.5, 1),
-Color(1, 0.8666667, 0.39607844, 1): Color(1, 0.87, 0.4, 1)
-}
-
-[sub_resource type="SVGTexture" id="SVGTexture_knbae"]
-_source = "<svg xmlns=\"http://www.w3.org/2000/svg\" width=\"16\" height=\"16\"><circle cx=\"8\" cy=\"8\" r=\"7\" fill=\"#e0e0e0\" fill-opacity=\".2\"/></svg>
-"
-saturation = 2.0
-color_map = {
-Color(1, 0.37254903, 0.37254903, 1): Color(1, 0.47, 0.42, 1),
-Color(0.37254903, 1, 0.5921569, 1): Color(0.45, 0.95, 0.5, 1),
-Color(1, 0.8666667, 0.39607844, 1): Color(1, 0.87, 0.4, 1)
-}
-
-[sub_resource type="SVGTexture" id="SVGTexture_dopoi"]
-_source = "<svg xmlns=\"http://www.w3.org/2000/svg\" width=\"16\" height=\"16\"><circle cx=\"8\" cy=\"8\" r=\"7\" fill=\"gray\" fill-opacity=\".2\"/></svg>
-"
-saturation = 2.0
-color_map = {
-Color(1, 0.37254903, 0.37254903, 1): Color(1, 0.47, 0.42, 1),
-Color(0.37254903, 1, 0.5921569, 1): Color(0.45, 0.95, 0.5, 1),
-Color(1, 0.8666667, 0.39607844, 1): Color(1, 0.87, 0.4, 1)
-}
-
-[sub_resource type="SVGTexture" id="SVGTexture_ico4d"]
-_source = "<svg xmlns=\"http://www.w3.org/2000/svg\" width=\"16\" height=\"16\"><rect width=\"14\" height=\"14\" x=\"1\" y=\"1\" fill=\"gray\" fill-opacity=\".2\" rx=\"2.333\"/></svg>
-"
-saturation = 2.0
-color_map = {
-Color(1, 0.37254903, 0.37254903, 1): Color(1, 0.47, 0.42, 1),
-Color(0.37254903, 1, 0.5921569, 1): Color(0.45, 0.95, 0.5, 1),
-Color(1, 0.8666667, 0.39607844, 1): Color(1, 0.87, 0.4, 1)
-}
-
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_gnpvo"]
 content_margin_left = 7.0
 content_margin_top = 6.0
@@ -436,16 +379,6 @@ color = Color(0.09286275, 0.09286275, 0.09286275, 1)
 grow_begin = -4.0
 grow_end = -4.0
 thickness = 2
-
-[sub_resource type="SVGTexture" id="SVGTexture_ifg5j"]
-_source = "<svg xmlns=\"http://www.w3.org/2000/svg\" width=\"16\" height=\"16\"><path fill=\"none\" stroke=\"#fff\" stroke-opacity=\".898\" stroke-width=\"2\" d=\"m3 3 10 10M3 13 13 3\"/></svg>
-"
-saturation = 2.0
-color_map = {
-Color(1, 0.37254903, 0.37254903, 1): Color(1, 0.47, 0.42, 1),
-Color(0.37254903, 1, 0.5921569, 1): Color(0.45, 0.95, 0.5, 1),
-Color(1, 0.8666667, 0.39607844, 1): Color(1, 0.87, 0.4, 1)
-}
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_7xmdk"]
 content_margin_left = 8.0
@@ -626,66 +559,6 @@ content_margin_right = 9.0
 content_margin_bottom = 9.0
 bg_color = Color(0.14509805, 0.14509805, 0.14509805, 1)
 
-[sub_resource type="SVGTexture" id="SVGTexture_k3w2a"]
-_source = "<svg xmlns=\"http://www.w3.org/2000/svg\" width=\"16\" height=\"16\"><rect width=\"14\" height=\"14\" x=\"1\" y=\"1\" fill=\"gray\" rx=\"2.33\"/><path fill=\"#b3b3b3\" d=\"M11.5 3.734 5.89 9.346 4.185 7.665l-1.5 1.499 3.204 3.18L13 5.235z\"/></svg>
-"
-saturation = 2.0
-color_map = {
-Color(1, 0.37254903, 0.37254903, 1): Color(1, 0.47, 0.42, 1),
-Color(0.37254903, 1, 0.5921569, 1): Color(0.45, 0.95, 0.5, 1),
-Color(1, 0.8666667, 0.39607844, 1): Color(1, 0.87, 0.4, 1)
-}
-
-[sub_resource type="SVGTexture" id="SVGTexture_bgbmp"]
-_source = "<svg xmlns=\"http://www.w3.org/2000/svg\" width=\"16\" height=\"16\"><circle cx=\"8\" cy=\"8\" r=\"7\" fill=\"gray\"/><circle cx=\"8\" cy=\"8\" r=\"4\" fill=\"#b3b3b3\"/></svg>
-"
-saturation = 2.0
-color_map = {
-Color(1, 0.37254903, 0.37254903, 1): Color(1, 0.47, 0.42, 1),
-Color(0.37254903, 1, 0.5921569, 1): Color(0.45, 0.95, 0.5, 1),
-Color(1, 0.8666667, 0.39607844, 1): Color(1, 0.87, 0.4, 1)
-}
-
-[sub_resource type="SVGTexture" id="SVGTexture_3r3hi"]
-_source = "<svg xmlns=\"http://www.w3.org/2000/svg\" width=\"16\" height=\"16\"><circle cx=\"8\" cy=\"8\" r=\"7\" fill=\"gray\" fill-opacity=\".2\"/></svg>
-"
-saturation = 2.0
-color_map = {
-Color(1, 0.37254903, 0.37254903, 1): Color(1, 0.47, 0.42, 1),
-Color(0.37254903, 1, 0.5921569, 1): Color(0.45, 0.95, 0.5, 1),
-Color(1, 0.8666667, 0.39607844, 1): Color(1, 0.87, 0.4, 1)
-}
-
-[sub_resource type="SVGTexture" id="SVGTexture_6bfiu"]
-_source = "<svg xmlns=\"http://www.w3.org/2000/svg\" width=\"16\" height=\"16\"><path fill=\"none\" stroke=\"#e0e0e0\" stroke-linecap=\"round\" stroke-linejoin=\"round\" stroke-width=\"2\" d=\"M5 8h7L8 4m4 4-4 4\"/></svg>
-"
-saturation = 2.0
-color_map = {
-Color(1, 0.37254903, 0.37254903, 1): Color(1, 0.47, 0.42, 1),
-Color(0.37254903, 1, 0.5921569, 1): Color(0.45, 0.95, 0.5, 1),
-Color(1, 0.8666667, 0.39607844, 1): Color(1, 0.87, 0.4, 1)
-}
-
-[sub_resource type="SVGTexture" id="SVGTexture_dcctb"]
-_source = "<svg xmlns=\"http://www.w3.org/2000/svg\" width=\"16\" height=\"16\"><path fill=\"none\" stroke=\"#e0e0e0\" stroke-linecap=\"round\" stroke-linejoin=\"round\" stroke-width=\"2\" d=\"M11 8H4l4 4M4 8l4-4\"/></svg>
-"
-saturation = 2.0
-color_map = {
-Color(1, 0.37254903, 0.37254903, 1): Color(1, 0.47, 0.42, 1),
-Color(0.37254903, 1, 0.5921569, 1): Color(0.45, 0.95, 0.5, 1),
-Color(1, 0.8666667, 0.39607844, 1): Color(1, 0.87, 0.4, 1)
-}
-
-[sub_resource type="SVGTexture" id="SVGTexture_quv2j"]
-_source = "<svg xmlns=\"http://www.w3.org/2000/svg\" width=\"16\" height=\"16\"><rect width=\"14\" height=\"14\" x=\"1\" y=\"1\" fill=\"gray\" fill-opacity=\".2\" rx=\"2.333\"/></svg>
-"
-saturation = 2.0
-color_map = {
-Color(1, 0.37254903, 0.37254903, 1): Color(1, 0.47, 0.42, 1),
-Color(0.37254903, 1, 0.5921569, 1): Color(0.45, 0.95, 0.5, 1),
-Color(1, 0.8666667, 0.39607844, 1): Color(1, 0.87, 0.4, 1)
-}
-
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_olpyw"]
 content_margin_left = 6.0
 content_margin_top = 3.6
@@ -757,14 +630,6 @@ corner_radius_bottom_right = 5
 bg_color = Color(0.14509805, 0.14509805, 0.14509805, 1)
 corner_radius_top_left = 5
 
-[sub_resource type="SVGTexture" id="SVGTexture_ktu72"]
-_source = "<svg xmlns=\"http://www.w3.org/2000/svg\" width=\"16\" height=\"8\"><path fill=\"none\" stroke=\"#fff\" stroke-width=\"2\" d=\"m12 2-4 3.5L4 2\"/></svg>
-"
-
-[sub_resource type="SVGTexture" id="SVGTexture_3ogxf"]
-_source = "<svg xmlns=\"http://www.w3.org/2000/svg\" width=\"16\" height=\"8\"><path fill=\"none\" stroke=\"#fff\" stroke-width=\"2\" d=\"m4 6 4-3.5L12 6\"/></svg>
-"
-
 [sub_resource type="ImageTexture" id="ImageTexture_1a267"]
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_o4m83"]
@@ -802,56 +667,6 @@ corner_detail = 5
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_gjjp0"]
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_oop3c"]
-
-[sub_resource type="SVGTexture" id="SVGTexture_7xmdk"]
-_source = "<svg xmlns=\"http://www.w3.org/2000/svg\" width=\"16\" height=\"16\"><path fill=\"#e0e0e0\" d=\"M8 14A6 6 0 0 0 8 2a6 6 0 0 0 0 12zM5.293 8.707a1 1 0 0 1 0-1.414l3-3a1 1 0 0 1 1.414 1.414L7.414 8l2.293 2.293a1 1 0 0 1-1.414 1.414z\"/></svg>
-"
-saturation = 2.0
-color_map = {
-Color(1, 0.37254903, 0.37254903, 1): Color(1, 0.47, 0.42, 1),
-Color(0.37254903, 1, 0.5921569, 1): Color(0.45, 0.95, 0.5, 1),
-Color(1, 0.8666667, 0.39607844, 1): Color(1, 0.87, 0.4, 1)
-}
-
-[sub_resource type="SVGTexture" id="SVGTexture_va4da"]
-_source = "<svg xmlns=\"http://www.w3.org/2000/svg\" width=\"16\" height=\"16\"><path fill=\"#e0e0e0\" fill-opacity=\".8\" d=\"M8 14A6 6 0 0 0 8 2a6 6 0 0 0 0 12zM5.293 8.707a1 1 0 0 1 0-1.414l3-3a1 1 0 0 1 1.414 1.414L7.414 8l2.293 2.293a1 1 0 0 1-1.414 1.414z\"/></svg>
-"
-saturation = 2.0
-color_map = {
-Color(1, 0.37254903, 0.37254903, 1): Color(1, 0.47, 0.42, 1),
-Color(0.37254903, 1, 0.5921569, 1): Color(0.45, 0.95, 0.5, 1),
-Color(1, 0.8666667, 0.39607844, 1): Color(1, 0.87, 0.4, 1)
-}
-
-[sub_resource type="SVGTexture" id="SVGTexture_25oj4"]
-_source = "<svg xmlns=\"http://www.w3.org/2000/svg\" width=\"16\" height=\"32\"><path fill=\"#fff\" d=\"m5 2h6v30h-6z\"/></svg>
-"
-saturation = 2.0
-color_map = {
-Color(1, 0.37254903, 0.37254903, 1): Color(1, 0.47, 0.42, 1),
-Color(0.37254903, 1, 0.5921569, 1): Color(0.45, 0.95, 0.5, 1),
-Color(1, 0.8666667, 0.39607844, 1): Color(1, 0.87, 0.4, 1)
-}
-
-[sub_resource type="SVGTexture" id="SVGTexture_ur88k"]
-_source = "<svg xmlns=\"http://www.w3.org/2000/svg\" width=\"16\" height=\"16\"><path fill=\"#e0e0e0\" fill-opacity=\".8\" d=\"M8 2a6 6 0 0 0 0 12A6 6 0 0 0 8 2zm2.707 5.293a1 1 0 0 1 0 1.414l-3 3a1 1 0 0 1-1.414-1.414L8.586 8 6.293 5.707a1 1 0 0 1 1.414-1.414z\"/></svg>
-"
-saturation = 2.0
-color_map = {
-Color(1, 0.37254903, 0.37254903, 1): Color(1, 0.47, 0.42, 1),
-Color(0.37254903, 1, 0.5921569, 1): Color(0.45, 0.95, 0.5, 1),
-Color(1, 0.8666667, 0.39607844, 1): Color(1, 0.87, 0.4, 1)
-}
-
-[sub_resource type="SVGTexture" id="SVGTexture_7xn3m"]
-_source = "<svg xmlns=\"http://www.w3.org/2000/svg\" width=\"16\" height=\"16\"><path fill=\"#e0e0e0\" d=\"M8 2a6 6 0 0 0 0 12A6 6 0 0 0 8 2zm2.707 5.293a1 1 0 0 1 0 1.414l-3 3a1 1 0 0 1-1.414-1.414L8.586 8 6.293 5.707a1 1 0 0 1 1.414-1.414z\"/></svg>
-"
-saturation = 2.0
-color_map = {
-Color(1, 0.37254903, 0.37254903, 1): Color(1, 0.47, 0.42, 1),
-Color(0.37254903, 1, 0.5921569, 1): Color(0.45, 0.95, 0.5, 1),
-Color(1, 0.8666667, 0.39607844, 1): Color(1, 0.87, 0.4, 1)
-}
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_dopoi"]
 content_margin_left = 7.0
@@ -919,26 +734,6 @@ bg_color = Color(1, 1, 1, 0)
 border_color = Color(0.3372549, 0.61960787, 1, 1)
 corner_radius_top_left = 5
 corner_radius_top_right = 5
-
-[sub_resource type="SVGTexture" id="SVGTexture_82v2u"]
-_source = "<svg xmlns=\"http://www.w3.org/2000/svg\" width=\"16\" height=\"16\"><path fill=\"#e0e0e0\" fill-opacity=\".4\" d=\"M8 0a2 2 0 0 0 0 4 2 2 0 0 0 0-4zm0 6a2 2 0 0 0 0 4 2 2 0 0 0 0-4zm0 6a2 2 0 0 0 0 4 2 2 0 0 0 0-4z\"/></svg>
-"
-saturation = 2.0
-color_map = {
-Color(1, 0.37254903, 0.37254903, 1): Color(1, 0.47, 0.42, 1),
-Color(0.37254903, 1, 0.5921569, 1): Color(0.45, 0.95, 0.5, 1),
-Color(1, 0.8666667, 0.39607844, 1): Color(1, 0.87, 0.4, 1)
-}
-
-[sub_resource type="SVGTexture" id="SVGTexture_mhc10"]
-_source = "<svg xmlns=\"http://www.w3.org/2000/svg\" width=\"16\" height=\"16\"><path fill=\"#e0e0e0\" d=\"M8 0a2 2 0 0 0 0 4 2 2 0 0 0 0-4zm0 6a2 2 0 0 0 0 4 2 2 0 0 0 0-4zm0 6a2 2 0 0 0 0 4 2 2 0 0 0 0-4z\"/></svg>
-"
-saturation = 2.0
-color_map = {
-Color(1, 0.37254903, 0.37254903, 1): Color(1, 0.47, 0.42, 1),
-Color(0.37254903, 1, 0.5921569, 1): Color(0.45, 0.95, 0.5, 1),
-Color(1, 0.8666667, 0.39607844, 1): Color(1, 0.87, 0.4, 1)
-}
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_yqum3"]
 content_margin_left = 7.125
@@ -1105,13 +900,7 @@ CheckBox/constants/check_v_offset = 0
 CheckBox/constants/h_separation = 8
 CheckBox/constants/outline_size = 0
 CheckBox/icons/checked = ExtResource("1_ur88k")
-CheckBox/icons/checked_disabled = SubResource("SVGTexture_yy2ta")
-CheckBox/icons/radio_checked = SubResource("SVGTexture_nhtgq")
-CheckBox/icons/radio_checked_disabled = SubResource("SVGTexture_olpyw")
-CheckBox/icons/radio_unchecked = SubResource("SVGTexture_knbae")
-CheckBox/icons/radio_unchecked_disabled = SubResource("SVGTexture_dopoi")
 CheckBox/icons/unchecked = ExtResource("1_25oj4")
-CheckBox/icons/unchecked_disabled = SubResource("SVGTexture_ico4d")
 CheckBox/styles/disabled = SubResource("StyleBoxFlat_gnpvo")
 CheckBox/styles/hover = SubResource("StyleBoxFlat_gnpvo")
 CheckBox/styles/hover_pressed = SubResource("StyleBoxFlat_gnpvo")
@@ -1143,7 +932,6 @@ LineEdit/colors/selection_color = Color(0.3372549, 0.61960787, 1, 0.4)
 LineEdit/constants/caret_width = 1
 LineEdit/constants/minimum_character_width = 4
 LineEdit/constants/outline_size = 0
-LineEdit/icons/clear = SubResource("SVGTexture_ifg5j")
 LineEdit/styles/focus = SubResource("StyleBoxFlat_7xmdk")
 LineEdit/styles/normal = SubResource("StyleBoxFlat_uymlp")
 LineEdit/styles/read_only = SubResource("StyleBoxFlat_k3w2a")
@@ -1202,15 +990,9 @@ PopupMenu/constants/item_start_padding = 9
 PopupMenu/constants/outline_size = 0
 PopupMenu/constants/v_separation = 7
 PopupMenu/icons/checked = ExtResource("1_ur88k")
-PopupMenu/icons/checked_disabled = SubResource("SVGTexture_k3w2a")
 PopupMenu/icons/radio_checked = ExtResource("4_c7q75")
-PopupMenu/icons/radio_checked_disabled = SubResource("SVGTexture_bgbmp")
 PopupMenu/icons/radio_unchecked = ExtResource("4_7xn3m")
-PopupMenu/icons/radio_unchecked_disabled = SubResource("SVGTexture_3r3hi")
-PopupMenu/icons/submenu = SubResource("SVGTexture_6bfiu")
-PopupMenu/icons/submenu_mirrored = SubResource("SVGTexture_dcctb")
 PopupMenu/icons/unchecked = ExtResource("1_25oj4")
-PopupMenu/icons/unchecked_disabled = SubResource("SVGTexture_quv2j")
 PopupMenu/styles/hover = SubResource("StyleBoxFlat_olpyw")
 PopupMenu/styles/labeled_separator_left = SubResource("StyleBoxLine_knbae")
 PopupMenu/styles/labeled_separator_right = SubResource("StyleBoxLine_knbae")
@@ -1242,14 +1024,6 @@ SpinBox/constants/buttons_vertical_separation = 0
 SpinBox/constants/buttons_width = 16
 SpinBox/constants/field_and_buttons_separation = 2
 SpinBox/constants/set_min_buttons_width_from_icons = 1
-SpinBox/icons/down = SubResource("SVGTexture_ktu72")
-SpinBox/icons/down_disabled = SubResource("SVGTexture_ktu72")
-SpinBox/icons/down_hover = SubResource("SVGTexture_ktu72")
-SpinBox/icons/down_pressed = SubResource("SVGTexture_ktu72")
-SpinBox/icons/up = SubResource("SVGTexture_3ogxf")
-SpinBox/icons/up_disabled = SubResource("SVGTexture_3ogxf")
-SpinBox/icons/up_hover = SubResource("SVGTexture_3ogxf")
-SpinBox/icons/up_pressed = SubResource("SVGTexture_3ogxf")
 SpinBox/icons/updown = SubResource("ImageTexture_1a267")
 SpinBox/styles/down_background = SubResource("StyleBoxEmpty_o4m83")
 SpinBox/styles/down_background_disabled = SubResource("StyleBoxEmpty_82v2u")
@@ -1268,12 +1042,6 @@ TabBar/colors/font_selected_color = Color(0.7862745, 0.7862745, 0.7862745, 1)
 TabBar/colors/font_unselected_color = Color(1, 1, 1, 0.35)
 TabBar/constants/h_separation = 4
 TabBar/constants/outline_size = 0
-TabBar/icons/close = SubResource("SVGTexture_ifg5j")
-TabBar/icons/decrement = SubResource("SVGTexture_7xmdk")
-TabBar/icons/decrement_highlight = SubResource("SVGTexture_va4da")
-TabBar/icons/drop_mark = SubResource("SVGTexture_25oj4")
-TabBar/icons/increment = SubResource("SVGTexture_ur88k")
-TabBar/icons/increment_highlight = SubResource("SVGTexture_7xn3m")
 TabBar/styles/button_highlight = SubResource("StyleBoxFlat_dopoi")
 TabBar/styles/button_pressed = SubResource("StyleBoxFlat_dopoi")
 TabBar/styles/tab_disabled = SubResource("StyleBoxFlat_ico4d")
@@ -1290,13 +1058,6 @@ TabContainer/constants/icon_separation = 6
 TabContainer/constants/outline_size = 0
 TabContainer/constants/side_margin = 0
 TabContainer/fonts/font = ExtResource("4_ur88k")
-TabContainer/icons/decrement = SubResource("SVGTexture_7xmdk")
-TabContainer/icons/decrement_highlight = SubResource("SVGTexture_va4da")
-TabContainer/icons/drop_mark = SubResource("SVGTexture_25oj4")
-TabContainer/icons/increment = SubResource("SVGTexture_ur88k")
-TabContainer/icons/increment_highlight = SubResource("SVGTexture_7xn3m")
-TabContainer/icons/menu = SubResource("SVGTexture_82v2u")
-TabContainer/icons/menu_highlight = SubResource("SVGTexture_mhc10")
 TabContainer/styles/panel = SubResource("StyleBoxFlat_yqum3")
 TabContainer/styles/tab_disabled = SubResource("StyleBoxFlat_ico4d")
 TabContainer/styles/tab_focus = SubResource("StyleBoxFlat_ktu72")

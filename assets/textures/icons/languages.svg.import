@@ -1,14 +1,14 @@
 [remap]
 
 importer="svg"
-type="SVGTexture"
+type="DPITexture"
 uid="uid://dyo407o1h2ov3"
-path="res://.godot/imported/languages.svg-35640fef845a20b4365b059963a8c53e.svgtex"
+path="res://.godot/imported/languages.svg-35640fef845a20b4365b059963a8c53e.dpitex"
 
 [deps]
 
 source_file="res://assets/textures/icons/languages.svg"
-dest_files=["res://.godot/imported/languages.svg-35640fef845a20b4365b059963a8c53e.svgtex"]
+dest_files=["res://.godot/imported/languages.svg-35640fef845a20b4365b059963a8c53e.dpitex"]
 
 [params]
 

@@ -1,14 +1,14 @@
 [remap]
 
 importer="svg"
-type="SVGTexture"
+type="DPITexture"
 uid="uid://cjn3kw1spborw"
-path="res://.godot/imported/clock.svg-7d67897f7a2d4666766f7a6978450c65.svgtex"
+path="res://.godot/imported/clock.svg-7d67897f7a2d4666766f7a6978450c65.dpitex"
 
 [deps]
 
 source_file="res://assets/textures/icons/clock.svg"
-dest_files=["res://.godot/imported/clock.svg-7d67897f7a2d4666766f7a6978450c65.svgtex"]
+dest_files=["res://.godot/imported/clock.svg-7d67897f7a2d4666766f7a6978450c65.dpitex"]
 
 [params]
 

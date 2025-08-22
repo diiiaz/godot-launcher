@@ -1,14 +1,14 @@
 [remap]
 
 importer="svg"
-type="SVGTexture"
+type="DPITexture"
 uid="uid://b3astwdjkewpq"
-path="res://.godot/imported/arrow_left.svg-c211fc4e147af9e96a28ad29af9b2a5a.svgtex"
+path="res://.godot/imported/arrow_left.svg-c211fc4e147af9e96a28ad29af9b2a5a.dpitex"
 
 [deps]
 
 source_file="res://assets/textures/icons/arrow_left.svg"
-dest_files=["res://.godot/imported/arrow_left.svg-c211fc4e147af9e96a28ad29af9b2a5a.svgtex"]
+dest_files=["res://.godot/imported/arrow_left.svg-c211fc4e147af9e96a28ad29af9b2a5a.dpitex"]
 
 [params]
 

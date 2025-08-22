@@ -1,14 +1,14 @@
 [remap]
 
 importer="svg"
-type="SVGTexture"
+type="DPITexture"
 uid="uid://cdtu1dxs2afjl"
-path="res://.godot/imported/dices.svg-c7873fad3dde9beb9a21cb49dcb350d8.svgtex"
+path="res://.godot/imported/dices.svg-c7873fad3dde9beb9a21cb49dcb350d8.dpitex"
 
 [deps]
 
 source_file="res://assets/textures/icons/dices.svg"
-dest_files=["res://.godot/imported/dices.svg-c7873fad3dde9beb9a21cb49dcb350d8.svgtex"]
+dest_files=["res://.godot/imported/dices.svg-c7873fad3dde9beb9a21cb49dcb350d8.dpitex"]
 
 [params]
 

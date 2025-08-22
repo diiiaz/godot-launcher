@@ -1,14 +1,14 @@
 [remap]
 
 importer="svg"
-type="SVGTexture"
+type="DPITexture"
 uid="uid://mwa7yfdar6j8"
-path="res://.godot/imported/delete.svg-a26266e0736770d35a276a457d91003a.svgtex"
+path="res://.godot/imported/delete.svg-a26266e0736770d35a276a457d91003a.dpitex"
 
 [deps]
 
 source_file="res://assets/textures/icons/delete.svg"
-dest_files=["res://.godot/imported/delete.svg-a26266e0736770d35a276a457d91003a.svgtex"]
+dest_files=["res://.godot/imported/delete.svg-a26266e0736770d35a276a457d91003a.dpitex"]
 
 [params]
 

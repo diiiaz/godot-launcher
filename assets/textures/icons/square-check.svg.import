@@ -1,14 +1,14 @@
 [remap]
 
 importer="svg"
-type="SVGTexture"
+type="DPITexture"
 uid="uid://dsutiwoq61d8n"
-path="res://.godot/imported/square-check.svg-e4803337437367800474745033e29206.svgtex"
+path="res://.godot/imported/square-check.svg-e4803337437367800474745033e29206.dpitex"
 
 [deps]
 
 source_file="res://assets/textures/icons/square-check.svg"
-dest_files=["res://.godot/imported/square-check.svg-e4803337437367800474745033e29206.svgtex"]
+dest_files=["res://.godot/imported/square-check.svg-e4803337437367800474745033e29206.dpitex"]
 
 [params]
 

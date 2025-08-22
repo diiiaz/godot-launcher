@@ -1,14 +1,14 @@
 [remap]
 
 importer="svg"
-type="SVGTexture"
+type="DPITexture"
 uid="uid://bqkqo1ibuxlap"
-path="res://.godot/imported/arrow_down.svg-ada10c9a6b45c4d1b17b323a72060514.svgtex"
+path="res://.godot/imported/arrow_down.svg-ada10c9a6b45c4d1b17b323a72060514.dpitex"
 
 [deps]
 
 source_file="res://assets/textures/icons/arrow_down.svg"
-dest_files=["res://.godot/imported/arrow_down.svg-ada10c9a6b45c4d1b17b323a72060514.svgtex"]
+dest_files=["res://.godot/imported/arrow_down.svg-ada10c9a6b45c4d1b17b323a72060514.dpitex"]
 
 [params]
 
