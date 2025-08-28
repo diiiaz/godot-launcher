@@ -6,11 +6,19 @@ class_name PopupWindow
 @onready var _mouse_blocker: PanelContainer = %MouseBlocker
 @onready var _content_container: Control = %ContentContainer
 
+var _is_closing: bool = false
+
 
 func _ready() -> void:
 	_mouse_blocker.mouse_filter = Control.MOUSE_FILTER_IGNORE
 	_window_panel.modulate.a = 0.0
 	_mouse_blocker.modulate.a = 0.0
+
+
+func _input(_event: InputEvent) -> void:
+	if Input.is_action_just_pressed("ui_cancel"):
+		close()
+
 
 func _on_close_button_pressed() -> void:
 	close()
@@ -37,10 +45,19 @@ func open(title: String, content: PopupWindowContent) -> void:
 	create_tween().set_ease(Tween.EASE_OUT).set_trans(Tween.TRANS_EXPO).tween_property(_window_panel, "modulate:a", 1.0, 0.2).from(0.0)
 	create_tween().set_ease(Tween.EASE_OUT).set_trans(Tween.TRANS_EXPO).tween_property(_mouse_blocker, "modulate:a", 1.0, 1.0).from(0.0)
 
+
 func close() -> void:
+	if _is_closing:
+		return
+	_is_closing = true
 	_mouse_blocker.mouse_filter = Control.MOUSE_FILTER_IGNORE
 	create_tween().set_ease(Tween.EASE_IN).set_trans(Tween.TRANS_CUBIC).tween_property(_window_panel, "scale", Vector2.ONE * 0.8, 0.2).from(Vector2.ONE)
 	create_tween().set_ease(Tween.EASE_IN).set_trans(Tween.TRANS_CUBIC).tween_property(_window_panel, "modulate:a", 0.0, 0.15).from(1.0)
 	create_tween().set_ease(Tween.EASE_IN).set_trans(Tween.TRANS_CUBIC).tween_property(_mouse_blocker, "modulate:a", 0.0, 0.2).from(1.0)
 	await get_tree().create_timer(0.2).timeout
 	queue_free()
+
+
+func _on_mouse_blocker_gui_input(event: InputEvent) -> void:
+	if Input.is_mouse_button_pressed(MOUSE_BUTTON_LEFT) and event.is_pressed():
+		close()
