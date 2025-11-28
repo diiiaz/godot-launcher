@@ -8,9 +8,8 @@ const CLOSE_WHILE_DOWNLOADING_POPUP_WINDOW_CONTENT = preload("uid://b6rp7jwqchtv
 
 
 func _ready() -> void:
-	EngineBuildsManager.initialize()
-	ProjectsManager.initialize()
-	update_launcher_button.text = "v" + ProjectSettings.get_setting("application/config/version")
+	if SettingsManager.get_setting(Settings.SETTING.CHECK_FOR_NEW_LAUNCHER_RELEASES_ON_STARTUP) or SettingsManager.get_setting(Settings.SETTING.CHECK_FOR_NEW_ENGINE_RELEASES_ON_STARTUP):
+		ConnectionTester.is_connected_to_internet(true)
 	
 	TranslationServer.set_locale(TranslationServer.get_loaded_locales()[SettingsManager.get_setting(Settings.SETTING.LANGUAGE)])
 	
@@ -26,8 +25,14 @@ func _ready() -> void:
 	if not DirAccess.dir_exists_absolute(SettingsManager.get_setting_fallback_value(Settings.SETTING.BUILDS_PATH)):
 		DirAccess.make_dir_absolute(SettingsManager.get_setting_fallback_value(Settings.SETTING.BUILDS_PATH))
 	
-	check_for_new_launcher_releases()
-	check_for_new_engine_releases()
+	EngineBuildsManager.initialize()
+	ProjectsManager.initialize()
+	update_launcher_button.text = "v" + ProjectSettings.get_setting("application/config/version")
+	
+	if SettingsManager.get_setting(Settings.SETTING.CHECK_FOR_NEW_LAUNCHER_RELEASES_ON_STARTUP):
+		check_for_new_launcher_releases()
+	if SettingsManager.get_setting(Settings.SETTING.CHECK_FOR_NEW_ENGINE_RELEASES_ON_STARTUP):
+		check_for_new_engine_releases()
 	get_tree().set_auto_accept_quit(false)
 	
 	loading_screen.close()
@@ -45,6 +50,8 @@ func _on_update_launcher_button_pressed() -> void:
 	if LauncherBuildsFetcher.has_new_release():
 		OS.shell_open(RELEASES_URL_TEMPLATE.format({"tag_name": LauncherBuildsFetcher.get_latest_version()}))
 	else:
+		if not await ConnectionTester.is_connected_to_internet(true):
+			return
 		await check_for_new_launcher_releases()
 		if not LauncherBuildsFetcher.has_new_release():
 			ToastsManager.create_info_toast(TranslationServer.translate("TOAST_NO_NEW_LAUNCHER_RELEASES"))

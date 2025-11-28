@@ -26,7 +26,7 @@ func setup(release: Release) -> void:
 		_release.build_downloaded.connect(_on_release_build_downloaded)
 	if not _release.build_uninstalled.is_connected(_on_release_build_uninstalled):
 		_release.build_uninstalled.connect(_on_release_build_uninstalled)
-	#builds_container_controller.setup(release)
+	
 	release_name_label.text = "Godot " + release.get_name()
 	
 	download_recommended_build_button.visible = not release.get_recommended_build().is_downloaded()

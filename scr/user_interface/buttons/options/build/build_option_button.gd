@@ -24,7 +24,7 @@ func update() -> void:
 	clear()
 	
 	disabled = not EngineBuildsManager.has_downloaded_builds()
-	
+	print(EngineBuildsManager._downloaded_builds)
 	if EngineBuildsManager.has_downloaded_builds():
 		add_item(tr("NO_BUILD_SELECTED"), 0)
 		set_item_disabled(0, true)

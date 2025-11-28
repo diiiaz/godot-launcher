@@ -1,7 +1,8 @@
 extends Button
 
 func _ready() -> void:
-	check_for_new_launcher_releases()
+	if SettingsManager.get_setting(Settings.SETTING.CHECK_FOR_NEW_LAUNCHER_RELEASES_ON_STARTUP):
+		check_for_new_launcher_releases()
 
 
 func check_for_new_launcher_releases() -> void:

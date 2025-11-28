@@ -15,6 +15,9 @@ func is_downloading() -> bool:
 
 
 func download(downloadable: Downloadable) -> void:
+	if not await ConnectionTester.is_connected_to_internet(true):
+		return
+	
 	if _is_downloading:
 		ToastsManager.create_warning_toast(tr("WARNING_ALREADY_DOWNLOADING_BUILD"))
 		return

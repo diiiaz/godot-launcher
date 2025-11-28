@@ -33,6 +33,11 @@ LauncherBuildsFetcher="*res://scr/globals/launcher_builds_fetcher.gd"
 Downloader="*res://scr/globals/downloader.gd"
 TagsManager="*res://scr/globals/tags_manager.gd"
 
+[debug]
+
+settings/gdscript/always_track_call_stacks=true
+settings/gdscript/always_track_local_variables=true
+
 [display]
 
 window/size/viewport_width=1280

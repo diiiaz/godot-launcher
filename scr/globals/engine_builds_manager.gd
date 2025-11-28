@@ -44,8 +44,8 @@ func has_downloaded_builds() -> bool:
 
 
 func update_releases(force_fetch_new_releases: bool = false) -> void:
-	if not await ConnectionTester.is_connected_to_internet():
-		return
+	#if not await ConnectionTester.is_connected_to_internet():
+		#return
 	
 	_downloaded_builds.clear()
 	_releases.clear()
@@ -76,6 +76,8 @@ func update_releases(force_fetch_new_releases: bool = false) -> void:
 
 
 func check_for_new_releases() -> void:
+	if not await ConnectionTester.is_connected_to_internet(true):
+		return
 	if await EngineBuildsFetcher.has_new_release():
 		await update_releases(true)
 	else:

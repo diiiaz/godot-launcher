@@ -66,6 +66,9 @@ func fetch_latest_release() -> Dictionary:
 func fetch_or_load_releases(force_fetch: bool = false) -> Array:
 	var cached_data: Dictionary = _get_cached_data()
 	
+	if not await ConnectionTester.is_connected_to_internet() and not cached_data.is_empty():
+		return cached_data.releases
+	
 	if not cached_data.is_empty() and not _is_cache_expired(cached_data) and not force_fetch:
 		return cached_data.releases
 	else:
