@@ -33,9 +33,9 @@ func _on_browse_directories_button_pressed() -> void:
 	get_viewport().add_child(file_dialog)
 
 
-func _on_open_directory_button_pressed() -> void:
-	OS.shell_open(get_current_dir())
-
-
 func get_current_dir() -> String:
 	return ProjectSettings.globalize_path(path_label.text) if DirAccess.dir_exists_absolute(ProjectSettings.globalize_path(path_label.text)) else SettingsManager.get_setting_fallback_value(_setting)
+
+
+func _on_open_directory_button_pressed() -> void:
+	OS.shell_open(get_current_dir())
