@@ -29,3 +29,4 @@ mono_crash.*.json
 # Project-specific ignores
 local/
 addons/explore-editor-theme/
+/addons/zylann.editor_debugger

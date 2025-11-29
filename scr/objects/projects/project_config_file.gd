@@ -15,13 +15,18 @@ const CONFIG_FILE_TEMPLATE: String = "; Engine configuration file.
 
 {config_key}name=\"{project_name}\"
 {config_key}icon=\"res://icon.svg\"
+
+[editor_plugins]
+
+enabled=PackedStringArray({plugins})
 "
 
 ## Generates a project.godot (or engine.cfg if version is old) file at the specified path.
 static func create_project_config_file(
 	project_name: String,
 	project_path: String,
-	godot_version: String
+	godot_version: String,
+	add_addon: bool = false
 		) -> void:
 	
 	var file: FileAccess = FileAccess.open(project_path.path_join(get_config_file_name(godot_version)), FileAccess.WRITE)
@@ -32,6 +37,7 @@ static func create_project_config_file(
 			"config_version": get_config_version(godot_version),
 			"config_key": get_config_key(godot_version),
 			"project_name": project_name,
+			"plugins": "\"res://addons/godot-launcher-quit-to-launcher/plugin.cfg\"" if add_addon else "" 
 		})
 		file.store_string(content)
 		file.close()

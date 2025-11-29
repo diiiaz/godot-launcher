@@ -45,7 +45,7 @@ window/size/viewport_height=720
 
 [editor_plugins]
 
-enabled=PackedStringArray("res://addons/SmoothScroll/plugin.cfg", "res://addons/explore-editor-theme/plugin.cfg", "res://addons/proton_control_animation/plugin.cfg")
+enabled=PackedStringArray("res://addons/SmoothScroll/plugin.cfg", "res://addons/explore-editor-theme/plugin.cfg", "res://addons/godot-launcher-addon/plugin.cfg", "res://addons/godot-launcher-quit-to-launcher/plugin.cfg", "res://addons/proton_control_animation/plugin.cfg")
 
 [file_customization]
 

@@ -167,7 +167,7 @@ func _on_create_new_project_window_content_user_input_result(result: CreateNewPr
 	if result.has_canceled():
 		return
 	
-	ProjectsManager.create_project(result.get_project_name(), result.get_project_path(), result.get_project_build())
+	ProjectsManager.create_project(result.get_project_name(), result.get_project_path(), result.get_project_build(), result.get_add_addon_state())
 	
 	if result.is_editing_after():
 		ProjectsManager.run_project(result.get_project_build(), result.get_project_path(), true)

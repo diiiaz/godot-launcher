@@ -16,6 +16,8 @@ const STATUS_SUCCESS_ICON_TEXTURE = preload("uid://dl5251qp6cx1y")
 @onready var create_edit_button: Button = %CreateEditButton
 @onready var create_button: Button = %CreateButton
 
+@onready var add_quit_to_launcher_addon_check_box: CheckBox = %AddQuitToLauncherAddonCheckBox
+
 var _current_project_name: String = ""
 var _current_project_path: String = ""
 var _selected_build: EngineBuild
@@ -100,11 +102,11 @@ func _on_open_directory_button_pressed() -> void:
 
 
 func _on_create_button_pressed() -> void:
-	user_input_result.emit(CreateNewProjectResult.new(CreateNewProjectResult.ACTION.CREATE).setup_new_project(_current_project_name, _current_project_path, _selected_build))
+	user_input_result.emit(CreateNewProjectResult.new(CreateNewProjectResult.ACTION.CREATE).setup_new_project(_current_project_name, _current_project_path, _selected_build, add_quit_to_launcher_addon_check_box.button_pressed))
 	get_popup_window().close()
 
 func _on_create_edit_button_pressed() -> void:
-	user_input_result.emit(CreateNewProjectResult.new(CreateNewProjectResult.ACTION.CREATE_EDIT).setup_new_project(_current_project_name, _current_project_path, _selected_build))
+	user_input_result.emit(CreateNewProjectResult.new(CreateNewProjectResult.ACTION.CREATE_EDIT).setup_new_project(_current_project_name, _current_project_path, _selected_build, add_quit_to_launcher_addon_check_box.button_pressed))
 	get_popup_window().close()
 
 func _on_cancel_button_pressed() -> void:
@@ -127,19 +129,22 @@ class CreateNewProjectResult extends PopupWindowContent.Result:
 	var _project_name: String
 	var _project_path: String
 	var _project_build: EngineBuild
+	var _add_addon: bool
 	
 	func _init(action: ACTION) -> void:
 		_action = action
 	
-	func setup_new_project(name: String = "", path: String = "", build: EngineBuild = null) -> CreateNewProjectResult:
+	func setup_new_project(name: String = "", path: String = "", build: EngineBuild = null, add_addon: bool = false) -> CreateNewProjectResult:
 		_project_name = name
 		_project_path = path
 		_project_build = build
+		_add_addon = add_addon
 		return self
 	
 	func get_action() -> ACTION: return _action
 	func get_project_name() -> String: return _project_name
 	func get_project_path() -> String: return _project_path
+	func get_add_addon_state() -> bool: return _add_addon
 	func get_project_build() -> EngineBuild: return _project_build
 	func get_result_as_text() -> String: return "action: " + ACTION.keys()[get_action()] + ", project_name: " + _project_name + ", project_path: " + _project_path + ", project_build: " + _project_build.get_name() if _project_build != null else "none"
 	func has_canceled() -> bool: return _action == ACTION.CANCEL

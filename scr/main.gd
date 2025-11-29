@@ -8,6 +8,8 @@ const CLOSE_WHILE_DOWNLOADING_POPUP_WINDOW_CONTENT = preload("uid://b6rp7jwqchtv
 
 
 func _ready() -> void:
+	UserDataManager.set_user_data(UserData.USER_DATA.LATEST_OPENED_LAUNCHER_PATH, OS.get_executable_path())
+	
 	if SettingsManager.get_setting(Settings.SETTING.CHECK_FOR_NEW_LAUNCHER_RELEASES_ON_STARTUP) or SettingsManager.get_setting(Settings.SETTING.CHECK_FOR_NEW_ENGINE_RELEASES_ON_STARTUP):
 		ConnectionTester.is_connected_to_internet(true)
 	
