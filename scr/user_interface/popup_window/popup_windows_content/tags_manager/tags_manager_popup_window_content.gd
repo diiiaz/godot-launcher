@@ -5,6 +5,7 @@ const TAG_UI_EDITOR = preload("uid://b4ymg7l804jgx")
 
 @onready var project_tags_container: HFlowContainer = %ProjectTagsHFlowContainer
 @onready var all_tags_container: HFlowContainer = %AllTagsHFlowContainer
+@onready var project_tag_label: Label = %ProjectTagLabel
 
 
 var _project: Project
@@ -18,8 +19,10 @@ func setup(extra_data: Variant) -> void:
 		await self.ready
 		await get_tree().process_frame
 	_project = extra_data
+	project_tag_label.text = tr("PROJECT_TAGS") % [_project.get_name()]
 	TagsManager.tag_group_changed.connect(_on_tag_group_changed)
 	_update()
+
 
 func _on_tag_group_changed(tag_group: TagGroup) -> void:
 	if tag_group.get_group_name() != Project.TAG_GROUP:
@@ -52,7 +55,7 @@ func _create_add_new_tag_button() -> Button:
 	create_tag_button.tooltip_text = "TOOLTIP_CREATE_TAG"
 	create_tag_button.mouse_behavior_recursive = Control.MOUSE_BEHAVIOR_ENABLED
 	create_tag_button.mouse_default_cursor_shape = Control.CURSOR_POINTING_HAND
-	create_tag_button.custom_minimum_size = Vector2.ONE * 32
+	create_tag_button.custom_minimum_size = Vector2.ONE * 16
 	create_tag_button.icon = preload("uid://wwa67pf51v78")
 	create_tag_button.pressed.connect(_on_create_new_tag_button_pressed)
 	return create_tag_button

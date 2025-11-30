@@ -154,6 +154,8 @@ WARNING_PROJECT_RUN_WITHOUT_SELECTED_BUILD,Cannot run project without a selected
 
 # Other,,
 NEW_TAG_NAME,New Tag,Nouvelle étiquette
+ALL_TAGS,All Tags,Tous les Tags
+PROJECT_TAGS,%s's Tags,Tags de %s
 TAGS_MANAGER_WINDOW_INFO,Click tags to move them; use the + button to create new ones.,Cliquez sur les étiquettes pour les déplacer; utilisez le bouton + pour en créer de nouvelles.
 ADD_QUIT_TO_LAUNCHER_ADDON,Add Quit to Launcher addon,Ajouter l'addon "Quitter vers le Launcher"
 QUIT_TO_LAUNCHER,Quit to Launcher,Quitter vers le Launcher

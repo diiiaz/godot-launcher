@@ -1,9 +1,23 @@
-[gd_scene load_steps=5 format=3 uid="uid://duskngwh068gh"]
+[gd_scene load_steps=11 format=3 uid="uid://duskngwh068gh"]
 
 [ext_resource type="Script" uid="uid://c882b4qsmjh7" path="res://scr/user_interface/popup_window/popup_windows_content/tags_manager/tags_manager_popup_window_content.gd" id="1_635bm"]
 [ext_resource type="Theme" uid="uid://bimvjqmjjj4jh" path="res://assets/resources/theme/main.tres" id="1_aicbu"]
+[ext_resource type="Script" uid="uid://bgqglerkcylxx" path="res://addons/SmoothScroll/SmoothScrollContainer.gd" id="3_5cfht"]
+[ext_resource type="Script" uid="uid://b7h0k2h2qwlqv" path="res://addons/SmoothScroll/scroll_damper/expo_scroll_damper.gd" id="4_b1lav"]
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_6ugnh"]
+
+[sub_resource type="Resource" id="Resource_5itf5"]
+script = ExtResource("4_b1lav")
+
+[sub_resource type="Resource" id="Resource_xxfol"]
+script = ExtResource("4_b1lav")
+
+[sub_resource type="Resource" id="Resource_5cfht"]
+script = ExtResource("4_b1lav")
+
+[sub_resource type="Resource" id="Resource_b1lav"]
+script = ExtResource("4_b1lav")
 
 [sub_resource type="LabelSettings" id="LabelSettings_aicbu"]
 font_size = 14
@@ -34,9 +48,10 @@ layout_mode = 2
 size_flags_horizontal = 3
 theme_override_constants/separation = 8
 
-[node name="Label" type="Label" parent="VBoxContainer/HBoxContainer/ProjectTagsContainer"]
+[node name="ProjectTagLabel" type="Label" parent="VBoxContainer/HBoxContainer/ProjectTagsContainer"]
+unique_name_in_owner = true
 layout_mode = 2
-text = "Projects Tags"
+text = "PROJECT_TAGS"
 horizontal_alignment = 1
 vertical_alignment = 1
 
@@ -53,9 +68,19 @@ theme_override_constants/margin_top = 8
 theme_override_constants/margin_right = 8
 theme_override_constants/margin_bottom = 8
 
-[node name="ProjectTagsHFlowContainer" type="HFlowContainer" parent="VBoxContainer/HBoxContainer/ProjectTagsContainer/Background/MarginContainer"]
+[node name="SmoothScrollContainer" type="ScrollContainer" parent="VBoxContainer/HBoxContainer/ProjectTagsContainer/Background/MarginContainer"]
+layout_mode = 2
+mouse_behavior_recursive = 2
+script = ExtResource("3_5cfht")
+wheel_scroll_damper = SubResource("Resource_5itf5")
+dragging_scroll_damper = SubResource("Resource_xxfol")
+metadata/_custom_type_script = "uid://bgqglerkcylxx"
+
+[node name="ProjectTagsHFlowContainer" type="HFlowContainer" parent="VBoxContainer/HBoxContainer/ProjectTagsContainer/Background/MarginContainer/SmoothScrollContainer"]
 unique_name_in_owner = true
 layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
 
 [node name="AllTagsContainer" type="VBoxContainer" parent="VBoxContainer/HBoxContainer"]
 layout_mode = 2
@@ -64,7 +89,7 @@ theme_override_constants/separation = 8
 
 [node name="Label" type="Label" parent="VBoxContainer/HBoxContainer/AllTagsContainer"]
 layout_mode = 2
-text = "All Tags"
+text = "ALL_TAGS"
 horizontal_alignment = 1
 vertical_alignment = 1
 
@@ -81,8 +106,22 @@ theme_override_constants/margin_top = 8
 theme_override_constants/margin_right = 8
 theme_override_constants/margin_bottom = 8
 
-[node name="AllTagsHFlowContainer" type="HFlowContainer" parent="VBoxContainer/HBoxContainer/AllTagsContainer/Background/MarginContainer"]
+[node name="SmoothScrollContainer" type="ScrollContainer" parent="VBoxContainer/HBoxContainer/AllTagsContainer/Background/MarginContainer"]
+layout_mode = 2
+mouse_behavior_recursive = 2
+script = ExtResource("3_5cfht")
+wheel_scroll_damper = SubResource("Resource_5cfht")
+dragging_scroll_damper = SubResource("Resource_b1lav")
+metadata/_custom_type_script = "uid://bgqglerkcylxx"
+
+[node name="AllTagsHFlowContainer" type="HFlowContainer" parent="VBoxContainer/HBoxContainer/AllTagsContainer/Background/MarginContainer/SmoothScrollContainer"]
 unique_name_in_owner = true
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+
+[node name="Control" type="Control" parent="VBoxContainer"]
+custom_minimum_size = Vector2(0, 2)
 layout_mode = 2
 
 [node name="InfoLabel" type="Label" parent="VBoxContainer"]
