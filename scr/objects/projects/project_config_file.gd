@@ -37,7 +37,7 @@ static func create_project_config_file(
 			"config_version": get_config_version(godot_version),
 			"config_key": get_config_key(godot_version),
 			"project_name": project_name,
-			"plugins": "\"res://addons/godot-launcher-quit-to-launcher/plugin.cfg\"" if add_addon else "" 
+			"plugins": "\"res://addons/godot-launcher-addon/plugin.cfg\"" if add_addon else "" 
 		})
 		file.store_string(content)
 		file.close()

@@ -15,10 +15,8 @@ func is_connected_to_internet(warn_when_no_connection: bool = false) -> bool:
 	await _http_request.request_completed
 	await get_tree().process_frame
 	_http_request.queue_free()
-	#if not _connected and _connected_last_state != _connected and warn_when_no_connection:
 	if not _connected and warn_when_no_connection:
 		ToastsManager.create_warning_toast(TranslationServer.translate("ERROR_NOT_CONNECTED_TO_INTERNET"), 5.0)
-	#_connected_last_state = _connected
 	return _connected
 
 

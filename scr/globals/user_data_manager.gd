@@ -36,3 +36,10 @@ func _remove_unused_projects_selected_version() -> void:
 		if DirAccess.dir_exists_absolute(project_path):
 			continue
 		get_user_data(UserData.USER_DATA.PROJECTS_SELECTED_BUILDS).erase(project_path)
+
+
+func get_godot_launcher_user_path() -> String:
+	var user_path: String = OS.get_user_data_dir()
+	user_path = user_path.replace(user_path.get_slice("/", user_path.get_slice_count("/") - 1), "")
+	var launcher_user_path = user_path.path_join("Godot Launcher")
+	return ProjectSettings.globalize_path(launcher_user_path)

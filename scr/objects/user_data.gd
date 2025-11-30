@@ -18,9 +18,6 @@ class_name UserData
 @warning_ignore("unused_private_class_variable")
 @export var _tags: Dictionary[String, Array] = {}
 
-@warning_ignore("unused_private_class_variable")
-@export var _latest_opened_launcher_path: String = ""
-
 
 enum USER_DATA {
 	PROJECTS_SELECTED_BUILDS,
@@ -28,7 +25,6 @@ enum USER_DATA {
 	PROJECT_SORT_OPTION_INDEX,
 	PROJECT_SORT_INVERTED,
 	TAGS,
-	LATEST_OPENED_LAUNCHER_PATH,
 }
 
 static var _user_data_variable_map: Dictionary[USER_DATA, String] = {
@@ -37,7 +33,6 @@ static var _user_data_variable_map: Dictionary[USER_DATA, String] = {
 	USER_DATA.PROJECT_SORT_OPTION_INDEX: "_project_sort_option_index",
 	USER_DATA.PROJECT_SORT_INVERTED: "_project_sort_inverted",
 	USER_DATA.TAGS: "_tags",
-	USER_DATA.LATEST_OPENED_LAUNCHER_PATH: "_latest_opened_launcher_path",
 }
 
 static var _user_data_fallback_value_map: Dictionary[USER_DATA, Variant] = {
@@ -46,7 +41,6 @@ static var _user_data_fallback_value_map: Dictionary[USER_DATA, Variant] = {
 	USER_DATA.PROJECT_SORT_OPTION_INDEX: 0,
 	USER_DATA.PROJECT_SORT_INVERTED: false,
 	USER_DATA.TAGS: {},
-	USER_DATA.LATEST_OPENED_LAUNCHER_PATH: "",
 }
 
 

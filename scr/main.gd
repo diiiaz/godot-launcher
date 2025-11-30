@@ -8,7 +8,8 @@ const CLOSE_WHILE_DOWNLOADING_POPUP_WINDOW_CONTENT = preload("uid://b6rp7jwqchtv
 
 
 func _ready() -> void:
-	UserDataManager.set_user_data(UserData.USER_DATA.LATEST_OPENED_LAUNCHER_PATH, OS.get_executable_path())
+	download_addon_to_user_path()
+	create_latest_opened_launcher_path_file()
 	
 	if SettingsManager.get_setting(Settings.SETTING.CHECK_FOR_NEW_LAUNCHER_RELEASES_ON_STARTUP) or SettingsManager.get_setting(Settings.SETTING.CHECK_FOR_NEW_ENGINE_RELEASES_ON_STARTUP):
 		ConnectionTester.is_connected_to_internet(true)
@@ -35,8 +36,8 @@ func _ready() -> void:
 		check_for_new_launcher_releases()
 	if SettingsManager.get_setting(Settings.SETTING.CHECK_FOR_NEW_ENGINE_RELEASES_ON_STARTUP):
 		check_for_new_engine_releases()
-	get_tree().set_auto_accept_quit(false)
 	
+	get_tree().set_auto_accept_quit(false)
 	loading_screen.close()
 
 
@@ -87,6 +88,51 @@ func _notification(what: int) -> void:
 			return
 		get_tree().quit()
 
+
 func _on_close_while_downloading_popup_content_user_input(result: PopupWindowContent.Result) -> void:
 	if result.action_is_close():
 		get_tree().quit()
+
+
+# ------------------------- hardcoded because idc right now
+
+static func create_latest_opened_launcher_path_file() -> void:
+	var file_path: String = UserDataManager.get_godot_launcher_user_path().path_join("latest_opened_launcher_path.json")
+	var file: FileAccess = FileAccess.open(file_path, FileAccess.WRITE)
+	file.store_string("{\"path\":\"{path}\"}".format({"path": OS.get_executable_path()}))
+	file.close()
+
+
+func download_addon_to_user_path() -> void:
+	const TAG_NAME: String = "v1.0.1"
+	var base_dir: String = UserDataManager.get_godot_launcher_user_path().path_join("addon")
+	
+	if DirAccess.dir_exists_absolute(base_dir) and not DirAccess.get_directories_at(base_dir).is_empty():
+		return
+	
+	var file_path: String = base_dir.path_join("temp_file_name")
+	
+	if not DirAccess.dir_exists_absolute(base_dir):
+		var err = DirAccess.make_dir_recursive_absolute(base_dir)
+		if err != OK:
+			push_error(error_string(err))
+	
+	await get_tree().process_frame
+	
+	if not await ConnectionTester.is_connected_to_internet():
+		return
+	
+	var https_request: HTTPRequest = HTTPRequest.new()
+	add_child(https_request)
+
+	https_request.set_download_file(file_path)
+	var request_error: Error = https_request.request("https://github.com/diiiaz/godot-launcher-addon/archive/refs/tags/{tag_name}.zip".format({"tag_name": TAG_NAME}))
+	
+	await https_request.request_completed
+	https_request.queue_free()
+	
+	if request_error != OK:
+		ToastsManager.create_error_toast(TranslationServer.translate("ERROR_REQUEST_FAILED").format({"error": request_error}))
+		return
+	
+	Downloader.extract_all_from_zip(file_path)

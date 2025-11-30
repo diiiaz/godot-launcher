@@ -1,11 +1,11 @@
 extends Node
 
-
 enum SORT_METHOD {
 	NAME,
 	DATE
 }
 
+const DirAccessHelper = preload("uid://dk3qqr7250fa")
 const DEFAULT_ICON_PATH = "res://assets/textures/icons/default_icon.svg"
 const PROJECT_ICON_NAME = "icon.svg"
 
@@ -122,8 +122,13 @@ func update_projects() -> void:
 func create_project(project_name: String, project_path: String, build: EngineBuild, add_addon: bool) -> void:
 	if not DirAccess.dir_exists_absolute(project_path):
 		DirAccess.make_dir_recursive_absolute(project_path)
+	
 	if add_addon:
-		assert(false, "not implemented")
+		if not DirAccess.dir_exists_absolute(project_path.path_join("addons")):
+			DirAccess.make_dir_recursive_absolute(project_path.path_join("addons"))
+		DirAccessHelper.copy_directory(UserDataManager.get_godot_launcher_user_path().path_join("addon"), project_path.path_join("addons"))
+		#DirAccess.copy_absolute(UserDataManager.get_godot_launcher_user_path().path_join("addon"), project_path.path_join("addons"))
+	
 	ProjectConfigFile.create_project_config_file(project_name, project_path, build.get_version_name(), add_addon)
 	DirAccess.copy_absolute(ProjectSettings.globalize_path(DEFAULT_ICON_PATH), project_path.path_join(PROJECT_ICON_NAME))
 	UserDataManager.get_user_data(UserData.USER_DATA.PROJECTS_SELECTED_BUILDS)[project_path] = build.get_path().get_file()
