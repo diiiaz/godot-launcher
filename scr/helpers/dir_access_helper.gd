@@ -1,16 +1,34 @@
 extends Node
 
-static func copy_directory(source_dir: String, dest_dir: String) -> int:
-	var dir = DirAccess.open(source_dir)
+
+static func copy_directory(source_path: String, dest_parent_path: String, new_name: String) -> int:
+	var original_name = source_path.trim_suffix("/").get_file()
+	var temp_dest_path = dest_parent_path.path_join(original_name)
+	
+	var copy_result = _recursive_copy_contents(source_path, temp_dest_path)
+	if copy_result != OK:
+		push_error("Copy failed with error code: %d" % copy_result)
+		return copy_result
+	
+	var final_dest_path = dest_parent_path.path_join(new_name)
+	var rename_result = DirAccess.rename_absolute(temp_dest_path, final_dest_path)
+	
+	if rename_result != OK:
+		push_error("Rename failed with error code: %d" % rename_result)
+	
+	return rename_result
+
+
+static func _recursive_copy_contents(source: String, destination: String) -> int:
+	var dir = DirAccess.open(source)
 	if dir == null:
-		push_error("DirAccess Helper Error: Could not open source directory: %s" % source_dir)
 		return ERR_CANT_OPEN
 	
-	var error = DirAccess.make_dir_recursive_absolute(dest_dir)
-	if error != OK:
-		push_error("DirAccess Helper Error: Could not create destination directory: %s (Error: %d)" % [dest_dir, error])
-		return error
-		
+	# Ensure the destination folder (B) exists
+	var err = DirAccess.make_dir_recursive_absolute(destination)
+	if err != OK:
+		return err
+	
 	dir.list_dir_begin()
 	var file_name = dir.get_next()
 	
@@ -19,38 +37,27 @@ static func copy_directory(source_dir: String, dest_dir: String) -> int:
 			file_name = dir.get_next()
 			continue
 			
-		var source_path = source_dir.path_join(file_name)
-		var dest_path = dest_dir.path_join(file_name)
+		var source_item = source.path_join(file_name)
+		var dest_item = destination.path_join(file_name)
 		
 		if dir.current_is_dir():
-			var result = copy_directory(source_path, dest_path)
-			if result != OK:
-				dir.list_dir_end()
-				return result
+			var res = _recursive_copy_contents(source_item, dest_item)
+			if res != OK:
+				return res
 		else:
-			var result = copy_file(source_path, dest_path)
-			if result != OK:
-				dir.list_dir_end()
-				return result
-		
+			var res = _copy_file_data(source_item, dest_item)
+			if res != OK:
+				return res
+			
 		file_name = dir.get_next()
-		
-	dir.list_dir_end()
 	return OK
 
 
-# Helper function to copy a single file
-static func copy_file(source_file: String, dest_file: String) -> int:
+static func _copy_file_data(source_file: String, dest_file: String) -> int:
 	var data = FileAccess.get_file_as_bytes(source_file)
-	if data.is_empty() and not FileAccess.file_exists(source_file):
-		push_error("DirAccess Helper Error: Source file not found or empty data: %s" % source_file)
-		return ERR_DOES_NOT_EXIST
-		
+	if data.is_empty() and not FileAccess.file_exists(source_file): return ERR_DOES_NOT_EXIST
 	var file = FileAccess.open(dest_file, FileAccess.WRITE)
 	if file == null:
-		push_error("DirAccess Helper Error: Could not open destination file for writing: %s" % dest_file)
 		return ERR_CANT_OPEN
-		
 	file.store_buffer(data)
-	file.close()
 	return OK

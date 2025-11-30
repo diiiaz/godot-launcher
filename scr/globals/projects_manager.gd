@@ -126,8 +126,11 @@ func create_project(project_name: String, project_path: String, build: EngineBui
 	if add_addon:
 		if not DirAccess.dir_exists_absolute(project_path.path_join("addons")):
 			DirAccess.make_dir_recursive_absolute(project_path.path_join("addons"))
-		DirAccessHelper.copy_directory(UserDataManager.get_godot_launcher_user_path().path_join("addon"), project_path.path_join("addons"))
-		#DirAccess.copy_absolute(UserDataManager.get_godot_launcher_user_path().path_join("addon"), project_path.path_join("addons"))
+		
+		var source_dir_path: String = UserDataManager.get_godot_launcher_user_path().path_join("addon")
+		var dirs_names: PackedStringArray = DirAccess.get_directories_at(source_dir_path)
+		var addon_path: String = source_dir_path.path_join(dirs_names[0])
+		DirAccessHelper.copy_directory(addon_path, project_path.path_join("addons"), "godot-launcher-addon")
 	
 	ProjectConfigFile.create_project_config_file(project_name, project_path, build.get_version_name(), add_addon)
 	DirAccess.copy_absolute(ProjectSettings.globalize_path(DEFAULT_ICON_PATH), project_path.path_join(PROJECT_ICON_NAME))
