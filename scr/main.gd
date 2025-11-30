@@ -97,7 +97,7 @@ func _on_close_while_downloading_popup_content_user_input(result: PopupWindowCon
 # ------------------------- hardcoded because idc right now
 
 static func create_latest_opened_launcher_path_file() -> void:
-	if OS.get_executable_path().contains("app_userdata/Godot Launcher/builds"):
+	if OS.get_executable_path().contains(SettingsManager.get_setting(Settings.SETTING.BUILDS_PATH)):
 		return
 	var file_path: String = UserDataManager.get_godot_launcher_user_path().path_join("latest_opened_launcher_path.json")
 	var file: FileAccess = FileAccess.open(file_path, FileAccess.WRITE)
