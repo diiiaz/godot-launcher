@@ -11,7 +11,7 @@ config_version=5
 [application]
 
 config/name="Godot Launcher"
-config/version="1.0.0"
+config/version="1.1.0"
 config/tags=PackedStringArray("app", "current")
 run/main_scene="uid://bm3chnt4habtm"
 config/features=PackedStringArray("4.5")
@@ -45,7 +45,7 @@ window/size/viewport_height=720
 
 [editor_plugins]
 
-enabled=PackedStringArray("res://addons/SmoothScroll/plugin.cfg", "res://addons/explore-editor-theme/plugin.cfg", "res://addons/godot-launcher-addon/plugin.cfg", "res://addons/proton_control_animation/plugin.cfg")
+enabled=PackedStringArray("res://addons/SmoothScroll/plugin.cfg", "res://addons/explore-editor-theme/plugin.cfg", "res://addons/proton_control_animation/plugin.cfg")
 
 [file_customization]
 
